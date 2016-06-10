@@ -21,7 +21,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from src.project_name import __version__
+from src.jupytalk import __version__
 
 
 class TestVersion (unittest.TestCase):
