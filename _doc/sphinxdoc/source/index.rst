@@ -6,12 +6,36 @@
 jupytalk
 ========
 
+
+**Links:** `github <https://github.com/sdpython/jupytalk/>`_,
+`documentation <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html>`_, 
+`travis <https://travis-ci.org/sdpython/jupytalk>`_,
+:ref:`l-README`,
+:ref:`blog <ap-main-0>`,
+:ref:`l-issues-todolist`
+
+**Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
+
+Presentation
+------------
+
+
+
+Installation
+------------
+
+::
+
+    pip install jupytalk
+    
+    
+
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
     
 .. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
-    :target: https://ci.appveyor.com/project/sdpython/python3-module-template
+    :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
     
 .. image:: https://badge.fury.io/py/project_name.svg
@@ -21,10 +45,6 @@ jupytalk
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/project_name
 
-.. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
-    :alt: GitHub Issues
-    :target: https://github.com/sdpython/jupytalk/issues
-    
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT  
@@ -39,31 +59,14 @@ jupytalk
     
 .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/jupytalk?branch=master
+
+.. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
+    :alt: GitHub Issues
+    :target: https://github.com/sdpython/jupytalk/issues
     
-   
-
-**Links:** `github <https://github.com/sdpython/jupytalk/>`_,
-`documentation <http://www.xavierdupre.fr/site2013/index_code.html#jupytalk>`_,
-`travis <https://travis-ci.org/sdpython/jupytalk>`_,
-:ref:`l-README`,
-:ref:`blog <ap-main-0>`,
-:ref:`l-issues-todolist`
-
-
-Presentation
-------------
-
-
-
-Installation
-------------
-
-::
-
-    pip install jupyter
-    
-    
-        
+.. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
+    :alt: Waffle
+    :target: https://waffle.io/jupytalk/pymyinstall    
         
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+

@@ -19,10 +19,6 @@ README
     :alt: PYPI Package
     :target: https://pypi.python.org/pypi/project_name
 
-.. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
-    :alt: GitHub Issues
-    :target: https://github.com/sdpython/jupytalk/issues
-    
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
@@ -38,6 +34,14 @@ README
 .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/jupytalk?branch=master
     
+.. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
+    :alt: GitHub Issues
+    :target: https://github.com/sdpython/jupytalk/issues
+    
+.. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
+    :alt: Waffle
+    :target: https://waffle.io/jupytalk/pymyinstall    
+        
       
 
 **Links:**
