@@ -3,14 +3,14 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Jupytalk
+jupytalk
 ========
 
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
     
-.. image:: https://ci.appveyor.com/api/projects/status/6qp50sxl22aqwtb5?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
     :target: https://ci.appveyor.com/project/sdpython/python3-module-template
     :alt: Build Status Windows
     
@@ -28,9 +28,6 @@ Jupytalk
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT  
-
-.. image:: https://coveralls.io/repos/sdpython/jupytalk/badge.svg?branch=master&service=github 
-    :target: https://coveralls.io/github/sdpython/jupytalk?branch=master     
 
 .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/jupytalk/master
@@ -74,7 +71,7 @@ Installation
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`modindex`      |  :ref:`l-example`   | :ref:`search`       | :ref:`l-license`   | :ref:`l-changes`       | :ref:`l-README`                                |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
-| :ref:`genindex`      |  :ref:`l-FAQ`       | :ref:`l-notebooks`  | :ref:`ext-tohelp`  | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
+| :ref:`genindex`      |  :ref:`l-FAQ`       | :ref:`l-notebooks`  |                    | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 
 

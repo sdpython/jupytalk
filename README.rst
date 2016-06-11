@@ -8,8 +8,8 @@ README
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
     
-.. image:: https://ci.appveyor.com/api/projects/status/6qp50sxl22aqwtb5?svg=true
-    :target: https://ci.appveyor.com/project/sdpython/python3-module-template
+.. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
+    :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
     
 .. image:: https://badge.fury.io/py/project_name.svg
@@ -27,9 +27,6 @@ README
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
     
-.. image:: https://coveralls.io/repos/sdpython/jupytalk/badge.svg?branch=master&service=github 
-    :target: https://coveralls.io/github/sdpython/jupytalk?branch=master     
-
 .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/jupytalk/master
    :alt: Code Health
@@ -49,6 +46,7 @@ README
 * `documentation <http://www.xavierdupre.fr/site2013/index_code.html#jupytalk>`_
 * `Blog <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
+**jupytalk**
 
 Material for presentation.
 

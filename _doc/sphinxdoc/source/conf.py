@@ -24,3 +24,13 @@ set_sphinx_variables(__file__, "jupyter", "Xavier Dupré", 2016,
                      extlinks=dict(issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')))
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
+
+# https://github.com/pinax/pinax-theme-bootstrap
+# https://pypi.python.org/pypi/guzzle_sphinx_theme/0.7.11
+# https://pypi.python.org/pypi/hbp-sphinx-theme/0.3.4
+# https://pypi.python.org/pypi/oslosphinx/3.2.0
+# https://pypi.python.org/pypi/foundation-sphinx-theme/0.0.3
+# https://pypi.python.org/pypi/pietroalbini-sphinx-themes/1.3.0
+# https://github.com/lucywyman/colorful-hieroglyph-theme
+# https://pypi.python.org/pypi/openstackdocstheme/1.3.0
+# https://pypi.python.org/pypi/sphinx_theme_pd/0.0.8
