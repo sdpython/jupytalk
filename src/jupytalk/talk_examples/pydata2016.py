@@ -24,7 +24,7 @@ def example_networkx(ax=None, **options):
     ncenter = 0
     for n in pos:
         x, y = pos[n]
-        d = (x - 0.5)**2 + (y - 0.5)**2
+        d = (x - 0.5) ** 2 + (y - 0.5) ** 2
         if d < dmin:
             ncenter = n
             dmin = d
