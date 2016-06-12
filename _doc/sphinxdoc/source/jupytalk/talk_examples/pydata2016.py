@@ -8,13 +8,13 @@ Examples used in talks
 
 def example_networkx(ax=None, **options):
     """
-    
+
         example using networks
-    
+
         :param      ax:          axis
         :param      options:     look at the code
         :return:                 ax
-        
+
     """
     import networkx as nx
     import matplotlib.pyplot as plt
@@ -52,14 +52,14 @@ def example_networkx(ax=None, **options):
 
 def example_confidence_interval(ax=None, seaborn=False, **options):
     """
-    
+
         draw pseudo confidence interval for a regression in a matplotlib
-    
+
         :param      ax:          axis
         :param      seaborn:     uses *seaborn* instead of *matplotlib*
         :param      options:     look at the code
         :return:                 ax
-        
+
     """
     import matplotlib.pyplot as plt
 
@@ -92,13 +92,13 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
 
 def example_basemap(ax=None, **options):
     """
-    
+
         draw a map of France
-    
+
         :param      ax:          axis
         :param      options:     look at the code
         :return:                 ax
-        
+
     """
     import matplotlib.pyplot as plt
 
