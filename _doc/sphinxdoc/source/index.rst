@@ -19,6 +19,11 @@ jupytalk
 Presentation
 ------------
 
+.. toctree::
+    :maxdepth:1
+    
+    PyData 06/15/2016 <2016/pydata2016>
+
 
 
 Installation
