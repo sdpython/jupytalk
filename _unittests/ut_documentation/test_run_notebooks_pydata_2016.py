@@ -46,7 +46,7 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooks(unittest.TestCase):
+class TestRunNotebooksPyData2016(unittest.TestCase):
 
     def test_run_notebook(self):
         fLOG(
@@ -69,7 +69,7 @@ class TestRunNotebooks(unittest.TestCase):
 
         # selection of notebooks
         fnb = os.path.normpath(os.path.join(
-            os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks"))
+            os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
             if os.path.splitext(f)[-1] == ".ipynb":

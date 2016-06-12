@@ -247,3 +247,6 @@ auto_*.xml
 auto_*.db3
 _doc/sphinxdoc/source/phdoc_static/require.js
 _doc/sphinxdoc/require.js
+_doc/notebooks/2016/pydata/.ipynb_checkpoints/*
+_doc/notebooks/2016/pydata/histogram_single.html
+_doc/notebooks/2016/pydata/les_mis.html
