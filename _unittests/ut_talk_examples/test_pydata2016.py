@@ -5,8 +5,6 @@
 import sys
 import os
 import unittest
-import pandas
-import warnings
 
 
 try:
@@ -53,7 +51,7 @@ class TestPyData2016(unittest.TestCase):
         temp = get_temp_folder(__file__, "temp_example_networkx")
         fix_tkinter_issues_virtualenv()
         import matplotlib.pyplot as plt
-        fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8,8))
+        fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 8))
         example_networkx(ax=ax)
         assert ax is not None
         img = os.path.join(temp, "img.png")

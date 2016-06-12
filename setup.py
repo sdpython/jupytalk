@@ -194,6 +194,6 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         #data_files              = data_files,
-        install_requires = ['pyquickhelper'],
+        install_requires=['pyquickhelper'],
         #include_package_data    = True,
     )

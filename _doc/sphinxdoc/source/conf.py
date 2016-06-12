@@ -21,7 +21,8 @@ sys.path.insert(
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2016,
                      "foundation_sphinx_theme", None, locals(),
-                     extlinks=dict(issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),
+                     extlinks=dict(
+                         issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),
                      github_user="sdpython", github_repo="jupytalk")
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
