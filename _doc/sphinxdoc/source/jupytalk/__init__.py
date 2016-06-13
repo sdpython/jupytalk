@@ -31,25 +31,25 @@ __blog__ = """
 
 def check(log=False):
     """
-
+    
         Checks the library is working.
         It raises an exception.
         If you want to disable the logs:
-
+    
         :param      log:     if True, display information, otherwise
         :return:             0 or exception
-
+        
     """
     return True
 
 
 def _setup_hook(use_print=False):
     """
-
+    
         if this function is added to the module,
         the help automation and unit tests call it first before
         anything goes on as an initialization step.
-
+        
     """
     # we can check many things, needed module
     # any others things before unit tests are started

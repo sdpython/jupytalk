@@ -21,6 +21,17 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pycryptodome"
+  - "%PYTHON%\\Scripts\\pymy_install3 biopython reportlab basemap"
+  - "%PYTHON%\\Scripts\\pip install bokeh"
+  - "%PYTHON%\\Scripts\\pip install bqplot"
+  - "%PYTHON%\\Scripts\\pip install ete3"
+  - "%PYTHON%\\Scripts\\pip install ggplot"
+  - "%PYTHON%\\Scripts\\pip install lifelines"
+  - "%PYTHON%\\Scripts\\pip install networkx"
+  - "%PYTHON%\\Scripts\\pip install seaborn"
+  - "%PYTHON%\\Scripts\\pip install plotly"
+  - "%PYTHON%\\Scripts\\pip install python-lightning"
+
 
 build: off
 

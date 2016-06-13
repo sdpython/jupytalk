@@ -24,8 +24,18 @@ Main presentation
 
 **Interactive libraries**
 
+* :ref:`jsbokehrst`
 * :ref:`jslightningpythonrst`
+* :ref:`jsmpld3rst`
 * :ref:`jsplotlyrst`
+* :ref:`jspygalrst`
+* :ref:`jspythreejsrst`
+* :ref:`jsvegarst`
+
+
+**GUI**
+
+* :ref:`guigeoplotlibrst`
 
 **Mix between Python and Javascript**
 

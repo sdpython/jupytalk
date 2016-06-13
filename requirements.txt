@@ -83,3 +83,16 @@ xlrd
 xmltodict
 Werkzeug
 XlsxWriter
+basemap
+biopython 
+bokeh
+bqplot
+ete3
+ggplot
+lifelines
+networkx
+seaborn
+plotly
+python-lightning
+reportlab 
+

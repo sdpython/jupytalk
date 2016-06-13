@@ -23,16 +23,42 @@ Presentation
     :maxdepth:1
     
     PyData 06/15/2016 <2016/pydata2016>
+    
 
-
-
-Installation
-------------
+Materials for the talks are included in this module. To install it:
 
 ::
 
     pip install jupytalk
     
+
+
+Teachings content
+-----------------
+
+* `ENSAE <http://www.ensae.fr>`_ : `Python pour un Data Scientist <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html>`_
+* `Institut des Actuaires <http://www.institutdesactuaires.com/>`_ : `Python et actuariat <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/index.html>`_
+* Pour les enfants : `lesenfantscodaient.fr <http://lesenfantscodaient.fr>`_
+
+References
+----------
+
+* `A Issy, les collégiennes passent leurs vacances en « colo » numérique <http://www.leparisien.fr/issy-les-moulineaux-92130/a-issy-les-collegiennes-passent-leurs-vacances-en-colo-numerique-22-04-2016-5737487.php>`_,
+  Le Parisien 22 avril 2016
+* `Le premier hackathon organisé par l'ENSAE et Microsoft sur les données de la Croix-Rouge <http://variances.eu/index.php/2016/03/29/le-premier-hackathon-organise-par-lensae-et-microsoft-sur-les-donnees-de-la-croix-rouge/>`_,
+  Variances 54, mars 2016
+* `Vidéo sur hackathon Microsoft - ENSAE - Croix-Rouge <https://channel9.msdn.com/Series/Data-Science-Student-Challenge/ENSAE-ParisTech-DSSC>`_, Novembre 2016
+
+
+Resources
+---------
+
+.. toctree::
+
+    resources/azure_teachings
+    setup_revealjs
+
+
     
 
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
