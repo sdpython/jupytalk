@@ -54,9 +54,10 @@ Resources
 ---------
 
 .. toctree::
+    :maxdepth: 1
 
     resources/azure_teachings
-    setup_revealjs
+    resources/notebooks
 
 
     

@@ -46,9 +46,9 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooksPyData2016(unittest.TestCase):
+class TestRunNotebooksPyData2016_gui(unittest.TestCase):
 
-    def test_run_notebook(self):
+    def test_run_notebook_im(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -65,20 +65,20 @@ class TestRunNotebooksPyData2016(unittest.TestCase):
         kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
             "python3_module_template")
 
-        temp = get_temp_folder(__file__, "temp_run_notebooks")
+        temp = get_temp_folder(__file__, "temp_run_notebooks_gui")
 
         # selection of notebooks
         fnb = os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb":
+            if os.path.splitext(f)[-1] == ".ipynb" and "gui_" in f:
                 keepnote.append(os.path.join(fnb, f))
         assert len(keepnote) > 0
 
         # function to tell that a can be run
         def valid(cell):
-            if "open_html_form" in cell:
+            if ".show" in cell:
                 return False
             if "open_window_params" in cell:
                 return False

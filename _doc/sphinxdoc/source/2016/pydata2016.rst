@@ -40,4 +40,5 @@ Main presentation
 **Mix between Python and Javascript**
 
 * :ref:`pyjsbqplotrst`
+* :ref:`pyjsbrythonrst`
 
