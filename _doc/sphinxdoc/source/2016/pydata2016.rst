@@ -41,7 +41,7 @@ it involves a server (bqplot).
 
 **Pure javascript**
 
-: :ref:`jsonlytreantrst`
+* :ref:`jsonlytreantrst`
 
 **Big Data**
 
