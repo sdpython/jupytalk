@@ -11,6 +11,11 @@ Main presentation
 
 * :ref:`10plottinglibrariesrst`
 
+A couple of notebooks requires to be run to see the results because
+a naive conversion does not take into account javascript dependencies
+(pythreejs, vega, brython) or does not work at all because
+it involves a server (bqplot).
+
 **Static libraries**
 
 * :ref:`imbasemaprst`

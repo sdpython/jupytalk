@@ -230,6 +230,7 @@ _doc/sphinxdoc/source/python_template/
 _doc/sphinxdoc/source/python_name/
 _doc/sphinxdoc/source/project_name/
 _doc/sphinxdoc/source/coverage/*
+_doc/sphinxdoc/source/jupytalk/*
 */sphinxdoc/source/all*.rst
 _doc/sphinxdoc/source/notebooks/*
 build_help.bat
