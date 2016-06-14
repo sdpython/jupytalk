@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import shutil
 
 
 try:
@@ -85,6 +86,15 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
             if '<div style="position:absolute' in cell:
                 return False
             return True
+
+        # file to copy
+        for cop in ["green_tripdata_2015-12_sample.csv",
+                    "NYPD_Motor_Vehicle_Collisions_sample.csv",
+                    "NYPD_Motor_Vehicle_Collisions_small.csv"]:
+            fsrc = os.path.join(fnb, cop)
+            if os.path.exists(fsrc):
+                dest = temp
+                shutil.copy(fsrc, dest)
 
         # additionnal path to add
         addpaths = [os.path.normpath(os.path.join(

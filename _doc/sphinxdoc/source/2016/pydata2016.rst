@@ -39,10 +39,13 @@ it involves a server (bqplot).
 * :ref:`jspythreejsrst`
 * :ref:`jsvegarst`
 
+**Pure javascript**
+
+: :ref:`jsonlytreantrst`
+
 **Big Data**
 
 * :ref:`bigdatashaderrst`
-
 
 **GUI**
 

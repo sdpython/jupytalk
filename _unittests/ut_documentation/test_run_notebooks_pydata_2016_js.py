@@ -46,9 +46,9 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooksPyData2016_im(unittest.TestCase):
+class TestRunNotebooksPyData2016_js(unittest.TestCase):
 
-    def test_run_notebook_im(self):
+    def test_run_notebook_js(self):
         fLOG(
             __file__,
             self._testMethodName,
