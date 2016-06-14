@@ -12,12 +12,12 @@ README
     :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
     
-.. image:: https://badge.fury.io/py/project_name.svg
-    :target: http://badge.fury.io/py/project_name    
+.. image:: https://badge.fury.io/py/jupytalk.svg
+    :target: http://badge.fury.io/py/jupytalk    
 
-.. image:: http://img.shields.io/pypi/dm/project_name.png
+.. image:: http://img.shields.io/pypi/dm/jupytalk.png
     :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/project_name
+    :target: https://pypi.python.org/pypi/jupytalk
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License

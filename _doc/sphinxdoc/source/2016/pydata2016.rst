@@ -23,6 +23,7 @@ it involves a server (bqplot).
 * :ref:`imete3rst`
 * :ref:`imlifelinesrst`
 * :ref:`immatplotlibrst`
+* :ref:`immissingnorst`
 * :ref:`imnetworkxrst`
 * :ref:`imreportlabrst`
 * :ref:`imseabornrst`
@@ -33,9 +34,14 @@ it involves a server (bqplot).
 * :ref:`jslightningpythonrst`
 * :ref:`jsmpld3rst`
 * :ref:`jsplotlyrst`
+* :ref:`jspydymassspringdamperrst`
 * :ref:`jspygalrst`
 * :ref:`jspythreejsrst`
 * :ref:`jsvegarst`
+
+**Big Data**
+
+* :ref:`bigdatashaderrst`
 
 
 **GUI**
@@ -46,4 +52,6 @@ it involves a server (bqplot).
 
 * :ref:`pyjsbqplotrst`
 * :ref:`pyjsbrythonrst`
+* :ref:`pyjscvispyrst`
+
 

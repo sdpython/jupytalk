@@ -1,11 +1,11 @@
-.. project_name documentation documentation master file, created by
-   sphinx-quickstart on Fri May 10 18:35:14 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+
 
 jupytalk
 ========
 
+
+
+**Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
 **Links:** `github <https://github.com/sdpython/jupytalk/>`_,
 `documentation <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html>`_, 
@@ -13,8 +13,6 @@ jupytalk
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`,
 :ref:`l-issues-todolist`
-
-**Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
 Presentation
 ------------
@@ -70,12 +68,12 @@ Resources
     :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
     
-.. image:: https://badge.fury.io/py/project_name.svg
-    :target: http://badge.fury.io/py/project_name    
+.. image:: https://badge.fury.io/py/jupytalk.svg
+    :target: http://badge.fury.io/py/jupytalk    
 
-.. image:: http://img.shields.io/pypi/dm/project_name.png
+.. image:: http://img.shields.io/pypi/dm/jupytalk.png
     :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/project_name
+    :target: https://pypi.python.org/pypi/jupytalk
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License

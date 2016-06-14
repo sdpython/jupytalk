@@ -110,3 +110,69 @@ def example_basemap(ax=None, **options):
     m.drawmeridians(numpy.arange(-20., 21., 2.))
     m.drawmapboundary(fill_color='#BBBBFF')
     return ax
+
+
+def example_pydy(ax=None, **options):
+    """
+    example from the documentation of `pydy <https://github.com/pydy/pydy>`_
+
+    @param      ax          matplotlib axis
+    @parm       options     extra options
+    @return                 ax
+    """
+    # part 1
+
+    from sympy import symbols
+    import sympy.physics.mechanics as me
+
+    mass, stiffness, damping, gravity = symbols('m, k, c, g')
+
+    position, speed = me.dynamicsymbols('x v')
+    positiond = me.dynamicsymbols('x', 1)
+    force = me.dynamicsymbols('F')
+
+    ceiling = me.ReferenceFrame('N')
+
+    origin = me.Point('origin')
+    origin.set_vel(ceiling, 0)
+
+    center = origin.locatenew('center', position * ceiling.x)
+    center.set_vel(ceiling, speed * ceiling.x)
+
+    block = me.Particle('block', center, mass)
+
+    kinematic_equations = [speed - positiond]
+
+    force_magnitude = mass * gravity - stiffness * position - damping * speed + force
+    forces = [(center, force_magnitude * ceiling.x)]
+
+    particles = [block]
+
+    kane = me.KanesMethod(ceiling, q_ind=[position], u_ind=[speed],
+                          kd_eqs=kinematic_equations)
+    kane.kanes_equations(forces, particles)
+
+    # part 2
+
+    from numpy import linspace, sin
+    from pydy.system import System
+
+    sys = System(kane,
+                 constants={mass: 1.0, stiffness: 1.0,
+                            damping: 0.2, gravity: 9.8},
+                 specifieds={force: lambda x, t: sin(t)},
+                 initial_conditions={position: 0.1, speed: -1.0},
+                 times=linspace(0.0, 10.0, 1000))
+
+    y = sys.integrate()
+
+    # part 3
+
+    import matplotlib.pyplot as plt
+    if ax is None:
+        _, ax = plt.subplots(
+            nrows=1, ncols=1, figsize=options.get('figsize', (5, 5)))
+
+    ax.plot(sys.times, y)
+    ax.legend((str(position), str(speed)))
+    return ax
