@@ -6,6 +6,7 @@ Main presentations
 
 :ref:`centrale201606rst`
 :ref:`centrale201606sysrecrst`
+:ref:`azurepigrst`
 
 Others materials:
 
