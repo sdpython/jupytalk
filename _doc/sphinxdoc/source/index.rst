@@ -55,7 +55,7 @@ Resources
     :maxdepth: 1
 
     resources/azure_teachings
-    resources/notebooks
+    resources/rnotebooks
 
 
     

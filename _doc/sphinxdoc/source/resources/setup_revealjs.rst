@@ -6,7 +6,7 @@ Setup for reveal.js
 
     Reveal.initialize({
         width: 1076,
-        height: 750,
+        height: 600,
 
         margin: 0.1,
 
