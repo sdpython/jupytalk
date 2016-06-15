@@ -1,7 +1,5 @@
-.. project_name documentation documentation master file, created by
-   sphinx-quickstart on Fri May 10 18:35:14 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+
+.. _l-pydata2016:
 
 PyData 06/14/2016 in Paris
 ==========================
@@ -57,4 +55,26 @@ it involves a server (bqplot).
 * :ref:`pyjsbrythonrst`
 * :ref:`pyjscvispyrst`
 
+**Not covered by this presentation**
 
+* `vaex <https://www.astro.rug.nl/~breddels/vaex/>`_: the speaker just after me and the library is able
+  to cope with bug data at a very high scale
+* `graphviz <http://www.graphviz.org/>`_: famous library to draw graph, trees.
+  I skipped because al the wrappers are not self contained and require to install 
+  `graphviz <http://www.graphviz.org/>`_first.
+  
+**Dig into building a Jupyter extension**
+
+* `Js extensinos <https://carreau.gitbooks.io/jupyter-book/content/Jsextensions.html>`_
+* `Distributing Jupyter Extensions as Python Packages <http://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html>`_
+* `Notebook extensions <https://github.com/jupyter/scipy-advanced-tutorial/blob/master/Part1/04-notebook-extensions.md>`_
+
+**PyData**
+
+The presentation which follows showed how to use
+`d3.js <https://d3js.org/>`_. It was amazingly easy and understandable:
+*Building Visualisations in `d3.js <https://d3js.org/>`_ for Python Programmers* by Thomas Parslow.
+
+The talk `software-carpentry <http://software-carpentry.org>`_ was also quite interesting
+as they developed strong experience in animating workshop. I grabbed a couple
+of ideas for teachings.
