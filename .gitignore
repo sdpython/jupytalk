@@ -263,3 +263,7 @@ _doc/notebooks/2016/centrale/bank*.txt
 _doc/notebooks/2016/centrale/stdout
 _doc/notebooks/2016/centrale/stderr
 _doc/notebooks/2016/centrale/*.pig
+_doc/notebooks/2016/centrale/agg_hadoop*
+_doc/notebooks/2016/centrale/agg*_hadoop*
+_doc/notebooks/2016/centrale/bank.csv
+_doc/notebooks/2016/centrale/.ipynb_checkpoints/*

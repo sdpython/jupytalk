@@ -73,8 +73,8 @@ it involves a server (bqplot).
 
 The presentation which follows showed how to use
 `d3.js <https://d3js.org/>`_. It was amazingly easy and understandable:
-*Building Visualisations in `d3.js <https://d3js.org/>`_ for Python Programmers* by Thomas Parslow.
+*Building Visualisations in d3.js for Python Programmers* by Thomas Parslow.
 
-The talk `software-carpentry <http://software-carpentry.org>`_ was also quite interesting
+The talk on `software-carpentry <http://software-carpentry.org>`_ was also quite interesting
 as they developed strong experience in animating workshop. I grabbed a couple
 of ideas for teachings.
