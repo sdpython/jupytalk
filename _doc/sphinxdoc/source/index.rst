@@ -21,6 +21,7 @@ Presentation
     :maxdepth:1
     
     PyData 06/15/2016 <2016/pydata2016>
+    Centrale 06/14/2016 <2016/centrale201606>
     
 
 Materials for the talks are included in this module. To install it:

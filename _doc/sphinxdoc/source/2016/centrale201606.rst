@@ -4,9 +4,9 @@ Centrale 16 juin 2016
 
 Main presentations
 
-:ref:`centrale201606rst`
-:ref:`centrale201606sysrecrst`
-:ref:`azurepigrst`
+* :ref:`centrale201606rst`
+* :ref:`centrale201606sysrecrst`
+* :ref:`azurepigrst`
 
 Others materials:
 
