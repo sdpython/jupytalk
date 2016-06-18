@@ -47,7 +47,7 @@ README
 **Links:**
 
 * `GitHub/jupytalk <https://github.com/sdpython/jupytalk/>`_
-* `documentation <http://www.xavierdupre.fr/site2013/index_code.html#jupytalk>`_
+* `documentation <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html>`_
 * `Blog <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/blog/main_0000.html#ap-main-0>`_
 
 **jupytalk**
