@@ -31,3 +31,5 @@ seaborn
 reportlab 
 patsy
 statsmodels
+xarray
+sympy

@@ -21,3 +21,5 @@ pylzma
 pyreadline
 brewer2mpl
 lightning-python
+brythonmagic
+mpld3
