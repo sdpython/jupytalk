@@ -11,7 +11,7 @@ Content
 
 * :ref:`10plottinglibrariesrst`
 
-A couple of notebooks requires to be run to see the results because
+A couple of notebooks require to be run to see the results because
 a naive conversion does not take into account javascript dependencies
 (pythreejs, vega, brython) or does not work at all because
 it involves a server (bqplot).
@@ -62,8 +62,8 @@ it involves a server (bqplot).
 * `vaex <https://www.astro.rug.nl/~breddels/vaex/>`_: the speaker just after me and the library is able
   to cope with bug data at a very high scale
 * `graphviz <http://www.graphviz.org/>`_: famous library to draw graph, trees.
-  I skipped because al the wrappers are not self contained and require to install 
-  `graphviz <http://www.graphviz.org/>`_first.
+  I skipped because all the wrappers are not self contained and require to install 
+  `graphviz <http://www.graphviz.org/>`_ first.
   
 **Dig into building a Jupyter extension**
 
@@ -81,31 +81,14 @@ The presentation which follows showed how to use
 *Building Visualisations in d3.js for Python Programmers* by Thomas Parslow.
 
 The talk on `software-carpentry <http://software-carpentry.org>`_ was also quite interesting
-as they developed strong experience in animating workshop. I grabbed a couple
-of ideas for teachings.
+as they developed strong experience in animating workshop.
+Surprising to see so many initiatives to educate people on programming.
 
 Some links taken from presentations:
 
 * `pyspark-ide-starter <https://github.com/ybenoit/pyspark-ide-starter>`_: setup for Spark
-* `From scikit-learn to Spark ML <http://blog.xebia.fr/2015/10/08/from-scikit-learn-to-spark-ml/>`_
-
-The MIT proposes a pretrained CNN (Convolution Neural Network) for places:
-
-* `Places CNN <http://places.csail.mit.edu/downloadCNN.html>`_,
-  `Pre-release of Places365-CNNs <https://github.com/metalbubble/places365>`_
-
-Github added a new features which allows users to edit directly from the browser.
-It is very useful to fix typos and documentation: 
-`Editing files in your repository <https://help.github.com/articles/editing-files-in-your-repository/>`_.
-
-Probably obvious to many poeple but since I did not study it at school,
-even though I was using it through neural networks:
-`Functional PCA <https://en.wikipedia.org/wiki/Functional_principal_component_analysis>`_.
-
-`thebe <https://oreillymedia.github.io/thebe/>`_ is a javascript libraries
-which makes it easy to call a server to run Python code from a web page,
-kind of simplified notebook to build documentation
-(`source <https://github.com/oreillymedia/thebe>`_).
+* `From scikit-learn to Spark ML <http://blog.xebia.fr/2015/10/08/from-scikit-learn-to-spark-ml/>`_:
+  tutorial to switch from *scikit-learn* to *pyspark*
 
 The presentation by `Nexedis <https://www.nexedi.com/>`_ was quite impressive. They introduced their 
 stack to process data mostly based on open source projects:
@@ -116,7 +99,7 @@ stack to process data mostly based on open source projects:
   even if you close your laptop at anytime.
 * `Re6st <https://lab.nexedi.com/nexedi/re6stnet>`_: Resilient, Scalable, IPv6 Network, 
   find routes between two locations in Internet. According to the speaker, it is much more reliable
-  than standard routing which always takes the paths.
+  than standard routing which always takes the same paths.
   It is like taking small roads instead of highways.
 * `neoppod <https://lab.nexedi.com/nexedi/neoppod>`_: 
   NEO is a distributed, redundant and scalable implementation of ZODB API.
@@ -140,6 +123,21 @@ stack to process data mostly based on open source projects:
 The most interesting part of the talk was about the way the company decided
 to base their processes on a particular libraries, especially for *Fluentd*.
 
+No connection but I heard the following in presentations.
+Github added a new features which allows users to edit directly from the browser.
+It is very useful to fix typos and documentation: 
+`Editing files in your repository <https://help.github.com/articles/editing-files-in-your-repository/>`_.
+Somebody would to add
+`Functional PCA <https://en.wikipedia.org/wiki/Functional_principal_component_analysis>`_
+to *scikit-learn*.
+`thebe <https://oreillymedia.github.io/thebe/>`_ is a javascript libraries
+which makes it easy to call a server to run Python code from a web page,
+kind of simplified notebook to build documentation
+(`source <https://github.com/oreillymedia/thebe>`_).
 A paper:
 `Sparse pairwise Markov model learning for anomaly detection in heterogeneous data <https://hal-institut-mines-telecom.archives-ouvertes.fr/hal-01167391>`_.
+The MIT proposes a pretrained CNN (Convolution Neural Network) for places:
+
+* `Places CNN <http://places.csail.mit.edu/downloadCNN.html>`_,
+  `Pre-release of Places365-CNNs <https://github.com/metalbubble/places365>`_
 
