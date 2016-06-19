@@ -24,3 +24,4 @@ lightning-python
 brythonmagic
 cufflinks
 pydy
+version_information

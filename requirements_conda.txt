@@ -35,3 +35,10 @@ xarray
 sympy
 datashader
 mpld3
+numba
+pillow
+toolz
+datashape
+scikit-image
+odo
+rasterio
