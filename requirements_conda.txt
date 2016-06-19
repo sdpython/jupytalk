@@ -33,3 +33,7 @@ patsy
 statsmodels
 xarray
 sympy
+datashader
+mpld3
+cufflinks
+pydy
