@@ -23,3 +23,6 @@ brewer2mpl
 lightning-python
 brythonmagic
 mpld3
+cufflinks
+datashader
+pydy
