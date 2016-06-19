@@ -21,3 +21,4 @@ codecov
 pkgtools
 pylzma
 pyreadline
+brewer2mpl
