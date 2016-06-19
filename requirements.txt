@@ -15,9 +15,9 @@ bqplot
 ete3
 lifelines
 plotly
-python-lightning
 codecov
 pkgtools
 pylzma
 pyreadline
 brewer2mpl
+lightning-python
