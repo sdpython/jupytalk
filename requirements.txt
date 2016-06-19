@@ -13,7 +13,6 @@ requests-oauthlib
 xmltodict
 bqplot
 ete3
-ggplot
 lifelines
 plotly
 python-lightning
