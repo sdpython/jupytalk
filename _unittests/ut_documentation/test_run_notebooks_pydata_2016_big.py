@@ -42,7 +42,7 @@ except ImportError:
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
 from pyquickhelper.ipythonhelper import execute_notebook_list
-from pyquickhelper.pycode import compare_module_version
+from pyquickhelper.pycode import compare_module_version, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
@@ -57,6 +57,10 @@ class TestRunNotebooksPyData2016_big(unittest.TestCase):
 
         if sys.version_info[0] == 2:
             # notebooks are not converted into python 2.7, so not tested
+            return
+
+        if is_travis_or_appveyor() == "travis":
+            warnings.warn("issue with datashader.bokeh_ext, skipping")
             return
 
         if compare_module_version(IPython.__version__, "4.0.0") < 0:

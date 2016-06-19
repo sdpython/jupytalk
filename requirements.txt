@@ -25,3 +25,4 @@ brythonmagic
 cufflinks
 pydy
 version_information
+pygal
