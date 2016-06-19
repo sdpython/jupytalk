@@ -26,3 +26,4 @@ cufflinks
 pydy
 version_information
 pygal
+pygal_maps_fr
