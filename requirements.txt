@@ -2,6 +2,7 @@ ansiconv
 autopep8
 brewer2mpl
 codecov
+entrypoints
 mechanize
 metakernel
 pkgtools
