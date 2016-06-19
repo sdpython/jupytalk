@@ -30,3 +30,4 @@ networkx
 seaborn
 reportlab 
 patsy
+statsmodels
