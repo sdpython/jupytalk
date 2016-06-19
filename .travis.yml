@@ -22,7 +22,7 @@ install:
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy scipy nose cython scikit-learn
   - source activate test-environment
   # - make all
-  - conda build build_tools/conda-recipe --quiet
+  #- conda build build_tools/conda-recipe --quiet
   - conda install --file=requirements.txt
 script:
     - python setup.py unittests
