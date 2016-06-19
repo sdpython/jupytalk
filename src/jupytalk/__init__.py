@@ -20,8 +20,8 @@ __blog__ = """
         <outline text="jupytalk"
             title="jupytalk"
             type="rss"
-            xmlUrl="http://www.xavierdupre.fr/app/pyquickhelper/jupytalk/_downloads/rss.xml"
-            htmlUrl="http://www.xavierdupre.fr/app/pyquickhelper/jupytalk/blog/main_0000.html" />
+            xmlUrl="http://www.xavierdupre.fr/app/jupytalk/helpsphinx/_downloads/rss.xml"
+            htmlUrl="http://www.xavierdupre.fr/app/jupytalk/helpsphinx/blog/main_0000.html" />
     </body>
 </opml>
 """
