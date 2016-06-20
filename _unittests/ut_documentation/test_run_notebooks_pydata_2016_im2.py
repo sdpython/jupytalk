@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 """
-@brief      test log(time=53s)
+@brief      test log(time=8s)
 """
 
 import sys
@@ -47,9 +47,9 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooksPyData2016_im(unittest.TestCase):
+class TestRunNotebooksPyData2016_im2(unittest.TestCase):
 
-    def test_run_notebook_im(self):
+    def test_run_notebook_im2(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -66,14 +66,14 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
         kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
             "python3_module_template")
 
-        temp = get_temp_folder(__file__, "temp_run_notebooks_im")
+        temp = get_temp_folder(__file__, "temp_run_notebooks_im2")
 
         # selection of notebooks
         fnb = os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb" and "im_" in f and "ete" not in f:
+            if os.path.splitext(f)[-1] == ".ipynb" and "im_" in f and "ete" in f:
                 keepnote.append(os.path.join(fnb, f))
         assert len(keepnote) > 0
 
