@@ -26,6 +26,7 @@ set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2016,
                      github_user="sdpython", github_repo="jupytalk")
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
+html_theme_options["top_bar_force_fit"] = True
 
 # https://pypi.python.org/pypi/hbp-sphinx-theme/0.3.4
 # https://pypi.python.org/pypi/oslosphinx/3.2.0

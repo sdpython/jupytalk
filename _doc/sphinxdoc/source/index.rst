@@ -3,19 +3,13 @@
 jupytalk
 ========
 
-
+Materials for the talks are included in this module. To install it:
 
 **Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
-**Links:** `github <https://github.com/sdpython/jupytalk/>`_,
-`documentation <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html>`_, 
-`travis <https://travis-ci.org/sdpython/jupytalk>`_,
-:ref:`l-README`,
-:ref:`blog <ap-main-0>`,
-:ref:`l-issues-todolist`
 
-Presentation
-------------
+Presentations
+-------------
 
 .. toctree::
     :maxdepth:1
@@ -24,7 +18,10 @@ Presentation
     Centrale 06/14/2016 <2016/centrale201606>
     
 
-Materials for the talks are included in this module. To install it:
+**Links:** `github <https://github.com/sdpython/jupytalk/>`_,
+:ref:`blog <ap-main-0>`,
+:ref:`l-issues-todolist`
+
 
 ::
 
