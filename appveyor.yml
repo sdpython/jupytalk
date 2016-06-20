@@ -21,7 +21,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper"
   - "%PYTHON%\\Scripts\\pip install pycryptodome"
-  - "%PYTHON%\\Scripts\\pymy_install3 biopython reportlab basemap scipy patsy"
+  - "%PYTHON%\\Scripts\\pymy_install3 biopython reportlab basemap scipy patsy statsmodels"
   - "%PYTHON%\\Scripts\\pip install bokeh"
   - "%PYTHON%\\Scripts\\pip install bqplot"
   - "%PYTHON%\\Scripts\\pip install ete3"
