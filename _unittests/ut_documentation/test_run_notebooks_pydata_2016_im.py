@@ -85,6 +85,8 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
                 return False
             if '<div style="position:absolute' in cell:
                 return False
+            if "animation.FuncAnimation" in cell:
+                return False
             return True
 
         # file to copy
