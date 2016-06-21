@@ -25,7 +25,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install bokeh"
   - "%PYTHON%\\Scripts\\pip install bqplot"
   - "%PYTHON%\\Scripts\\pip install ete3"
-  - "%PYTHON%\\Scripts\\pip install ggplot"
+  - "%PYTHON%\\Scripts\\pip install brewer2mpl ggplot"
   - "%PYTHON%\\Scripts\\pip install lifelines"
   - "%PYTHON%\\Scripts\\pip install networkx"
   - "%PYTHON%\\Scripts\\pip install seaborn"
