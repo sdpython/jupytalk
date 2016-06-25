@@ -1,9 +1,13 @@
 
 
-jupytalk
-========
+Notebook presentations
+======================
 
 Materials for the talks are included in this module. To install it:
+
+::
+
+    pip install jupytalk
 
 **Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
@@ -12,7 +16,7 @@ Presentations
 -------------
 
 .. toctree::
-    :maxdepth:1
+    :maxdepth: 1
     
     PyData 06/15/2016 <2016/pydata2016>
     Centrale 06/14/2016 <2016/centrale201606>
@@ -22,11 +26,6 @@ Presentations
 :ref:`blog <ap-main-0>`,
 :ref:`l-issues-todolist`
 
-
-::
-
-    pip install jupytalk
-    
 
 
 Teachings content
