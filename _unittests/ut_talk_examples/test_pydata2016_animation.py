@@ -53,6 +53,10 @@ class TestPyData2016Animation(unittest.TestCase):
             warnings.warn("issue with datashader.bokeh_ext, skipping")
             return
 
+        if is_travis_or_appveyor() == "appveyor":
+            warnings.warn("no ffmpeg installed")
+            return
+
         temp = get_temp_folder(__file__, "temp_example_example")
         fix_tkinter_issues_virtualenv()
 
