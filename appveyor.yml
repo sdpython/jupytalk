@@ -36,6 +36,8 @@ install:
   - "%PYTHON%\\Scripts\\pip install lightning-python"
   - "%PYTHON%\\Scripts\\pip install mpld3"
   - "%PYTHON%\\Scripts\\pip install datashape"
+  - "%PYTHON%\\Scripts\\pip install pygal"
+  - "%PYTHON%\\Scripts\\pip install brewer2mpl"
   - "%PYTHON%\\Scripts\\pip install ggplot==0.9.3"
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
   - "%PYTHON%\\Scripts\\pymy_install3 datashader pydy biopython"
