@@ -66,7 +66,7 @@ it involves a server (bqplot).
 **Not covered by this presentation**
 
 * `vaex <https://www.astro.rug.nl/~breddels/vaex/>`_: the speaker just after me and the library is able
-  to cope with bug data at a very high scale
+  to cope with big data at a very high scale
 * `graphviz <http://www.graphviz.org/>`_: famous library to draw graph, trees.
   I skipped because all the wrappers are not self contained and require to install 
   `graphviz <http://www.graphviz.org/>`_ first.
