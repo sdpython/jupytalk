@@ -6,7 +6,7 @@
 import sys
 import os
 import unittest
-
+import warnings
 
 try:
     import pyquickhelper as skip_
@@ -72,10 +72,11 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if is_travis_or_appveyor() == "travis":
-                if "pyjs_brython" in f:
-                    continue
             if os.path.splitext(f)[-1] == ".ipynb" and "pyjs_" in f:
+                if is_travis_or_appveyor() == "travis":
+                    if "pyjs_brython" in f:
+                        warnings.warn("Travis, skipping " + f)
+                        continue
                 keepnote.append(os.path.join(fnb, f))
         assert len(keepnote) > 0
 
