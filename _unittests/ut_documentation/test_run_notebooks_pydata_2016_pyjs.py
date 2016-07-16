@@ -39,7 +39,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list
 from pyquickhelper.pycode import compare_module_version
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
@@ -59,7 +59,7 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             return
 
         if compare_module_version(IPython.__version__, "4.0.0") < 0:
-            # IPython is not recnt enough
+            warnings.warn("IPython is not recent enough")
             return
 
         kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
@@ -72,6 +72,9 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
+            if is_travis_or_appveyor() == "travis":
+                if "pyjs_brython" in f:
+                    continue
             if os.path.splitext(f)[-1] == ".ipynb" and "pyjs_" in f:
                 keepnote.append(os.path.join(fnb, f))
         assert len(keepnote) > 0
