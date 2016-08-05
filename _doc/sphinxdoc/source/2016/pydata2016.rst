@@ -80,6 +80,10 @@ it involves a server (bqplot).
   in a more Pythonic way
 * `HoloViews <http://ioam.github.io/holoviews/>`_: useful to build complex and linked graphs,
   look at `Pandas Conversion <http://ioam.github.io/holoviews/Tutorials/Pandas_Conversion.html>`_
+* `flexx <https://flexx.readthedocs.io/en/stable/>`_ : very promising way to plug javascript graphs
+  written in Python, this module contains a tools which converts Python into javascript  
+* `python-gantt <http://xael.org/pages/python-gantt-en.html>`_ : to draw 
+  `Gantt charts <https://en.wikipedia.org/wiki/Gantt_chart>`_
   
 **Dig into building a Jupyter extension**
 
