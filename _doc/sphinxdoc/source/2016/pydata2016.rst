@@ -84,6 +84,8 @@ it involves a server (bqplot).
   written in Python, this module contains a tools which converts Python into javascript  
 * `python-gantt <http://xael.org/pages/python-gantt-en.html>`_ : to draw 
   `Gantt charts <https://en.wikipedia.org/wiki/Gantt_chart>`_
+* `toyplot <https://toyplot.readthedocs.io/en/stable/>`_: PDF, SVG, MP4 rendering
+* `pyxley <http://pyxley.readthedocs.io/en/latest/why.html>`_: web app on Flask
   
 **Dig into building a Jupyter extension**
 
