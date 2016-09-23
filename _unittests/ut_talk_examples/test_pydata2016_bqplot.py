@@ -57,6 +57,8 @@ class TestPyData2016bqplot(unittest.TestCase):
         get_url_content_timeout(url + f, output=full)
         r = topo_load(full)
         assert r
+        if not isinstance(r, dict):
+            raise TypeError(type(r))
 
 
 if __name__ == "__main__":
