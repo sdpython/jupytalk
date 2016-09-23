@@ -51,7 +51,7 @@ class TestPyData2016bqplot(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         temp = get_temp_folder(__file__, "temp_bqplot_topo_load")
-        f = 'WorldData.json'
+        f = 'WorldMap.json'
         full = os.path.join(temp, f)
         url = "https://raw.githubusercontent.com/bloomberg/bqplot/master/bqplot/map_data/"
         get_url_content_timeout(url + f, output=full)
