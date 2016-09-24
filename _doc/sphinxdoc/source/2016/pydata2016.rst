@@ -89,7 +89,7 @@ it involves a server (bqplot).
   
 **Dig into building a Jupyter extension**
 
-* `Js extensinos <https://carreau.gitbooks.io/jupyter-book/content/Jsextensions.html>`_
+* `Js extensions <https://carreau.gitbooks.io/jupyter-book/content/Jsextensions.html>`_
 * `Distributing Jupyter Extensions as Python Packages <http://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html>`_
 * `Notebook extensions <https://github.com/jupyter/scipy-advanced-tutorial/blob/master/Part1/04-notebook-extensions.md>`_
 
