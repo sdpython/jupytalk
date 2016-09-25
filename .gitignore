@@ -268,3 +268,5 @@ _doc/notebooks/2016/centrale/agg_hadoop*
 _doc/notebooks/2016/centrale/agg*_hadoop*
 _doc/notebooks/2016/centrale/bank.csv
 _doc/notebooks/2016/centrale/.ipynb_checkpoints/*
+*.err
+_unittests/run_unittests.py.out

@@ -24,7 +24,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install azure"
   - "%PYTHON%\\Scripts\\pymy_install3 pycrypto numba"
   - "%PYTHON%\\Scripts\\pymy_install3 basemap sympy pyqt4 mpmath reportlab statsmodels cffi scipy pylzma"
-  - "%PYTHON%\\Scripts\\pip install pycryptodomex"
+  - "%PYTHON%\\Scripts\\pip install pycryptodomex jyquickhelper"
   - "%PYTHON%\\Scripts\\pip install urllib3"
   - "%PYTHON%\\Scripts\\pip install pycodestyle version_information"
   - "%PYTHON%\\Scripts\\pip install ete3"
