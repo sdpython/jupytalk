@@ -65,27 +65,28 @@ it involves a server (bqplot).
 
 **Not covered by this presentation**
 
-* `vaex <https://www.astro.rug.nl/~breddels/vaex/>`_: the speaker just after me and the library is able
-  to cope with big data at a very high scale
+* `altair <https://github.com/ellisonbg/altair>`_: an example on how to wrap `Vega <https://github.com/vega/ipyvega>`_ 
+  in a more Pythonic way
+* `flexx <https://flexx.readthedocs.io/en/stable/>`_ : very promising way to plug javascript graphs
+  written in Python, this module contains a tools which converts Python into javascript  
 * `graphviz <http://www.graphviz.org/>`_: famous library to draw graph, trees.
   I skipped because all the wrappers are not self contained and require to install 
   `graphviz <http://www.graphviz.org/>`_ first.
+* `HoloViews <http://ioam.github.io/holoviews/>`_: useful to build complex and linked graphs,
+  look at `Pandas Conversion <http://ioam.github.io/holoviews/Tutorials/Pandas_Conversion.html>`_
 * `ipyleaflet <https://github.com/ellisonbg/ipyleaflet>`_:
   offers similar tools than `folium <http://folium.readthedocs.io/en/latest/>`_, 
   see an example on how to interact with `bqplot <https://github.com/bloomberg/bqplot>`_:
   `An Analysis of Well-Being in San Francisco <https://github.com/SylvainCorlay/bayeshack>`_
 * `nglview <http://arose.github.io/nglview/latest/>`_: animate molecular structures
-* `pytraj <http://amber-md.github.io/pytraj/latest/index.html>`_: analyze of molecular dynamics trajectories and displays
-* `altair <https://github.com/ellisonbg/altair>`_: an example on how to wrap `Vega <https://github.com/vega/ipyvega>`_ 
-  in a more Pythonic way
-* `HoloViews <http://ioam.github.io/holoviews/>`_: useful to build complex and linked graphs,
-  look at `Pandas Conversion <http://ioam.github.io/holoviews/Tutorials/Pandas_Conversion.html>`_
-* `flexx <https://flexx.readthedocs.io/en/stable/>`_ : very promising way to plug javascript graphs
-  written in Python, this module contains a tools which converts Python into javascript  
+* `pandastable <https://pypi.python.org/pypi/pandastable>`_ : IDE to look at dataframes
 * `python-gantt <http://xael.org/pages/python-gantt-en.html>`_ : to draw 
   `Gantt charts <https://en.wikipedia.org/wiki/Gantt_chart>`_
-* `toyplot <https://toyplot.readthedocs.io/en/stable/>`_: PDF, SVG, MP4 rendering
+* `pytraj <http://amber-md.github.io/pytraj/latest/index.html>`_: analyze of molecular dynamics trajectories and displays
 * `pyxley <http://pyxley.readthedocs.io/en/latest/why.html>`_: web app on Flask
+* `toyplot <https://toyplot.readthedocs.io/en/stable/>`_: PDF, SVG, MP4 rendering
+* `vaex <https://www.astro.rug.nl/~breddels/vaex/>`_: the speaker just after me and the library is able
+  to cope with big data at a very high scale
   
 **Dig into building a Jupyter extension**
 
