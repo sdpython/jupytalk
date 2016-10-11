@@ -47,7 +47,10 @@ install:
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
   - "%PYTHON%\\Scripts\\pip install -r requirements2.txt"
   - "%PYTHON%\\Scripts\\pip install widgetsnbextension"
-  - "%PYTHON%\\Scripts\\jupyter nbextension enable --py --sys-prefix widgetsnbextension"
+  - "set CURRENT_THIS=%~dp0"
+  - "cd %PYTHON%\\Scripts"
+  - "jupyter nbextension enable --py --sys-prefix widgetsnbextension"
+  - "cd %CURRENT_THIS%"s
   - "set PATH=%PATH%;C:\\projects\\jupytalk\\build\\update_modules\\Graphviz\\bin"
 build: off
 
