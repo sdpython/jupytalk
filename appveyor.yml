@@ -50,7 +50,7 @@ install:
   - "set CURRENT_THIS=%~dp0"
   - "cd %PYTHON%\\Scripts"
   - "jupyter nbextension enable --py --sys-prefix widgetsnbextension"
-  - "cd %CURRENT_THIS%"s
+  - "cd %CURRENT_THIS%"
   - "set PATH=%PATH%;C:\\projects\\jupytalk\\build\\update_modules\\Graphviz\\bin"
 build: off
 
