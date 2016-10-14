@@ -64,6 +64,10 @@ class TestRunNotebooksPyData2016_big(unittest.TestCase):
             warnings.warn("issue with datashader.bokeh_ext, skipping")
             return
 
+        if is_travis_or_appveyor() == "appveyor":
+            warnings.warn("issue with numba, skipping")
+            return
+
         if compare_module_version(IPython.__version__, "4.0.0") < 0:
             # IPython is not recnt enough
             return
