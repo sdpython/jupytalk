@@ -28,8 +28,6 @@ path.py
 patsy
 pep8
 pillow
-pyqt
-PyQt4
 pyzmq
 qtconsole
 rasterio
