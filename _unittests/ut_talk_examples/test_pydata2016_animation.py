@@ -1,5 +1,5 @@
 """
-@brief      test log(time=5s)
+@brief      test log(time=20s)
 """
 
 import sys
@@ -37,7 +37,23 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
-from pyquickhelper.loghelper import fLOG
+try:
+    import pyensae as skip__
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "pyensae",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import pyensae as skip__
+
+from pyquickhelper.loghelper import fLOG, run_cmd
 from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, is_travis_or_appveyor
 
 
@@ -57,6 +73,19 @@ class TestPyData2016Animation(unittest.TestCase):
             warnings.warn("no ffmpeg installed")
             return
 
+        fLOG("test ffmpeg")
+        out, err = run_cmd("ffmpeg", wait=True, fLOG=fLOG)
+        fLOG("end ffmpeg")
+        if "ffmpeg version" not in out or err is None or len(err) == 0:
+            if sys.platform.startswith("win"):
+                fLOG("download ffmpeg")
+                from pyensae.datasource import download_data
+                download_data("ffmpeg.zip", website="xd")
+            else:
+                raise FileNotFoundError(
+                    "Unable to find ffmpeg. PATH={0}".format(os.environ["PATH"]))
+
+        fLOG("test")
         temp = get_temp_folder(__file__, "temp_example_example")
         fix_tkinter_issues_virtualenv()
 
