@@ -37,24 +37,9 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
-try:
-    import pyensae as skip__
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyensae",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyensae as skip__
-
 from pyquickhelper.loghelper import fLOG, run_cmd
 from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, is_travis_or_appveyor
+from pyquickhelper.pycode import add_missing_development_version
 
 
 class TestPyData2016Animation(unittest.TestCase):
@@ -79,6 +64,8 @@ class TestPyData2016Animation(unittest.TestCase):
         if "ffmpeg version" not in out or err is None or len(err) == 0:
             if sys.platform.startswith("win"):
                 fLOG("download ffmpeg")
+                add_missing_development_version(
+                    ["pyensae"], __file__, hide=True)
                 from pyensae.datasource import download_data
                 download_data("ffmpeg.zip", website="xd")
             else:
