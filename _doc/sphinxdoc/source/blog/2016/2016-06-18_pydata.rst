@@ -3,7 +3,7 @@
 .. blogpost::
     :title: Follow up on PyData in Paris
     :keywords: pydata
-    :date: 2016-10-18
+    :date: 2016-06-18
     :categories: conference
     
     I added some notes taken from others presentations

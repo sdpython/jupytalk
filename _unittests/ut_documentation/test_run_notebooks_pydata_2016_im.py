@@ -25,6 +25,21 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
+try:
+    import jyquickhelper as skip__
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "jyquickhelper",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import jyquickhelper as skip__
 
 try:
     import src
@@ -102,7 +117,9 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
             os.path.normpath(os.path.join(
-                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src")),
+            os.path.normpath(os.path.join(
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src"))
         ]
 
         # creation of a kernel
@@ -123,7 +140,13 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
             name = os.path.split(k)[-1]
             fLOG(name, v[0], v[1])
         if len(fails) > 0:
-            raise fails[0][1][-1]
+            for f in fails:
+                if "_process_plot_var_args' object has no attribute" not in str(f[1][-1]):
+                    raise f[1][-1]
+                else:
+                    # if lifelines fails, check:
+                    # https://github.com/CamDavidsonPilon/lifelines/issues/191#issuecomment-145275656
+                    warnings.warn(str(f[1][-1]))
 
 if __name__ == "__main__":
     unittest.main()

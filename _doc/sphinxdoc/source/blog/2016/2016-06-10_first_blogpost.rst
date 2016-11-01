@@ -3,7 +3,7 @@
 .. blogpost::
     :title: First day
     :keywords: presentation
-    :date: 2016-10-06
+    :date: 2016-06-10
     :categories: talk
     
     First blog post.
