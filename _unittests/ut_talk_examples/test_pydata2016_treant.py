@@ -353,5 +353,6 @@ class TestPyData2016treant(unittest.TestCase):
         h = display_treant(json_tree, json_data, css, classname)
         assert h
 
+
 if __name__ == "__main__":
     unittest.main()

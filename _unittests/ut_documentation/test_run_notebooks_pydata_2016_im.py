@@ -149,5 +149,6 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
                     # https://github.com/CamDavidsonPilon/lifelines/issues/191#issuecomment-145275656
                     warnings.warn(str(f[1][-1]))
 
+
 if __name__ == "__main__":
     unittest.main()
