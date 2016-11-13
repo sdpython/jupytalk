@@ -1,5 +1,6 @@
 
 
+======================
 Notebook presentations
 ======================
 
@@ -13,13 +14,14 @@ Materials for the talks are included in this module. To install it:
 
 
 Presentations
--------------
+=============
 
 .. toctree::
     :maxdepth: 1
     
     PyData 06/15/2016 <2016/pydata2016>
     Centrale 06/14/2016 <2016/centrale201606>
+    ENSAE 14/11/2016 <2016/ensae201611>
     
 
 **Links:** `github <https://github.com/sdpython/jupytalk/>`_,
@@ -28,15 +30,15 @@ Presentations
 
 
 
-Teachings content
------------------
+Teachings
+=========
 
 * `ENSAE <http://www.ensae.fr>`_ : `Python pour un Data Scientist <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html>`_
 * `Institut des Actuaires <http://www.institutdesactuaires.com/>`_ : `Python et actuariat <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/index.html>`_
 * Pour les enfants : `lesenfantscodaient.fr <http://lesenfantscodaient.fr>`_
 
 References
-----------
+==========
 
 * `A Issy, les collégiennes passent leurs vacances en « colo » numérique <http://www.leparisien.fr/issy-les-moulineaux-92130/a-issy-les-collegiennes-passent-leurs-vacances-en-colo-numerique-22-04-2016-5737487.php>`_,
   Le Parisien 22 avril 2016
@@ -46,15 +48,15 @@ References
 
 
 Resources
----------
+=========
 
 .. toctree::
     :maxdepth: 1
 
-    resources/azure_teachings
+    i_faq
+    i_ex
     resources/rnotebooks
-
-
+    resources/azure_teachings
     
 
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master

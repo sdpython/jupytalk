@@ -173,10 +173,10 @@ if is_local():
     logging_function(OutputPrint=True)
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name,
-        unittest_modules=["pyquickhelper"],
-        additional_notebook_path=["pyquickhelper"],
-        additional_local_path=["pyquickhelper"],
-        requirements=["pyquickhelper"],
+        unittest_modules=["pyquickhelper", "jyquickhelper"],
+        additional_notebook_path=["pyquickhelper", "jyquickhelper"],
+        additional_local_path=["pyquickhelper", "jyquickhelper"],
+        requirements=["pyquickhelper", "jyquickhelper"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=(
@@ -210,6 +210,6 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         #data_files              = data_files,
-        install_requires=['pyquickhelper'],
+        install_requires=['pyquickhelper', "jyquickhelper"],
         #include_package_data    = True,
     )
