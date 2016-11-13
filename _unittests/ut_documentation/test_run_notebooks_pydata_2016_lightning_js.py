@@ -7,6 +7,7 @@ import sys
 import os
 import unittest
 import shutil
+import warnings
 
 
 try:
@@ -24,6 +25,23 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import pyquickhelper as skip_
+
+
+try:
+    import jyquickhelper as skip__
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "jyquickhelper",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import jyquickhelper as skip__
 
 
 try:
@@ -47,13 +65,16 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooksPyData2016_js(unittest.TestCase):
+class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
 
-    def test_run_notebook_js(self):
+    def test_run_notebook_lightning_js(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
+
+        warnings.warn("The unit test relies on lightning-python but it shares the same name as another one. We disable it.")
+        return
 
         if sys.version_info[0] == 2:
             # notebooks are not converted into python 2.7, so not tested
@@ -73,7 +94,7 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb" and "js_" in f and "pyjs_" not in f and "lightning" not in f:
+            if os.path.splitext(f)[-1] == ".ipynb" and "js_" in f and "lightning" in f:
                 keepnote.append(os.path.join(fnb, f))
         assert len(keepnote) > 0
 
@@ -98,7 +119,9 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
             os.path.normpath(os.path.join(
-                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src")),
+            os.path.normpath(os.path.join(
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src"))
         ]
 
         # creation of a kernel
