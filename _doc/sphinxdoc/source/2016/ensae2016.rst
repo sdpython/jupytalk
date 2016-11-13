@@ -158,7 +158,7 @@ FAQ
     
     .. math::
     
-        E(X_e, M_c) = \esp( E(X, M_c) | X \in X_e ) \sim \sum_i e(x_i, M_c) \pr(x_i \in X_e)
+        E(X_e, M_c) = \mathbb{E}( E(X, M_c) | X \in X_e ) \sim \sum_i e(x_i, M_c) \mathbb{P}(x_i \in X_e)
     
     Par extension, si les bases d'apprentissage et d'évaluation ont été
     construites de telle sorte qu'elles soient homogènes, un modèle capable 
