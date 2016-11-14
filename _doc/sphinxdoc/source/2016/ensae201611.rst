@@ -28,6 +28,9 @@ Librairies
 * `libFM <https://github.com/srendle/libfm>`_ : Library for factorization machines
 * `pywFM <https://github.com/jfloff/pywFM>`_ : pywFM is a Python wrapper for Steffen Rendle's libFM
 * `Regularized Greedy Forest (RGF) in C++ <http://stat.rutgers.edu/home/tzhang/software/rgf/>`_
+* `Quizlet <https://quizlet.com/api/2.0/docs>`_ (voir `Quizlet <https://en.wikipedia.org/wiki/Quizlet>`_)
+* `LightGBM <https://github.com/Microsoft/LightGBM>`_
+* `jellyfish <https://pypi.python.org/pypi/jellyfish>`_
 
 
 Idées / algorithmes
@@ -36,11 +39,14 @@ Idées / algorithmes
 * :ref:`Les bases de train et test sont-elles homogènes ? <faq-train-test-homogeneous>` : une idée simple
   pour vérifier cette hypothèse et corriger l'apprentissage et façon à coller au plus près des données
   d'évaluation, lire `Adversarial validation, part one <http://fastml.com/adversarial-validation-part-one/>`_.
-* `RANSAC <https://fr.wikipedia.org/wiki/RANSAC>` : abréviation pour **RANdom SAmple Consensus**,
+* `RANSAC <https://fr.wikipedia.org/wiki/RANSAC>`_ : abréviation pour **RANdom SAmple Consensus**,
   `scikit-learn/RANSAC <http://scikit-learn.org/stable/modules/linear_model.html#ransac-random-sample-consensus>`_
 * `Normalized compression distance <https://en.wikipedia.org/wiki/Normalized_compression_distance>`_ : 
   mesure la proximité entre deux séquences d'objets
 * `The Boosting Margin, or Why Boosting Doesn’t Overfit <https://jeremykun.com/2015/09/21/the-boosting-margin-or-why-boosting-doesnt-overfit/>`_
+* `Ad Click Prediction: a View from the Trenches <http://www.eecs.tufts.edu/~dsculley/papers/ad-click-prediction.pdf>`_ (FTRL-Proximal online learning algorithm)
+* `DMLC Model Gallery <https://github.com/dmlc/mxnet-model-gallery>`_
+* `KAGGLE ENSEMBLING GUIDE <http://mlwave.com/kaggle-ensembling-guide/>`_
 
 
 Liens
@@ -49,6 +55,7 @@ Liens
 * 09/2016 - `The Allen AI Science Challenge <https://www.kaggle.com/c/the-allen-ai-science-challenge>`_ : Is your model smarter than an 8th grader?
 
     * `The Allen AI Science Challenge, Winner's Interview: 3rd place, Alejandro Mosquera <http://blog.kaggle.com/2016/04/09/the-allen-ai-science-challenge-winners-interview-3rd-place-alejandro-mosquera/>`_
+    * `comparaison des trois solutions gagnantes <https://gist.github.com/vihari/32b11ad1fac001cfab5981430ad8f36c>`_
 
 * 09/2016 - `Predicting Red Hat Business Value <https://www.kaggle.com/c/predicting-red-hat-business-value>`_: 
   Classify customer potential
