@@ -47,7 +47,7 @@ Idées / algorithmes
 * `Ad Click Prediction: a View from the Trenches <http://www.eecs.tufts.edu/~dsculley/papers/ad-click-prediction.pdf>`_ (FTRL-Proximal online learning algorithm)
 * `DMLC Model Gallery <https://github.com/dmlc/mxnet-model-gallery>`_
 * `KAGGLE ENSEMBLING GUIDE <http://mlwave.com/kaggle-ensembling-guide/>`_
-
+* `Optimization of AMS using Weighted AUC optimized models <http://jmlr.org/proceedings/papers/v42/diaz14.pdf>`_
 
 Liens
 +++++
@@ -133,6 +133,11 @@ Liens
   Predict the destination of taxi trips based on initial partial trajectories
     
     * `Taxi Trajectory Winners' Interview: 1st place, Team ? <http://blog.kaggle.com/2015/07/27/taxi-trajectory-winners-interview-1st-place-team-%F0%9F%9A%95/>`_
+
+* 07/2013 - `Facebook Recruiting III - Keyword Extraction <https://www.kaggle.com/c/facebook-recruiting-iii-keyword-extraction>`_ :
+  Identify keywords and tags from millions of text questions
+    
+    * `Keyword Extraction and Semantic Tag Prediction <http://cs229.stanford.edu/proj2013/FangHong-Keyword%20Extraction%20and%20Semantic%20Tag%20Prediction.pdf>`_
 
 
 
