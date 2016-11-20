@@ -181,7 +181,7 @@ if is_local():
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=(
             "989a8320-d21b-47f4-910b-f1fd9b2e5415", "'_UT_35_std' in outfile"),
-        nbformats=('ipynb', 'html', 'python', 'rst', 'slides', 'present'))
+        nbformats=('ipynb', 'html', 'python', 'rst', 'slides', 'present', 'github'))
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst"} & set(sys.argv)):
