@@ -70,10 +70,6 @@ Resources
 .. image:: https://badge.fury.io/py/jupytalk.svg
     :target: http://badge.fury.io/py/jupytalk    
 
-.. image:: http://img.shields.io/pypi/dm/jupytalk.png
-    :alt: PYPI Package
-    :target: https://pypi.python.org/pypi/jupytalk
-
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT  
