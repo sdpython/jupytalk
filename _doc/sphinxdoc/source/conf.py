@@ -19,7 +19,7 @@ sys.path.insert(
             "pyquickhelper",
             "src")))
 
-from pyquickhelper.helpgen.default_conf import set_sphinx_variables
+from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2016,
                      # "readable", [sphinx_readable_theme.get_html_theme_path()],
                      "basicstrap", None,
@@ -30,7 +30,7 @@ set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2016,
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
 blog_background = False
 html_context = {
-    'css_files': ['_static/my-styles.css'],
+    'css_files': get_default_stylesheet() + ['_static/my-styles.css'],
 }
 
 # https://github.com/peterhudec/foundation-sphinx-theme
