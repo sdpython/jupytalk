@@ -7,38 +7,36 @@ README
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
-    
+
 .. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
     :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
-    
+
 .. image:: https://badge.fury.io/py/jupytalk.svg
-    :target: http://badge.fury.io/py/jupytalk    
+    :target: http://badge.fury.io/py/jupytalk
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
-    
+
 .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/jupytalk/master
    :alt: Code Health
-   
+
 .. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
      :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
-     :alt: Requirements Status   
-    
+     :alt: Requirements Status
+
 .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/jupytalk?branch=master
-    
+
 .. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
     :alt: GitHub Issues
     :target: https://github.com/sdpython/jupytalk/issues
-    
+
 .. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
     :alt: Waffle
-    :target: https://waffle.io/jupytalk/pymyinstall    
-        
-      
+    :target: https://waffle.io/jupytalk/pymyinstall
 
 **Links:**
 
@@ -49,4 +47,3 @@ README
 **jupytalk**
 
 Material for presentation.
-

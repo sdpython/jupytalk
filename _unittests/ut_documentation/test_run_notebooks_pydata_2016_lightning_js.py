@@ -73,7 +73,8 @@ class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        warnings.warn("The unit test relies on lightning-python but it shares the same name as another one. We disable it.")
+        warnings.warn(
+            "The unit test relies on lightning-python but it shares the same name as another one. We disable it.")
         return
 
         if sys.version_info[0] == 2:

@@ -47,10 +47,8 @@ Setup for reveal.js
 
         transition: Reveal.getQueryHash().transition || "linear",
 
-        
         math: {
             mathjax: "http://cdn.mathjax.org/mathjax/latest/MathJax.js",config: "TeX-AMS_HTML-full"},
-        
 
         dependencies: [
            { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -59,13 +57,13 @@ Setup for reveal.js
            { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
            { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
            { src: '_static/plugin/leap/leap.js', async: true, condition: function() { return !!document.body.classList; } },
-           
+
            { src: '_static/plugin/multiplex/master.js', async: true, condition: function() { return !!document.body.classList; } },
-           
+
            { src: '_static/plugin/remotes/remotes.js_static/plugin/notes-server/client.js', async: true, condition: function() { return !!document.body.classList; } },
-           
+
            { src: '_static/plugin/math/math.js', async: true, condition: function() { return !!document.body.classList; } },
-           
+
            { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
         ]
       });

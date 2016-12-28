@@ -1,5 +1,4 @@
 
-
 .. _l-issues-todolist:
 
 Issues and enhancements
@@ -9,20 +8,14 @@ Issues and enhancements
 
 .. contents::
 
-
 Issues
 ++++++
 
 .. todoextlist::
     :tag: issue
 
-
 Enhancements
 ++++++++++++
 
 .. todoextlist::
     :tag: enhancement
-
-
-
-

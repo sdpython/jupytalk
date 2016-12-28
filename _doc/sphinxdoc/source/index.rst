@@ -1,5 +1,4 @@
 
-
 ======================
 Notebook presentations
 ======================
@@ -12,23 +11,19 @@ Materials for the talks are included in this module. To install it:
 
 **Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
-
 Presentations
 =============
 
 .. toctree::
     :maxdepth: 1
-    
+
     PyData 06/15/2016 <2016/pydata2016>
     Centrale 06/14/2016 <2016/centrale201606>
     ENSAE 14/11/2016 <2016/ensae201611>
-    
 
 **Links:** `github <https://github.com/sdpython/jupytalk/>`_,
 :ref:`blog <ap-main-0>`,
 :ref:`l-issues-todolist`
-
-
 
 Teachings
 =========
@@ -46,7 +41,6 @@ References
   Variances 54, mars 2016
 * `Vidéo sur hackathon Microsoft - ENSAE - Croix-Rouge <https://channel9.msdn.com/Series/Data-Science-Student-Challenge/ENSAE-ParisTech-DSSC>`_, Novembre 2016
 
-
 Resources
 =========
 
@@ -55,24 +49,25 @@ Resources
 
     i_faq
     i_ex
+    all_notebooks
+    gyexamples/index
     resources/rnotebooks
     resources/teachings
-    
 
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
-    
+
 .. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
     :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
-    
+
 .. image:: https://badge.fury.io/py/jupytalk.svg
-    :target: http://badge.fury.io/py/jupytalk    
+    :target: http://badge.fury.io/py/jupytalk
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
-    :target: http://opensource.org/licenses/MIT  
+    :target: http://opensource.org/licenses/MIT
 
 .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
    :target: https://landscape.io/github/sdpython/jupytalk/master
@@ -80,19 +75,18 @@ Resources
 
 .. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
      :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
-     :alt: Requirements Status   
-    
+     :alt: Requirements Status
+
 .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/jupytalk?branch=master
 
 .. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
     :alt: GitHub Issues
     :target: https://github.com/sdpython/jupytalk/issues
-    
+
 .. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
     :alt: Waffle
-    :target: https://waffle.io/jupytalk/pymyinstall    
-        
+    :target: https://waffle.io/jupytalk/pymyinstall
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
@@ -101,7 +95,3 @@ Resources
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`genindex`      |  :ref:`l-FAQ2       | :ref:`l-notebooks`  |                    | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
-
-
-
-

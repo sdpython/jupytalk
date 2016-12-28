@@ -1,9 +1,7 @@
 
-
 Resources for notebooks
 =======================
 
 .. toctree::
-    
-    setup_revealjs
 
+    setup_revealjs
