@@ -172,7 +172,7 @@ if is_local():
     from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function(OutputPrint=True)
     r = process_standard_options_for_setup(
-        sys.argv, __file__, project_var_name,
+        sys.argv, __file__, project_var_name, layout=["html"],
         unittest_modules=["pyquickhelper", "jyquickhelper"],
         additional_notebook_path=["pyquickhelper", "jyquickhelper"],
         additional_local_path=["pyquickhelper", "jyquickhelper"],
