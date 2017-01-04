@@ -26,6 +26,22 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
+try:
+    import jyquickhelper as skip__
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "jyquickhelper",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import jyquickhelper as skip__
+
 
 try:
     import src
@@ -105,7 +121,9 @@ class TestRunNotebooksPyData2016_im2(unittest.TestCase):
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
             os.path.normpath(os.path.join(
-                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src")),
+            os.path.normpath(os.path.join(
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src"))
         ]
 
         # creation of a kernel
