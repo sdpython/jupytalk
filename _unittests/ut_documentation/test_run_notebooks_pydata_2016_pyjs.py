@@ -94,6 +94,8 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
         addpaths = [os.path.normpath(os.path.join(
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "src")),
             os.path.normpath(os.path.join(
+                os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src")),
+            os.path.normpath(os.path.join(
                 os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
         ]
 
