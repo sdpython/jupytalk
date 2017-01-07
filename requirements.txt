@@ -29,8 +29,8 @@ pyreadline
 pyreadline
 pythreejs
 requests-oauthlib
+traittypes
 vega
 version_information
 vispy
 xmltodict
-

@@ -41,5 +41,4 @@ statsmodels
 sympy
 toolz
 traitlets
-traittypes
 xarray
