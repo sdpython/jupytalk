@@ -64,7 +64,7 @@ from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
 
-class TestRunNotebooksPyData2016_im2(unittest.TestCase):
+class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
 
     def test_run_notebook_im2(self):
         fLOG(
