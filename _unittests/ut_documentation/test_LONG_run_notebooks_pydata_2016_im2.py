@@ -56,7 +56,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG
+from pyquickhelper.loghelper import fLOG, CustomLog
 from pyquickhelper.pycode import get_temp_folder
 from pyquickhelper.ipythonhelper import execute_notebook_list
 from pyquickhelper.pycode import compare_module_version, is_travis_or_appveyor
@@ -130,9 +130,12 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
             "python3_module_template")
 
+        clog = CustomLog(temp)
+
         # run the notebooks
         res = execute_notebook_list(
-            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
+            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths,
+            kernel_name=kernel_name, detailed_log=clog)
 
         # final checkings
         assert len(res) > 0
