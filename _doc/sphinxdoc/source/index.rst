@@ -58,7 +58,7 @@ Resources
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
 
-.. image:: https://ci.appveyor.com/api/projects/status/by2p84twqmfcdd21?svg=true
+.. image:: https://ci.appveyor.com/api/projects/status/cq8d56y2o4ldi7rn?svg=true
     :target: https://ci.appveyor.com/project/sdpython/jupytalk
     :alt: Build Status Windows
 
