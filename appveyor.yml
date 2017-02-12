@@ -45,7 +45,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install pygal_maps_fr"
   - "%PYTHON%\\Scripts\\pip install ggplot==0.9.3"
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
-  - "%PYTHON%\\Scripts\\pymy_install3 datashader pydy biopython scikit-image"
+  - "%PYTHON%\\Scripts\\pymy_install3 datashader pydy biopython scikit-image pyproj"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
   - "%PYTHON%\\Scripts\\pip install -r requirements2.txt"
   - "%PYTHON%\\Scripts\\pip install widgetsnbextension"
