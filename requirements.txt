@@ -10,10 +10,10 @@ cufflinks
 entrypoints
 ete3
 geoplotlib
+ggplot
 jyquickhelper
 lifelines
 lightning-python
-mechanize
 metakernel
 missingno
 pkgtools
