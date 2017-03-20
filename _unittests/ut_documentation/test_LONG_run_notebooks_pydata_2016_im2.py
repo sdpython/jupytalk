@@ -67,6 +67,11 @@ import IPython
 class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
 
     def test_run_notebook_im2(self):
+        """
+        If the test does not end, it is probably due to PyQt4 needed by ete3.
+        Try ``import PyQt4.QtCore``.
+        Try to remove PyQt5.
+        """
         fLOG(
             __file__,
             self._testMethodName,
