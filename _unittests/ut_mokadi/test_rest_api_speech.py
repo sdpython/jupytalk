@@ -39,14 +39,12 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor, add_missing_development_version
-from src.jupytalk.mokadi.cognitices_services_helper import call_api_speech_reco
 
 
 class TestRestApiSpeech(unittest.TestCase):
 
     def setUp(self):
-        add_missing_development_version(["pymyinstall", "pyensae", "pymmails", "jyquickhelper",
-                                         "ensae_teaching_cs", "pyrsslocal"],
+        add_missing_development_version(["jyquickhelper", "ensae_teaching_cs", "pymmails"],
                                         __file__, hide=True)
 
     def test_api_news_speech(self):
@@ -59,6 +57,7 @@ class TestRestApiSpeech(unittest.TestCase):
             # no keys
             return
 
+        from src.jupytalk.mokadi.cognitices_services_helper import call_api_speech_reco
         import keyring
         subkey = keyring.get_password(
             "cogser", os.environ["COMPUTERNAME"] + "voicereco")

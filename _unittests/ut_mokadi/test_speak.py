@@ -45,8 +45,7 @@ from src.jupytalk.mokadi import speak
 class TestSpeak(unittest.TestCase):
 
     def setUp(self):
-        add_missing_development_version(["pymyinstall", "pyensae", "pymmails", "jyquickhelper",
-                                         "ensae_teaching_cs", "pyrsslocal"],
+        add_missing_development_version(["jyquickhelper", "ensae_teaching_cs", "pymmails"],
                                         __file__, hide=True)
 
     def test_speak(self):

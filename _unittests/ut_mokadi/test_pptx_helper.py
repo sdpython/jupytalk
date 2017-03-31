@@ -39,7 +39,7 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
-from src.jupytalk.mokadi.pptx_helper import pptx_enumerate_text
+from src.jupytalk.mokadi.pptx_helper import pptx_enumerate_text, pptx_apply_transform
 
 
 class TestPptxHelper(unittest.TestCase):
@@ -65,7 +65,7 @@ class TestPptxHelper(unittest.TestCase):
             return "*" + text + "*"
 
         exp2 = [(a, b, c, "*" + d + "*") for a, b, c, d in exp]
-        zones = list(pptx_enumerate_text(ptx))
+        zones = list(pptx_enumerate_text(pptx_apply_transform(ptx, trans)))
         self.assertEqual(zones, exp2)
 
 

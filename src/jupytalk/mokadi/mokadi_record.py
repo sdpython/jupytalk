@@ -3,12 +3,11 @@
 @brief Record a couple of seconds and returns the raw stream.
 """
 import io
-import pyaudio
 import wave
 from pyquickhelper.loghelper import noLOG
 
 
-def record_speech(RECORD_SECONDS=5, CHUNK=1024, FORMAT=pyaudio.paInt16,
+def record_speech(RECORD_SECONDS=5, CHUNK=1024, FORMAT=None,
                   CHANNELS=2, RATE=44100,
                   WAVE_OUTPUT_FILENAME=None, fLOG=noLOG):
     """
@@ -22,6 +21,9 @@ def record_speech(RECORD_SECONDS=5, CHUNK=1024, FORMAT=pyaudio.paInt16,
     See `pyaudio <http://people.csail.mit.edu/hubert/pyaudio/>`_
     for the others parameters.
     """
+    import pyaudio
+    if FORMAT is None:
+        FORMAT = pyaudio.paInt16
     p = pyaudio.PyAudio()
 
     stream = p.open(format=FORMAT,
@@ -78,6 +80,7 @@ def play_speech(filename_or_bytes, CHUNK=1024):
         st = io.BytesIO(filename_or_bytes)
         wf = wave.open(st, 'rb')
 
+    import pyaudio
     p = pyaudio.PyAudio()
 
     stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),

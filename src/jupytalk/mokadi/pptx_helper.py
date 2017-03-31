@@ -30,7 +30,7 @@ def pptx_apply_transform(ptx, replace_func):
 
     @param      ptx             presentation
     @param      replace_func    function ``f(islide, ishape, ip, text) --> text
-    @return                     number of modified zone
+    @return                     presentation
 
     @warning Updated text does not retain style (bug).
     """
@@ -41,7 +41,7 @@ def pptx_apply_transform(ptx, replace_func):
             text_frame = shape.text_frame
             for ip, p in enumerate(text_frame.paragraphs):
                 if p.text:
-                    new_text = replace_func(p.text)
+                    new_text = replace_func(islide, ishape, ip, p.text)
                     if new_text != p.text:
                         font = p.font
                         p.text = ""  # new_text
@@ -51,3 +51,4 @@ def pptx_apply_transform(ptx, replace_func):
                         run.font.size = Pt(25)  # font.size
                         #run.font.color.rgb = font.color.rgb
                         run.font.color.rgb = RGBColor(0xFF, 0x7F, 0x50)
+    return ptx
