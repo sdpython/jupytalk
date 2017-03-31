@@ -20,6 +20,7 @@ missingno
 pkgtools
 pkgtools
 plotly
+pyaudio
 pydy
 pygal
 pygal_maps_fr

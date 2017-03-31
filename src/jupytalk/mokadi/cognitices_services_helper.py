@@ -78,3 +78,39 @@ def call_api_speech_reco(subkey, lang="fr-FR", filename=None, memwav=None,
     """
     from ensae_teaching_cs.pythonnet import vocal_recognition
     return vocal_recognition(subkey, lang=lang, filename=filename, memwav=memwav, url=url)
+
+
+def call_api_emotions(subkey, image_or_bytes):
+    """
+    Retrieve resuls for news
+
+    @param      subkey              subscription key
+    @param      image_or_bytes      image or bytes
+    @return                         results
+    """
+    headers = {
+        # Request headers
+        'Content-Type': 'application/octet-stream',
+        'Ocp-Apim-Subscription-Key': subkey,
+    }
+
+    params = urllib.parse.urlencode({
+    })
+
+    if isinstance(image_or_bytes, str):
+        with open(image_or_bytes, "rb") as f:
+            content = f.read()
+    else:
+        content = image_or_bytes
+
+    try:
+        conn = http.client.HTTPSConnection(
+            'westus.api.cognitive.microsoft.com')
+        conn.request("POST", "/emotion/v1.0/recognize?%s" %
+                     params, content, headers)
+        response = conn.getresponse()
+        data = response.read()
+        conn.close()
+        return bytes2python(data)
+    except Exception as e:
+        raise CognitiveException("[Errno {0}] {1}".format(e.errno, e.strerror))

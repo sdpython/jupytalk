@@ -39,12 +39,12 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor
-from src.jupytalk.mokadi.cognitices_services_helper import call_api_news
+from src.jupytalk.mokadi.cognitices_services_helper import call_api_emotions
 
 
-class TestRestApiNews(unittest.TestCase):
+class TestRestApiEmotions(unittest.TestCase):
 
-    def test_api_news(self):
+    def test_api_emotions(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -54,19 +54,19 @@ class TestRestApiNews(unittest.TestCase):
             # no keys
             return
 
+        path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
+        imgs = [os.path.join(path, "84-cate-blanchett-jude-quinn-i-m-not-there-2007--630-75.jpg"),
+                os.path.join(path, "Cate_Blanchett_Deauville_2013_2.jpg")]
+
         import keyring
         subkey = keyring.get_password(
-            "cogser", os.environ["COMPUTERNAME"] + "news")
-        res = call_api_news(subkey, "tennis")
-        self.assertTrue(isinstance(res, dict))
-        self.assertTrue(len(res) > 0)
-        for k, v in res.items():
-            fLOG("k={0}".format(k))
-            if isinstance(v, list):
-                for _ in v:
-                    fLOG(_)
-                    self.assertTrue(isinstance(_, dict))
-                    self.assertTrue("name" in _)
+            "cogser", os.environ["COMPUTERNAME"] + "emotions")
+        for img in imgs:
+            res = call_api_emotions(subkey, img)
+            self.assertTrue(isinstance(res, list))
+            self.assertTrue(len(img) > 0)
+            for _ in res:
+                fLOG(_)
 
 
 if __name__ == "__main__":
