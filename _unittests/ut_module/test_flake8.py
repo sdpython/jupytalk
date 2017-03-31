@@ -57,7 +57,8 @@ class TestFlake8(unittest.TestCase):
 
         thi = os.path.abspath(os.path.dirname(__file__))
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
-        check_pep8(src_, fLOG=fLOG)
+        check_pep8(src_, fLOG=fLOG, skip=["MokadiGrammarLexer.py",
+                                          "MokadiGrammarListener.py", "MokadiGrammarParser.py"])
 
     def test_flake8_test(self):
         fLOG(

@@ -36,7 +36,8 @@ CLASSIFIERS = [
 
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
-package_data = {}
+package_data = {project_var_name + ".mokadi": ["*.g4", "*.tokens"], }
+
 
 ############
 # functions
@@ -74,6 +75,7 @@ def is_local():
        "upload_docs" in sys.argv or \
        "setup_hook" in sys.argv or \
        "copy_sphinx" in sys.argv or \
+       "update_grammars" in sys.argv or \
        "write_version" in sys.argv:
         try:
             import_pyquickhelper()
@@ -129,14 +131,15 @@ if is_local() and "--help" not in sys.argv and "--help-commands" not in sys.argv
     if sys.version_info[0] != 2:
         write_version()
 
-    if os.path.exists("version.txt"):
-        with open("version.txt", "r") as f:
+    version = os.path.join(os.path.dirname(__file__), "version.txt")
+    if os.path.exists(version):
+        with open(version, "r") as f:
             lines = f.readlines()
         subversion = "." + lines[0].strip("\r\n ")
         if subversion == ".0":
             raise Exception("subversion is wrong: " + subversion)
     else:
-        raise FileNotFoundError("version.txt")
+        raise FileNotFoundError(version)
 else:
     # when the module is installed, no commit number is displayed
     subversion = ""
@@ -182,6 +185,27 @@ if is_local():
         fLOG=logging_function, covtoken=(
             "989a8320-d21b-47f4-910b-f1fd9b2e5415", "'_UT_35_std' in outfile"),
         nbformats=('ipynb', 'html', 'python', 'rst', 'slides', 'present', 'github'))
+    if not r and "update_grammars" in sys.argv:
+        # expecting python setup.py update_grammars file
+        ind = sys.argv.index("update_grammars")
+        if len(sys.argv) <= ind:
+            raise Exception(
+                "expecting a grammar file: python setup.py update_grammars R.g4")
+        grammar = sys.argv[ind + 1]
+        if not os.path.exists(grammar):
+            cdir = os.path.abspath(os.path.dirname(__file__))
+            g2 = os.path.join(cdir, "src", "jupytalk", "mokadi", grammar)
+            if not os.path.exists(g2):
+                raise FileNotFoundError("{0}\n{1}".format(grammar, g2))
+            grammar = g2
+        try:
+            from pyensae.languages import build_grammar
+        except ImportError:
+            sys.path.append(os.path.join(
+                os.path.dirname(__file__), "..", "pyensae", "src"))
+            from pyensae.languages import build_grammar
+        build_grammar(grammar)
+        r = True
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst"} & set(sys.argv)):

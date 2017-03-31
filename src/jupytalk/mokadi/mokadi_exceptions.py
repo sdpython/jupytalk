@@ -1,0 +1,18 @@
+"""
+@file
+@brief Exception for Mokadi.
+"""
+
+
+class MokadiException(Exception):
+    """
+    Mokadi exception.
+    """
+    pass
+
+
+class CognitiveException(Exception):
+    """
+    Failure when calling the API.
+    """
+    pass
