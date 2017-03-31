@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 """
-@brief      test log(time=5s)
+@brief      test log(time=10s)
 """
 
 import sys
@@ -38,30 +38,27 @@ except ImportError:
     import pyquickhelper as skip_
 
 from pyquickhelper.loghelper import fLOG
-from src.jupytalk.mokadi.cognitices_services_helper import call_api_news
+from pyquickhelper.pycode import is_travis_or_appveyor
+from src.jupytalk.mokadi import record_speech, play_speech
 
 
-class TestRestApiNews(unittest.TestCase):
+class TestRestApiSpeech(unittest.TestCase):
 
-    def test_api_news(self):
+    def test_record(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        import keyring
-        subkey = keyring.get_password(
-            "cogser", os.environ["COMPUTERNAME"] + "news")
-        res = call_api_news(subkey, "tennis")
-        self.assertTrue(isinstance(res, dict))
-        self.assertTrue(len(res) > 0)
-        for k, v in res.items():
-            fLOG("k={0}".format(k))
-            if isinstance(v, list):
-                for _ in v:
-                    fLOG(_)
-                    self.assertTrue(isinstance(_, dict))
-                    self.assertTrue("name" in _)
+        if is_travis_or_appveyor():
+            # no keys
+            return
+
+        fLOG("record")
+        record = record_speech(3, fLOG=fLOG)
+        fLOG("play")
+        play_speech(record)
+        fLOG("end")
 
 
 if __name__ == "__main__":
