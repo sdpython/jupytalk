@@ -40,6 +40,7 @@ except ImportError:
 from pyquickhelper.loghelper import fLOG, CustomLog
 from pyquickhelper.pycode import get_temp_folder
 from src.jupytalk.mokadi import MokadiEngine, MokadiMessage, MokadiInfo
+from src.jupytalk.mokadi.mokadi_action_slides import MokadiActionSlides
 
 
 class TestEngine(unittest.TestCase):
@@ -52,11 +53,29 @@ class TestEngine(unittest.TestCase):
 
         temp = get_temp_folder(__file__, "temp_engine_simple")
         clog = CustomLog(temp)
-        engine = MokadiEngine(temp, clog)
+        engine = MokadiEngine(temp, clog, actions=[])
         mes = MokadiMessage("nokadi", 1)
         res = list(engine.process(mes))
         self.assertEqual(len(res), 1)
         self.assertTrue(isinstance(res[0], MokadiInfo))
+        fLOG(res[0])
+
+    def test_engine_slides(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        temp = get_temp_folder(__file__, "temp_engine_slides")
+        clog = CustomLog(temp)
+        folder = os.path.join(temp, "..", "data")
+        act = MokadiActionSlides(folder)
+        engine = MokadiEngine(temp, clog, actions=[act])
+        mes = MokadiMessage("MOKADI liste presentation", 1)
+        res = list(engine.process(mes, exc=True))
+        self.assertEqual(len(res), 2)
+        self.assertTrue(isinstance(res[0], MokadiInfo))
+        self.assertTrue(isinstance(res[1], MokadiInfo))
         fLOG(res[0])
 
 

@@ -12,7 +12,7 @@ class MokadiInfo:
 
     _allowed_status = {"error", "ok", "empty"}
 
-    def __init__(self, status: str, info: str, error: str, image):
+    def __init__(self, status: str, info: str, error="", image=None, sound=None):
         """
         Constructor
 
@@ -20,11 +20,13 @@ class MokadiInfo:
         @param      info            text to display
         @param      error           error message
         @param      image           image name
+        @param      sound           sound
         """
         self._status = status
         self._info = info
         self._error = error
         self._image = image
+        self._sound = sound
 
         if not isinstance(status, str):
             raise TypeError("status must be a string")
@@ -38,6 +40,9 @@ class MokadiInfo:
         if image is not None and len(image) > 0:
             if not os.path.exists(image):
                 raise FileNotFoundError(image)
+        if sound is not None and len(sound) > 0:
+            if not os.path.exists(sound):
+                raise FileNotFoundError(sound)
 
     def __str__(self):
         """

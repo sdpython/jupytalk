@@ -5,6 +5,28 @@ parse
     ;
     
 /////////////
+// expression
+/////////////
+
+expression_stmt
+    : expression
+    | ('(' expression ')')
+    ;
+
+expression
+    : slides_stmt
+    | anything_stmt
+    ;
+    
+slides_stmt
+    : verb presentation (integer_number slides integer_number)?
+    ;
+    
+anything_stmt
+    : word_name word_name* question?
+    ;
+
+/////////////
 // mokadi
 ////////////
 
@@ -15,19 +37,31 @@ mokadi
     | 'Leocadie'
     ;
     
-/////////////
-// expression
-/////////////
-
-expression_stmt
-    : expression
-    | ('(' expression ')')
+presentation
+    : Presentation
+    | 'powerpoint'
     ;
-
-expression
-    : word_name word_name*
+    
+Presentation
+    : 'pr' E_CODE 'sentation'
+    ;    
+    
+slides
+    : 'slides'
+    | 'slide'
+    | 'transparent'
     ;
-
+    
+verb
+    : 'lit'
+    | 'voir'
+    | 'list'
+    | 'lire'
+    | 'liste'
+    | 'lister'
+    ;
+    
+    
 ////////
 // rules
 ////////
@@ -40,6 +74,10 @@ word_name
     
 operator
     : '+' | '-' | '*' | '/' | '%' | '&&' | '||' | '==' | '!=' | '<=' | '>=' | '>' | '<'
+    ;
+    
+question
+    : '?'
     ;
 
 constant
@@ -72,6 +110,10 @@ Digits
 
 Identifier
     : LETTER LETTER_DIGIT*
+    ;
+    
+fragment E_CODE
+    : '\u00E9' | 'é' | 'e'
     ;
     
 STRING

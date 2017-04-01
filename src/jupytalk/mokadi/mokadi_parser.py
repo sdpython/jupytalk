@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 """
 @file
 @brief Parse with Mokadi'sgrammar.
@@ -33,7 +34,7 @@ def run_parse(parser):
     out = stdout.getvalue()
     err = stderr.getvalue()
     if len(err) > 0:
-        raise SyntaxError("Scope parsing error:\n" + err)
+        raise SyntaxError("Mokadi parsing error:\n" + err)
     return out, err, tree
 
 
@@ -130,8 +131,24 @@ def get_tree_string(tree, parser, script=None):
                     return ":P:"
                 if isinstance(ch, self.parser.MokadiContext):
                     return ":MOKADI:"
+                if isinstance(ch, self.parser.Slides_stmtContext):
+                    return ":slide_exp:"
+                if isinstance(ch, self.parser.SlidesContext):
+                    return ":slide:"
                 if isinstance(ch, self.parser.Word_nameContext):
                     return ":word:"
+                if isinstance(ch, self.parser.OperatorContext):
+                    return ":op:"
+                if isinstance(ch, self.parser.VerbContext):
+                    return ":verb:"
+                if isinstance(ch, self.parser.QuestionContext):
+                    return ":question:"
+                if isinstance(ch, self.parser.Integer_numberContext):
+                    return ":int:"
+                if isinstance(ch, self.parser.PresentationContext):
+                    return ":presentation:"
+                if isinstance(ch, self.parser.Anything_stmtContext):
+                    return ":anything:"
                 if isinstance(ch, self.parser.Expression_stmtContext) or \
                         isinstance(ch, self.parser.ExpressionContext):
                     return ":expression:"

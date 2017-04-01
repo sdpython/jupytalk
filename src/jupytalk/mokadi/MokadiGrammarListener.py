@@ -21,14 +21,6 @@ class MokadiGrammarListener(ParseTreeListener):
     def exitParse(self, ctx: MokadiGrammarParser.ParseContext):
         pass
 
-    # Enter a parse tree produced by MokadiGrammarParser#mokadi.
-    def enterMokadi(self, ctx: MokadiGrammarParser.MokadiContext):
-        pass
-
-    # Exit a parse tree produced by MokadiGrammarParser#mokadi.
-    def exitMokadi(self, ctx: MokadiGrammarParser.MokadiContext):
-        pass
-
     # Enter a parse tree produced by MokadiGrammarParser#expression_stmt.
     def enterExpression_stmt(self, ctx: MokadiGrammarParser.Expression_stmtContext):
         pass
@@ -45,6 +37,54 @@ class MokadiGrammarListener(ParseTreeListener):
     def exitExpression(self, ctx: MokadiGrammarParser.ExpressionContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammarParser#slides_stmt.
+    def enterSlides_stmt(self, ctx: MokadiGrammarParser.Slides_stmtContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#slides_stmt.
+    def exitSlides_stmt(self, ctx: MokadiGrammarParser.Slides_stmtContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#anything_stmt.
+    def enterAnything_stmt(self, ctx: MokadiGrammarParser.Anything_stmtContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#anything_stmt.
+    def exitAnything_stmt(self, ctx: MokadiGrammarParser.Anything_stmtContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#mokadi.
+    def enterMokadi(self, ctx: MokadiGrammarParser.MokadiContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#mokadi.
+    def exitMokadi(self, ctx: MokadiGrammarParser.MokadiContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#presentation.
+    def enterPresentation(self, ctx: MokadiGrammarParser.PresentationContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#presentation.
+    def exitPresentation(self, ctx: MokadiGrammarParser.PresentationContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#slides.
+    def enterSlides(self, ctx: MokadiGrammarParser.SlidesContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#slides.
+    def exitSlides(self, ctx: MokadiGrammarParser.SlidesContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#verb.
+    def enterVerb(self, ctx: MokadiGrammarParser.VerbContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#verb.
+    def exitVerb(self, ctx: MokadiGrammarParser.VerbContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammarParser#word_name.
     def enterWord_name(self, ctx: MokadiGrammarParser.Word_nameContext):
         pass
@@ -59,6 +99,14 @@ class MokadiGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammarParser#operator.
     def exitOperator(self, ctx: MokadiGrammarParser.OperatorContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#question.
+    def enterQuestion(self, ctx: MokadiGrammarParser.QuestionContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#question.
+    def exitQuestion(self, ctx: MokadiGrammarParser.QuestionContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammarParser#constant.

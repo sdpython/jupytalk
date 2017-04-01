@@ -6,34 +6,44 @@ from io import StringIO
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\37")
-        buf.write("V\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
-        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\3\2\3\2\3\2\3\2\3\3\3\3")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\5\4\"\n\4\3\5\3\5\7\5&\n\5\f\5\16")
-        buf.write("\5)\13\5\3\6\3\6\3\6\5\6.\n\6\3\7\3\7\3\b\3\b\3\b\5\b")
-        buf.write("\65\n\b\3\t\3\t\3\n\5\n:\n\n\3\n\3\n\3\13\5\13?\n\13\3")
-        buf.write("\13\3\13\3\13\3\13\3\13\5\13F\n\13\3\13\5\13I\n\13\3\13")
-        buf.write("\5\13L\n\13\3\13\3\13\3\13\5\13Q\n\13\3\13\5\13T\n\13")
-        buf.write("\3\13\2\2\f\2\4\6\b\n\f\16\20\22\24\2\4\3\2\3\6\3\2\t")
-        buf.write("\25X\2\26\3\2\2\2\4\32\3\2\2\2\6!\3\2\2\2\b#\3\2\2\2\n")
-        buf.write("-\3\2\2\2\f/\3\2\2\2\16\64\3\2\2\2\20\66\3\2\2\2\229\3")
-        buf.write("\2\2\2\24S\3\2\2\2\26\27\5\4\3\2\27\30\5\6\4\2\30\31\7")
-        buf.write("\2\2\3\31\3\3\2\2\2\32\33\t\2\2\2\33\5\3\2\2\2\34\"\5")
-        buf.write("\b\5\2\35\36\7\7\2\2\36\37\5\b\5\2\37 \7\b\2\2 \"\3\2")
-        buf.write("\2\2!\34\3\2\2\2!\35\3\2\2\2\"\7\3\2\2\2#\'\5\n\6\2$&")
-        buf.write("\5\n\6\2%$\3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(\t")
-        buf.write("\3\2\2\2)\'\3\2\2\2*.\7\31\2\2+.\5\16\b\2,.\5\f\7\2-*")
-        buf.write("\3\2\2\2-+\3\2\2\2-,\3\2\2\2.\13\3\2\2\2/\60\t\3\2\2\60")
-        buf.write("\r\3\2\2\2\61\65\5\22\n\2\62\65\5\24\13\2\63\65\5\20\t")
-        buf.write("\2\64\61\3\2\2\2\64\62\3\2\2\2\64\63\3\2\2\2\65\17\3\2")
-        buf.write("\2\2\66\67\7\32\2\2\67\21\3\2\2\28:\7\37\2\298\3\2\2\2")
-        buf.write("9:\3\2\2\2:;\3\2\2\2;<\7\30\2\2<\23\3\2\2\2=?\7\37\2\2")
-        buf.write(">=\3\2\2\2>?\3\2\2\2?@\3\2\2\2@A\7\30\2\2AB\7\26\2\2B")
-        buf.write("H\7\30\2\2CE\7\27\2\2DF\7\37\2\2ED\3\2\2\2EF\3\2\2\2F")
-        buf.write("G\3\2\2\2GI\7\30\2\2HC\3\2\2\2HI\3\2\2\2IT\3\2\2\2JL\7")
-        buf.write("\37\2\2KJ\3\2\2\2KL\3\2\2\2LM\3\2\2\2MN\7\30\2\2NP\7\27")
-        buf.write("\2\2OQ\7\37\2\2PO\3\2\2\2PQ\3\2\2\2QR\3\2\2\2RT\7\30\2")
-        buf.write("\2S>\3\2\2\2SK\3\2\2\2T\25\3\2\2\2\r!\'-\649>EHKPS")
+        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3+")
+        buf.write("y\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
+        buf.write("\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\3\2\3\2\3\3")
+        buf.write("\3\3\3\3\3\3\3\3\5\3,\n\3\3\4\3\4\5\4\60\n\4\3\5\3\5\3")
+        buf.write("\5\3\5\3\5\3\5\5\58\n\5\3\6\3\6\7\6<\n\6\f\6\16\6?\13")
+        buf.write("\6\3\6\5\6B\n\6\3\7\3\7\3\b\3\b\3\t\3\t\3\n\3\n\3\13\3")
+        buf.write("\13\3\13\5\13O\n\13\3\f\3\f\3\r\3\r\3\16\3\16\3\16\5\16")
+        buf.write("X\n\16\3\17\3\17\3\20\5\20]\n\20\3\20\3\20\3\21\5\21b")
+        buf.write("\n\21\3\21\3\21\3\21\3\21\3\21\5\21i\n\21\3\21\5\21l\n")
+        buf.write("\21\3\21\5\21o\n\21\3\21\3\21\3\21\5\21t\n\21\3\21\5\21")
+        buf.write("w\n\21\3\21\2\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
+        buf.write("\36 \2\7\3\2\5\b\4\2\t\t##\3\2\n\f\3\2\r\22\3\2\23\37")
+        buf.write("x\2\"\3\2\2\2\4+\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n9\3")
+        buf.write("\2\2\2\fC\3\2\2\2\16E\3\2\2\2\20G\3\2\2\2\22I\3\2\2\2")
+        buf.write("\24N\3\2\2\2\26P\3\2\2\2\30R\3\2\2\2\32W\3\2\2\2\34Y\3")
+        buf.write("\2\2\2\36\\\3\2\2\2 v\3\2\2\2\"#\5\f\7\2#$\5\4\3\2$%\7")
+        buf.write("\2\2\3%\3\3\2\2\2&,\5\6\4\2\'(\7\3\2\2()\5\6\4\2)*\7\4")
+        buf.write("\2\2*,\3\2\2\2+&\3\2\2\2+\'\3\2\2\2,\5\3\2\2\2-\60\5\b")
+        buf.write("\5\2.\60\5\n\6\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2\2\2\61\62")
+        buf.write("\5\22\n\2\62\67\5\16\b\2\63\64\5\36\20\2\64\65\5\20\t")
+        buf.write("\2\65\66\5\36\20\2\668\3\2\2\2\67\63\3\2\2\2\678\3\2\2")
+        buf.write("\28\t\3\2\2\29=\5\24\13\2:<\5\24\13\2;:\3\2\2\2<?\3\2")
+        buf.write("\2\2=;\3\2\2\2=>\3\2\2\2>A\3\2\2\2?=\3\2\2\2@B\5\30\r")
+        buf.write("\2A@\3\2\2\2AB\3\2\2\2B\13\3\2\2\2CD\t\2\2\2D\r\3\2\2")
+        buf.write("\2EF\t\3\2\2F\17\3\2\2\2GH\t\4\2\2H\21\3\2\2\2IJ\t\5\2")
+        buf.write("\2J\23\3\2\2\2KO\7%\2\2LO\5\32\16\2MO\5\26\f\2NK\3\2\2")
+        buf.write("\2NL\3\2\2\2NM\3\2\2\2O\25\3\2\2\2PQ\t\6\2\2Q\27\3\2\2")
+        buf.write("\2RS\7 \2\2S\31\3\2\2\2TX\5\36\20\2UX\5 \21\2VX\5\34\17")
+        buf.write("\2WT\3\2\2\2WU\3\2\2\2WV\3\2\2\2X\33\3\2\2\2YZ\7&\2\2")
+        buf.write("Z\35\3\2\2\2[]\7+\2\2\\[\3\2\2\2\\]\3\2\2\2]^\3\2\2\2")
+        buf.write("^_\7$\2\2_\37\3\2\2\2`b\7+\2\2a`\3\2\2\2ab\3\2\2\2bc\3")
+        buf.write("\2\2\2cd\7$\2\2de\7!\2\2ek\7$\2\2fh\7\"\2\2gi\7+\2\2h")
+        buf.write("g\3\2\2\2hi\3\2\2\2ij\3\2\2\2jl\7$\2\2kf\3\2\2\2kl\3\2")
+        buf.write("\2\2lw\3\2\2\2mo\7+\2\2nm\3\2\2\2no\3\2\2\2op\3\2\2\2")
+        buf.write("pq\7$\2\2qs\7\"\2\2rt\7+\2\2sr\3\2\2\2st\3\2\2\2tu\3\2")
+        buf.write("\2\2uw\7$\2\2va\3\2\2\2vn\3\2\2\2w!\3\2\2\2\20+/\67=A")
+        buf.write("NW\\ahknsv")
         return buf.getvalue()
 
 
@@ -47,34 +57,46 @@ class MokadiGrammarParser (Parser):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = ["<INVALID>", "'MOKADI'", "'mokadie'", "'leocadie'",
-                    "'Leocadie'", "'('", "')'", "'+'", "'-'", "'*'", "'/'",
-                    "'%'", "'&&'", "'||'", "'=='", "'!='", "'<='", "'>='",
-                    "'>'", "'<'", "'.'", "'e'"]
+    literalNames = ["<INVALID>", "'('", "')'", "'MOKADI'", "'mokadie'",
+                    "'leocadie'", "'Leocadie'", "'powerpoint'", "'slides'",
+                    "'slide'", "'transparent'", "'lit'", "'voir'", "'list'",
+                    "'lire'", "'liste'", "'lister'", "'+'", "'-'", "'*'",
+                    "'/'", "'%'", "'&&'", "'||'", "'=='", "'!='", "'<='",
+                    "'>='", "'>'", "'<'", "'?'", "'.'", "'e'"]
 
     symbolicNames = ["<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                     "<INVALID>", "<INVALID>", "Digits", "Identifier",
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
+                     "<INVALID>", "Presentation", "Digits", "Identifier",
                      "STRING", "STRING_DOUBLE_QUOTE", "STRING_QUOTE", "LINE_COMMENT",
                      "WS", "Sign"]
 
     RULE_parse = 0
-    RULE_mokadi = 1
-    RULE_expression_stmt = 2
-    RULE_expression = 3
-    RULE_word_name = 4
-    RULE_operator = 5
-    RULE_constant = 6
-    RULE_string_literal = 7
-    RULE_integer_number = 8
-    RULE_real_number = 9
+    RULE_expression_stmt = 1
+    RULE_expression = 2
+    RULE_slides_stmt = 3
+    RULE_anything_stmt = 4
+    RULE_mokadi = 5
+    RULE_presentation = 6
+    RULE_slides = 7
+    RULE_verb = 8
+    RULE_word_name = 9
+    RULE_operator = 10
+    RULE_question = 11
+    RULE_constant = 12
+    RULE_string_literal = 13
+    RULE_integer_number = 14
+    RULE_real_number = 15
 
-    ruleNames = ["parse", "mokadi", "expression_stmt", "expression", "word_name",
-                 "operator", "constant", "string_literal", "integer_number",
-                 "real_number"]
+    ruleNames = ["parse", "expression_stmt", "expression", "slides_stmt",
+                 "anything_stmt", "mokadi", "presentation", "slides",
+                 "verb", "word_name", "operator", "question", "constant",
+                 "string_literal", "integer_number", "real_number"]
 
     EOF = Token.EOF
     T__0 = 1
@@ -98,14 +120,26 @@ class MokadiGrammarParser (Parser):
     T__18 = 19
     T__19 = 20
     T__20 = 21
-    Digits = 22
-    Identifier = 23
-    STRING = 24
-    STRING_DOUBLE_QUOTE = 25
-    STRING_QUOTE = 26
-    LINE_COMMENT = 27
-    WS = 28
-    Sign = 29
+    T__21 = 22
+    T__22 = 23
+    T__23 = 24
+    T__24 = 25
+    T__25 = 26
+    T__26 = 27
+    T__27 = 28
+    T__28 = 29
+    T__29 = 30
+    T__30 = 31
+    T__31 = 32
+    Presentation = 33
+    Digits = 34
+    Identifier = 35
+    STRING = 36
+    STRING_DOUBLE_QUOTE = 37
+    STRING_QUOTE = 38
+    LINE_COMMENT = 39
+    WS = 40
+    Sign = 41
 
     def __init__(self, input: TokenStream):
         super().__init__(input)
@@ -147,52 +181,12 @@ class MokadiGrammarParser (Parser):
         self.enterRule(localctx, 0, self.RULE_parse)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 20
+            self.state = 32
             self.mokadi()
-            self.state = 21
+            self.state = 33
             self.expression_stmt()
-            self.state = 22
+            self.state = 34
             self.match(MokadiGrammarParser.EOF)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class MokadiContext(ParserRuleContext):
-
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def getRuleIndex(self):
-            return MokadiGrammarParser.RULE_mokadi
-
-        def enterRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "enterMokadi"):
-                listener.enterMokadi(self)
-
-        def exitRule(self, listener: ParseTreeListener):
-            if hasattr(listener, "exitMokadi"):
-                listener.exitMokadi(self)
-
-    def mokadi(self):
-
-        localctx = MokadiGrammarParser.MokadiContext(
-            self, self._ctx, self.state)
-        self.enterRule(localctx, 2, self.RULE_mokadi)
-        self._la = 0  # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 24
-            _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__0) | (1 << MokadiGrammarParser.T__1) | (1 << MokadiGrammarParser.T__2) | (1 << MokadiGrammarParser.T__3))) != 0)):
-                self._errHandler.recoverInline(self)
-            else:
-                self._errHandler.reportMatch(self)
-                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -225,24 +219,24 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.Expression_stmtContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 4, self.RULE_expression_stmt)
+        self.enterRule(localctx, 2, self.RULE_expression_stmt)
         try:
-            self.state = 31
+            self.state = 41
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [MokadiGrammarParser.T__6, MokadiGrammarParser.T__7, MokadiGrammarParser.T__8, MokadiGrammarParser.T__9, MokadiGrammarParser.T__10, MokadiGrammarParser.T__11, MokadiGrammarParser.T__12, MokadiGrammarParser.T__13, MokadiGrammarParser.T__14, MokadiGrammarParser.T__15, MokadiGrammarParser.T__16, MokadiGrammarParser.T__17, MokadiGrammarParser.T__18, MokadiGrammarParser.Digits, MokadiGrammarParser.Identifier, MokadiGrammarParser.STRING, MokadiGrammarParser.Sign]:
+            if token in [MokadiGrammarParser.T__10, MokadiGrammarParser.T__11, MokadiGrammarParser.T__12, MokadiGrammarParser.T__13, MokadiGrammarParser.T__14, MokadiGrammarParser.T__15, MokadiGrammarParser.T__16, MokadiGrammarParser.T__17, MokadiGrammarParser.T__18, MokadiGrammarParser.T__19, MokadiGrammarParser.T__20, MokadiGrammarParser.T__21, MokadiGrammarParser.T__22, MokadiGrammarParser.T__23, MokadiGrammarParser.T__24, MokadiGrammarParser.T__25, MokadiGrammarParser.T__26, MokadiGrammarParser.T__27, MokadiGrammarParser.T__28, MokadiGrammarParser.Digits, MokadiGrammarParser.Identifier, MokadiGrammarParser.STRING, MokadiGrammarParser.Sign]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 26
+                self.state = 36
                 self.expression()
                 pass
-            elif token in [MokadiGrammarParser.T__4]:
+            elif token in [MokadiGrammarParser.T__0]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 27
-                self.match(MokadiGrammarParser.T__4)
-                self.state = 28
+                self.state = 37
+                self.match(MokadiGrammarParser.T__0)
+                self.state = 38
                 self.expression()
-                self.state = 29
-                self.match(MokadiGrammarParser.T__5)
+                self.state = 39
+                self.match(MokadiGrammarParser.T__1)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -261,11 +255,11 @@ class MokadiGrammarParser (Parser):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def word_name(self, i: int=None):
-            if i is None:
-                return self.getTypedRuleContexts(MokadiGrammarParser.Word_nameContext)
-            else:
-                return self.getTypedRuleContext(MokadiGrammarParser.Word_nameContext, i)
+        def slides_stmt(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.Slides_stmtContext, 0)
+
+        def anything_stmt(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.Anything_stmtContext, 0)
 
         def getRuleIndex(self):
             return MokadiGrammarParser.RULE_expression
@@ -282,22 +276,310 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.ExpressionContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 6, self.RULE_expression)
+        self.enterRule(localctx, 4, self.RULE_expression)
+        try:
+            self.state = 45
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [MokadiGrammarParser.T__10, MokadiGrammarParser.T__11, MokadiGrammarParser.T__12, MokadiGrammarParser.T__13, MokadiGrammarParser.T__14, MokadiGrammarParser.T__15]:
+                self.enterOuterAlt(localctx, 1)
+                self.state = 43
+                self.slides_stmt()
+                pass
+            elif token in [MokadiGrammarParser.T__16, MokadiGrammarParser.T__17, MokadiGrammarParser.T__18, MokadiGrammarParser.T__19, MokadiGrammarParser.T__20, MokadiGrammarParser.T__21, MokadiGrammarParser.T__22, MokadiGrammarParser.T__23, MokadiGrammarParser.T__24, MokadiGrammarParser.T__25, MokadiGrammarParser.T__26, MokadiGrammarParser.T__27, MokadiGrammarParser.T__28, MokadiGrammarParser.Digits, MokadiGrammarParser.Identifier, MokadiGrammarParser.STRING, MokadiGrammarParser.Sign]:
+                self.enterOuterAlt(localctx, 2)
+                self.state = 44
+                self.anything_stmt()
+                pass
+            else:
+                raise NoViableAltException(self)
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class Slides_stmtContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def verb(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.VerbContext, 0)
+
+        def presentation(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.PresentationContext, 0)
+
+        def integer_number(self, i: int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MokadiGrammarParser.Integer_numberContext)
+            else:
+                return self.getTypedRuleContext(MokadiGrammarParser.Integer_numberContext, i)
+
+        def slides(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.SlidesContext, 0)
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_slides_stmt
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSlides_stmt"):
+                listener.enterSlides_stmt(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSlides_stmt"):
+                listener.exitSlides_stmt(self)
+
+    def slides_stmt(self):
+
+        localctx = MokadiGrammarParser.Slides_stmtContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 6, self.RULE_slides_stmt)
         self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 33
-            self.word_name()
-            self.state = 37
+            self.state = 47
+            self.verb()
+            self.state = 48
+            self.presentation()
+            self.state = 53
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__6) | (1 << MokadiGrammarParser.T__7) | (1 << MokadiGrammarParser.T__8) | (1 << MokadiGrammarParser.T__9) | (1 << MokadiGrammarParser.T__10) | (1 << MokadiGrammarParser.T__11) | (1 << MokadiGrammarParser.T__12) | (1 << MokadiGrammarParser.T__13) | (1 << MokadiGrammarParser.T__14) | (1 << MokadiGrammarParser.T__15) | (1 << MokadiGrammarParser.T__16) | (1 << MokadiGrammarParser.T__17) | (1 << MokadiGrammarParser.T__18) | (1 << MokadiGrammarParser.Digits) | (1 << MokadiGrammarParser.Identifier) | (1 << MokadiGrammarParser.STRING) | (1 << MokadiGrammarParser.Sign))) != 0):
-                self.state = 34
+            if _la == MokadiGrammarParser.Digits or _la == MokadiGrammarParser.Sign:
+                self.state = 49
+                self.integer_number()
+                self.state = 50
+                self.slides()
+                self.state = 51
+                self.integer_number()
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class Anything_stmtContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def word_name(self, i: int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MokadiGrammarParser.Word_nameContext)
+            else:
+                return self.getTypedRuleContext(MokadiGrammarParser.Word_nameContext, i)
+
+        def question(self):
+            return self.getTypedRuleContext(MokadiGrammarParser.QuestionContext, 0)
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_anything_stmt
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterAnything_stmt"):
+                listener.enterAnything_stmt(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitAnything_stmt"):
+                listener.exitAnything_stmt(self)
+
+    def anything_stmt(self):
+
+        localctx = MokadiGrammarParser.Anything_stmtContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 8, self.RULE_anything_stmt)
+        self._la = 0  # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 55
+            self.word_name()
+            self.state = 59
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__16) | (1 << MokadiGrammarParser.T__17) | (1 << MokadiGrammarParser.T__18) | (1 << MokadiGrammarParser.T__19) | (1 << MokadiGrammarParser.T__20) | (1 << MokadiGrammarParser.T__21) | (1 << MokadiGrammarParser.T__22) | (1 << MokadiGrammarParser.T__23) | (1 << MokadiGrammarParser.T__24) | (1 << MokadiGrammarParser.T__25) | (1 << MokadiGrammarParser.T__26) | (1 << MokadiGrammarParser.T__27) | (1 << MokadiGrammarParser.T__28) | (1 << MokadiGrammarParser.Digits) | (1 << MokadiGrammarParser.Identifier) | (1 << MokadiGrammarParser.STRING) | (1 << MokadiGrammarParser.Sign))) != 0):
+                self.state = 56
                 self.word_name()
-                self.state = 39
+                self.state = 61
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
+            self.state = 63
+            self._errHandler.sync(self)
+            _la = self._input.LA(1)
+            if _la == MokadiGrammarParser.T__29:
+                self.state = 62
+                self.question()
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class MokadiContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_mokadi
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterMokadi"):
+                listener.enterMokadi(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitMokadi"):
+                listener.exitMokadi(self)
+
+    def mokadi(self):
+
+        localctx = MokadiGrammarParser.MokadiContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_mokadi)
+        self._la = 0  # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 65
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__2) | (1 << MokadiGrammarParser.T__3) | (1 << MokadiGrammarParser.T__4) | (1 << MokadiGrammarParser.T__5))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class PresentationContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def Presentation(self):
+            return self.getToken(MokadiGrammarParser.Presentation, 0)
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_presentation
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterPresentation"):
+                listener.enterPresentation(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitPresentation"):
+                listener.exitPresentation(self)
+
+    def presentation(self):
+
+        localctx = MokadiGrammarParser.PresentationContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 12, self.RULE_presentation)
+        self._la = 0  # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 67
+            _la = self._input.LA(1)
+            if not(_la == MokadiGrammarParser.T__6 or _la == MokadiGrammarParser.Presentation):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class SlidesContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_slides
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterSlides"):
+                listener.enterSlides(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitSlides"):
+                listener.exitSlides(self)
+
+    def slides(self):
+
+        localctx = MokadiGrammarParser.SlidesContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 14, self.RULE_slides)
+        self._la = 0  # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 69
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__7) | (1 << MokadiGrammarParser.T__8) | (1 << MokadiGrammarParser.T__9))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class VerbContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_verb
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterVerb"):
+                listener.enterVerb(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitVerb"):
+                listener.exitVerb(self)
+
+    def verb(self):
+
+        localctx = MokadiGrammarParser.VerbContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_verb)
+        self._la = 0  # Token type
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 71
+            _la = self._input.LA(1)
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__10) | (1 << MokadiGrammarParser.T__11) | (1 << MokadiGrammarParser.T__12) | (1 << MokadiGrammarParser.T__13) | (1 << MokadiGrammarParser.T__14) | (1 << MokadiGrammarParser.T__15))) != 0)):
+                self._errHandler.recoverInline(self)
+            else:
+                self._errHandler.reportMatch(self)
+                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -336,24 +618,24 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.Word_nameContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 8, self.RULE_word_name)
+        self.enterRule(localctx, 18, self.RULE_word_name)
         try:
-            self.state = 43
+            self.state = 76
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [MokadiGrammarParser.Identifier]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 40
+                self.state = 73
                 self.match(MokadiGrammarParser.Identifier)
                 pass
             elif token in [MokadiGrammarParser.Digits, MokadiGrammarParser.STRING, MokadiGrammarParser.Sign]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 41
+                self.state = 74
                 self.constant()
                 pass
-            elif token in [MokadiGrammarParser.T__6, MokadiGrammarParser.T__7, MokadiGrammarParser.T__8, MokadiGrammarParser.T__9, MokadiGrammarParser.T__10, MokadiGrammarParser.T__11, MokadiGrammarParser.T__12, MokadiGrammarParser.T__13, MokadiGrammarParser.T__14, MokadiGrammarParser.T__15, MokadiGrammarParser.T__16, MokadiGrammarParser.T__17, MokadiGrammarParser.T__18]:
+            elif token in [MokadiGrammarParser.T__16, MokadiGrammarParser.T__17, MokadiGrammarParser.T__18, MokadiGrammarParser.T__19, MokadiGrammarParser.T__20, MokadiGrammarParser.T__21, MokadiGrammarParser.T__22, MokadiGrammarParser.T__23, MokadiGrammarParser.T__24, MokadiGrammarParser.T__25, MokadiGrammarParser.T__26, MokadiGrammarParser.T__27, MokadiGrammarParser.T__28]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 42
+                self.state = 75
                 self.operator()
                 pass
             else:
@@ -388,17 +670,51 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.OperatorContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_operator)
+        self.enterRule(localctx, 20, self.RULE_operator)
         self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 45
+            self.state = 78
             _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__6) | (1 << MokadiGrammarParser.T__7) | (1 << MokadiGrammarParser.T__8) | (1 << MokadiGrammarParser.T__9) | (1 << MokadiGrammarParser.T__10) | (1 << MokadiGrammarParser.T__11) | (1 << MokadiGrammarParser.T__12) | (1 << MokadiGrammarParser.T__13) | (1 << MokadiGrammarParser.T__14) | (1 << MokadiGrammarParser.T__15) | (1 << MokadiGrammarParser.T__16) | (1 << MokadiGrammarParser.T__17) | (1 << MokadiGrammarParser.T__18))) != 0)):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << MokadiGrammarParser.T__16) | (1 << MokadiGrammarParser.T__17) | (1 << MokadiGrammarParser.T__18) | (1 << MokadiGrammarParser.T__19) | (1 << MokadiGrammarParser.T__20) | (1 << MokadiGrammarParser.T__21) | (1 << MokadiGrammarParser.T__22) | (1 << MokadiGrammarParser.T__23) | (1 << MokadiGrammarParser.T__24) | (1 << MokadiGrammarParser.T__25) | (1 << MokadiGrammarParser.T__26) | (1 << MokadiGrammarParser.T__27) | (1 << MokadiGrammarParser.T__28))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+    class QuestionContext(ParserRuleContext):
+
+        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def getRuleIndex(self):
+            return MokadiGrammarParser.RULE_question
+
+        def enterRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "enterQuestion"):
+                listener.enterQuestion(self)
+
+        def exitRule(self, listener: ParseTreeListener):
+            if hasattr(listener, "exitQuestion"):
+                listener.exitQuestion(self)
+
+    def question(self):
+
+        localctx = MokadiGrammarParser.QuestionContext(
+            self, self._ctx, self.state)
+        self.enterRule(localctx, 22, self.RULE_question)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 80
+            self.match(MokadiGrammarParser.T__29)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -437,26 +753,26 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.ConstantContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_constant)
+        self.enterRule(localctx, 24, self.RULE_constant)
         try:
-            self.state = 50
+            self.state = 85
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 3, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 6, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 47
+                self.state = 82
                 self.integer_number()
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 48
+                self.state = 83
                 self.real_number()
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 49
+                self.state = 84
                 self.string_literal()
                 pass
 
@@ -492,10 +808,10 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.String_literalContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_string_literal)
+        self.enterRule(localctx, 26, self.RULE_string_literal)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 52
+            self.state = 87
             self.match(MokadiGrammarParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
@@ -532,18 +848,18 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.Integer_numberContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_integer_number)
+        self.enterRule(localctx, 28, self.RULE_integer_number)
         self._la = 0  # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 55
+            self.state = 90
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la == MokadiGrammarParser.Sign:
-                self.state = 54
+                self.state = 89
                 self.match(MokadiGrammarParser.Sign)
 
-            self.state = 57
+            self.state = 92
             self.match(MokadiGrammarParser.Digits)
         except RecognitionException as re:
             localctx.exception = re
@@ -586,66 +902,66 @@ class MokadiGrammarParser (Parser):
 
         localctx = MokadiGrammarParser.Real_numberContext(
             self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_real_number)
+        self.enterRule(localctx, 30, self.RULE_real_number)
         self._la = 0  # Token type
         try:
-            self.state = 81
+            self.state = 116
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 10, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input, 13, self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 60
+                self.state = 95
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la == MokadiGrammarParser.Sign:
-                    self.state = 59
+                    self.state = 94
                     self.match(MokadiGrammarParser.Sign)
 
-                self.state = 62
+                self.state = 97
                 self.match(MokadiGrammarParser.Digits)
-                self.state = 63
-                self.match(MokadiGrammarParser.T__19)
-                self.state = 64
+                self.state = 98
+                self.match(MokadiGrammarParser.T__30)
+                self.state = 99
                 self.match(MokadiGrammarParser.Digits)
-                self.state = 70
+                self.state = 105
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la == MokadiGrammarParser.T__20:
-                    self.state = 65
-                    self.match(MokadiGrammarParser.T__20)
-                    self.state = 67
+                if _la == MokadiGrammarParser.T__31:
+                    self.state = 100
+                    self.match(MokadiGrammarParser.T__31)
+                    self.state = 102
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if _la == MokadiGrammarParser.Sign:
-                        self.state = 66
+                        self.state = 101
                         self.match(MokadiGrammarParser.Sign)
 
-                    self.state = 69
+                    self.state = 104
                     self.match(MokadiGrammarParser.Digits)
 
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 73
+                self.state = 108
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la == MokadiGrammarParser.Sign:
-                    self.state = 72
+                    self.state = 107
                     self.match(MokadiGrammarParser.Sign)
 
-                self.state = 75
+                self.state = 110
                 self.match(MokadiGrammarParser.Digits)
-                self.state = 76
-                self.match(MokadiGrammarParser.T__20)
-                self.state = 78
+                self.state = 111
+                self.match(MokadiGrammarParser.T__31)
+                self.state = 113
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 if _la == MokadiGrammarParser.Sign:
-                    self.state = 77
+                    self.state = 112
                     self.match(MokadiGrammarParser.Sign)
 
-                self.state = 80
+                self.state = 115
                 self.match(MokadiGrammarParser.Digits)
                 pass
 
