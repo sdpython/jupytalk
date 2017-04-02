@@ -56,7 +56,7 @@ class TestPicture(unittest.TestCase):
             return
 
         temp = get_temp_folder(__file__, "temp_take_picture")
-        
+
         try:
             for module in ["pygame", "cv2"]:
                 fLOG(module)

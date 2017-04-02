@@ -65,7 +65,7 @@ class TestRestApiSpeech(unittest.TestCase):
                os.environ["USERNAME"] == "appveyor" or \
                "paris" in os.environ["COMPUTERNAME"].lower() or \
                os.environ["USERNAME"].endswith("$"):
-                return            
+                return
         fLOG("play")
         play_speech(record)
         fLOG("end")

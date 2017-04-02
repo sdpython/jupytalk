@@ -97,5 +97,6 @@ class TestMail(unittest.TestCase):
                os.environ["USERNAME"].endswith("$"):
                 return
 
+
 if __name__ == "__main__":
     unittest.main()
