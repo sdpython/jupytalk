@@ -79,6 +79,14 @@ class TestMail(unittest.TestCase):
 
         try:
             mails = enumerate_last_mails(user, pwd, server, fLOG=fLOG)
+
+            i = 0
+            for mail in mails:
+                fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
+                     "**", mail.get_date_str())
+                fLOG(mail.get_field("subject").split("\n")[0])
+                i += 1
+
         except Exception as e:
             if os.environ["USERNAME"] == "ensaestudent" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \
@@ -86,19 +94,8 @@ class TestMail(unittest.TestCase):
                "DOUZE2016" in os.environ["COMPUTERNAME"] or \
                os.environ["USERNAME"] == "appveyor" or \
                "paris" in os.environ["COMPUTERNAME"].lower() or \
-               os.environ["USERNAME"].endswith("$"):  # anonymous Jenkins configuration
-                # I would prefer to catch a proper exception
-                # it just exclude one user only used on remotre
-                # machines
+               os.environ["USERNAME"].endswith("$"):
                 return
-
-        i = 0
-        for mail in mails:
-            fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
-                 "**", mail.get_date_str())
-            fLOG(mail.get_field("subject").split("\n")[0])
-            i += 1
-
 
 if __name__ == "__main__":
     unittest.main()
