@@ -55,10 +55,10 @@ class TestPptxHelper(unittest.TestCase):
         name = os.path.join(data, "simple.pptx")
         ptx = pptx.Presentation(name)
         zones = list(pptx_enumerate_text(ptx))
-        exp = [(0, 0, 0, 'Présentation à traduire en anglais'),
+        exp = [(0, 0, 0, 'Exemple de présentation'),
                (0, 1, 0, 'Xavier Dupré'), (1, 0, 0, 'Première diapositive'),
-               (1, 1, 0, 'Le service fait appel aux API Bing.'),
-               (1, 1, 1, 'Il utilise python pour faire des requêtes en JSON.')]
+               (1, 1, 0, 'Cela sera très vite terminé.'),
+               (1, 1, 1, 'Ceci est une petite présentation en exemple. ')]
         self.assertEqual(zones, exp)
 
         def trans(islide, ishape, ip, text):
