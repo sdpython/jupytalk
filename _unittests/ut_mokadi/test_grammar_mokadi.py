@@ -51,10 +51,10 @@ class TestGrammarMokadi(unittest.TestCase):
         from src.jupytalk.mokadi.mokadi_parser import get_tree_string, parse_mokadi
         from src.jupytalk.mokadi.MokadiGrammarParser import MokadiGrammarParser
 
-        codes = ["MOKADI a", "MOKADI fetch mail"]
+        codes = ["MOKADI a", "MOKADI lire mail"]
         expec = [[('MOKADI', ':MOKADI:'), ('a', ':word:'), ('<EOF>', ':P:')],
-                 [('MOKADI', ':MOKADI:'), ('fetch', ':word:'),
-                  ('mail', ':word:'), ('<EOF>', ':P:')]
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('mail', ':mails:'), ('<EOF>', ':P:')]
                  ]
 
         for i, code in enumerate(codes):
@@ -86,10 +86,10 @@ class TestGrammarMokadi(unittest.TestCase):
 
         from src.jupytalk.mokadi import interpret
 
-        codes = ["MOKADI a", "MOKADI fetch mail"]
+        codes = ["MOKADI a", "MOKADI lire mail"]
         expec = [[('MOKADI', ':MOKADI:'), ('a', ':word:'), ('<EOF>', ':P:')],
-                 [('MOKADI', ':MOKADI:'), ('fetch', ':word:'),
-                  ('mail', ':word:'), ('<EOF>', ':P:')]
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('mail', ':mails:'), ('<EOF>', ':P:')]
                  ]
 
         for i, code in enumerate(codes):

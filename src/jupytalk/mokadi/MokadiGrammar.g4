@@ -16,10 +16,15 @@ expression_stmt
 expression
     : slides_stmt
     | anything_stmt
+    | mail_stmt
     ;
     
 slides_stmt
-    : verb presentation (integer_number slides integer_number)?
+    : verb_voir presentation (integer_number slides integer_number)?
+    ;
+    
+mail_stmt
+    : verb_voir mails
     ;
     
 anything_stmt
@@ -52,7 +57,16 @@ slides
     | 'transparent'
     ;
     
-verb
+mails
+    : 'mail'
+    | 'mails'
+    | 'email'
+    | 'mel'
+    | 'emails'
+    | 'mels'
+    ;
+    
+verb_voir
     : 'lit'
     | 'voir'
     | 'list'
@@ -106,6 +120,11 @@ real_number
 
 Digits
     : DIGIT+
+    ;
+    
+Sign
+    : '-'
+    | '+'
     ;
 
 Identifier

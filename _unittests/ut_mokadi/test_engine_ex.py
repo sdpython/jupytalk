@@ -37,11 +37,29 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
+try:
+    import pymmails as skip__
+except ImportError:
+    path = os.path.normpath(
+        os.path.abspath(
+            os.path.join(
+                os.path.split(__file__)[0],
+                "..",
+                "..",
+                "..",
+                "pymmails",
+                "src")))
+    if path not in sys.path:
+        sys.path.append(path)
+    import pymmails as skip__
+
+
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
 from src.jupytalk.mokadi import MokadiEngine, MokadiMessage
 from src.jupytalk.mokadi.mokadi_action_slides import MokadiActionSlides
 from src.jupytalk.mokadi.mokadi_action_conversation import MokadiActionConversation
+from src.jupytalk.mokadi.mokadi_action_mail import MokadiActionMail
 
 
 class TestEngineExtended(unittest.TestCase):
@@ -54,15 +72,27 @@ class TestEngineExtended(unittest.TestCase):
 
         messages = ["MOKADI liste presentation",
                     "MOKADI lire presentation 1 slide 2",
-                    "MOKADI hello"]
+                    "MOKADI hello",
+                    ]
 
         temp = get_temp_folder(__file__, "temp_engine_ex")
         clog = fLOG
         folder = os.path.join(temp, "..", "data")
 
+        import keyring
+        user = keyring.get_password(
+            "gmail", os.environ["COMPUTERNAME"] + "user")
+        pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
+        server = "imap.gmail.com"
+
         actions = [MokadiActionSlides(folder, fLOG=fLOG),
                    MokadiActionConversation(fLOG=fLOG),
                    ]
+
+        if "paris" not in os.environ["COMPUTERNAME"].lower():
+            messages.append("MOKADI lire mail")
+            actions.insert(0, MokadiActionMail(
+                user=user, pwd=pwd, server=server, fLOG=fLOG))
 
         engine = MokadiEngine(temp, clog, actions=actions)
         verif = 0

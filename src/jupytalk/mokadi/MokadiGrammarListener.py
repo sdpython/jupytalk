@@ -43,6 +43,14 @@ class MokadiGrammarListener(ParseTreeListener):
     def exitSlides_stmt(self, ctx: MokadiGrammarParser.Slides_stmtContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammarParser#mail_stmt.
+    def enterMail_stmt(self, ctx: MokadiGrammarParser.Mail_stmtContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#mail_stmt.
+    def exitMail_stmt(self, ctx: MokadiGrammarParser.Mail_stmtContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammarParser#anything_stmt.
     def enterAnything_stmt(self, ctx: MokadiGrammarParser.Anything_stmtContext):
         pass
@@ -75,12 +83,20 @@ class MokadiGrammarListener(ParseTreeListener):
     def exitSlides(self, ctx: MokadiGrammarParser.SlidesContext):
         pass
 
-    # Enter a parse tree produced by MokadiGrammarParser#verb.
-    def enterVerb(self, ctx: MokadiGrammarParser.VerbContext):
+    # Enter a parse tree produced by MokadiGrammarParser#mails.
+    def enterMails(self, ctx: MokadiGrammarParser.MailsContext):
         pass
 
-    # Exit a parse tree produced by MokadiGrammarParser#verb.
-    def exitVerb(self, ctx: MokadiGrammarParser.VerbContext):
+    # Exit a parse tree produced by MokadiGrammarParser#mails.
+    def exitMails(self, ctx: MokadiGrammarParser.MailsContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammarParser#verb_voir.
+    def enterVerb_voir(self, ctx: MokadiGrammarParser.Verb_voirContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammarParser#verb_voir.
+    def exitVerb_voir(self, ctx: MokadiGrammarParser.Verb_voirContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammarParser#word_name.

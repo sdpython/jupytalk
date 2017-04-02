@@ -37,8 +37,11 @@ class MokadiActionConversation(MokadiAction):
         if len(interpreted) <= 1:
             return False
         res = self.process_interpreted_message(interpreted, message)
-        for info in res:
-            return True
+        try:
+            for info in res:
+                return True
+        except MokadiException:
+            return False
         return False
 
     def process_interpreted_message(self, interpretation, message):

@@ -139,8 +139,11 @@ def get_tree_string(tree, parser, script=None):
                     return ":word:"
                 if isinstance(ch, self.parser.OperatorContext):
                     return ":op:"
-                if isinstance(ch, self.parser.VerbContext):
-                    return ":verb:"
+                if isinstance(ch, self.parser.Verb_voirContext):
+                    return ":verb_voir:"
+                if isinstance(ch, self.parser.Mail_stmtContext) or \
+                        isinstance(ch, self.parser.MailsContext):
+                    return ":mails:"
                 if isinstance(ch, self.parser.QuestionContext):
                     return ":question:"
                 if isinstance(ch, self.parser.Integer_numberContext):

@@ -50,16 +50,16 @@ class TestGrammarMokadiExtended(unittest.TestCase):
 
         from src.jupytalk.mokadi import interpret
 
-        codes = ["MOKADI fetch mail",
+        codes = ["MOKADI lire mail",
                  "MOKADI liste presentation",
                  "MOKADI lire présentation 1 slide 2",
                  "MOKADI Comment vas-tu ?",
                  "MOKADI hello",
                  ]
-        expec = [[('MOKADI', ':MOKADI:'), ('fetch', ':word:'), ('mail', ':word:')],
-                 [('MOKADI', ':MOKADI:'), ('liste', ':verb:'),
+        expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],
+                 [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
                   ('presentation', ':presentation:')],
-                 [('MOKADI', ':MOKADI:'), ('lire', ':verb:'), ('présentation', ':presentation:'),
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('présentation', ':presentation:'),
                   ('1', ':int:'), ('slide', ':slide:'), ('2', ':int:')],
                  [('MOKADI', ':MOKADI:'), ('Comment', ':word:'), ('vas', ':word:'),
                   ('-', ':op:'), ('tu', ':word:'), ('?', ':question:')],

@@ -53,7 +53,7 @@ class MokadiActionSlides(MokadiAction):
         """
         done = False
         if len(interpretation) == 4:
-            if interpretation[1][0] == "liste" and interpretation[2][1] == ":presentation:":
+            if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":presentation:":
                 pres = list(self.enumerate_listdir())
                 yield MokadiInfo("ok", "Il y a {0} présentations.".format(len(pres)))
                 for name in pres:
