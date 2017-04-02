@@ -1,12 +1,14 @@
-# Generated from C:\xadupre\__home_\GitHub\jupytalk\src\jupytalk\mokadi\MokadiGrammar.g4 by ANTLR 4.6
+# Generated from \MokadiGrammar.g4 by ANTLR 4.7
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
+from typing.io import TextIO
+import sys
 
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3+")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3+")
         buf.write("y\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
         buf.write("\16\4\17\t\17\4\20\t\20\4\21\t\21\3\2\3\2\3\2\3\2\3\3")
@@ -19,31 +21,31 @@ def serializedATN():
         buf.write("\21\3\21\5\21o\n\21\3\21\3\21\3\21\5\21t\n\21\3\21\5\21")
         buf.write("w\n\21\3\21\2\2\22\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
         buf.write("\36 \2\7\3\2\5\b\4\2\t\t##\3\2\n\f\3\2\r\22\3\2\23\37")
-        buf.write("x\2\"\3\2\2\2\4+\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n9\3")
-        buf.write("\2\2\2\fC\3\2\2\2\16E\3\2\2\2\20G\3\2\2\2\22I\3\2\2\2")
-        buf.write("\24N\3\2\2\2\26P\3\2\2\2\30R\3\2\2\2\32W\3\2\2\2\34Y\3")
-        buf.write("\2\2\2\36\\\3\2\2\2 v\3\2\2\2\"#\5\f\7\2#$\5\4\3\2$%\7")
-        buf.write("\2\2\3%\3\3\2\2\2&,\5\6\4\2\'(\7\3\2\2()\5\6\4\2)*\7\4")
-        buf.write("\2\2*,\3\2\2\2+&\3\2\2\2+\'\3\2\2\2,\5\3\2\2\2-\60\5\b")
-        buf.write("\5\2.\60\5\n\6\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2\2\2\61\62")
-        buf.write("\5\22\n\2\62\67\5\16\b\2\63\64\5\36\20\2\64\65\5\20\t")
-        buf.write("\2\65\66\5\36\20\2\668\3\2\2\2\67\63\3\2\2\2\678\3\2\2")
-        buf.write("\28\t\3\2\2\29=\5\24\13\2:<\5\24\13\2;:\3\2\2\2<?\3\2")
-        buf.write("\2\2=;\3\2\2\2=>\3\2\2\2>A\3\2\2\2?=\3\2\2\2@B\5\30\r")
-        buf.write("\2A@\3\2\2\2AB\3\2\2\2B\13\3\2\2\2CD\t\2\2\2D\r\3\2\2")
-        buf.write("\2EF\t\3\2\2F\17\3\2\2\2GH\t\4\2\2H\21\3\2\2\2IJ\t\5\2")
-        buf.write("\2J\23\3\2\2\2KO\7%\2\2LO\5\32\16\2MO\5\26\f\2NK\3\2\2")
-        buf.write("\2NL\3\2\2\2NM\3\2\2\2O\25\3\2\2\2PQ\t\6\2\2Q\27\3\2\2")
-        buf.write("\2RS\7 \2\2S\31\3\2\2\2TX\5\36\20\2UX\5 \21\2VX\5\34\17")
-        buf.write("\2WT\3\2\2\2WU\3\2\2\2WV\3\2\2\2X\33\3\2\2\2YZ\7&\2\2")
-        buf.write("Z\35\3\2\2\2[]\7+\2\2\\[\3\2\2\2\\]\3\2\2\2]^\3\2\2\2")
-        buf.write("^_\7$\2\2_\37\3\2\2\2`b\7+\2\2a`\3\2\2\2ab\3\2\2\2bc\3")
-        buf.write("\2\2\2cd\7$\2\2de\7!\2\2ek\7$\2\2fh\7\"\2\2gi\7+\2\2h")
-        buf.write("g\3\2\2\2hi\3\2\2\2ij\3\2\2\2jl\7$\2\2kf\3\2\2\2kl\3\2")
-        buf.write("\2\2lw\3\2\2\2mo\7+\2\2nm\3\2\2\2no\3\2\2\2op\3\2\2\2")
-        buf.write("pq\7$\2\2qs\7\"\2\2rt\7+\2\2sr\3\2\2\2st\3\2\2\2tu\3\2")
-        buf.write("\2\2uw\7$\2\2va\3\2\2\2vn\3\2\2\2w!\3\2\2\2\20+/\67=A")
-        buf.write("NW\\ahknsv")
+        buf.write("\2x\2\"\3\2\2\2\4+\3\2\2\2\6/\3\2\2\2\b\61\3\2\2\2\n9")
+        buf.write("\3\2\2\2\fC\3\2\2\2\16E\3\2\2\2\20G\3\2\2\2\22I\3\2\2")
+        buf.write("\2\24N\3\2\2\2\26P\3\2\2\2\30R\3\2\2\2\32W\3\2\2\2\34")
+        buf.write("Y\3\2\2\2\36\\\3\2\2\2 v\3\2\2\2\"#\5\f\7\2#$\5\4\3\2")
+        buf.write("$%\7\2\2\3%\3\3\2\2\2&,\5\6\4\2\'(\7\3\2\2()\5\6\4\2)")
+        buf.write("*\7\4\2\2*,\3\2\2\2+&\3\2\2\2+\'\3\2\2\2,\5\3\2\2\2-\60")
+        buf.write("\5\b\5\2.\60\5\n\6\2/-\3\2\2\2/.\3\2\2\2\60\7\3\2\2\2")
+        buf.write("\61\62\5\22\n\2\62\67\5\16\b\2\63\64\5\36\20\2\64\65\5")
+        buf.write("\20\t\2\65\66\5\36\20\2\668\3\2\2\2\67\63\3\2\2\2\678")
+        buf.write("\3\2\2\28\t\3\2\2\29=\5\24\13\2:<\5\24\13\2;:\3\2\2\2")
+        buf.write("<?\3\2\2\2=;\3\2\2\2=>\3\2\2\2>A\3\2\2\2?=\3\2\2\2@B\5")
+        buf.write("\30\r\2A@\3\2\2\2AB\3\2\2\2B\13\3\2\2\2CD\t\2\2\2D\r\3")
+        buf.write("\2\2\2EF\t\3\2\2F\17\3\2\2\2GH\t\4\2\2H\21\3\2\2\2IJ\t")
+        buf.write("\5\2\2J\23\3\2\2\2KO\7%\2\2LO\5\32\16\2MO\5\26\f\2NK\3")
+        buf.write("\2\2\2NL\3\2\2\2NM\3\2\2\2O\25\3\2\2\2PQ\t\6\2\2Q\27\3")
+        buf.write("\2\2\2RS\7 \2\2S\31\3\2\2\2TX\5\36\20\2UX\5 \21\2VX\5")
+        buf.write("\34\17\2WT\3\2\2\2WU\3\2\2\2WV\3\2\2\2X\33\3\2\2\2YZ\7")
+        buf.write("&\2\2Z\35\3\2\2\2[]\7+\2\2\\[\3\2\2\2\\]\3\2\2\2]^\3\2")
+        buf.write("\2\2^_\7$\2\2_\37\3\2\2\2`b\7+\2\2a`\3\2\2\2ab\3\2\2\2")
+        buf.write("bc\3\2\2\2cd\7$\2\2de\7!\2\2ek\7$\2\2fh\7\"\2\2gi\7+\2")
+        buf.write("\2hg\3\2\2\2hi\3\2\2\2ij\3\2\2\2jl\7$\2\2kf\3\2\2\2kl")
+        buf.write("\3\2\2\2lw\3\2\2\2mo\7+\2\2nm\3\2\2\2no\3\2\2\2op\3\2")
+        buf.write("\2\2pq\7$\2\2qs\7\"\2\2rt\7+\2\2sr\3\2\2\2st\3\2\2\2t")
+        buf.write("u\3\2\2\2uw\7$\2\2va\3\2\2\2vn\3\2\2\2w!\3\2\2\2\20+/")
+        buf.write("\67=ANW\\ahknsv")
         return buf.getvalue()
 
 
@@ -141,9 +143,9 @@ class MokadiGrammarParser (Parser):
     WS = 40
     Sign = 41
 
-    def __init__(self, input: TokenStream):
-        super().__init__(input)
-        self.checkVersion("4.6")
+    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
+        super().__init__(input, output)
+        self.checkVersion("4.7")
         self._interp = ParserATNSimulator(
             self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None

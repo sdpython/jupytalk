@@ -36,7 +36,8 @@ CLASSIFIERS = [
 
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
-package_data = {project_var_name + ".mokadi": ["*.g4", "*.tokens"], }
+package_data = {project_var_name + ".mokadi": ["*.g4", "*.tokens"],
+                project_var_name + ".mokadi.daa": ["*.wav"]}
 
 
 ############
@@ -207,7 +208,7 @@ if is_local():
             sys.path.append(os.path.join(
                 os.path.dirname(__file__), "..", "pyensae", "src"))
             from pyensae.languages import build_grammar
-        build_grammar(grammar)
+        build_grammar(grammar, fLOG=logging_function)
         r = True
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",

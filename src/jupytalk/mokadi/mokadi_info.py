@@ -7,12 +7,12 @@ import os
 
 class MokadiInfo:
     """
-    Defines results for mokadi.
+    Defines results for Mokadi.
     """
 
     _allowed_status = {"error", "ok", "empty"}
 
-    def __init__(self, status: str, info: str, error="", image=None, sound=None):
+    def __init__(self, status: str, info="", error="", image=None, sound=None):
         """
         Constructor
 
@@ -43,6 +43,20 @@ class MokadiInfo:
         if sound is not None and len(sound) > 0:
             if not os.path.exists(sound):
                 raise FileNotFoundError(sound)
+
+    @property
+    def HasSound(self):
+        """
+        Tells if there is sound.
+        """
+        return hasattr(self, "_sound") and self._sound is not None
+
+    @property
+    def HasImage(self):
+        """
+        Tells if there is an image.
+        """
+        return hasattr(self, "_image") and self._image is not None
 
     def __str__(self):
         """

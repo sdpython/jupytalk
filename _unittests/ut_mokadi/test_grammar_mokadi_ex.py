@@ -54,15 +54,18 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI liste presentation",
                  "MOKADI lire présentation 1 slide 2",
                  "MOKADI Comment vas-tu ?",
+                 "MOKADI hello",
                  ]
-        expec = [[('MOKADI', ':MOKADI:'), ('fetch', ':word:'), ('mail', ':word:'), ('<EOF>', ':P:')],
+        expec = [[('MOKADI', ':MOKADI:'), ('fetch', ':word:'), ('mail', ':word:')],
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb:'),
-                  ('presentation', ':presentation:'), ('<EOF>', ':P:')],
+                  ('presentation', ':presentation:')],
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb:'), ('présentation', ':presentation:'),
-                  ('1', ':int:'), ('slide', ':slide:'), ('2', ':int:'), ('<EOF>', ':P:')],
+                  ('1', ':int:'), ('slide', ':slide:'), ('2', ':int:')],
                  [('MOKADI', ':MOKADI:'), ('Comment', ':word:'), ('vas', ':word:'),
-                  ('-', ':op:'), ('tu', ':word:'), ('?', ':question:'), ('<EOF>', ':P:')]
+                  ('-', ':op:'), ('tu', ':word:'), ('?', ':question:')],
+                 [('MOKADI', ':MOKADI:'), ('hello', ':word:')],
                  ]
+        expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 
         for i, code in enumerate(codes):
             fLOG("{0}/{1}: {2}".format(i + 1, len(codes), code))

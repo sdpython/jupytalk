@@ -6,19 +6,23 @@
 import os
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
+from .mokadi_exceptions import MokadiException
+from .pptx_helper import pptx_enumerate_text
+import pptx
 
 
 class MokadiActionSlides(MokadiAction):
     """
-    Action.
+    Action present slides.
     """
 
-    def __init__(self, folder):
+    def __init__(self, folder, fLOG=None):
         """
         Constructor.
 
         @param      folder      folder where to look for presentation
         """
+        MokadiAction.__init__(self, fLOG=fLOG)
         self._folder = folder
         if not os.path.exists(folder):
             raise FileNotFoundError(folder)
@@ -47,12 +51,40 @@ class MokadiActionSlides(MokadiAction):
         @param      message             original message
         @return                         iterator on Info
         """
+        done = False
         if len(interpretation) == 4:
             if interpretation[1][0] == "liste" and interpretation[2][1] == ":presentation:":
                 pres = list(self.enumerate_listdir())
                 yield MokadiInfo("ok", "Il y a {0} présentations.".format(len(pres)))
                 for name in pres:
                     yield MokadiInfo("ok", name)
+                done = True
+        elif len(interpretation) == 7:
+            if interpretation[1][0] == "lire" and interpretation[2][1] == ":presentation:" and \
+               interpretation[3][1] == ":int:" and interpretation[4][1] == ":slide:" and \
+               interpretation[5][1] == ":int:":
+                presn = int(interpretation[3][0])
+                slide = int(interpretation[5][0])
+                pres = list(self.enumerate_listdir())
+                if presn <= 0 or presn > len(pres):
+                    yield MokadiInfo("error", error="La présentation {0} n'existe pas.".format(presn))
+                    done = True
+                else:
+                    name = os.path.join(self._folder, pres[presn - 1])
+                    self.fLOG("[MokadiActionSlides] open '%s' from '%s'" % (
+                        os.path.split(name)[-1], os.path.dirname(name)))
+                    ptx = pptx.Presentation(name)
+                    if slide <= 0 or slide > len(ptx.slides):
+                        yield MokadiInfo("error", error="La présentation ne contient pas le transparent {0}.".format(slide))
+                        done = True
+                    else:
+                        for islide, ishape, ip, text in pptx_enumerate_text(ptx):
+                            if islide == slide - 1:
+                                yield MokadiInfo("ok", text)
+                        done = True
+        if not done:
+            raise MokadiException(
+                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation), interpretation))
 
     def enumerate_listdir(self):
         """

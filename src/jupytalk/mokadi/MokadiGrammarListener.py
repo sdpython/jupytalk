@@ -1,6 +1,4 @@
-# Generated from
-# C:\xadupre\__home_\GitHub\jupytalk\src\jupytalk\mokadi\MokadiGrammar.g4
-# by ANTLR 4.6
+# Generated from \MokadiGrammar.g4 by ANTLR 4.7
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .MokadiGrammarParser import MokadiGrammarParser

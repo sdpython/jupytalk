@@ -38,7 +38,7 @@ except ImportError:
     import pyquickhelper as skip_
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import is_travis_or_appveyor
+from pyquickhelper.pycode import is_travis_or_appveyor, get_temp_folder
 from src.jupytalk.mokadi import record_speech, play_speech
 
 
@@ -55,8 +55,10 @@ class TestRestApiSpeech(unittest.TestCase):
             return
 
         fLOG("record")
+        temp = get_temp_folder(__file__, "temp_record")
+        output = os.path.join(temp, "output.wav")
         try:
-            record = record_speech(3, fLOG=fLOG)
+            record = record_speech(3, fLOG=fLOG, WAVE_OUTPUT_FILENAME=output)
         except Exception as e:
             if os.environ["USERNAME"] == "ensaestudent" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \
@@ -66,7 +68,7 @@ class TestRestApiSpeech(unittest.TestCase):
                "paris" in os.environ["COMPUTERNAME"].lower() or \
                os.environ["USERNAME"].endswith("$"):
                 return
-        fLOG("play")
+        fLOG("play", len(record))
         play_speech(record)
         fLOG("end")
 

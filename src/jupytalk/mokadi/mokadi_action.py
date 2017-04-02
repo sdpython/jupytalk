@@ -9,11 +9,31 @@ class MokadiAction:
     Action.
     """
 
-    def __init__(self):
+    def __init__(self, fLOG=None):
         """
         Constructor.
         """
-        pass
+        if fLOG is not None:
+            self._fLOG = fLOG
+
+    def fLOG(self, *l, **p):
+        """
+        logging function
+        """
+        if hasattr(self, "_fLOG") and self._fLOG is not None:
+            self._fLOG(*l, **p)
+
+    def __str__(self):
+        """
+        usual
+        """
+        return self.__class__.__name__
+
+    def __repr__(self):
+        """
+        usual
+        """
+        return self.__class__.__name__
 
     def can_do(self, interpreted, message):
         """

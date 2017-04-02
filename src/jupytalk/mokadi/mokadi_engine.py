@@ -93,9 +93,12 @@ class MokadiEngine:
         done = False
         for act in self._actions:
             if act.can_do(interpretation, message):
+                self.fLOG(
+                    "[MokadiEngine.process_interpreted_message] '%s' processes the message" % str(act))
                 for info in act.process_interpreted_message(interpretation, message):
                     yield info
                 done = True
+                break
         if not done:
             raise MokadiException(
                 "Unable to process '{0}' - '{1}'.".format(interpretation, message))
