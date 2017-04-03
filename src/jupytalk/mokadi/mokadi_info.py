@@ -12,7 +12,7 @@ class MokadiInfo:
 
     _allowed_status = {"error", "ok", "empty"}
 
-    def __init__(self, status: str, info="", error="", image=None, sound=None):
+    def __init__(self, status: str, info="", error="", image=None, sound=None, url=None):
         """
         Constructor
 
@@ -21,12 +21,14 @@ class MokadiInfo:
         @param      error           error message
         @param      image           image name
         @param      sound           sound
+        @param      url             one URL
         """
         self._status = status
         self._info = info
         self._error = error
         self._image = image
         self._sound = sound
+        self._url = url
 
         if not isinstance(status, str):
             raise TypeError("status must be a string")
@@ -38,7 +40,7 @@ class MokadiInfo:
             raise ValueError("status must be in {0}".format(
                 MokadiInfo._allowed_status))
         if image is not None and len(image) > 0:
-            if not os.path.exists(image):
+            if not image.startswith("http") and not os.path.exists(image):
                 raise FileNotFoundError(image)
         if sound is not None and len(sound) > 0:
             if not os.path.exists(sound):
@@ -57,6 +59,28 @@ class MokadiInfo:
         Tells if there is an image.
         """
         return hasattr(self, "_image") and self._image is not None
+
+    @property
+    def HasUrl(self):
+        """
+        Tells if there is an image.
+        """
+        return hasattr(self, "_url") and self._url is not None
+
+    @property
+    def Url(self):
+        """retrieve the url"""
+        return self._url
+
+    @property
+    def Image(self):
+        """retrieve the image"""
+        return self._image
+
+    @property
+    def Sound(self):
+        """retrieve the sound"""
+        return self._sound
 
     def __str__(self):
         """

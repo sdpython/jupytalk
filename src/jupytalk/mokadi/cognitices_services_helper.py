@@ -33,6 +33,28 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
     @param      count               number of results
     @param      offset              skip results
     @return                         results
+
+    Example of a result:
+
+    ::
+
+        {'_type': 'News',
+         'readLink': 'https://api.cognitive.microsoft.com/api/v5/news/search?q=',
+         'value': [{'name': "Colombie : le bilan de la coulée de boue s'alourdit 54 morts",
+                    'url': 'http://www.bing.com/cr?IG=CEFF9C63FD7A4439B591261606484860&CID=3B75F5FD9A146DBF103CFFA49BF36C83&rd=1&',
+                    'image': {'thumbnail': {'contentUrl': 'https://www.bing.com/th?id=ON.08357B50C029DBC09D053826F9B22658&pid=News',
+                                            'width': 700, 'height': 304}},
+                    'description': "Selon les d꤬arations du président colombien Juan Manuel Santos, le bilan de la gigantesque coulée de ",
+                    'provider': [{'_type': 'Organization', 'name': 'Le Point'}],
+                    'datePublished': '2017-04-03T10:33:00',
+                    'headline': True,
+                    'clusteredArticles': [{'name': "Colombie : le bilan s'alourdit de 54 orts, dont 43 enfants",
+                                           'url': 'http://www.bing.com/cr?IG=CEFF9C63FD7A4439B591261606484860&CID=3B75F5FD9A146DBF103CFFA49BF36C83&rd=1&h=',
+                                           'description': "La ville de Mocoa, capitale provinciale du sud du pays, a été frappée ces derniers ...",
+                                           'provider': [{'_type': 'Organization', 'name': 'Le Figaro'}],
+                                           'datePublished': '2017-04-03T09:38:00', 'headline': True},
+        ...
+
     """
     headers = {
         # Request headers

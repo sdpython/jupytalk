@@ -55,11 +55,12 @@ except ImportError:
 
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from src.jupytalk.mokadi import MokadiEngine, MokadiMessage
 from src.jupytalk.mokadi.mokadi_action_slides import MokadiActionSlides
 from src.jupytalk.mokadi.mokadi_action_conversation import MokadiActionConversation
 from src.jupytalk.mokadi.mokadi_action_mail import MokadiActionMail
+from src.jupytalk.mokadi.mokadi_action_news import MokadiActionNews
 from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
 
@@ -71,30 +72,44 @@ class TestEngineExtended(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
+        temp = get_temp_folder(__file__, "temp_engine_ex")
+        clog = fLOG
+        folder = os.path.join(temp, "..", "data")
+
+        fLOG("Adding actions with credentials.")
         messages = ["MOKADI liste presentation",
                     "MOKADI lire presentation 1 slide 2",
                     "MOKADI hello",
                     ]
 
-        temp = get_temp_folder(__file__, "temp_engine_ex")
-        clog = fLOG
-        folder = os.path.join(temp, "..", "data")
-
-        import keyring
-        user = keyring.get_password(
-            "gmail", os.environ["COMPUTERNAME"] + "user")
-        pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
-        server = "imap.gmail.com"
-
         actions = [MokadiActionSlides(folder, fLOG=fLOG),
                    MokadiActionConversation(fLOG=fLOG),
                    ]
 
+        # Adding test which requires credentials.
         if "paris" not in os.environ["COMPUTERNAME"].lower():
+            fLOG("Adding actions with credentials.")
+            import keyring
+            user = keyring.get_password(
+                "gmail", os.environ["COMPUTERNAME"] + "user")
+            pwd = keyring.get_password(
+                "gmail", os.environ["COMPUTERNAME"] + "pwd")
+            server = "imap.gmail.com"
+            subkey_news = keyring.get_password(
+                "cogser", os.environ["COMPUTERNAME"] + "news")
+
             messages.append("MOKADI lire mail")
+            messages.append("MOKADI lire news")
+            messages.append("MOKADI lire news sur les élections")
+
             actions.insert(0, MokadiActionMail(
                 user=user, pwd=pwd, server=server, fLOG=fLOG))
+            actions.insert(0, MokadiActionNews(subkey_news, fLOG=fLOG))
 
+        if not is_travis_or_appveyor():
+            pass
+
+        # Test is beginning.
         engine = MokadiEngine(temp, clog, actions, MokadiGrammar_frParser,
                               MokadiGrammar_frLexer, MokadiGrammar_frListener)
         verif = 0

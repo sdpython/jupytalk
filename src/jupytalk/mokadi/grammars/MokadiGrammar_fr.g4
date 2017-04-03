@@ -31,8 +31,12 @@ mail_stmt
     ;
     
 news_stmt
-    : (verb_voir stop_words? time_indication? news)
-    | news
+    : ((verb_voir stop_words? time_indication? news) news_query?)
+    | (news news_query?)
+    ;
+    
+news_query
+    : apropos stop_words? stop_words? word_name+
     ;
     
 anything_stmt
@@ -82,6 +86,11 @@ Recent
 
 Presentation
     : 'pr' E_CODE 'sentation' 's'?
+    ;    
+    
+apropos
+    : (Astopword 'propos')
+    | 'sur'
     ;    
     
 slides

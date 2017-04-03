@@ -148,6 +148,10 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":question:"
             if isinstance(ch, self.parser.NewsContext):
                 return ":news:"
+            if isinstance(ch, self.parser.News_queryContext):
+                return ":query:"
+            if isinstance(ch, self.parser.AproposContext):
+                return ":apropos:"
             if isinstance(ch, self.parser.News_stmtContext):
                 return ":news:"
             if isinstance(ch, self.parser.Time_indicationContext):

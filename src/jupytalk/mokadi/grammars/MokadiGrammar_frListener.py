@@ -59,6 +59,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitNews_stmt(self, ctx: MokadiGrammar_frParser.News_stmtContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammar_frParser#news_query.
+    def enterNews_query(self, ctx: MokadiGrammar_frParser.News_queryContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#news_query.
+    def exitNews_query(self, ctx: MokadiGrammar_frParser.News_queryContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammar_frParser#anything_stmt.
     def enterAnything_stmt(self, ctx: MokadiGrammar_frParser.Anything_stmtContext):
         pass
@@ -97,6 +105,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammar_frParser#time_indication.
     def exitTime_indication(self, ctx: MokadiGrammar_frParser.Time_indicationContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#apropos.
+    def enterApropos(self, ctx: MokadiGrammar_frParser.AproposContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#apropos.
+    def exitApropos(self, ctx: MokadiGrammar_frParser.AproposContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#slides.
