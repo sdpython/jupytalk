@@ -1,7 +1,9 @@
-grammar MokadiGrammar;
+grammar MokadiGrammar_fr;
+
+// code UTF-8 http://www.utf8-chartable.de/
 
 parse
-    : mokadi expression_stmt  EOF
+    : mokadi expression_stmt questions_mark? EOF
     ;
     
 /////////////
@@ -17,14 +19,20 @@ expression
     : slides_stmt
     | anything_stmt
     | mail_stmt
+    | news_stmt
     ;
     
 slides_stmt
-    : verb_voir presentation (integer_number slides integer_number)?
+    : verb_voir stop_words? presentation (integer_number slides integer_number)?
     ;
     
 mail_stmt
-    : verb_voir mails
+    : verb_voir stop_words? time_indication? mails
+    ;
+    
+news_stmt
+    : (verb_voir stop_words? time_indication? news)
+    | news
     ;
     
 anything_stmt
@@ -47,8 +55,33 @@ presentation
     | 'powerpoint'
     ;
     
+news
+    : 'nouvelles'
+    | 'nouvelle'
+    | 'news'
+    | 'informations'
+    | 'information'
+    ;
+    
+time_indication
+    : Dernieres
+    | Recent
+    | 'nouvelles'
+    | 'nouvelle'
+    | 'nouveau'
+    | 'nouveaux'
+    ;
+    
+Dernieres
+    : 'derni' E_CODE 'r' 'e'? 's'?
+    ; 
+
+Recent
+    : 'r' E_CODE 'cent' 'e'? 's'?
+    ; 
+
 Presentation
-    : 'pr' E_CODE 'sentation'
+    : 'pr' E_CODE 'sentation' 's'?
     ;    
     
 slides
@@ -73,8 +106,26 @@ verb_voir
     | 'lire'
     | 'liste'
     | 'lister'
+    | ('quelles' 'sont')
+    | ('quel' 'sont')
+    | ('quelle' 'est')
+    | ('quel' 'est')
     ;
     
+    
+stop_words
+    : 'les' | 'le' | 'la'
+    | Astopword
+    | 'du' | 'de' | 'des'
+    ;
+    
+Astopword
+    : A_CODE
+    ;
+        
+questions_mark
+    :'?'
+    ;
     
 ////////
 // rules
@@ -132,7 +183,11 @@ Identifier
     ;
     
 fragment E_CODE
-    : '\u00E9' | 'é' | 'e'
+    : '\u00E8' | '\u00E9' | '\u00EA' | '\u00EB' | 'é' | 'e' | 'è' | 'ê' | 'ë'
+    ;
+    
+fragment A_CODE
+    : '\u00E0' | 'à'
     ;
     
 STRING

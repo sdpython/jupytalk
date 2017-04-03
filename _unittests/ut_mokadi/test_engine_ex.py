@@ -60,6 +60,7 @@ from src.jupytalk.mokadi import MokadiEngine, MokadiMessage
 from src.jupytalk.mokadi.mokadi_action_slides import MokadiActionSlides
 from src.jupytalk.mokadi.mokadi_action_conversation import MokadiActionConversation
 from src.jupytalk.mokadi.mokadi_action_mail import MokadiActionMail
+from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
 
 class TestEngineExtended(unittest.TestCase):
@@ -94,7 +95,8 @@ class TestEngineExtended(unittest.TestCase):
             actions.insert(0, MokadiActionMail(
                 user=user, pwd=pwd, server=server, fLOG=fLOG))
 
-        engine = MokadiEngine(temp, clog, actions=actions)
+        engine = MokadiEngine(temp, clog, actions, MokadiGrammar_frParser,
+                              MokadiGrammar_frLexer, MokadiGrammar_frListener)
         verif = 0
         for i, text in enumerate(messages):
             fLOG("***", text)

@@ -6,10 +6,7 @@
 import io
 import sys
 from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
-from .mokadi_listener import MokadiListener
 from .mokadi_exceptions import MokadiException
-from .MokadiGrammarParser import MokadiGrammarParser
-from .MokadiGrammarLexer import MokadiGrammarLexer
 
 
 def run_parse(parser):
@@ -38,12 +35,14 @@ def run_parse(parser):
     return out, err, tree
 
 
-def parse_mokadi(content):
+def parse_mokadi(content, MokadiGrammarParser, MokadiGrammarLexer):
     """
     Parse a sentance with mokadi language.
 
-    @param      content     string
-    @return                 instance of @see cl MokadiGrammarParser
+    @param      MokadiGrammarParser parser for a specific language
+    @param      MokadiGrammarLexer  lexer for a specific language
+    @param      content             string
+    @return                         instance of @see cl MokadiGrammarParser
     """
     if isinstance(content, str):
         # we assume it is a string
@@ -54,17 +53,18 @@ def parse_mokadi(content):
     return parser
 
 
-def get_tree_string(tree, parser, script=None):
+def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
     """
     returns a string which shows the parsed tree
 
-    @param      tree        from @see fn parse_code
-    @param      parser      the parser used to build the tree
-    @param      format      None or a class ParseTreeListener
-    @return                 string or C# code in Scope script (scope instructions are replace by blank lines)
+    @param      MokadiGrammarListener   listener to use
+    @param      tree                    from @see fn parse_code
+    @param      parser                  the parser used to build the tree
+    @param      format                  None or a class ParseTreeListener
+    @return                             string or C# code in Scope script (scope instructions are replace by blank lines)
     """
 
-    class TreeStringListener(MokadiListener):
+    class TreeStringListener(MokadiGrammarListener):
 
         """
         this class is an attempt to run through the tree
@@ -77,7 +77,7 @@ def get_tree_string(tree, parser, script=None):
 
             @param      parser      parser used to parse the code
             """
-            MokadiListener.__init__(self)
+            MokadiGrammarListener.__init__(self)
             self.buffer = None
             self.level = -1
             self.parser = parser
@@ -117,6 +117,56 @@ def get_tree_string(tree, parser, script=None):
             buffer.append(" ---" + str(node.parentCtx.__dict__))
             raise MokadiException("\n".join(buffer))
 
+        def istypeof(self, ch):
+            """
+            Annotation a specific node of the grammar.
+
+            @param      ch      context, node
+            @return             string or None
+
+            This function is not efficient, it should be rewritten with
+            a kind a dictionary.
+            """
+            if isinstance(ch, self.parser.ParseContext):
+                return ":P:"
+            if isinstance(ch, self.parser.MokadiContext):
+                return ":MOKADI:"
+            if isinstance(ch, self.parser.Slides_stmtContext):
+                return ":slide_exp:"
+            if isinstance(ch, self.parser.SlidesContext):
+                return ":slide:"
+            if isinstance(ch, self.parser.Word_nameContext):
+                return ":word:"
+            if isinstance(ch, self.parser.OperatorContext):
+                return ":op:"
+            if isinstance(ch, self.parser.Verb_voirContext):
+                return ":verb_voir:"
+            if isinstance(ch, self.parser.Mail_stmtContext) or \
+                    isinstance(ch, self.parser.MailsContext):
+                return ":mails:"
+            if isinstance(ch, self.parser.QuestionContext):
+                return ":question:"
+            if isinstance(ch, self.parser.NewsContext):
+                return ":news:"
+            if isinstance(ch, self.parser.News_stmtContext):
+                return ":news:"
+            if isinstance(ch, self.parser.Time_indicationContext):
+                return ":time_indication:"
+            if isinstance(ch, self.parser.Integer_numberContext):
+                return ":int:"
+            if isinstance(ch, self.parser.Questions_markContext):
+                return ":question_mark:"
+            if isinstance(ch, self.parser.Stop_wordsContext):
+                return ":stopword:"
+            if isinstance(ch, self.parser.PresentationContext):
+                return ":presentation:"
+            if isinstance(ch, self.parser.Anything_stmtContext):
+                return ":anything:"
+            if isinstance(ch, self.parser.Expression_stmtContext) or \
+                    isinstance(ch, self.parser.ExpressionContext):
+                return ":expression:"
+            return None
+
         def get_type(self, ctx, children=False, exc=True):
             """
             Extract the type of a context.
@@ -126,45 +176,14 @@ def get_tree_string(tree, parser, script=None):
             @param      exc         raise an exception if not found
             @return                 type as a string
             """
-            def istype(ch):
-                if isinstance(ch, self.parser.ParseContext):
-                    return ":P:"
-                if isinstance(ch, self.parser.MokadiContext):
-                    return ":MOKADI:"
-                if isinstance(ch, self.parser.Slides_stmtContext):
-                    return ":slide_exp:"
-                if isinstance(ch, self.parser.SlidesContext):
-                    return ":slide:"
-                if isinstance(ch, self.parser.Word_nameContext):
-                    return ":word:"
-                if isinstance(ch, self.parser.OperatorContext):
-                    return ":op:"
-                if isinstance(ch, self.parser.Verb_voirContext):
-                    return ":verb_voir:"
-                if isinstance(ch, self.parser.Mail_stmtContext) or \
-                        isinstance(ch, self.parser.MailsContext):
-                    return ":mails:"
-                if isinstance(ch, self.parser.QuestionContext):
-                    return ":question:"
-                if isinstance(ch, self.parser.Integer_numberContext):
-                    return ":int:"
-                if isinstance(ch, self.parser.PresentationContext):
-                    return ":presentation:"
-                if isinstance(ch, self.parser.Anything_stmtContext):
-                    return ":anything:"
-                if isinstance(ch, self.parser.Expression_stmtContext) or \
-                        isinstance(ch, self.parser.ExpressionContext):
-                    return ":expression:"
-                return None
-
-            t = istype(ctx)
+            t = self.istypeof(ctx)
             if t is not None:
                 return t
             if children:
                 ctxi = ctx
                 while ctxi is not None:
                     for ch in ctxi.getChildren():
-                        t = istype(ch)
+                        t = self.istype(ch)
                         if t is not None:
                             return t
                     ctxi = ctxi.parentCtx

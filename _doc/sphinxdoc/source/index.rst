@@ -14,6 +14,9 @@ Materials for the talks are included in this module. To install it:
 Presentations
 =============
 
+2016
+----
+
 .. toctree::
     :maxdepth: 1
 
@@ -21,9 +24,8 @@ Presentations
     Centrale 06/14/2016 <2016/centrale201606>
     ENSAE 14/11/2016 <2016/ensae201611>
 
-**Links:** `github <https://github.com/sdpython/jupytalk/>`_,
-:ref:`blog <ap-main-0>`,
-:ref:`l-issues-todolist`
+2017
+----
 
 Teachings
 =========
@@ -53,6 +55,10 @@ Resources
     gyexamples/index
     resources/rnotebooks
     resources/teachings
+    issues_todoextlist
+
+See also `github <https://github.com/sdpython/jupytalk/>`_,
+:ref:`blog <ap-main-0>`.
 
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk

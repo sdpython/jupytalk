@@ -1,8 +1,8 @@
+#-*- coding: utf-8 -*-
 """
 @file
-@brief Call to Cognitive services
+@brief Call to Cognitive Services.
 """
-
 import http.client
 import urllib.request
 import urllib.parse
@@ -25,7 +25,7 @@ def bytes2python(answer):
 
 def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
     """
-    Retrieve resuls for news
+    Retrieve resuls for news.
 
     @param      subscription_key
     @param      query               query

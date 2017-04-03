@@ -36,7 +36,7 @@ CLASSIFIERS = [
 
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
-package_data = {project_var_name + ".mokadi": ["*.g4", "*.tokens"],
+package_data = {project_var_name + ".mokadi.grammars": ["*.g4", "*.tokens"],
                 project_var_name + ".mokadi.daa": ["*.wav"]}
 
 
@@ -194,11 +194,12 @@ if is_local():
         ind = sys.argv.index("update_grammars")
         if len(sys.argv) <= ind:
             raise Exception(
-                "expecting a grammar file: python setup.py update_grammars R.g4")
+                "expecting a grammar file: python setup.py update_grammars MokadiGrammar.g4")
         grammar = sys.argv[ind + 1]
         if not os.path.exists(grammar):
             cdir = os.path.abspath(os.path.dirname(__file__))
-            g2 = os.path.join(cdir, "src", "jupytalk", "mokadi", grammar)
+            g2 = os.path.join(cdir, "src", "jupytalk",
+                              "mokadi", "grammars", grammar)
             if not os.path.exists(g2):
                 raise FileNotFoundError("{0}\n{1}".format(grammar, g2))
             grammar = g2

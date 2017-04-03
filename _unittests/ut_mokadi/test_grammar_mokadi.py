@@ -49,7 +49,7 @@ class TestGrammarMokadi(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         from src.jupytalk.mokadi.mokadi_parser import get_tree_string, parse_mokadi
-        from src.jupytalk.mokadi.MokadiGrammarParser import MokadiGrammarParser
+        from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
         codes = ["MOKADI a", "MOKADI lire mail"]
         expec = [[('MOKADI', ':MOKADI:'), ('a', ':word:'), ('<EOF>', ':P:')],
@@ -59,9 +59,11 @@ class TestGrammarMokadi(unittest.TestCase):
 
         for i, code in enumerate(codes):
             fLOG("{0}/{1}: {2}".format(i + 1, len(codes), code))
-            parser = parse_mokadi(code)
+            parser = parse_mokadi(
+                code, MokadiGrammar_frParser, MokadiGrammar_frLexer)
             tree = parser.parse()
-            res, simple = get_tree_string(tree, MokadiGrammarParser, code)
+            res, simple = get_tree_string(
+                MokadiGrammar_frListener, tree, parser, code)
             if "error" in res:
                 raise Exception("unable to parse '{0}'".format(code))
             fLOG("SIMPLE", simple)
@@ -85,6 +87,7 @@ class TestGrammarMokadi(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         from src.jupytalk.mokadi import interpret
+        from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
         codes = ["MOKADI a", "MOKADI lire mail"]
         expec = [[('MOKADI', ':MOKADI:'), ('a', ':word:'), ('<EOF>', ':P:')],
@@ -94,7 +97,8 @@ class TestGrammarMokadi(unittest.TestCase):
 
         for i, code in enumerate(codes):
             fLOG("{0}/{1}: {2}".format(i + 1, len(codes), code))
-            simple = interpret(code)
+            simple = interpret(code, MokadiGrammar_frParser,
+                               MokadiGrammar_frLexer, MokadiGrammar_frListener)
             self.assertEqual(simple, expec[i])
 
     def test_mokadi_interpret_exception(self):
@@ -104,9 +108,11 @@ class TestGrammarMokadi(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         from src.jupytalk.mokadi import interpret
+        from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
         try:
-            interpret("ROOCADI")
+            interpret("ROOCADI", MokadiGrammar_frParser,
+                      MokadiGrammar_frLexer, MokadiGrammar_frListener)
             self.assertTrue(False)
         except SyntaxError as e:
             fLOG(e)

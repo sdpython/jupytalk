@@ -30,17 +30,24 @@ class MokadiEngine:
         i = random.randint(0, len(mes) - 1)
         return mes[i]
 
-    def __init__(self, root, clog: CustomLog, actions):
+    def __init__(self, root, clog: CustomLog, actions,
+                 MokadiGrammarParser, MokadiGrammarLexer, MokadiGrammarListener):
         """
         Constructor
 
-        @param      root        root folder
-        @param      clog        custom log
-        @param      actions     list of actions
+        @param      root                    root folder
+        @param      clog                    custom log
+        @param      actions                 list of actions
+        @param      MokadiGrammarParser     parser for a specific language
+        @param      MokadiGrammarLexer      lexer for a specific language
+        @param      MokadiGrammarListener   listener for a specific language
         """
         self._clog = clog
         self._root = root
         self._actions = actions
+        self._MokadiGrammarParser = MokadiGrammarParser
+        self._MokadiGrammarLexer = MokadiGrammarLexer
+        self._MokadiGrammarListener = MokadiGrammarListener
 
         if not os.path.exists(root):
             raise FileNotFoundError(root)
@@ -60,7 +67,8 @@ class MokadiEngine:
         @return                 iterator on @see cl MokadiInfo
         """
         self.fLOG("[MokadiEngine.process]", message)
-        res = message.interpret(exc=False)
+        res = message.interpret(exc, self._MokadiGrammarParser,
+                                self._MokadiGrammarLexer, self._MokadiGrammarListener)
         if isinstance(res, Exception):
             info = MokadiInfo("error", MokadiEngine.peak_random(
                 MokadiEngine._messages["dontunderstand"]), str(res), None)

@@ -49,27 +49,49 @@ class TestGrammarMokadiExtended(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         from src.jupytalk.mokadi import interpret
+        from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
-        codes = ["MOKADI lire mail",
-                 "MOKADI liste presentation",
-                 "MOKADI lire présentation 1 slide 2",
-                 "MOKADI Comment vas-tu ?",
-                 "MOKADI hello",
+        codes = ["MOKADI lire mail",  # 1
+                 "MOKADI liste presentation",  # 2
+                 "MOKADI lire présentation 1 slide 2",  # 3
+                 "MOKADI Comment vas-tu ?",  # 4
+                 "MOKADI hello",  # 5
+                 "MOKADI lire nouvelles",  # 6
+                 "MOKADI lire dernières nouvelles",  # 7
+                 "MOKADI quelles sont les nouvelles ?",  # 8
+                 "MOKADI quelles sont les dernières nouvelles ?",  # 9
+                 "MOKADI news",  # 10
                  ]
-        expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],
+        expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
-                  ('presentation', ':presentation:')],
+                  ('presentation', ':presentation:')],  # 2
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('présentation', ':presentation:'),
-                  ('1', ':int:'), ('slide', ':slide:'), ('2', ':int:')],
+                  ('1', ':int:'), ('slide', ':slide:'), ('2', ':int:')],  # 3
                  [('MOKADI', ':MOKADI:'), ('Comment', ':word:'), ('vas', ':word:'),
-                  ('-', ':op:'), ('tu', ':word:'), ('?', ':question:')],
-                 [('MOKADI', ':MOKADI:'), ('hello', ':word:')],
+                  ('-', ':op:'), ('tu', ':word:'), ('?', ':question:')],  # 4
+                 [('MOKADI', ':MOKADI:'), ('hello', ':word:')],  # 5
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('nouvelles', ':news:')],  # 6
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('dernières',
+                                                                    ':time_indication:'), ('nouvelles', ':news:')],  # 7
+                 [('MOKADI', ':MOKADI:'), ('quelles', ':verb_voir:'), ('sont', ':verb_voir:'), ('les', ':stopword:'),
+                  ('nouvelles', ':news:'), ('?', ':question_mark:')],  # 8
+                 [('MOKADI', ':MOKADI:'), ('quelles', ':verb_voir:'), ('sont', ':verb_voir:'), ('les', ':stopword:'), ('dernières', ':time_indication:'),
+                  ('nouvelles', ':news:'), ('?', ':question_mark:')],  # 9
+                 [('MOKADI', ':MOKADI:'), ('news', ':news:')],  # 10
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 
         for i, code in enumerate(codes):
             fLOG("{0}/{1}: {2}".format(i + 1, len(codes), code))
-            simple = interpret(code)
+            try:
+                simple = interpret(code, MokadiGrammar_frParser,
+                                   MokadiGrammar_frLexer, MokadiGrammar_frListener)
+            except SyntaxError as e:
+                raise Exception(
+                    "Unable to interpret '{0}'".format(code)) from e
+            if i >= len(expec):
+                raise Exception(simple[:-1])
             self.assertEqual(simple, expec[i])
 
 
