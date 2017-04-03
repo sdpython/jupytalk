@@ -17,7 +17,8 @@ class MokadiEngine:
     """
 
     _messages = {"dontunderstand": ["Je n'ai pas compris.", "Parlez vous mokadi?"],
-                 "failure": ["Un imprévu s'est produit.", "Grosse tuile"]}
+                 "failure": ["Un imprévu s'est produit. Je n'ai pas su faire.",
+                             "Grosse tuile. Je pensais avoir compris. Mais non."]}
 
     @staticmethod
     def peak_random(mes: list):

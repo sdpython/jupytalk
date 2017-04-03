@@ -37,7 +37,7 @@ CLASSIFIERS = [
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
 package_data = {project_var_name + ".mokadi.grammars": ["*.g4", "*.tokens"],
-                project_var_name + ".mokadi.daa": ["*.wav"]}
+                project_var_name + ".mokadi.data": ["*.wav", "*.ico"]}
 
 
 ############

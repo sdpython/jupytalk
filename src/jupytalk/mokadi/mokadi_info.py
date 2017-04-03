@@ -47,21 +47,21 @@ class MokadiInfo:
                 raise FileNotFoundError(sound)
 
     @property
-    def HasSound(self):
+    def has_sound(self):
         """
         Tells if there is sound.
         """
         return hasattr(self, "_sound") and self._sound is not None
 
     @property
-    def HasImage(self):
+    def has_image(self):
         """
         Tells if there is an image.
         """
         return hasattr(self, "_image") and self._image is not None
 
     @property
-    def HasUrl(self):
+    def has_url(self):
         """
         Tells if there is an image.
         """
@@ -73,12 +73,12 @@ class MokadiInfo:
         return self._url
 
     @property
-    def Image(self):
+    def image(self):
         """retrieve the image"""
         return self._image
 
     @property
-    def Sound(self):
+    def sound(self):
         """retrieve the sound"""
         return self._sound
 
@@ -110,14 +110,21 @@ class MokadiInfo:
             return "<b>%s<b> <i>%s</i>" % (self._status, self._info)
 
     @property
-    def Info(self):
+    def info(self):
         """
         property
         """
         return self._info
 
     @property
-    def Status(self):
+    def error(self):
+        """
+        property
+        """
+        return self._error
+
+    @property
+    def status(self):
         """
         property
         """

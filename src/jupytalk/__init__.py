@@ -49,3 +49,27 @@ def _setup_hook(use_print=False):
     # any others things before unit tests are started
     if use_print:
         print("Success: _setup_hook")
+
+
+def launch_gui_mokadi(fLOG=None):
+    """
+    Launches tkinter with Mokadi BOT.
+    """
+    try:
+        import pyquickhelper
+    except ImportError:
+        import os
+        this = os.path.abspath(os.path.dirname(__file__))
+        import sys
+        for mod in ["pyquickhelper", "pyensae", "ensae_teching_cs", "pymmails", "jyquickhelper"]:
+            np = os.path.join(this, "..", "..", "..", mod, "src")
+            sys.path.append(np)
+        import pyquickhelper
+
+    if fLOG is None:
+        import pyquickhelper.loghelper
+        fLOG = pyquickhelper.loghelper.fLOG
+        fLOG(OutputPrint=True)
+
+    from .mokadi.gui_mokadi import gui_mokadi
+    gui_mokadi()

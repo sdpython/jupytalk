@@ -41,14 +41,14 @@ class MokadiMessage:
         return "<b>%1.2f<b> <i>%s</i>" % (self._confidence, self._message)
 
     @property
-    def Message(self):
+    def message(self):
         """
         property
         """
         return self._message
 
     @property
-    def Confidence(self):
+    def confidence(self):
         """
         property
         """
