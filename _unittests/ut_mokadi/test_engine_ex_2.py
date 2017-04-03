@@ -57,54 +57,38 @@ except ImportError:
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from src.jupytalk.mokadi import MokadiEngine, MokadiMessage
-from src.jupytalk.mokadi.mokadi_action_slides import MokadiActionSlides
+from src.jupytalk.mokadi.mokadi_action_emotion import MokadiActionEmotion
 from src.jupytalk.mokadi.mokadi_action_conversation import MokadiActionConversation
-from src.jupytalk.mokadi.mokadi_action_mail import MokadiActionMail
-from src.jupytalk.mokadi.mokadi_action_news import MokadiActionNews
 from src.jupytalk.mokadi.grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 
 
-class TestEngineExtended(unittest.TestCase):
+class TestEngineExtended_2(unittest.TestCase):
 
-    def test_engine_ex(self):
+    def test_engine_ex_2(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        temp = get_temp_folder(__file__, "temp_engine_ex")
+        temp = get_temp_folder(__file__, "temp_engine_ex_2")
         clog = fLOG
-        folder = os.path.join(temp, "..", "data")
 
         fLOG("Adding actions with credentials.")
-        messages = ["MOKADI liste presentation",
-                    "MOKADI lire presentation 1 slide 2",
-                    "MOKADI hello",
-                    ]
+        messages = ["MOKADI bonjour"]
 
-        actions = [MokadiActionSlides(folder, fLOG=fLOG),
-                   MokadiActionConversation(fLOG=fLOG),
+        actions = [MokadiActionConversation(fLOG=fLOG),
                    ]
 
         # Adding test which requires credentials.
         if "paris" not in os.environ.get("COMPUTERNAME", os.environ.get("USER", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
-            user = keyring.get_password(
-                "gmail", os.environ["COMPUTERNAME"] + "user")
-            pwd = keyring.get_password(
-                "gmail", os.environ["COMPUTERNAME"] + "pwd")
-            server = "imap.gmail.com"
-            subkey_news = keyring.get_password(
-                "cogser", os.environ["COMPUTERNAME"] + "news")
+            subkey_emo = keyring.get_password(
+                "cogser", os.environ["COMPUTERNAME"] + "emotions")
 
-            messages.append("MOKADI lire mail")
-            messages.append("MOKADI lire news")
-            messages.append("MOKADI lire news sur les élections")
+            messages.append("MOKADI humeur")
 
-            actions.insert(0, MokadiActionMail(
-                user=user, pwd=pwd, server=server, fLOG=fLOG))
-            actions.insert(0, MokadiActionNews(subkey_news, fLOG=fLOG))
+            actions.insert(0, MokadiActionEmotion(subkey_emo, temp, fLOG=fLOG))
 
         if not is_travis_or_appveyor():
             pass
@@ -119,10 +103,7 @@ class TestEngineExtended(unittest.TestCase):
             res = list(engine.process(mes, exc=True))
             fLOG(res)
             self.assertTrue(len(res) > 0)
-            if i == 2:
-                self.assertEqual(len(res), 1)
-                self.assertTrue(res[0].HasSound)
-                verif += 1
+            verif += 1
         self.assertTrue(verif > 0)
 
 

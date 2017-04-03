@@ -62,6 +62,8 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI quelles sont les dernières nouvelles ?",  # 9
                  "MOKADI news",  # 10
                  "MOKADI lire news sur les élections",  # 11
+                 "MOKADI humeur",  # 11
+                 "MOKADI quelle est mon humeur",  # 12
                  ]
         expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
@@ -82,6 +84,9 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  [('MOKADI', ':MOKADI:'), ('news', ':news:')],  # 10
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('news', ':news:'),
                   ('sur', ':apropos:'), ('les', ':stopword:'), ('élections', ':word:')],  # 11
+                 [('MOKADI', ':MOKADI:'), ('humeur', ':emotion:')],  # 12
+                 [('MOKADI', ':MOKADI:'), ('quelle', ':verb_voir:'), ('est',
+                                                                      ':verb_voir:'), ('mon', ':a_moi:'), ('humeur', ':emotion:')],  # 13
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 

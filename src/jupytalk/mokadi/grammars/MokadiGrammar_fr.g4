@@ -20,6 +20,7 @@ expression
     | anything_stmt
     | mail_stmt
     | news_stmt
+    | emotion_stmt
     ;
     
 slides_stmt
@@ -39,6 +40,10 @@ news_query
     : apropos stop_words? stop_words? word_name+
     ;
     
+emotion_stmt
+    : verb_voir? possessif_me? humeur
+    ;
+
 anything_stmt
     : word_name word_name* question?
     ;
@@ -52,6 +57,10 @@ mokadi
     | 'mokadie'
     | 'leocadie'
     | 'Leocadie'
+    ;
+    
+humeur
+    : 'humeur'
     ;
     
 presentation
@@ -121,11 +130,14 @@ verb_voir
     | ('quel' 'est')
     ;
     
-    
 stop_words
     : 'les' | 'le' | 'la'
     | Astopword
     | 'du' | 'de' | 'des'
+    ;
+    
+possessif_me
+    : 'mon' | 'ma' | 'mes'
     ;
     
 Astopword

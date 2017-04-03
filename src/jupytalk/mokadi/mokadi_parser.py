@@ -164,6 +164,12 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":stopword:"
             if isinstance(ch, self.parser.PresentationContext):
                 return ":presentation:"
+            if isinstance(ch, self.parser.Emotion_stmtContext):
+                return ":emotion:"
+            if isinstance(ch, self.parser.HumeurContext):
+                return ":emotion:"
+            if isinstance(ch, self.parser.Possessif_meContext):
+                return ":a_moi:"
             if isinstance(ch, self.parser.Anything_stmtContext):
                 return ":anything:"
             if isinstance(ch, self.parser.Expression_stmtContext) or \

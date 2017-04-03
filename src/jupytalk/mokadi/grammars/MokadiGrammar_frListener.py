@@ -67,6 +67,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitNews_query(self, ctx: MokadiGrammar_frParser.News_queryContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammar_frParser#emotion_stmt.
+    def enterEmotion_stmt(self, ctx: MokadiGrammar_frParser.Emotion_stmtContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#emotion_stmt.
+    def exitEmotion_stmt(self, ctx: MokadiGrammar_frParser.Emotion_stmtContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammar_frParser#anything_stmt.
     def enterAnything_stmt(self, ctx: MokadiGrammar_frParser.Anything_stmtContext):
         pass
@@ -81,6 +89,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammar_frParser#mokadi.
     def exitMokadi(self, ctx: MokadiGrammar_frParser.MokadiContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#humeur.
+    def enterHumeur(self, ctx: MokadiGrammar_frParser.HumeurContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#humeur.
+    def exitHumeur(self, ctx: MokadiGrammar_frParser.HumeurContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#presentation.
@@ -145,6 +161,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammar_frParser#stop_words.
     def exitStop_words(self, ctx: MokadiGrammar_frParser.Stop_wordsContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#possessif_me.
+    def enterPossessif_me(self, ctx: MokadiGrammar_frParser.Possessif_meContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#possessif_me.
+    def exitPossessif_me(self, ctx: MokadiGrammar_frParser.Possessif_meContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#questions_mark.

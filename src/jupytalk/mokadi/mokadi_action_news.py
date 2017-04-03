@@ -96,7 +96,7 @@ class MokadiActionNews(MokadiAction):
                         displayed += 1
                     if displayed == 0:
                         yield MokadiInfo("ok", "La recherche '{0}' a abouti mais les résultats sont inattendus.".format(query))
-                        done = True
+                    done = True
 
         if not done:
             args = [message, len(interpretation),

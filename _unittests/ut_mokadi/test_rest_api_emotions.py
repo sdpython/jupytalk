@@ -39,7 +39,7 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor
-from src.jupytalk.mokadi.cognitices_services_helper import call_api_emotions
+from src.jupytalk.mokadi.cognitives_services_helper import call_api_emotions
 
 
 class TestRestApiEmotions(unittest.TestCase):
