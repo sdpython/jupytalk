@@ -39,7 +39,7 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor
-from src.jupytalk.mokadi.cognitices_services_helper import call_api_news
+from src.jupytalk.mokadi.cognitive_services_helper import call_api_news
 
 
 class TestRestApiNews(unittest.TestCase):

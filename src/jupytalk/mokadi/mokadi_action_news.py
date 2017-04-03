@@ -6,7 +6,7 @@
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
-from .cognitices_services_helper import call_api_news
+from .cognitive_services_helper import call_api_news
 from .mokadi_helper import convert_into_days
 
 

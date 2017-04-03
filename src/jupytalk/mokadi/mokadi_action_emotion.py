@@ -8,7 +8,7 @@ import os
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
-from .cognitives_services_helper import call_api_emotions
+from .cognitive_services_helper import call_api_emotions
 from .mokadi_picture import take_picture
 from PIL import Image, ImageDraw
 
