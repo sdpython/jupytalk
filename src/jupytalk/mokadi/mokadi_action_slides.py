@@ -8,6 +8,7 @@ from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
 from .pptx_helper import pptx_enumerate_text
+from .mokadi_helper import parse_string_int
 import pptx
 
 
@@ -63,8 +64,8 @@ class MokadiActionSlides(MokadiAction):
             if interpretation[1][0] == "lire" and interpretation[2][1] == ":presentation:" and \
                interpretation[3][1] == ":int:" and interpretation[4][1] == ":slide:" and \
                interpretation[5][1] == ":int:":
-                presn = int(interpretation[3][0])
-                slide = int(interpretation[5][0])
+                presn = parse_string_int(interpretation[3][0])
+                slide = parse_string_int(interpretation[5][0])
                 pres = list(self.enumerate_listdir())
                 if presn <= 0 or presn > len(pres):
                     yield MokadiInfo("error", error="La présentation {0} n'existe pas.".format(presn))

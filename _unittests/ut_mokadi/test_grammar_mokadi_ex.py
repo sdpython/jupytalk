@@ -62,8 +62,12 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI quelles sont les dernières nouvelles ?",  # 9
                  "MOKADI news",  # 10
                  "MOKADI lire news sur les élections",  # 11
-                 "MOKADI humeur",  # 11
-                 "MOKADI quelle est mon humeur",  # 12
+                 "MOKADI humeur",  # 12
+                 "MOKADI quelle est mon humeur",  # 13
+                 "MOKADI lire 1 mail",  # 14
+                 "MOKADI lire deux mails",  # 15
+                 "MOKADI lire mail deux",  # 16
+                 "MOKADI lire mail deux en entier",  # 17
                  ]
         expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
@@ -85,8 +89,16 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('news', ':news:'),
                   ('sur', ':apropos:'), ('les', ':stopword:'), ('élections', ':word:')],  # 11
                  [('MOKADI', ':MOKADI:'), ('humeur', ':emotion:')],  # 12
-                 [('MOKADI', ':MOKADI:'), ('quelle', ':verb_voir:'), ('est',
-                                                                      ':verb_voir:'), ('mon', ':a_moi:'), ('humeur', ':emotion:')],  # 13
+                 [('MOKADI', ':MOKADI:'), ('quelle', ':verb_voir:'),
+                  ('est', ':verb_voir:'), ('mon', ':a_moi:'), ('humeur', ':emotion:')],  # 13
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('1', ':int:'), ('mail', ':mails:')],  # 14
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('deux', ':int:'), ('mails', ':mails:')],  # 15
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('mail', ':mails:'), ('deux', ':int:')],  # 16
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:'),
+                  ('deux', ':int:'), ('en', ':stopword:'), ('entier', ':entier:')],  # 17
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 

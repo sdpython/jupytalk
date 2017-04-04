@@ -24,11 +24,12 @@ expression
     ;
     
 slides_stmt
-    : verb_voir stop_words? presentation (integer_number slides integer_number)?
+    : verb_voir stop_words? presentation (integer_number_string slides integer_number_string)?
     ;
     
 mail_stmt
-    : verb_voir stop_words? time_indication? mails
+    : verb_voir stop_words? time_indication? 
+      integer_number_string? mails (integer_number_string with_body?)?
     ;
     
 news_stmt
@@ -85,6 +86,10 @@ time_indication
     | 'nouveaux'
     ;
     
+with_body
+    : stop_words 'entier'
+    ;
+    
 Dernieres
     : 'derni' E_CODE 'r' 'e'? 's'?
     ; 
@@ -134,6 +139,7 @@ stop_words
     : 'les' | 'le' | 'la'
     | Astopword
     | 'du' | 'de' | 'des'
+    | 'en'
     ;
     
 possessif_me
@@ -151,6 +157,23 @@ questions_mark
 ////////
 // rules
 ////////
+
+integer_number_string
+    : integer_number
+    | number_name
+    ;
+
+number_name
+    : 'un' | 'deux' | 'trois' | 'quatre' | 'cinq'
+    | 'six' | 'sept' | 'huit' | 'neuf' | 'dix'
+    | 'onze' | 'douze' | 'treize' 
+    | 'vingt' | 'trente'
+    | 'cinquante'
+    | ('cent' 's'?)
+    | 'mille'
+    | ('million' 's'?)
+    | ('millard' 's'?)
+    ;
 
 word_name
     : Identifier

@@ -4,7 +4,7 @@
 @brief Main file.
 """
 
-__version__ = "0.1"
+__version__ = "0.2"
 __author__ = "Xavier Dupré"
 __github__ = "https://github.com/sdpython/jupytalk"
 __url__ = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html"
@@ -61,10 +61,11 @@ def launch_gui_mokadi(fLOG=None):
         import os
         this = os.path.abspath(os.path.dirname(__file__))
         import sys
-        for mod in ["pyquickhelper", "pyensae", "ensae_teching_cs", "pymmails", "jyquickhelper"]:
+        for mod in ["pyquickhelper", "pyensae", "ensae_teaching_cs", "pymmails", "jyquickhelper"]:
             np = os.path.join(this, "..", "..", "..", mod, "src")
             sys.path.append(np)
         import pyquickhelper
+    import ensae_teaching_cs
 
     if fLOG is None:
         import pyquickhelper.loghelper

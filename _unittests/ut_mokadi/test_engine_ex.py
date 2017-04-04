@@ -87,7 +87,7 @@ class TestEngineExtended(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if "paris" not in os.environ.get("COMPUTERNAME", os.environ.get("USER", "")).lower():
+        if "douze2016" not in os.environ["COMPUTERNAME"].lower():
             fLOG("Adding actions with credentials.")
             import keyring
             user = keyring.get_password(
@@ -98,6 +98,10 @@ class TestEngineExtended(unittest.TestCase):
             subkey_news = keyring.get_password(
                 "cogser", os.environ["COMPUTERNAME"] + "news")
 
+            messages.append("MOKADI lire mail 2 en entier")
+            messages.append("MOKADI lire mail 2")
+            messages.append("MOKADI lire 1 mail")
+            messages.append("MOKADI lire un mail")
             messages.append("MOKADI lire mail")
             messages.append("MOKADI lire news")
             messages.append("MOKADI lire news sur les élections")
@@ -121,7 +125,7 @@ class TestEngineExtended(unittest.TestCase):
             self.assertTrue(len(res) > 0)
             if i == 2:
                 self.assertEqual(len(res), 1)
-                self.assertTrue(res[0].HasSound)
+                self.assertTrue(res[0].has_sound)
                 verif += 1
         self.assertTrue(verif > 0)
 

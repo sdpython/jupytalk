@@ -158,6 +158,10 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":time_indication:"
             if isinstance(ch, self.parser.Integer_numberContext):
                 return ":int:"
+            if isinstance(ch, self.parser.Integer_number_stringContext):
+                return ":int:"
+            if isinstance(ch, self.parser.Number_nameContext):
+                return ":int:"
             if isinstance(ch, self.parser.Questions_markContext):
                 return ":question_mark:"
             if isinstance(ch, self.parser.Stop_wordsContext):
@@ -172,6 +176,8 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":a_moi:"
             if isinstance(ch, self.parser.Anything_stmtContext):
                 return ":anything:"
+            if isinstance(ch, self.parser.With_bodyContext):
+                return ":entier:"
             if isinstance(ch, self.parser.Expression_stmtContext) or \
                     isinstance(ch, self.parser.ExpressionContext):
                 return ":expression:"

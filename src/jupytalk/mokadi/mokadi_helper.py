@@ -45,3 +45,29 @@ def convert_into_days(date, lang="fr", format="%Y-%m-%dT%H:%M:%S"):
         return "dans le futur"
     else:
         return "il y a {0} jours".format(delay)
+
+
+_int_values = dict(un=1, deux=2, trois=3, quatre=4, cinq=5, six=6, sept=7,
+                   huit=8, neuf=9, dix=10, onze=11, douze=12, vingt=20, cent=100,
+                   cents=100, mille=1000)
+
+
+def parse_string_int(text: str) -> int:
+    """
+    Converts a string into an integer.
+    It can also be a string like *'un'*.
+
+    @param      text        text to convert
+    @return                 number
+    """
+    if not text:
+        raise ValueError("Text to convert cannot be empty.")
+    if not isinstance(text, str):
+        raise ValueError("Text to convert cannot be a string.")
+    try:
+        return int(text)
+    except ValueError:
+        if text in _int_values:
+            return _int_values[text]
+        else:
+            raise ValueError("Unable to convert '{0}' into int.".format(text))

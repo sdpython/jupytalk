@@ -17,6 +17,7 @@ from .mokadi_action_mail import MokadiActionMail
 from .mokadi_action_news import MokadiActionNews
 from .mokadi_action_slides import MokadiActionSlides
 from .mokadi_record import play_speech
+from .mokadi_speak import speak
 
 
 class TkinterMokadi(tkinter.Frame):
@@ -24,12 +25,18 @@ class TkinterMokadi(tkinter.Frame):
     Defines a frame.
     """
 
-    def __init__(self, parent, mokadi, fLOG=fLOG):
+    def __init__(self, parent, mokadi, speak=False, fLOG=fLOG):
         """
         Constructor.
+
+        @param      parent      a frame
+        @param      mokadi      the bot @see cl MokadiEngine
+        @param      speak       speak the answer and not just display it
+        @param      fLOG        logging function
         """
         tkinter.Frame.__init__(self, parent)
-        self.mokadi = mokadi
+        self._mokadi = mokadi
+        self._speak = speak
         self.initialize()
         self.fLOG = fLOG
 
@@ -89,9 +96,12 @@ class TkinterMokadi(tkinter.Frame):
         self.conversation['state'] = 'normal'
         self.conversation.insert(
             tkinter.END, "\n\nVous : " + user_input.message)
-        iter = self.mokadi.process(user_input, exc=False)
+        iter = self._mokadi.process(user_input, exc=False)
         self.fLOG("[TkinterMokadi] sent:", user_input)
+
         for info in iter:
+            speakable = []
+
             self.fLOG("[TkinterMokadi] received:", info,
                       info.has_sound, info.has_image)
             if info.status == "ok":
@@ -107,9 +117,16 @@ class TkinterMokadi(tkinter.Frame):
                 if info.info:
                     self.conversation.insert(
                         tkinter.END, "\nMokadi : " + info.info)
+                    speakable.append(info.info)
             elif info.status == "error":
                 self.conversation.insert(
                     tkinter.END, "\nMokadi : " + info.info)
+                speakable.append(info.info)
+
+            if self._speak and len(speakable) > 0:
+                for text in speakable:
+                    speak(text)
+
         self.conversation['state'] = 'disabled'
         self.conversation.see(tkinter.END)
 
@@ -149,5 +166,5 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     tk = tkinter.Tk()
     tk.iconbitmap(os.path.join(os.path.dirname(__file__), 'project_ico.ico'))
     tk.title("Mokadi")
-    TkinterMokadi(tk, engine)
+    TkinterMokadi(tk, engine, speak=True)
     tk.mainloop()

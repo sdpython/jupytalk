@@ -123,6 +123,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitTime_indication(self, ctx: MokadiGrammar_frParser.Time_indicationContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammar_frParser#with_body.
+    def enterWith_body(self, ctx: MokadiGrammar_frParser.With_bodyContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#with_body.
+    def exitWith_body(self, ctx: MokadiGrammar_frParser.With_bodyContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammar_frParser#apropos.
     def enterApropos(self, ctx: MokadiGrammar_frParser.AproposContext):
         pass
@@ -177,6 +185,24 @@ class MokadiGrammar_frListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammar_frParser#questions_mark.
     def exitQuestions_mark(self, ctx: MokadiGrammar_frParser.Questions_markContext):
+        pass
+
+    # Enter a parse tree produced by
+    # MokadiGrammar_frParser#integer_number_string.
+    def enterInteger_number_string(self, ctx: MokadiGrammar_frParser.Integer_number_stringContext):
+        pass
+
+    # Exit a parse tree produced by
+    # MokadiGrammar_frParser#integer_number_string.
+    def exitInteger_number_string(self, ctx: MokadiGrammar_frParser.Integer_number_stringContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#number_name.
+    def enterNumber_name(self, ctx: MokadiGrammar_frParser.Number_nameContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#number_name.
+    def exitNumber_name(self, ctx: MokadiGrammar_frParser.Number_nameContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#word_name.

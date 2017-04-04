@@ -7,6 +7,7 @@ from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
 from .mokadi_mails import enumerate_last_mails
+from .mokadi_helper import parse_string_int
 
 
 class MokadiActionMail(MokadiAction):
@@ -53,22 +54,53 @@ class MokadiActionMail(MokadiAction):
         @return                         iterator on Info
         """
         done = False
-        if len(interpretation) == 4:
+        stop = -1
+        keep = -1
+        good = False
+        body = False
+        interpretation_clean = [
+            _ for _ in interpretation if _[1] != ":stopword:"]
+        if len(interpretation_clean) == 6:
+            if interpretation_clean[1][1] == ":verb_voir:" and interpretation_clean[2][1] == ":mails:" and \
+                    interpretation_clean[3][1] == ":int:" and interpretation_clean[4][1] == ":entier:":
+                keep = parse_string_int(interpretation_clean[3][0])
+                good = True
+                body = False
+        elif len(interpretation) == 5:
+            if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":int:" and \
+                    interpretation[3][1] == ":mails:":
+                stop = parse_string_int(interpretation[2][0])
+                good = True
+            elif interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":mails:" and \
+                    interpretation[3][1] == ":int:":
+                keep = parse_string_int(interpretation[3][0])
+                good = True
+        elif len(interpretation) == 4:
             if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":mails:":
-                mails = enumerate_last_mails(
-                    self._user, self._pwd, self._server, fLOG=self.fLOG)
+                good = True
+        if good:
+            fetch = max(keep + 1, 5)
+            mails = enumerate_last_mails(
+                self._user, self._pwd, self._server, fLOG=self.fLOG, nb=fetch)
 
-                for mail in mails:
-                    self.fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
-                              "**", mail.get_date_str())
-                    h = mail.get_date().hour
-                    yield MokadiInfo("ok", "Mail reçu vers {0} heures de {1}.".format(h, mail.get_name()))
-                    yield MokadiInfo("ok", mail.get_field("subject").split("\n")[0])
-                    nb = mail.get_nb_attachements()
-                    if nb > 0:
-                        yield MokadiInfo("ok", "Ce mail a {0} pièces jointes.".format(nb))
+            for i, mail in enumerate(mails):
+                if i == stop:
+                    break
+                if keep != -1 and i != keep:
+                    continue
+                self.fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
+                          "**", mail.get_date_str())
+                h = mail.get_date().hour
+                yield MokadiInfo("ok", "Mail reçu vers {0} heures de {1}.".format(h, mail.get_name()))
+                yield MokadiInfo("ok", mail.get_field("subject").split("\n")[0])
+                nb = mail.get_nb_attachements()
+                if nb > 0:
+                    yield MokadiInfo("ok", "Ce mail a {0} pièces jointes.".format(nb))
+                if body:
+                    for line in mail.body:
+                        yield MokadiInfo("ok", line)
 
-                done = True
+            done = True
         if not done:
             raise MokadiException(
                 "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation), interpretation))
