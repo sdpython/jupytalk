@@ -6,8 +6,10 @@
 import tkinter
 import tkinter.ttk as ttk
 import tkinter.scrolledtext as ScrolledText
-from PIL import Image, ImageTk
 import os
+import threading
+from queue import Queue
+from PIL import Image, ImageTk
 from pyquickhelper.loghelper import CustomLog, fLOG
 from .grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
 from . import MokadiEngine, MokadiMessage
@@ -16,8 +18,39 @@ from .mokadi_action_emotion import MokadiActionEmotion
 from .mokadi_action_mail import MokadiActionMail
 from .mokadi_action_news import MokadiActionNews
 from .mokadi_action_slides import MokadiActionSlides
-from .mokadi_record import play_speech
+from .mokadi_record import play_speech, record_speech
 from .mokadi_speak import speak
+from .cognitive_services_helper import call_api_speech_reco
+from .mokadi_picture import take_picture
+
+
+class ThreadSpeech(threading.Thread):
+
+    def __init__(self, win, subkey):
+        threading.Thread.__init__(self)
+        self.win = win
+        self.subkey = subkey
+
+    def run(self):
+        speech = record_speech()
+        reco = call_api_speech_reco(self.subkey, memwav=speech)
+        print(reco)
+        if "results" not in reco:
+            reco = "erreur 1", 1
+        else:
+            results = reco["results"]
+            if len(results) != 1:
+                reco = "erreur 2", 1
+            else:
+                res = results[0]
+                if "lexical" not in res:
+                    reco = "erreur 3", 1
+                else:
+                    conf = res["confidence"]
+                    reco = res["lexical"], conf
+
+        self.win.queue.put_nowait(reco)
+        self.win.event_generate("<<thread_fini>>")
 
 
 class TkinterMokadi(tkinter.Frame):
@@ -25,20 +58,23 @@ class TkinterMokadi(tkinter.Frame):
     Defines a frame.
     """
 
-    def __init__(self, parent, mokadi, speak=False, fLOG=fLOG):
+    def __init__(self, parent, mokadi, speak=False, subkey_speech=None, fLOG=fLOG):
         """
         Constructor.
 
-        @param      parent      a frame
-        @param      mokadi      the bot @see cl MokadiEngine
-        @param      speak       speak the answer and not just display it
-        @param      fLOG        logging function
+        @param      parent          a frame
+        @param      mokadi          the bot @see cl MokadiEngine
+        @param      speak           speak the answer and not just display it
+        @param      subkey_speech   key for the speech
+        @param      fLOG            logging function
         """
         tkinter.Frame.__init__(self, parent)
         self._mokadi = mokadi
         self._speak = speak
+        self._subkey_speech = subkey_speech
         self.initialize()
         self.fLOG = fLOG
+        self.queue = Queue()
 
     def initialize(self):
         """
@@ -61,7 +97,7 @@ class TkinterMokadi(tkinter.Frame):
         self.usr_input.config(width=5)
 
         self.conversation_lbl = ttk.Label(
-            self.subframe1, anchor=tkinter.E, text='Conversation:')
+            self.subframe1, anchor=tkinter.E, text='Conversation')
         self.conversation_lbl.grid(
             column=0, row=1, sticky='nesw', padx=3, pady=3)
         self.conversation_lbl.config(width=50)
@@ -71,6 +107,8 @@ class TkinterMokadi(tkinter.Frame):
         self.conversation.grid(column=0, row=2, columnspan=2,
                                sticky='nesw', padx=3, pady=3)
         self.conversation.config(width=50)
+        self.bind("<<thread_fini>>", self.receive_speech)
+        self._waiting = False
 
     def bound_enter(self, *l):
         """
@@ -83,9 +121,45 @@ class TkinterMokadi(tkinter.Frame):
         Get the text in the message box.
         Retrieve the answer.
         """
-        user_input = MokadiMessage("MOKADI " + self.usr_input.get(), 1)
+        if self._waiting:
+            self.fLOG("[TkinterMokadi] already waiting")
+            return
+        user_text = self.usr_input.get()
         self.usr_input.delete(0, tkinter.END)
-        self.process(user_input)
+
+        if len(user_text) == 0:
+            # We record the speech instead.
+            self.start_speech_recording()
+        else:
+            user_input = MokadiMessage("MOKADI " + user_text, 1)
+            self.process(user_input)
+
+    def start_speech_recording(self):
+        """
+        Launches a thread which record the speech.
+        """
+        self.conversation_lbl.config(text='Parlez (< 5s) et attendez.')
+        self.conversation_lbl.update_idletasks()
+        self._waiting = True
+        th = ThreadSpeech(self, self._subkey_speech)
+        th.run()
+
+    def receive_speech(self, *l):
+        """
+        Reveices the recognized speech.
+        """
+        self.conversation_lbl.config(text='Conversation')
+        self.conversation_lbl.update_idletasks()
+
+        data = self.queue.get()
+        self.queue.task_done()
+        self._waiting = False
+
+        if isinstance(data, tuple):
+            data = data[0]
+
+        self.usr_input.insert(0, data)
+        self.usr_input.event_generate("<Return>")
 
     def process(self, user_input):
         """
@@ -104,6 +178,7 @@ class TkinterMokadi(tkinter.Frame):
 
             self.fLOG("[TkinterMokadi] received:", info,
                       info.has_sound, info.has_image)
+
             if info.status == "ok":
                 if info.has_sound:
                     play_speech(info.sound)
@@ -117,7 +192,8 @@ class TkinterMokadi(tkinter.Frame):
                 if info.info:
                     self.conversation.insert(
                         tkinter.END, "\nMokadi : " + info.info)
-                    speakable.append(info.info)
+                    if not info.has_sound:
+                        speakable.append(info.info)
             elif info.status == "error":
                 self.conversation.insert(
                     tkinter.END, "\nMokadi : " + info.info)
@@ -134,7 +210,11 @@ class TkinterMokadi(tkinter.Frame):
 def gui_mokadi(fLOG=None, folder_slides=None):
     """
     Launches the application.
+
+    There is a bug somewhere. Taking a picture fails if the vocal synthesis
+    runs first. We need to take a picture first.
     """
+    take_picture()
     import keyring
     user = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "user")
     pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
@@ -143,6 +223,8 @@ def gui_mokadi(fLOG=None, folder_slides=None):
         "cogser", os.environ["COMPUTERNAME"] + "news")
     subkey_emo = keyring.get_password(
         "cogser", os.environ["COMPUTERNAME"] + "emotions")
+    subkey_speech = keyring.get_password(
+        "cogser", os.environ["COMPUTERNAME"] + "voicereco")
 
     if folder_slides is None:
         folder_slides = os.path.abspath(os.path.dirname(__file__))
@@ -154,10 +236,10 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     clog = CustomLog(folder)
 
     actions = [MokadiActionSlides(folder=folder_slides, fLOG=fLOG),
-               MokadiActionConversation(fLOG=fLOG),
                MokadiActionMail(user=user, pwd=pwd, server=server, fLOG=fLOG),
                MokadiActionNews(subkey_news, fLOG=fLOG),
                MokadiActionEmotion(subkey_emo, folder, fLOG=fLOG),
+               MokadiActionConversation(fLOG=fLOG),
                ]
 
     engine = MokadiEngine(folder, clog, actions, MokadiGrammar_frParser,
@@ -166,5 +248,5 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     tk = tkinter.Tk()
     tk.iconbitmap(os.path.join(os.path.dirname(__file__), 'project_ico.ico'))
     tk.title("Mokadi")
-    TkinterMokadi(tk, engine, speak=True)
+    TkinterMokadi(tk, engine, speak=True, subkey_speech=subkey_speech)
     tk.mainloop()

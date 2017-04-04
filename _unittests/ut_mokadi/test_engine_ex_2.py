@@ -80,7 +80,7 @@ class TestEngineExtended_2(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("USER", "")).lower():
+        if "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
             subkey_emo = keyring.get_password(

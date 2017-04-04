@@ -16,6 +16,9 @@ class MokadiActionConversation(MokadiAction):
     """
 
     _sounds = {"hello": os.path.join(os.path.abspath(os.path.dirname(__file__)), "data", "hello.wav"),
+               "faux_rire": os.path.join(os.path.abspath(os.path.dirname(__file__)), "data", "faux_rire.wav"),
+               "applaudit": os.path.join(os.path.abspath(os.path.dirname(__file__)), "data", "applaus.wav"),
+               "toilette": os.path.join(os.path.abspath(os.path.dirname(__file__)), "data", "toilet_flush_2.wav")
                }
 
     _messages = {"hello": ["hello", "bonjour", "salut"],
@@ -67,13 +70,36 @@ class MokadiActionConversation(MokadiAction):
         @param      message             original message
         @return                         iterator on Info
         """
-        sentance = [w[0].lower() for w in interpretation[1:3]]
+        sentance = [w[0].lower() for w in interpretation[1:]]
+        joined = " ".join(sentance).lower().replace("d'", "").replace("l'", "")
         if sentance[0] in {"hello", "bonjour", "salut"}:
             options = MokadiActionConversation._messages["hello"]
-            yield MokadiInfo("ok", MokadiActionConversation.peak_random(options), sound=MokadiActionConversation._sounds["hello"])
+            yield MokadiInfo("ok", MokadiActionConversation.peak_random(options))
         elif sentance[0] in {"bye", "au revoir", "salut"}:
             options = MokadiActionConversation._messages["bye"]
             yield MokadiInfo("ok", MokadiActionConversation.peak_random(options))
+        elif sentance[0] in {"papa", "papounet"}:
+            if "ordinateur" in joined:
+                yield MokadiInfo("ok", "", sound=MokadiActionConversation._sounds["faux_rire"])
+            else:
+                raise MokadiException(
+                    "Unable to answer to '{0}'.".format(sentance))
+        elif sentance[0] in {"bruit", "son"}:
+            if "toilette" in joined:
+                yield MokadiInfo("ok", "", sound=MokadiActionConversation._sounds["toilette"])
+            elif "applaudissement" in joined:
+                yield MokadiInfo("ok", "", sound=MokadiActionConversation._sounds["applaudit"])
+            else:
+                raise MokadiException(
+                    "Unable to answer to '{0}'.".format(sentance))
+        elif sentance[0] in {"quel", "quelle", "comment", "pourquoi"}:
+            yield MokadiInfo("ok", "Je ne sais pas répondre à la question: {0}".format(sentance))
+        elif joined.startswith("c'est quoi"):
+            if "intelligence" in joined and "artificielle" in joined:
+                yield MokadiInfo("ok", "C'est moi.")
+            else:
+                raise MokadiException(
+                    "Unable to answer to '{0}'.".format(sentance))
         else:
             raise MokadiException(
                 "Unable to answer to '{0}'.".format(sentance))

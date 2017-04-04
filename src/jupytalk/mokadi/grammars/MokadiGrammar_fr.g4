@@ -17,19 +17,19 @@ expression_stmt
 
 expression
     : slides_stmt
-    | anything_stmt
     | mail_stmt
     | news_stmt
     | emotion_stmt
+    | anything_stmt
     ;
     
 slides_stmt
-    : verb_voir stop_words? presentation (integer_number_string slides integer_number_string)?
+    : verb_voir stop_words? presentation (integer_number_string slides numero? integer_number_string)?
     ;
     
 mail_stmt
     : verb_voir stop_words? time_indication? 
-      integer_number_string? mails (integer_number_string with_body?)?
+      integer_number_string? mails (numero? integer_number_string with_body?)?
     ;
     
 news_stmt
@@ -46,7 +46,19 @@ emotion_stmt
     ;
 
 anything_stmt
-    : word_name word_name* question?
+    : word_name_ext word_name_ext* question?
+    ;
+    
+word_name_ext
+    : word_name
+    | humeur
+    | numero
+    | presentation
+    | news
+    | time_indication
+    | with_body
+    | apropos
+    | slides
     ;
 
 /////////////
@@ -64,9 +76,18 @@ humeur
     : 'humeur'
     ;
     
+numero
+    : Numero
+    ;
+    
+Numero 
+    : 'num' E_CODE 'ro'
+    ;
+    
 presentation
     : Presentation
     | 'powerpoint'
+    | 'plantation'
     ;
     
 news
@@ -108,9 +129,16 @@ apropos
     ;    
     
 slides
-    : 'slides'
-    | 'slide'
-    | 'transparent'
+    : Slide
+    | Transparent
+    ;
+    
+Slide
+    : 'slide' 's'?
+    ;
+    
+Transparent
+    : 'transparent' 's'?
     ;
     
 mails
@@ -177,7 +205,7 @@ number_name
 
 word_name
     : Identifier
-    | constant
+    | constant_number
     | operator
     ;
     
@@ -189,14 +217,9 @@ question
     : '?'
     ;
 
-constant
+constant_number
     : integer_number
     | real_number
-    | string_literal
-    ;
-
-string_literal
-    : STRING
     ;
 
 integer_number
@@ -236,19 +259,10 @@ fragment A_CODE
     
 STRING
     : STRING_DOUBLE_QUOTE
-    | STRING_QUOTE
     ;
     
 STRING_DOUBLE_QUOTE
     : '"' (NO_DOUBLE_QUOTE | '\\"')* '"'
-    ;
-    
-STRING_QUOTE
-    : '\'' (NO_QUOTE | '\\\'')* '\''
-    ;
-    
-fragment NO_QUOTE
-    : ~[']
     ;
 
 fragment NO_DOUBLE_QUOTE
@@ -256,7 +270,7 @@ fragment NO_DOUBLE_QUOTE
     ;
 
 fragment LETTER_DIGIT
-    : LETTER | DIGIT
+    : LETTER | DIGIT | [']
     ;
     
 fragment DIGIT

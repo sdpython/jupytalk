@@ -137,6 +137,8 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":slide:"
             if isinstance(ch, self.parser.Word_nameContext):
                 return ":word:"
+            if isinstance(ch, self.parser.Word_name_extContext):
+                return ":word:"
             if isinstance(ch, self.parser.OperatorContext):
                 return ":op:"
             if isinstance(ch, self.parser.Verb_voirContext):
@@ -178,6 +180,8 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":anything:"
             if isinstance(ch, self.parser.With_bodyContext):
                 return ":entier:"
+            if isinstance(ch, self.parser.NumeroContext):
+                return ":numero:"
             if isinstance(ch, self.parser.Expression_stmtContext) or \
                     isinstance(ch, self.parser.ExpressionContext):
                 return ":expression:"

@@ -58,6 +58,8 @@ class MokadiActionMail(MokadiAction):
         keep = -1
         good = False
         body = False
+        interpretation0 = interpretation
+        interpretation = [_ for _ in interpretation if _[1] != ":numero:"]
         interpretation_clean = [
             _ for _ in interpretation if _[1] != ":stopword:"]
         if len(interpretation_clean) == 6:
@@ -103,4 +105,4 @@ class MokadiActionMail(MokadiAction):
             done = True
         if not done:
             raise MokadiException(
-                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation), interpretation))
+                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation0), interpretation))

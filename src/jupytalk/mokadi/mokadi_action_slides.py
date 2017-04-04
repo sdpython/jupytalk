@@ -53,6 +53,8 @@ class MokadiActionSlides(MokadiAction):
         @return                         iterator on Info
         """
         done = False
+        interpretation0 = interpretation
+        interpretation = [_ for _ in interpretation if _[1] != ":numero:"]
         if len(interpretation) == 4:
             if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":presentation:":
                 pres = list(self.enumerate_listdir())
@@ -85,7 +87,7 @@ class MokadiActionSlides(MokadiAction):
                         done = True
         if not done:
             raise MokadiException(
-                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation), interpretation))
+                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation0), interpretation))
 
     def enumerate_listdir(self):
         """

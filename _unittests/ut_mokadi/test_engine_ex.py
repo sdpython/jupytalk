@@ -79,7 +79,9 @@ class TestEngineExtended(unittest.TestCase):
         fLOG("Adding actions with credentials.")
         messages = ["MOKADI liste presentation",
                     "MOKADI lire presentation 1 slide 2",
+                    "MOKADI lire presentation 1 slide numéro 2",
                     "MOKADI hello",
+                    "MOKADI bruit de toilette",
                     ]
 
         actions = [MokadiActionSlides(folder, fLOG=fLOG),
@@ -87,7 +89,7 @@ class TestEngineExtended(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if "douze2016" not in os.environ["COMPUTERNAME"].lower():
+        if "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
             user = keyring.get_password(
@@ -100,6 +102,7 @@ class TestEngineExtended(unittest.TestCase):
 
             messages.append("MOKADI lire mail 2 en entier")
             messages.append("MOKADI lire mail 2")
+            messages.append("MOKADI lire mail numéro 2")
             messages.append("MOKADI lire 1 mail")
             messages.append("MOKADI lire un mail")
             messages.append("MOKADI lire mail")
@@ -123,7 +126,7 @@ class TestEngineExtended(unittest.TestCase):
             res = list(engine.process(mes, exc=True))
             fLOG(res)
             self.assertTrue(len(res) > 0)
-            if i == 2:
+            if i == 4:
                 self.assertEqual(len(res), 1)
                 self.assertTrue(res[0].has_sound)
                 verif += 1

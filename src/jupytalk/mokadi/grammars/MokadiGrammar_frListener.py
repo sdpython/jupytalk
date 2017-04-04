@@ -83,6 +83,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitAnything_stmt(self, ctx: MokadiGrammar_frParser.Anything_stmtContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammar_frParser#word_name_ext.
+    def enterWord_name_ext(self, ctx: MokadiGrammar_frParser.Word_name_extContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#word_name_ext.
+    def exitWord_name_ext(self, ctx: MokadiGrammar_frParser.Word_name_extContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammar_frParser#mokadi.
     def enterMokadi(self, ctx: MokadiGrammar_frParser.MokadiContext):
         pass
@@ -97,6 +105,14 @@ class MokadiGrammar_frListener(ParseTreeListener):
 
     # Exit a parse tree produced by MokadiGrammar_frParser#humeur.
     def exitHumeur(self, ctx: MokadiGrammar_frParser.HumeurContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#numero.
+    def enterNumero(self, ctx: MokadiGrammar_frParser.NumeroContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#numero.
+    def exitNumero(self, ctx: MokadiGrammar_frParser.NumeroContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#presentation.
@@ -229,20 +245,12 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitQuestion(self, ctx: MokadiGrammar_frParser.QuestionContext):
         pass
 
-    # Enter a parse tree produced by MokadiGrammar_frParser#constant.
-    def enterConstant(self, ctx: MokadiGrammar_frParser.ConstantContext):
+    # Enter a parse tree produced by MokadiGrammar_frParser#constant_number.
+    def enterConstant_number(self, ctx: MokadiGrammar_frParser.Constant_numberContext):
         pass
 
-    # Exit a parse tree produced by MokadiGrammar_frParser#constant.
-    def exitConstant(self, ctx: MokadiGrammar_frParser.ConstantContext):
-        pass
-
-    # Enter a parse tree produced by MokadiGrammar_frParser#string_literal.
-    def enterString_literal(self, ctx: MokadiGrammar_frParser.String_literalContext):
-        pass
-
-    # Exit a parse tree produced by MokadiGrammar_frParser#string_literal.
-    def exitString_literal(self, ctx: MokadiGrammar_frParser.String_literalContext):
+    # Exit a parse tree produced by MokadiGrammar_frParser#constant_number.
+    def exitConstant_number(self, ctx: MokadiGrammar_frParser.Constant_numberContext):
         pass
 
     # Enter a parse tree produced by MokadiGrammar_frParser#integer_number.

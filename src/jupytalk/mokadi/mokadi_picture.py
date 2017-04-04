@@ -4,12 +4,13 @@
 """
 
 
-def take_picture(filename, size=(640, 480), module="pygame"):
+def take_picture(filename=None, size=(640, 480), module="pygame"):
     """
     Take a picture with the camera.
 
-    @param          filename        picture to save
+    @param          filename        picture to save (if not None)
     @param          module          module to use (look at the code).
+    @return                         image object
 
     We use the examples from
     `Capturing a single image from my webcam in Java or Python <http://stackoverflow.com/questions/11094481/capturing-a-single-image-from-my-webcam-in-java-or-python>`_.
@@ -23,12 +24,16 @@ def take_picture(filename, size=(640, 480), module="pygame"):
         cam = pygame.camera.Camera(0, size)
         cam.start()
         img = cam.get_image()
-        pygame.image.save(img, filename)
+        if filename is not None:
+            pygame.image.save(img, filename)
+        return img
     elif module == "cv2":
         from cv2 import VideoCapture, imwrite
         # initialize the camera
         cam = VideoCapture(0)   # 0 -> index of camera
         s, img = cam.read()
-        imwrite(filename, img)
+        if filename is not None:
+            imwrite(filename, img)
+        return img
     else:
         raise ImportError("No module '{0}'".format(module))

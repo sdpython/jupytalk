@@ -68,6 +68,10 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI lire deux mails",  # 15
                  "MOKADI lire mail deux",  # 16
                  "MOKADI lire mail deux en entier",  # 17
+                 "MOKADI lire mail numéro deux en entier",  # 18
+                 "MOKADI lire mail numéro deux",  # 19
+                 "MOKADI lire présentation 1 transparent numéro 2",  # 20
+                 "MOKADI c'est quoi l'intelligence artificielle",  # 21
                  ]
         expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
@@ -99,6 +103,14 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                   ('mail', ':mails:'), ('deux', ':int:')],  # 16
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:'),
                   ('deux', ':int:'), ('en', ':stopword:'), ('entier', ':entier:')],  # 17
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:'),
+                  ('numéro', ':numero:'), ('deux', ':int:'), ('en', ':stopword:'), ('entier', ':entier:')],  # 18
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:'),
+                  ('numéro', ':numero:'), ('deux', ':int:')],  # 19
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('présentation', ':presentation:'), ('1', ':int:'),
+                  ('transparent', ':slide:'), ('numéro', ':numero:'), ('2', ':int:')],  # 20
+                 [('MOKADI', ':MOKADI:'), ("c'est", ':word:'), ('quoi', ':word:'),
+                  ("l'intelligence", ':word:'), ('artificielle', ':word:')],  # 21
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 
