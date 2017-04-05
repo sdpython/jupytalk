@@ -72,6 +72,9 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI lire mail numéro deux",  # 19
                  "MOKADI lire présentation 1 transparent numéro 2",  # 20
                  "MOKADI c'est quoi l'intelligence artificielle",  # 21
+                 "MOKADI bruit de toilette",  # 22
+                 "MOKADI définition de la tour eiffel",  # 23
+                 "MOKADI synonymes de ville",  # 24
                  ]
         expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
@@ -111,6 +114,12 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                   ('transparent', ':slide:'), ('numéro', ':numero:'), ('2', ':int:')],  # 20
                  [('MOKADI', ':MOKADI:'), ("c'est", ':word:'), ('quoi', ':word:'),
                   ("l'intelligence", ':word:'), ('artificielle', ':word:')],  # 21
+                 [('MOKADI', ':MOKADI:'), ('bruit', ':word:'),
+                  ('de', ':stopword:'), ('toilette', ':word:')],  # 22
+                 [('MOKADI', ':MOKADI:'), ('définition', ':definition:'), ('de', ':stopword:'), ('la', ':stopword:'),
+                  ('tour', ':word:'), ('eiffel', ':word:')],  # 23
+                 [('MOKADI', ':MOKADI:'), ('synonymes', ':synonym:'),
+                  ('de', ':stopword:'), ('ville', ':word:')],  # 24
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 

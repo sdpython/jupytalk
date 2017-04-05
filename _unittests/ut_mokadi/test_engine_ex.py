@@ -82,6 +82,9 @@ class TestEngineExtended(unittest.TestCase):
                     "MOKADI lire presentation 1 slide numéro 2",
                     "MOKADI hello",
                     "MOKADI bruit de toilette",
+                    "MOKADI définition de la tour eiffel",
+                    "MOKADI c'est quoi la tour eiffel",
+                    "MOKADI synonymes de ville",
                     ]
 
         actions = [MokadiActionSlides(folder, fLOG=fLOG),
@@ -89,7 +92,7 @@ class TestEngineExtended(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
+        if not is_travis_or_appveyor() and "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
             user = keyring.get_password(
@@ -112,9 +115,6 @@ class TestEngineExtended(unittest.TestCase):
             actions.insert(0, MokadiActionMail(
                 user=user, pwd=pwd, server=server, fLOG=fLOG))
             actions.insert(0, MokadiActionNews(subkey_news, fLOG=fLOG))
-
-        if not is_travis_or_appveyor():
-            pass
 
         # Test is beginning.
         engine = MokadiEngine(temp, clog, actions, MokadiGrammar_frParser,

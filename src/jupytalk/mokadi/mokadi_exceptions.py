@@ -16,3 +16,10 @@ class CognitiveException(Exception):
     Failure when calling the API.
     """
     pass
+
+
+class WikipediaException(Exception):
+    """
+    Issue with wikipedia
+    """
+    pass

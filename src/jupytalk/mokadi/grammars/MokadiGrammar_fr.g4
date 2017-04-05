@@ -46,7 +46,7 @@ emotion_stmt
     ;
 
 anything_stmt
-    : word_name_ext word_name_ext* question?
+    : word_name_ext+ question?
     ;
     
 word_name_ext
@@ -56,9 +56,13 @@ word_name_ext
     | presentation
     | news
     | time_indication
-    | with_body
     | apropos
     | slides
+    | entier
+    | stop_words
+    | possessif_me
+    | definition
+    | synonyme
     ;
 
 /////////////
@@ -108,15 +112,39 @@ time_indication
     ;
     
 with_body
-    : stop_words 'entier'
+    : stop_words entier
     ;
     
 Dernieres
     : 'derni' E_CODE 'r' 'e'? 's'?
     ; 
+    
+entier
+    : Entier
+    ;
+
+Entier
+    : 'entier'
+    ;
 
 Recent
     : 'r' E_CODE 'cent' 'e'? 's'?
+    ; 
+    
+definition
+    : Definition
+    ;
+
+synonyme
+    : Synonym
+    ;
+    
+Synonym
+    : 'synonyme' 's'?
+    ;
+
+Definition
+    : 'd' E_CODE 'finition' 's'?
     ; 
 
 Presentation

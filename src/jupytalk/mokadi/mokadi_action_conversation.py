@@ -8,6 +8,7 @@ import random
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
+from .mokadi_wikipedia import definition_wikipedia, synonyms_wiktionary
 
 
 class MokadiActionConversation(MokadiAction):
@@ -51,6 +52,9 @@ class MokadiActionConversation(MokadiAction):
         @param      interpreted     interpreted message
         @param      message         message
         @return                     true if the class can process the message
+
+        The function should be optimized for a subset of answers
+        quite long to build.
         """
         if len(interpreted) <= 1:
             return False
@@ -94,12 +98,26 @@ class MokadiActionConversation(MokadiAction):
                     "Unable to answer to '{0}'.".format(sentance))
         elif sentance[0] in {"quel", "quelle", "comment", "pourquoi"}:
             yield MokadiInfo("ok", "Je ne sais pas répondre à la question: {0}".format(sentance))
-        elif joined.startswith("c'est quoi"):
+        elif joined.startswith("c'est quoi") or interpretation[1][1] in {":definition:"}:
             if "intelligence" in joined and "artificielle" in joined:
                 yield MokadiInfo("ok", "C'est moi.")
             else:
-                raise MokadiException(
-                    "Unable to answer to '{0}'.".format(sentance))
+                query = " ".join(_[0] for _ in interpretation[
+                                 2:-1] if _[1] not in {":stopword:"})
+                self.fLOG(
+                    "[MokadiActionConversation.process_interpreted_message] definition of '{0}'".format(query))
+                res = definition_wikipedia(query)
+                yield MokadiInfo("ok", res)
+        elif interpretation[1][1] in {":synonym:"}:
+            query = " ".join(_[0] for _ in interpretation[
+                             2:-1] if _[1] not in {":stopword:"})
+            self.fLOG(
+                "[MokadiActionConversation.process_interpreted_message] synonym of '{0}'".format(query))
+            res = synonyms_wiktionary(query)
+            if len(res) == 0:
+                yield MokadiInfo("ok", "Aucun synonyme trouvé.")
+            else:
+                yield MokadiInfo("ok", " ".join(res))
         else:
             raise MokadiException(
                 "Unable to answer to '{0}'.".format(sentance))

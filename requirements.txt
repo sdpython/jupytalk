@@ -33,3 +33,5 @@ vega
 version_information
 vispy
 xmltodict
+wikipedia
+wptools

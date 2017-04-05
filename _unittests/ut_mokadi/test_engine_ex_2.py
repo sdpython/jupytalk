@@ -80,18 +80,14 @@ class TestEngineExtended_2(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
+        if not is_travis_or_appveyor() and "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
             subkey_emo = keyring.get_password(
                 "cogser", os.environ["COMPUTERNAME"] + "emotions")
 
             messages.append("MOKADI humeur")
-
             actions.insert(0, MokadiActionEmotion(subkey_emo, temp, fLOG=fLOG))
-
-        if not is_travis_or_appveyor():
-            pass
 
         # Test is beginning.
         engine = MokadiEngine(temp, clog, actions, MokadiGrammar_frParser,

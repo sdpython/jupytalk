@@ -147,6 +147,30 @@ class MokadiGrammar_frListener(ParseTreeListener):
     def exitWith_body(self, ctx: MokadiGrammar_frParser.With_bodyContext):
         pass
 
+    # Enter a parse tree produced by MokadiGrammar_frParser#entier.
+    def enterEntier(self, ctx: MokadiGrammar_frParser.EntierContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#entier.
+    def exitEntier(self, ctx: MokadiGrammar_frParser.EntierContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#definition.
+    def enterDefinition(self, ctx: MokadiGrammar_frParser.DefinitionContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#definition.
+    def exitDefinition(self, ctx: MokadiGrammar_frParser.DefinitionContext):
+        pass
+
+    # Enter a parse tree produced by MokadiGrammar_frParser#synonyme.
+    def enterSynonyme(self, ctx: MokadiGrammar_frParser.SynonymeContext):
+        pass
+
+    # Exit a parse tree produced by MokadiGrammar_frParser#synonyme.
+    def exitSynonyme(self, ctx: MokadiGrammar_frParser.SynonymeContext):
+        pass
+
     # Enter a parse tree produced by MokadiGrammar_frParser#apropos.
     def enterApropos(self, ctx: MokadiGrammar_frParser.AproposContext):
         pass

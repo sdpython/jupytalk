@@ -9,6 +9,40 @@ from antlr4 import CommonTokenStream, InputStream, ParseTreeWalker
 from .mokadi_exceptions import MokadiException
 
 
+def print_level_order(node, indent=0):
+    """
+    Displays a tree for the parsed text.
+
+    @param      node        output of ``parser.parse()``
+    @return                 string (see below)
+
+    Example of results:
+
+    ::
+
+        MOKADIbruitdetoilette - <Parse>
+           MOKADI - <Mokadi>
+              MOKADI - <TerminalNodeImpl>
+           bruit - <Expression_stmt>
+              bruit - <Expression>
+                 bruit - <Anything_stmt>
+                    bruit - <Word_name_ext>
+                       bruit - <Word_name>
+                          bruit - <TerminalNodeImpl>
+           de - <ErrorNodeImpl>
+           toilette - <ErrorNodeImpl>
+    """
+    rows = []
+    cl = str(type(node)).split(".")[-1].strip("'><")
+    if cl.endswith("Context"):
+        cl = cl[:-7]
+    rows.append('{0}{1} - <{2}>'.format('   ' * indent, node.getText(), cl))
+    if hasattr(node, "getChildren"):
+        for child in node.getChildren():
+            rows.append(print_level_order(child, indent + 1))
+    return "\n".join(rows)
+
+
 def run_parse(parser):
     """
     Parses the script and intercept standard output and error.
@@ -31,7 +65,8 @@ def run_parse(parser):
     out = stdout.getvalue()
     err = stderr.getvalue()
     if len(err) > 0:
-        raise SyntaxError("Mokadi parsing error:\n" + err)
+        mes = print_level_order(tree)
+        raise SyntaxError("Mokadi parsing error:\n" + err + "\nTREE\n" + mes)
     return out, err, tree
 
 
@@ -180,8 +215,14 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":anything:"
             if isinstance(ch, self.parser.With_bodyContext):
                 return ":entier:"
+            if isinstance(ch, self.parser.EntierContext):
+                return ":entier:"
             if isinstance(ch, self.parser.NumeroContext):
                 return ":numero:"
+            if isinstance(ch, self.parser.DefinitionContext):
+                return ":definition:"
+            if isinstance(ch, self.parser.SynonymeContext):
+                return ":synonym:"
             if isinstance(ch, self.parser.Expression_stmtContext) or \
                     isinstance(ch, self.parser.ExpressionContext):
                 return ":expression:"
