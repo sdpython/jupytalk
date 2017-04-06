@@ -27,6 +27,8 @@ Presentations
 2017
 ----
 
+    Devoox 06/04/2017 <2017/devoxx2017>
+
 Teachings
 =========
 
