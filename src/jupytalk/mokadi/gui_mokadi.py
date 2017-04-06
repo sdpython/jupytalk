@@ -22,19 +22,26 @@ from .mokadi_record import play_speech, record_speech
 from .mokadi_speak import speak
 from .cognitive_services_helper import call_api_speech_reco
 from .mokadi_picture import take_picture
+from .gui_mokadi_process import start_process_listen
 
 
 class ThreadSpeech(threading.Thread):
 
-    def __init__(self, win, subkey):
+    def __init__(self, win, subkey, fLOG):
         threading.Thread.__init__(self)
         self.win = win
         self.subkey = subkey
+        self.fLOG = fLOG
 
     def run(self):
+        self.fLOG("[BingSpeech] start listening")
         speech = record_speech()
-        reco = call_api_speech_reco(self.subkey, memwav=speech)
-        print(reco)
+        self.fLOG("[BingSpeech] call API ", len(speech))
+        try:
+            reco = call_api_speech_reco(self.subkey, memwav=speech)
+        except Exception as e:
+            reco = "erreur 0", 1
+        self.fLOG("[BingSpeech] received ", len(speech))
         if "results" not in reco:
             reco = "erreur 1", 1
         else:
@@ -53,12 +60,67 @@ class ThreadSpeech(threading.Thread):
         self.win.event_generate("<<thread_fini>>")
 
 
+class ThreadListenProcess(threading.Thread):
+
+    def __init__(self, win, fLOG):
+        threading.Thread.__init__(self)
+        self.win = win
+        self.fLOG = fLOG
+
+    def run(self):
+        self.fLOG("[Listen] start")
+        process, parent_conn, child_conn = start_process_listen()
+        self.process = process
+        good = {'123', 'et 23', '23', 'et 223', '923', '2123', ', 923', 'l\'un des trois',
+                '0123', 'Trois'}
+        while True:
+            text = parent_conn.recv()
+            self.fLOG("[Listen]", text)
+            if text in good:
+                speak("Je t'écoute.")
+                self.win.event_generate("<<Listener>>")
+
+    def stop_listening(self):
+        self.process.terminate()
+
+
+class ThreadListen(threading.Thread):
+
+    def __init__(self, win, fLOG, folder):
+        threading.Thread.__init__(self)
+        self.win = win
+        self.fLOG = fLOG
+        self.folder = folder
+        self.filename = os.path.join(folder, "roaming_listening.wav")
+
+    def run(self):
+        self.fLOG("[Listen] start")
+        from ensae_teaching_cs.pythonnet import vocal_recognition_system
+        good = {'123', 'et 23', '23', 'et 223', '923', '2123', ', 923', 'l\'un des trois',
+                '0123'}
+        self.continue_listening = True
+        while self.continue_listening:
+            self.fLOG("[Listen] .")
+            sound = record_speech(RECORD_SECONDS=2)
+            with open(self.filename, "wb") as f:
+                f.write(sound)
+            res = vocal_recognition_system(self.filename)
+            if res is not None:
+                text = " ".join(_[1] for _ in res)
+                self.fLOG("[Listen] .", text)
+                if text in good:
+                    self.win.event_generate("<<Listener>>")
+
+    def stop_listening(self):
+        self.continue_listening = False
+
+
 class TkinterMokadi(tkinter.Frame):
     """
     Defines a frame.
     """
 
-    def __init__(self, parent, mokadi, speak=False, subkey_speech=None, fLOG=fLOG):
+    def __init__(self, parent, mokadi, speak=False, subkey_speech=None, fLOG=fLOG, folder="."):
         """
         Constructor.
 
@@ -66,15 +128,17 @@ class TkinterMokadi(tkinter.Frame):
         @param      mokadi          the bot @see cl MokadiEngine
         @param      speak           speak the answer and not just display it
         @param      subkey_speech   key for the speech
+        @param      folder          temporary folder
         @param      fLOG            logging function
         """
         tkinter.Frame.__init__(self, parent)
         self._mokadi = mokadi
         self._speak = speak
         self._subkey_speech = subkey_speech
-        self.initialize()
         self.fLOG = fLOG
         self.queue = Queue()
+        self._folder = folder
+        self.initialize()
 
     def initialize(self):
         """
@@ -90,6 +154,11 @@ class TkinterMokadi(tkinter.Frame):
             self.subframe1, text='Demander', command=self.get_response)
         self.respond.grid(column=1, row=0, sticky='nesw', padx=3, pady=3)
         self.respond.config(width=5)
+
+        self.listen = ttk.Button(
+            self.subframe1, text='Ecouter', command=self.start_speech_listening)
+        self.listen.grid(column=1, row=1, sticky='nesw', padx=3, pady=3)
+        self.listen.config(width=5)
 
         self.usr_input = ttk.Entry(self.subframe1, state='normal')
         self.usr_input.grid(column=0, row=0, sticky='nesw', padx=3, pady=3)
@@ -141,8 +210,30 @@ class TkinterMokadi(tkinter.Frame):
         self.conversation_lbl.config(text='Parlez (< 5s) et attendez.')
         self.conversation_lbl.update_idletasks()
         self._waiting = True
-        th = ThreadSpeech(self, self._subkey_speech)
-        th.run()
+        th = ThreadSpeech(self, self._subkey_speech, self.fLOG)
+        th.start()
+
+    def start_speech_listening(self):
+        """
+        Launches a thread which record the speech.
+        """
+        if hasattr(self, "thread_listen") and self.thread_listen is not None:
+            self.thread_listen.stop_listening()
+            self.listen.config(text="Ecouter")
+            self.thread_listen = None
+        else:
+            self.listen.config(text="Arrêter l'écoute")
+            th = ThreadListen(self, self.fLOG, self._folder)
+            th.start()
+            self.thread_listen = th
+            self.bind("<<Listener>>", self.from_listener)
+
+    def from_listener(self, *l):
+        """
+        Listener tells to start.
+        """
+        speak("Je t'écoute.")
+        self.get_response()
 
     def receive_speech(self, *l):
         """
@@ -248,5 +339,9 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     tk = tkinter.Tk()
     tk.iconbitmap(os.path.join(os.path.dirname(__file__), 'project_ico.ico'))
     tk.title("Mokadi")
-    TkinterMokadi(tk, engine, speak=True, subkey_speech=subkey_speech)
+    window = TkinterMokadi(tk, engine, speak=True, subkey_speech=subkey_speech)
     tk.mainloop()
+    if hasattr(window, "thread_listen") and window.thread_listen is not None:
+        window.thread_listen.stop_listening()
+        fLOG("Stop listening.")
+    fLOG("END.")

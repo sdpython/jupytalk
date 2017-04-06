@@ -107,15 +107,18 @@ class MokadiActionConversation(MokadiAction):
                 self.fLOG(
                     "[MokadiActionConversation.process_interpreted_message] definition of '{0}'".format(query))
                 res = definition_wikipedia(query)
-                yield MokadiInfo("ok", res)
+                if res is None or len(res) == 0:
+                    yield MokadiInfo("ok", "Je n'ai pas trouvé de définition pour {0}.".format(query))
+                else:
+                    yield MokadiInfo("ok", res)
         elif interpretation[1][1] in {":synonym:"}:
             query = " ".join(_[0] for _ in interpretation[
                              2:-1] if _[1] not in {":stopword:"})
             self.fLOG(
                 "[MokadiActionConversation.process_interpreted_message] synonym of '{0}'".format(query))
             res = synonyms_wiktionary(query)
-            if len(res) == 0:
-                yield MokadiInfo("ok", "Aucun synonyme trouvé.")
+            if res is None or len(res) == 0:
+                yield MokadiInfo("ok", "Je n'ai pas trouvé de synonyme.")
             else:
                 yield MokadiInfo("ok", " ".join(res))
         else:

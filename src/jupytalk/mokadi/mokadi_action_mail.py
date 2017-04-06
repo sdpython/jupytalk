@@ -77,8 +77,8 @@ class MokadiActionMail(MokadiAction):
                     interpretation[3][1] == ":int:":
                 keep = parse_string_int(interpretation[3][0])
                 good = True
-        elif len(interpretation) == 4:
-            if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":mails:":
+        if not good and len(interpretation_clean) == 4:
+            if interpretation_clean[1][1] == ":verb_voir:" and interpretation_clean[2][1] == ":mails:":
                 good = True
         if good:
             fetch = max(keep + 1, 5)
@@ -105,4 +105,4 @@ class MokadiActionMail(MokadiAction):
             done = True
         if not done:
             raise MokadiException(
-                "Unable to interpret '{0}'\n{1} - {2}.".format(message, len(interpretation0), interpretation))
+                "Unable to interpret '{0}'\n{1} - {2}\n.".format(message, len(interpretation0), interpretation, interpretation_clean))

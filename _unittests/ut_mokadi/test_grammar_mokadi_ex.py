@@ -75,6 +75,7 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                  "MOKADI bruit de toilette",  # 22
                  "MOKADI définition de la tour eiffel",  # 23
                  "MOKADI synonymes de ville",  # 24
+                 "MOKADI lire les mails",  # 25
                  ]
         expec = [[('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('mail', ':mails:')],  # 1
                  [('MOKADI', ':MOKADI:'), ('liste', ':verb_voir:'),
@@ -120,6 +121,8 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                   ('tour', ':word:'), ('eiffel', ':word:')],  # 23
                  [('MOKADI', ':MOKADI:'), ('synonymes', ':synonym:'),
                   ('de', ':stopword:'), ('ville', ':word:')],  # 24
+                 [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'),
+                  ('les', ':stopword:'), ('mails', ':mails:')],  # 25
                  ]
         expec = [_ + [('<EOF>', ':P:')] for _ in expec]
 
