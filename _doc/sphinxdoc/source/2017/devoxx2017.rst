@@ -10,7 +10,8 @@ Devoxx 06/04/2017
     :twitter: 3
     :head: False
 
-La présentation abordait le thème de l'intelligence artificielle.
+La présentation abordait le thème de l'intelligence artificielle :
+`Démocratisation de l'IA Microsoft : de la recherche aux technologies et outils à votre disposition ! <http://cfp.devoxx.fr/2017/talk/OQY-0948/Democratisation_de_l%E2%80%99IA_Microsoft_:_de_la_recherche_aux_technologies_et_outils_a_votre_disposition_!>`_.
 Je ne décrirai pas ici le contenu de la présentation pour plus parler
 de la petite démo que j'ai préparé pour cet événement.
 
