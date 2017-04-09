@@ -25,7 +25,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyensae"
   - "%PYTHON%\\Scripts\\pip install cryptography"
   - "%PYTHON%\\Scripts\\pip install azure"
-  - "%PYTHON%\\Scripts\\pymy_install3 pycrypto numba"
+  - "%PYTHON%\\Scripts\\pymy_install3 pycrypto numba pycurl"
   - "%PYTHON%\\Scripts\\pymy_install3 basemap sympy pyqt4 mpmath reportlab statsmodels cffi scipy pylzma"
   - "%PYTHON%\\Scripts\\pip install pycryptodomex jyquickhelper"
   - "%PYTHON%\\Scripts\\pip install urllib3 traittypes"
