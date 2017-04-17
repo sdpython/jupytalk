@@ -30,7 +30,7 @@ Presentations
 .. toctree::
     :maxdepth: 1
 
-    Devoox 06/04/2017 <2017/devoxx2017>
+    Devoxx 06/04/2017 <2017/devoxx2017>
 
 Teachings
 =========
