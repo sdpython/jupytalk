@@ -9,12 +9,12 @@ Les algorithmes, outils de décision automatique. L’exemple du trading algorit
     :linkedin: 2
     :twitter: 3
     :head: False
-    
+
 *Présentation*
 
 :ref:`automationfinancetradingrst`
-(`site <https://univ-droit.fr/actualites-de-la-recherche/manifestations/23274-algorithmes-les-nouveaux-decideurs>`_)
-
+(sur le `site du MESHS <https://www.meshs.fr/page/algorithmes_les_nouveaux_decideurs>`_,
+sur le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manifestations/23274-algorithmes-les-nouveaux-decideurs>`_)
 
 *Médias*
 
@@ -39,11 +39,15 @@ Les algorithmes, outils de décision automatique. L’exemple du trading algorit
 * `Technical Analysis <https://en.wikipedia.org/wiki/Technical_analysis>`_
 * `Nicole El Karoui <https://en.wikipedia.org/wiki/Nicole_El_Karoui>`_
 * `RTB Real Time Bidding <https://en.wikipedia.org/wiki/Real-time_bidding>`_
+* `ECN <https://en.wikipedia.org/wiki/Electronic_communication_network>`_
+* `Flash Crash de 2010 <https://fr.wikipedia.org/wiki/Flash_Crash_de_2010>`_
+* `Hedge Fund <https://fr.wikipedia.org/wiki/Gestion_alternative>`_
 
 *Programmation*
 
 * `Stratégie automatique de trading en finance <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/specials/finance_autostrat.html>`_
 * `zipline <http://www.zipline.io/>`_
+* `awesome-quant <https://github.com/wilsonfreitas/awesome-quant>`_
 
 *Indicateur financiers*
 
@@ -55,19 +59,11 @@ Les algorithmes, outils de décision automatique. L’exemple du trading algorit
 *Livres, articles*
 
 * `Options, futures et autres actifs dérivés, véritable bible des marchés <http://financedemarche.fr/finance/john-hull-options-futures-et-autres-actifs-derives-veritable-bible-des-marches>`_, John Hull
-* `Le trading algorithmique <https://arxiv.org/ftp/arxiv/papers/0810/0810.4000.pdf>`_ 
+* `Le trading algorithmique <https://arxiv.org/ftp/arxiv/papers/0810/0810.4000.pdf>`_
   (Victor Lebreton ENSAE)
+* `L'informatisation des transactions : la cotation assistée en continu ... <https://www.mataf.net/fr/bourse/edu/formation-bourse/l-informatisation-des-transactions-la-cotation-en-continu>`_
+* `Des transactions à la vitesse de la lumière <https://www.sciencesetavenir.fr/high-tech/des-transactions-boursieres-a-la-vitesse-de-la-lumiere_35736>`_
 
 *Outils*
 
 * `Quandl <https://www.quandl.com/>`_ : moteur de recherche sur les données
-
-
-
-
-
-
-
-
-
-

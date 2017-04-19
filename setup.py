@@ -123,6 +123,7 @@ def verbose():
 # version
 ##########
 
+
 if is_local() and "--help" not in sys.argv and "--help-commands" not in sys.argv:
     def write_version():
         pyquickhelper = import_pyquickhelper()
@@ -178,12 +179,12 @@ if is_local():
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name, layout=["html"],
         unittest_modules=["pyquickhelper", "jyquickhelper"],
-        additional_notebook_path=[
-            "pyquickhelper", "jyquickhelper", "pymmails", "ensae_teaching_cs"],
-        additional_local_path=["pyquickhelper",
+        additional_notebook_path=["mlstatpy", "teachpyx",
+                                  "pyquickhelper", "jyquickhelper", "pymmails", "ensae_teaching_cs", "pyensae"],
+        additional_local_path=["pyquickhelper", "pyensae", "mlstatpy", "teachpyx",
                                "jyquickhelper", "pymmails", "ensae_teaching_cs"],
-        requirements=["pyquickhelper", "jyquickhelper",
-                      "pymmails", "ensae_teaching_cs"],
+        requirements=["pyquickhelper", "jyquickhelper", "mlstatpy", "teachpyx",
+                      "pymmails", "ensae_teaching_cs", "pyensae"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=(

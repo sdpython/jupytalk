@@ -59,7 +59,8 @@ class TestSpeechSystem(unittest.TestCase):
             return
 
         # bugged
-        warnings.warn("vocal_recognition_system does not return for a wav file.")
+        warnings.warn(
+            "vocal_recognition_system does not return for a wav file.")
         return
 
         wav = os.path.join(os.path.abspath(
