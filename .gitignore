@@ -274,7 +274,10 @@ _doc/notebooks/2016/centrale/.ipynb_checkpoints/*
 _unittests/run_unittests.py.out
 _unittests/ut_talk_examples/ffmpeg.zip
 _unittests/ut_talk_examples/ffmpeg.exe
-_doc/notebooks/2016/ensae/.ipynb_checkpoints/kaggle_review_2016-checkpoint.ipynb
+_doc/notebooks/2016/ensae/.ipynb_checkpoints/*
+_doc/notebooks/2016/.ipynb_checkpoints/*
+_doc/notebooks/2017/.ipynb_checkpoints/*
+_doc/notebooks/2017/meshs/cache/*
+_doc/notebooks/2017/meshs/.ipynb_checkpoints/*
 ffmpeg.exe
 ffmpeg.zip
-_doc/notebooks/2017/cache/BNP.PA.2000-01-03.2017-04-18.txt

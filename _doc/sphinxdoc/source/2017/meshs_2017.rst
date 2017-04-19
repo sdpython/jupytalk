@@ -63,6 +63,7 @@ sur le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manife
   (Victor Lebreton ENSAE)
 * `L'informatisation des transactions : la cotation assistée en continu ... <https://www.mataf.net/fr/bourse/edu/formation-bourse/l-informatisation-des-transactions-la-cotation-en-continu>`_
 * `Des transactions à la vitesse de la lumière <https://www.sciencesetavenir.fr/high-tech/des-transactions-boursieres-a-la-vitesse-de-la-lumiere_35736>`_
+* `Analysis of Trend Following Systems <http://www.cruset.com/systemtrader/download/trendfollowing.pdf>`_
 
 *Outils*
 
