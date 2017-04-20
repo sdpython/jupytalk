@@ -31,6 +31,7 @@ Presentations
     :maxdepth: 1
 
     Devoxx 06/04/2017 <2017/devoxx2017>
+    Meshs 04/05/2017 <2017/meshs_2017>
 
 Teachings
 =========
