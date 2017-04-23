@@ -176,6 +176,10 @@ if is_local():
     logging_function = pyquickhelper.get_fLOG()
     from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function(OutputPrint=True)
+    if "unittests" in sys.argv and sys.platform.startswith("win"):
+        # There is some issues on Windows.
+        from PIL import Image as PIL_Image
+        assert PIL is not None
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name, layout=["html"],
         unittest_modules=["pyquickhelper", "jyquickhelper"],

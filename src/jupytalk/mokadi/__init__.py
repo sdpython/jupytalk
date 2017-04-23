@@ -5,6 +5,7 @@
 
 from .mokadi_engine import MokadiEngine
 from .mokadi_exceptions import MokadiException
+from .gui_mokadi import gui_mokadi
 from .mokadi_grammar import interpret
 from .mokadi_info import MokadiInfo
 from .mokadi_mails import enumerate_last_mails

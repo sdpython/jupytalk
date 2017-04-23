@@ -76,7 +76,6 @@ class TestMail(unittest.TestCase):
             "gmail", os.environ["COMPUTERNAME"] + "user")
         pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
         server = "imap.gmail.com"
-
         try:
             mails = enumerate_last_mails(user, pwd, server, fLOG=fLOG)
 

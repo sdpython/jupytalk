@@ -5,7 +5,7 @@
 """
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
-from .mokadi_exceptions import MokadiException
+from .mokadi_exceptions import MokadiException, MokadiAuthentification
 from .mokadi_mails import enumerate_last_mails
 from .mokadi_helper import parse_string_int
 
@@ -67,7 +67,7 @@ class MokadiActionMail(MokadiAction):
                     interpretation_clean[3][1] == ":int:" and interpretation_clean[4][1] == ":entier:":
                 keep = parse_string_int(interpretation_clean[3][0])
                 good = True
-                body = False
+                body = True
         elif len(interpretation) == 5:
             if interpretation[1][1] == ":verb_voir:" and interpretation[2][1] == ":int:" and \
                     interpretation[3][1] == ":mails:":
@@ -82,25 +82,33 @@ class MokadiActionMail(MokadiAction):
                 good = True
         if good:
             fetch = max(keep + 1, 5)
-            mails = enumerate_last_mails(
-                self._user, self._pwd, self._server, fLOG=self.fLOG, nb=fetch)
+            try:
+                mails = enumerate_last_mails(
+                    self._user, self._pwd, self._server, fLOG=self.fLOG, nb=fetch)
+            except MokadiAuthentification as e:
+                yield MokadiInfo("error", "Il m'est impossible de me connecter à la boîte mail de {0}.".format(self._user))
 
-            for i, mail in enumerate(mails):
-                if i == stop:
-                    break
-                if keep != -1 and i != keep:
-                    continue
-                self.fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
-                          "**", mail.get_date_str())
-                h = mail.get_date().hour
-                yield MokadiInfo("ok", "Mail reçu vers {0} heures de {1}.".format(h, mail.get_name()))
-                yield MokadiInfo("ok", mail.get_field("subject").split("\n")[0])
-                nb = mail.get_nb_attachements()
-                if nb > 0:
-                    yield MokadiInfo("ok", "Ce mail a {0} pièces jointes.".format(nb))
-                if body:
-                    for line in mail.body:
-                        yield MokadiInfo("ok", line)
+            try:
+                for i, mail in enumerate(mails):
+                    if i == stop:
+                        break
+                    if keep != -1 and i != keep:
+                        continue
+                    self.fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
+                              "**", mail.get_date_str())
+                    h = mail.get_date().hour
+                    yield MokadiInfo("ok", "Mail reçu vers {0} heures de {1}.".format(h, mail.get_name()))
+                    yield MokadiInfo("ok", mail.get_field("subject").split("\n")[0])
+                    nb = mail.get_nb_attachements()
+                    if nb > 0:
+                        yield MokadiInfo("ok", "Ce mail a {0} pièces jointes.".format(nb))
+                    if body:
+                        # The content of the mail includes past answers.
+                        # This should be removed as well as html tags.
+                        for line in mail.body.split("\n"):
+                            yield MokadiInfo("ok", line)
+            except MokadiAuthentification as e:
+                yield MokadiInfo("error", "Il m'est impossible de me connecter à la boîte mail de {0}.".format(self._user))
 
             done = True
         if not done:

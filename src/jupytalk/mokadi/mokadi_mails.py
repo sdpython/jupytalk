@@ -4,6 +4,7 @@
 """
 import datetime
 from pyquickhelper.loghelper import noLOG
+from .mokadi_exceptions import MokadiAuthentification
 
 
 def enumerate_last_mails(user, pwd, server, nb=5, fLOG=noLOG):
@@ -28,7 +29,10 @@ def enumerate_last_mails(user, pwd, server, nb=5, fLOG=noLOG):
     pattern = "SINCE %s" % date
     fLOG("[enumerate_last_mails] pattern ", pattern)
     box = MailBoxImap(user, pwd, server, ssl=True, fLOG=fLOG)
-    box.login()
+    try:
+        box.login()
+    except Exception as e:
+        raise MokadiAuthentification("Unable to connect to the mailbox") from e
 
     def enumerate_mails(iter):
         for mail in iter:

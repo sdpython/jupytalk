@@ -12,7 +12,8 @@ from queue import Queue
 from PIL import Image, ImageTk
 from pyquickhelper.loghelper import CustomLog, fLOG
 from .grammars import MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener
-from . import MokadiEngine, MokadiMessage
+from .mokadi_message import MokadiMessage
+from .mokadi_engine import MokadiEngine
 from .mokadi_action_conversation import MokadiActionConversation
 from .mokadi_action_emotion import MokadiActionEmotion
 from .mokadi_action_mail import MokadiActionMail

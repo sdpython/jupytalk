@@ -23,3 +23,10 @@ class WikipediaException(Exception):
     Issue with wikipedia
     """
     pass
+
+
+class MokadiAuthentification(Exception):
+    """
+    Issue with authentification
+    """
+    pass

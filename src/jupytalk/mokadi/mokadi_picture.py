@@ -4,7 +4,7 @@
 """
 
 
-def take_picture(filename=None, size=(640, 480), module="pygame"):
+def take_picture(filename=None, size=(640, 480), module="cv2"):
     """
     Take a picture with the camera.
 
@@ -21,7 +21,11 @@ def take_picture(filename=None, size=(640, 480), module="pygame"):
         import pygame.camera
         pygame.camera.init()
         # pygame.camera.list_camera()
-        cam = pygame.camera.Camera(0, size)
+        try:
+            cam = pygame.camera.Camera(0, size, "RGB")
+        except Exception as e:
+            raise Exception(
+                "Unable to change resolution into {0}".format(size)) from e
         cam.start()
         img = cam.get_image()
         if filename is not None:
