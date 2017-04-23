@@ -40,19 +40,23 @@ class ThreadSpeech(threading.Thread):
         self.fLOG("[BingSpeech] call API ", len(speech))
         try:
             reco = call_api_speech_reco(self.subkey, memwav=speech)
+            exc = None
         except Exception as e:
-            reco = "erreur 0", 1
+            reco = "error, Je n'ai rien entendu. Etes-vous connecté ?", 1
+            exc = e
         self.fLOG("[BingSpeech] received ", len(speech))
-        if "results" not in reco:
-            reco = "erreur 1", 1
+        if exc is not None:
+            self.fLOG("[BingSpeech] exc", exc)
+        elif "results" not in reco:
+            reco = "error, Je n'ai rien entendu. Etes-vous sûr d'avoir parlé ?", 1
         else:
             results = reco["results"]
             if len(results) != 1:
-                reco = "erreur 2", 1
+                reco = "error, Je n'ai rien compris. Avez-vous parlé assez fort ?", 1
             else:
                 res = results[0]
                 if "lexical" not in res:
-                    reco = "erreur 3", 1
+                    reco = "error, Quelle langue avez-vous parlé ?", 1
                 else:
                     conf = res["confidence"]
                     reco = res["lexical"], conf
@@ -323,6 +327,8 @@ def gui_mokadi(fLOG=None, folder_slides=None):
         folder_slides = os.path.join(folder_slides, "demo")
 
     folder = os.path.abspath("temp_mokadi_folder")
+    if fLOG is not None:
+        fLOG("[gui_mokadi] saving into", folder)
     if not os.path.exists(folder):
         os.mkdir(folder)
     clog = CustomLog(folder)

@@ -68,28 +68,34 @@ class MokadiEngine:
         @return                 iterator on @see cl MokadiInfo
         """
         self.fLOG("[MokadiEngine.process]", message)
-        res = message.interpret(exc, self._MokadiGrammarParser,
-                                self._MokadiGrammarLexer, self._MokadiGrammarListener)
-        if isinstance(res, Exception):
-            info = MokadiInfo("error", MokadiEngine.peak_random(
-                MokadiEngine._messages["dontunderstand"]), str(res), None)
+        prefix_error = "MOKADI error,"
+        if message.message is not None and message.message.startswith(prefix_error):
+            info = MokadiInfo("error", message.message[len(prefix_error):])
             self.fLOG("[MokadiEngine.process]", info)
             yield info
         else:
-            if exc:
-                for info in self.process_interpreted_message(res, message):
-                    self.fLOG("[MokadiEngine.process]", info)
-                    yield info
+            res = message.interpret(exc, self._MokadiGrammarParser,
+                                    self._MokadiGrammarLexer, self._MokadiGrammarListener)
+            if isinstance(res, Exception):
+                info = MokadiInfo("error", MokadiEngine.peak_random(
+                    MokadiEngine._messages["dontunderstand"]), str(res), None)
+                self.fLOG("[MokadiEngine.process]", info)
+                yield info
             else:
-                try:
+                if exc:
                     for info in self.process_interpreted_message(res, message):
                         self.fLOG("[MokadiEngine.process]", info)
                         yield info
-                except Exception as e:
-                    info = MokadiInfo("error", MokadiEngine.peak_random(
-                        MokadiEngine._messages["failure"]), str(e), None)
-                    self.fLOG("[MokadiEngine.process]", info)
-                    yield info
+                else:
+                    try:
+                        for info in self.process_interpreted_message(res, message):
+                            self.fLOG("[MokadiEngine.process]", info)
+                            yield info
+                    except Exception as e:
+                        info = MokadiInfo("error", MokadiEngine.peak_random(
+                            MokadiEngine._messages["failure"]), str(e), None)
+                        self.fLOG("[MokadiEngine.process]", info)
+                        yield info
 
     def process_interpreted_message(self, interpretation, message):
         """
