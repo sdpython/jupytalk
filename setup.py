@@ -179,7 +179,7 @@ if is_local():
     if "unittests" in sys.argv and sys.platform.startswith("win"):
         # There is some issues on Windows.
         from PIL import Image as PIL_Image
-        assert PIL is not None
+        assert PIL_Image is not None
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name, layout=["html"],
         unittest_modules=["pyquickhelper", "jyquickhelper"],
