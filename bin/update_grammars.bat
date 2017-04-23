@@ -16,5 +16,5 @@ set current=%~dp0
 @echo ~SET current=%current%
 set PYTHONPATH=%current%\src
 
-%pythonexe% -u %current%..\setup.py update_grammars
+%pythonexe% -u %current%..\setup.py update_grammars MokadiGrammar_fr.g4
 if %errorlevel% neq 0 exit /b %errorlevel%
