@@ -14,7 +14,7 @@ Les algorithmes, outils de décision automatique. L’exemple du trading algorit
 
 :ref:`automationfinancetradingrst`
 (sur le `site du MESHS <https://www.meshs.fr/page/algorithmes_les_nouveaux_decideurs>`_,
-sur le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manifestations/23274-algorithmes-les-nouveaux-decideurs>`_)
+et le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manifestations/23274-algorithmes-les-nouveaux-decideurs>`_)
 
 *Médias*
 
