@@ -10,11 +10,18 @@ Les algorithmes, outils de décision automatique. L’exemple du trading algorit
     :twitter: 3
     :head: False
 
-*Présentation*
+.. contents::
+    :local:
+
+Présentation
+------------
 
 :ref:`automationfinancetradingrst`
 (sur le `site du MESHS <https://www.meshs.fr/page/algorithmes_les_nouveaux_decideurs>`_,
 et le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manifestations/23274-algorithmes-les-nouveaux-decideurs>`_)
+
+Liens, articles
+---------------
 
 *Médias*
 
@@ -68,3 +75,21 @@ et le `site univ-droit <https://univ-droit.fr/actualites-de-la-recherche/manifes
 *Outils*
 
 * `Quandl <https://www.quandl.com/>`_ : moteur de recherche sur les données
+
+Notes
+-----
+
+La journée organisée par le
+`MESHS <https://www.meshs.fr/page/algorithmes_les_nouveaux_decideurs>`_ était très intéressante
+et réunissait des acteurs autour du droit et des algorithmes. Comment gérer le cas
+où un algorithme porte préjudice à quelqu'un ? Parmi les nombreux éléments de réflexion discutés
+ce jour était celui du contrôle d'un algorithme ? Comment peut-on s'assurer de l'équité ou
+du caractère non biaisé des résultats d'un algorithme ? Faut-il s'intéresser au processus
+qui produit ses résultats ou aux résultats eux-mêmes ?
+
+* `O21 : « La transparence des algorithmes relève des droits civiques <http://www.lemonde.fr/campus/article/2017/05/02/o21-la-transparence-des-algorithmes-releve-des-droits-civiques_5121201_4401467.html>`_
+* `TransAlgo : évaluer la responsabilité et la transparence des systèmes algorithmiques <https://www.inria.fr/actualite/actualites-inria/transalgo>`_
+* `Data Transparency Lab <http://datatransparencylab.org/>`_
+* `Réguler les algorithmes : remise d'un rapport à Axelle Lemaire <https://www.economie.gouv.fr/reguler-algorithmes-rapport-axelle-lemaire-cge>`_
+* `OPAL <http://www.data4sdgs.org/dc-opal/>`_
+* `FairTest: Discovering Unwarranted Associations in Data-Driven Applications <https://arxiv.org/pdf/1510.02377.pdf>`_
