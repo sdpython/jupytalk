@@ -93,3 +93,8 @@ qui produit ses résultats ou aux résultats eux-mêmes ?
 * `Réguler les algorithmes : remise d'un rapport à Axelle Lemaire <https://www.economie.gouv.fr/reguler-algorithmes-rapport-axelle-lemaire-cge>`_
 * `OPAL <http://www.data4sdgs.org/dc-opal/>`_
 * `FairTest: Discovering Unwarranted Associations in Data-Driven Applications <https://arxiv.org/pdf/1510.02377.pdf>`_
+
+Un algorithme biaisé est-il éthique ?
+Les recettes de cuisine sont des algorithmes.
+Peut-on dire que la recette d'un poison n'est pas éthique ?
+Et si ce poison est un remède dans certains cas rares ?
