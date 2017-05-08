@@ -41,13 +41,13 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor, add_missing_development_version
 
 
-class TestRestApiSpeech(unittest.TestCase):
+class TestLONGRestApiSpeech(unittest.TestCase):
 
     def setUp(self):
         add_missing_development_version(["jyquickhelper", "ensae_teaching_cs", "pymmails"],
                                         __file__, hide=True)
 
-    def test_api_news_speech(self):
+    def test_api_speech_reco(self):
         fLOG(
             __file__,
             self._testMethodName,
