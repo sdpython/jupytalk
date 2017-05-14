@@ -281,3 +281,5 @@ _doc/notebooks/2017/meshs/cache/*
 _doc/notebooks/2017/meshs/.ipynb_checkpoints/*
 ffmpeg.exe
 ffmpeg.zip
+_doc/notebooks/2016/pydata/scatter.svg
+_doc/notebooks/2016/pydata/scatter.pdf
