@@ -94,6 +94,10 @@ it involves a server (bqplot).
 * `Distributing Jupyter Extensions as Python Packages <http://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/Distributing%20Jupyter%20Extensions%20as%20Python%20Packages.html>`_
 * `Notebook extensions <https://github.com/jupyter/scipy-advanced-tutorial/blob/master/Part1/04-notebook-extensions.md>`_
 
+*Links*
+
+* `The Python Visualization Landscape <http://pyvideo.org/pycon-us-2017/the-python-visualization-landscape.html>`_
+
 .. _l-pydataparis-notes:
 
 From others presentations
