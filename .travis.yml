@@ -7,6 +7,9 @@ addons:
 -  apt:
 -    packages:
       - ffmpeg
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y ta-lib
 install:
   # We do this conditionally because it saves us some downloading if the
   # version is the same.
