@@ -42,7 +42,7 @@ except ImportError:
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
 from pyquickhelper.ipythonhelper import execute_notebook_list
-from pyquickhelper.pycode import compare_module_version
+from pyquickhelper.pycode import compare_module_version, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import IPython
 
@@ -61,6 +61,9 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
 
         if compare_module_version(IPython.__version__, "4.0.0") < 0:
             # IPython is not recnt enough
+            return
+
+        if is_travis_or_appveyor() == "travis":
             return
 
         kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
