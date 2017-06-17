@@ -10,7 +10,7 @@ addons:
       - ffmpeg
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y ta-lib
+  # - sudo apt-get install -y ta-lib  does not work
 install:
   # We do this conditionally because it saves us some downloading if the
   # version is the same.

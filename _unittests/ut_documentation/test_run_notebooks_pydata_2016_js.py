@@ -74,8 +74,10 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
         keepnote = []
         for f in os.listdir(fnb):
             if os.path.splitext(f)[-1] == ".ipynb" and "js_" in f and "pyjs_" not in f and "lightning" not in f:
-                keepnote.append(os.path.join(fnb, f))
-        assert len(keepnote) > 0
+                if sys.platform.startswith("win") or "plotly" not in f:
+                    # plotly requires cufflinks which requires ta-lib which is difficult to install on travis
+                    keepnote.append(os.path.join(fnb, f))
+        self.assertTrue(len(keepnote) > 0)
 
         # function to tell that a can be run
         def valid(cell):

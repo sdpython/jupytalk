@@ -28,7 +28,6 @@ pyreadline
 python-pptx
 pythreejs
 requests-oauthlib
-ta-lib
 traittypes
 vega
 version_information
