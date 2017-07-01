@@ -16,6 +16,7 @@ lifelines
 lightning-python
 metakernel
 missingno
+mpld3
 pkgtools
 plotly
 pydy
@@ -28,6 +29,7 @@ pyreadline
 python-pptx
 pythreejs
 requests-oauthlib
+shapely
 traittypes
 vega
 version_information

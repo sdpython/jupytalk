@@ -15,7 +15,6 @@ jupyter_client
 jupyter_console
 jupyter_core
 matplotlib
-mpld3
 nbformat
 nbpresent
 networkx
