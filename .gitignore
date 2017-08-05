@@ -284,3 +284,6 @@ ffmpeg.zip
 _doc/notebooks/2016/pydata/scatter.svg
 _doc/notebooks/2016/pydata/scatter.pdf
 _doc/notebooks/2016/pydata/bokeh_temp.html
+_doc/notebooks/2016/pydata/export/NYCT_pickups_vs_dropoffs.png
+_doc/notebooks/2016/pydata/export/NYCT_90th.png
+_doc/notebooks/2016/pydata/export/NYCT_hot.png
