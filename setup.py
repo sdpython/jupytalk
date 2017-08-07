@@ -235,6 +235,7 @@ if not r:
         version='%s%s' % (sversion, subversion),
         author='Xavier Dupré',
         author_email='xavier.dupre@gmail.com',
+        license="MIT",
         url="http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html",
         download_url="https://github.com/sdpython/jupytalk",
         description=DESCRIPTION,
