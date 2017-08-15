@@ -7,7 +7,6 @@ import sys
 import os
 import unittest
 import shutil
-import warnings
 
 
 try:
@@ -57,9 +56,10 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
-from pyquickhelper.ipythonhelper import execute_notebook_list
+from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
 from pyquickhelper.pycode import compare_module_version
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
+import src.jupytalk
 import IPython
 
 
@@ -130,24 +130,17 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
         # run the notebooks
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
+        execute_notebook_list_finalize_ut(
+            res, fLOG=fLOG, dump=src.jupytalk)
 
-        # final checkings
-        assert len(res) > 0
-        fails = [(os.path.split(k)[-1], v)
-                 for k, v in sorted(res.items()) if not v[0]]
-        for f in fails:
-            fLOG(f)
-        for k, v in sorted(res.items()):
-            name = os.path.split(k)[-1]
-            fLOG(name, v[0], v[1])
-        if len(fails) > 0:
-            for f in fails:
-                if "_process_plot_var_args' object has no attribute" not in str(f[1][-1]):
-                    raise f[1][-1]
-                else:
-                    # if lifelines fails, check:
-                    # https://github.com/CamDavidsonPilon/lifelines/issues/191#issuecomment-145275656
-                    warnings.warn(str(f[1][-1]))
+        # if len(fails) > 0:
+        #     for f in fails:
+        #         if "_process_plot_var_args' object has no attribute" not in str(f[1][-1]):
+        #             raise f[1][-1]
+        #         else:
+        #             # if lifelines fails, check:
+        #             # https://github.com/CamDavidsonPilon/lifelines/issues/191#issuecomment-145275656
+        #             warnings.warn(str(f[1][-1]))
 
 
 if __name__ == "__main__":
