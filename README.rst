@@ -40,7 +40,7 @@ README
 
 .. image:: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/_images/nbcov.png
     :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
-    :alt: Notebook Coverage    
+    :alt: Notebook Coverage
 
 **Links:**
 

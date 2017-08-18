@@ -67,6 +67,7 @@ it involves a server (bqplot).
 
 * `altair <https://github.com/ellisonbg/altair>`_: an example on how to wrap `Vega <https://github.com/vega/ipyvega>`_
   in a more Pythonic way
+* `blockdiag <http://blockdiag.com/en/>`_: interesting alternative to :epkg:`Graphviz`
 * `flexx <https://flexx.readthedocs.io/en/stable/>`_ : very promising way to plug javascript graphs
   written in Python, this module contains a tools which converts Python into javascript
 * `graphviz <http://www.graphviz.org/>`_: famous library to draw graph, trees.
