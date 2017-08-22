@@ -66,43 +66,48 @@ Resources
 See also `github <https://github.com/sdpython/jupytalk/>`_,
 :ref:`blog <ap-main-0>`.
 
-.. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
-    :target: https://travis-ci.org/sdpython/jupytalk
-    :alt: Build status
+.. only:: html
 
-.. image:: https://ci.appveyor.com/api/projects/status/cq8d56y2o4ldi7rn?svg=true
-    :target: https://ci.appveyor.com/project/sdpython/jupytalk
-    :alt: Build Status Windows
+    .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
+        :target: https://travis-ci.org/sdpython/jupytalk
+        :alt: Build status
 
-.. image:: https://badge.fury.io/py/jupytalk.svg
-    :target: http://badge.fury.io/py/jupytalk
+    .. image:: https://ci.appveyor.com/api/projects/status/cq8d56y2o4ldi7rn?svg=true
+        :target: https://ci.appveyor.com/project/sdpython/jupytalk
+        :alt: Build Status Windows
 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg
-    :alt: MIT License
-    :target: http://opensource.org/licenses/MIT
+    .. image:: https://circleci.com/gh/sdpython/teachpyx/tree/master.svg?style=svg
+        :target: https://circleci.com/gh/sdpython/teachpyx/tree/master
+        
+    .. image:: https://badge.fury.io/py/jupytalk.svg
+        :target: http://badge.fury.io/py/jupytalk
 
-.. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
-   :target: https://landscape.io/github/sdpython/jupytalk/master
-   :alt: Code Health
+    .. image:: https://img.shields.io/badge/license-MIT-blue.svg
+        :alt: MIT License
+        :target: http://opensource.org/licenses/MIT
 
-.. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
-     :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
-     :alt: Requirements Status
+    .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
+       :target: https://landscape.io/github/sdpython/jupytalk/master
+       :alt: Code Health
 
-.. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
-    :target: https://codecov.io/github/sdpython/jupytalk?branch=master
+    .. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
+         :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
+         :alt: Requirements Status
 
-.. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
-    :alt: GitHub Issues
-    :target: https://github.com/sdpython/jupytalk/issues
+    .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
+        :target: https://codecov.io/github/sdpython/jupytalk?branch=master
 
-.. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
-    :alt: Waffle
-    :target: https://waffle.io/sdpython/jupytalk
+    .. image:: http://img.shields.io/github/issues/sdpython/jupytalk.png
+        :alt: GitHub Issues
+        :target: https://github.com/sdpython/jupytalk/issues
 
-.. image:: nbcov.png
-    :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
-    :alt: Notebook Coverage
+    .. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
+        :alt: Waffle
+        :target: https://waffle.io/sdpython/jupytalk
+
+    .. image:: nbcov.png
+        :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
+        :alt: Notebook Coverage
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
