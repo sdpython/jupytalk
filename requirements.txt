@@ -40,5 +40,7 @@ tqdm
 unify
 vega
 version_information
+wikipedia
 vispy
 wheel
+wptools
