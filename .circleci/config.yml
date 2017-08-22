@@ -44,9 +44,9 @@ jobs:
                     sudo apt-get install -y graphviz
 
       - run:
-          name: install ffmpeg
+          name: install avconv (ffmpeg)
           command: |
-                    sudo apt-get install ffmpeg
+                    sudo apt-get install libav-tools
 
       - run:
           name: install dependencies 1

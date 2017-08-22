@@ -58,10 +58,9 @@ class TestPyData2016Animation(unittest.TestCase):
             warnings.warn("no ffmpeg installed")
             return
 
-        fLOG("test ffmpeg")
-        out, err = run_cmd("ffmpeg", wait=True, fLOG=fLOG)
-        fLOG("end ffmpeg")
-        if "ffmpeg version" not in out or err is None or len(err) == 0:
+        prog = "ffmpeg" if sys.platform.startswith("win") else "avconv"
+        out, err = run_cmd(prog, wait=True, fLOG=fLOG)
+        if (prog + "version") not in out or err is None or len(err) == 0:
             if sys.platform.startswith("win"):
                 fLOG("download ffmpeg")
                 add_missing_development_version(
@@ -70,9 +69,8 @@ class TestPyData2016Animation(unittest.TestCase):
                 download_data("ffmpeg.zip", website="xd")
             else:
                 raise FileNotFoundError(
-                    "Unable to find ffmpeg. PATH={0}".format(os.environ["PATH"]))
+                    "Unable to find '{1}'. PATH={0}".format(os.environ["PATH"], prog))
 
-        fLOG("test")
         temp = get_temp_folder(__file__, "temp_example_example")
         fix_tkinter_issues_virtualenv()
 
@@ -81,6 +79,10 @@ class TestPyData2016Animation(unittest.TestCase):
         import matplotlib.pyplot as plt
         import scipy.stats as ss
         from matplotlib.animation import FuncAnimation, writers
+
+        # To get the list of available writers
+        fLOG(matplotlib.animation.writers.list())
+        if not startswith("win"):
 
         class UpdateDist(object):
 
