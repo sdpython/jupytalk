@@ -82,7 +82,6 @@ class TestPyData2016Animation(unittest.TestCase):
 
         # To get the list of available writers
         fLOG(matplotlib.animation.writers.list())
-        if not startswith("win"):
 
         class UpdateDist(object):
 
