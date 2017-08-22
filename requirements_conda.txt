@@ -17,7 +17,6 @@ pillow
 pyproj
 pyshp
 pyzmq
-rasterio
 reportlab
 scikit-learn
 scipy
