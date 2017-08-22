@@ -41,10 +41,8 @@ except ImportError:
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-from pyquickhelper.pycode import compare_module_version
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 import src.jupytalk
-import IPython
 
 
 class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
@@ -55,15 +53,7 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        if sys.version_info[0] == 2:
-            # notebooks are not converted into python 2.7, so not tested
-            return
-
-        if compare_module_version(IPython.__version__, "4.0.0") < 0:
-            warnings.warn("IPython is not recent enough")
-            return
-
-        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
+        kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
             "python3_module_template")
 
         temp = get_temp_folder(__file__, "temp_run_notebooks_pyjs")
@@ -79,7 +69,6 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
                         warnings.warn("Travis, skipping " + f)
                         continue
                 keepnote.append(os.path.join(fnb, f))
-        assert len(keepnote) > 0
 
         # function to tell that a can be run
         def valid(cell):
@@ -99,10 +88,6 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             os.path.normpath(os.path.join(
                 os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "pyquickhelper", "src"))
         ]
-
-        # creation of a kernel
-        kernel_name = None if "travis" in sys.executable else install_python_kernel_for_unittest(
-            "python3_module_template")
 
         # run the notebooks
         res = execute_notebook_list(
