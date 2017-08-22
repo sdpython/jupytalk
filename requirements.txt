@@ -26,9 +26,9 @@ pylzma
 pymmails
 pyquickhelper>1.5.2122
 pyreadline
+pyshp
 pythreejs
 semantic_version
-sphinx-bootstrap-theme
 sphinx-gallery
 sphinxcontrib-images
 sphinxcontrib-imagesvg

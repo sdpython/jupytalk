@@ -78,7 +78,7 @@ See also `github <https://github.com/sdpython/jupytalk/>`_,
 
     .. image:: https://circleci.com/gh/sdpython/teachpyx/tree/master.svg?style=svg
         :target: https://circleci.com/gh/sdpython/teachpyx/tree/master
-        
+
     .. image:: https://badge.fury.io/py/jupytalk.svg
         :target: http://badge.fury.io/py/jupytalk
 
