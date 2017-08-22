@@ -81,7 +81,7 @@ class TestPyData2016Animation(unittest.TestCase):
         from matplotlib.animation import FuncAnimation, writers
 
         # To get the list of available writers
-        fLOG(matplotlib.animation.writers.list())
+        fLOG(writers.list())
 
         class UpdateDist(object):
 
