@@ -15,31 +15,31 @@ jobs:
           - v1-dependencies-
 
       - run:
-          name: Install pandoc
+          name: install pandoc
           command: |
                     sudo apt-get update 
                     wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb
                     sudo dpkg -i pandoc-1.19.2.1-1-amd64.deb
           
       - run:
-          name: Install tex
+          name: install tex
           command: |
                     sudo apt-get install -y texlive
                     sudo apt-get install -y texlive-latex-extra
                     sudo apt-get install -y texlive-lang-french
           
       - run:
-          name: Install 7z, unrar
+          name: install 7z, unrar
           command: |
                     sudo apt-get install -y p7zip-full
           
       - run:
-          name: Install InkScape
+          name: install InkScape
           command: |
                     sudo apt-get install -y inkscape
           
       - run:
-          name: Install graphviz
+          name: install graphviz
           command: |
                     sudo apt-get install -y graphviz
           
@@ -48,10 +48,18 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            conda install --file requirements_conda.txt
+            pip install -r requirements_conda.txt
             pip install -r requirements.txt
             pip install git+https://github.com/sdpython/sphinxcontrib-images.git --upgrade --no-deps
             pip install git+https://github.com/bokeh/datashader.git --upgrade --no-deps
+            
+      - run:
+          name: install basemap
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            sudo apt-get install libgeos-dev
+            pip install git+https://github.com/matplotlib/basemap.git
 
       - save_cache:
           paths:

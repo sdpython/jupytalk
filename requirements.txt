@@ -1,10 +1,8 @@
 antlr4-python3-runtime
-ansiconv
 autopep8
-bqplot
 babel!=2.0
 blockdiag
-bokeh
+bqplot
 brythonmagic
 coverage
 cufflinks
@@ -18,7 +16,6 @@ lightning-python
 mutagen
 missingno
 mpld3
-pkgtools
 plotly
 pycodestyle>=2.0.0
 pydocstyle
@@ -29,9 +26,7 @@ pylzma
 pymmails
 pyquickhelper>1.5.2122
 pyreadline
-python-pptx
 pythreejs
-requests-oauthlib
 semantic_version
 sphinx-bootstrap-theme
 sphinx-gallery
@@ -41,14 +36,9 @@ sphinxcontrib-jsdemo
 sphinxjp.themes.basicstrap
 sphinxjp.themes.revealjs
 sphinxjp.themes.sphinxjp
-shapely
 tqdm
-traittypes
 unify
 vega
 version_information
 vispy
-xmltodict
-wikipedia
-wptools
 wheel
