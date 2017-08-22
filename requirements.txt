@@ -27,6 +27,7 @@ pymmails
 pyquickhelper>1.5.2122
 pyreadline
 pyshp
+python-pptx
 pythreejs
 semantic_version
 sphinx-gallery
