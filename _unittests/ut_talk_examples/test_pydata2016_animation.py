@@ -69,7 +69,8 @@ class TestPyData2016Animation(unittest.TestCase):
                 download_data("ffmpeg.zip", website="xd")
             else:
                 raise FileNotFoundError(
-                    "Unable to find '{1}'. PATH={0}".format(os.environ["PATH"], prog))
+                    "Unable to find '{1}'.\nPATH='{0}'\n--------\n[OUT]\n{2}\n[ERR]\n{3}".format(
+                        os.environ["PATH"], prog, out, err))
 
         temp = get_temp_folder(__file__, "temp_example_example")
         fix_tkinter_issues_virtualenv()
