@@ -136,7 +136,7 @@ class TestPyData2016Animation(unittest.TestCase):
         except KeyError as e:
             if prog == "avconv":
                 from matplotlib.animation import AVConvWriter
-                writer = AVConvWriter
+                Writer = AVConvWriter
             else:
                 raise e
         writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
