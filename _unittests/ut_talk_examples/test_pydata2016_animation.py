@@ -60,7 +60,7 @@ class TestPyData2016Animation(unittest.TestCase):
 
         prog = "ffmpeg" if sys.platform.startswith("win") else "avconv"
         out, err = run_cmd(prog, wait=True, fLOG=fLOG)
-        exps = prog + "version"
+        exps = prog + " version"
         if (exps not in out and exps not in err) or err is None or len(err) == 0:
             if sys.platform.startswith("win"):
                 fLOG("download ffmpeg")
