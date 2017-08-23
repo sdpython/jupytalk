@@ -29,6 +29,7 @@ pyreadline
 pyshp
 python-pptx
 pythreejs
+scikit-image
 semantic_version
 sphinx-gallery
 sphinxcontrib-images
