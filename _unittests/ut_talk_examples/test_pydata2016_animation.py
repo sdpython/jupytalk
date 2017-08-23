@@ -83,6 +83,8 @@ class TestPyData2016Animation(unittest.TestCase):
         from matplotlib.animation import FuncAnimation, writers
 
         # To get the list of available writers
+        if not writers.is_available(prog):
+            writers.register(prog)
         fLOG(writers.list())
 
         class UpdateDist(object):
@@ -129,7 +131,7 @@ class TestPyData2016Animation(unittest.TestCase):
         anim = FuncAnimation(fig, ud, frames=np.arange(100), init_func=ud.init,
                              interval=100, blit=True)
 
-        Writer = writers['ffmpeg']
+        Writer = writers[prog]
         writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
         anim.save(os.path.join(temp, 'lines2.mp4'), writer=writer)
 
