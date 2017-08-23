@@ -131,7 +131,14 @@ class TestPyData2016Animation(unittest.TestCase):
         anim = FuncAnimation(fig, ud, frames=np.arange(100), init_func=ud.init,
                              interval=100, blit=True)
 
-        Writer = writers[prog]
+        try:
+            Writer = writers[prog]
+        except KeyError as e:
+            if prog == "avconv":
+                from matplotlib.animation import AVConvWriter
+                writer = AVConvWriter
+            else:
+                raise e
         writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
         anim.save(os.path.join(temp, 'lines2.mp4'), writer=writer)
 
