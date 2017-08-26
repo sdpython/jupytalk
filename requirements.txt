@@ -31,6 +31,7 @@ python-pptx
 pythreejs
 scikit-image
 semantic_version
+shapely
 sphinx-gallery
 sphinxcontrib-images
 sphinxcontrib-imagesvg

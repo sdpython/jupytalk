@@ -22,7 +22,6 @@ scikit-learn
 scipy
 seaborn
 setuptools
-shapely
 Sphinx
 sympy
 toolz
