@@ -59,6 +59,7 @@ Resources
     i_ex
     all_notebooks
     gyexamples/index
+    blog/blogindex
     resources/rnotebooks
     resources/teachings
     issues_todoextlist
