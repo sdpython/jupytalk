@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -63,7 +64,11 @@ class TestRestApiEmotions(unittest.TestCase):
             "cogser", os.environ["COMPUTERNAME"] + "emotions")
         for img in imgs:
             res = call_api_emotions(subkey, img)
-            self.assertTrue(isinstance(res, list))
+            if isinstance(res, dict) and "error" in res:
+                warnings.warn("Key should be checked or renewed.")
+                continue
+            if not isinstance(res, list):
+                raise TypeError(type(res))
             self.assertTrue(len(img) > 0)
             for _ in res:
                 fLOG(_)

@@ -32,6 +32,7 @@ Presentations
 
     Devoxx 06/04/2017 <2017/devoxx2017>
     Meshs 04/05/2017 <2017/meshs_2017>
+    ENSAE 05/09/2017 <2017/ensae_1a_2017>
 
 Teachings
 =========
