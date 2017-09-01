@@ -9,7 +9,7 @@ import unittest
 
 
 try:
-    import src
+    import src.jupytalk
 except ImportError:
     path = os.path.normpath(
         os.path.abspath(
@@ -19,7 +19,7 @@ except ImportError:
                 "..")))
     if path not in sys.path:
         sys.path.append(path)
-    import src
+    import src.jupytalk
 
 try:
     import pyquickhelper as skip_
@@ -49,9 +49,8 @@ class TestNotebook123Coverage(unittest.TestCase):
                                         __file__, hide=True)
 
     def a_test_notebook_runner(self, name, folder, valid=None):
-        import src.jupytalk
         temp = get_temp_folder(__file__, "temp_notebook_123_{0}".format(name))
-        doc =  os.path.join(temp, "..", "..", "..", "_doc", "notebooks", folder)
+        doc = os.path.join(temp, "..", "..", "..", "_doc", "notebooks", folder)
         self.assertTrue(os.path.exists(doc))
         keepnote = [os.path.join(doc, _) for _ in os.listdir(doc) if name in _]
         self.assertTrue(len(keepnote) > 0)
@@ -59,10 +58,11 @@ class TestNotebook123Coverage(unittest.TestCase):
         import pyquickhelper
         import jyquickhelper
         import pyensae
-        import src.jupytalk
-        add_path = get_additional_paths([jyquickhelper, pyquickhelper, pyensae, src.jupytalk])
-        res = execute_notebook_list(temp, keepnote, additional_path=add_path, valid=valid)
-        execute_notebook_list_finalize_ut(res, fLOG=fLOG, dump=src.jupytalk)                          
+        add_path = get_additional_paths(
+            [jyquickhelper, pyquickhelper, pyensae, src.jupytalk])
+        res = execute_notebook_list(
+            temp, keepnote, additional_path=add_path, valid=valid)
+        execute_notebook_list_finalize_ut(res, fLOG=fLOG, dump=src.jupytalk)
 
     def test_notebook_automation_finance_trading(self):
         fLOG(
@@ -101,7 +101,7 @@ class TestNotebook123Coverage(unittest.TestCase):
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-            
+
         def valid(cell):
             if "from lightning import Lightning" in cell:
                 return False
@@ -109,7 +109,8 @@ class TestNotebook123Coverage(unittest.TestCase):
                 return False
             return True
 
-        self.a_test_notebook_runner("js_lightning_python", "2016/pydata", valid=valid)
+        self.a_test_notebook_runner(
+            "js_lightning_python", "2016/pydata", valid=valid)
 
     def test_notebook_pyjsc_vispy(self):
         fLOG(
