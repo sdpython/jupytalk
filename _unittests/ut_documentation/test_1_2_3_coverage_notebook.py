@@ -72,13 +72,13 @@ class TestNotebook123Coverage(unittest.TestCase):
 
         self.a_test_notebook_runner("automation_finance_trading", "2017/meshs")
 
-    def test_notebook_centrale_201606_sysrec(self):
+    def test_notebook_centrale_201606(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        self.a_test_notebook_runner("centrale_201606_sysrec", "2016/centrale")
+        self.a_test_notebook_runner("centrale_201606", "2016/centrale")
 
     def test_notebook_kaggle_review_2016(self):
         fLOG(
@@ -119,6 +119,14 @@ class TestNotebook123Coverage(unittest.TestCase):
             OutputPrint=__name__ == "__main__")
 
         self.a_test_notebook_runner("pyjsc_vispy", "2016/pydata")
+
+    def test_notebook_2017_1a_ensae_nocture(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        self.a_test_notebook_runner("2017_1a_ensae_nocture", "2017/ensae")
 
 
 if __name__ == "__main__":
