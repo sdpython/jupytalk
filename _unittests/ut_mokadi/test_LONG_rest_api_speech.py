@@ -57,6 +57,10 @@ class TestLONGRestApiSpeech(unittest.TestCase):
             # no keys
             return
 
+        if os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME")).startswith("VSWINDOUZE"):
+            # jenkins remote machine: no audio
+            return
+
         from src.jupytalk.mokadi.cognitive_services_helper import call_api_speech_reco
         import keyring
         subkey = keyring.get_password(
