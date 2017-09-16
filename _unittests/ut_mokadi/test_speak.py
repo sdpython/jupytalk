@@ -67,6 +67,7 @@ class TestSpeak(unittest.TestCase):
                 if os.environ["USERNAME"] == "ensaestudent" or \
                    os.environ["USERNAME"] == "vsxavierdupre" or \
                    os.environ["USERNAME"] == "vsxavierdupre" or \
+                   os.environ["USERNAME"] == "Administrateur" or \
                    "DOUZE2016" in os.environ.get("COMPUTERNAME", "") or \
                    os.environ["USERNAME"] == "appveyor" or \
                    "ENSAE" in os.environ.get("COMPUTERNAME", "").lower() or \
@@ -75,7 +76,8 @@ class TestSpeak(unittest.TestCase):
                     # it just exclude one user only used on remotre
                     # machines
                     return
-            raise Exception("USERNAME: " + os.environ.get("USERNAME", "-"))
+            raise Exception("USERNAME {0} COMPUTERNAME {1}".format(
+                os.environ.get("USERNAME", "-"), os.environ.get("COMPUTERNAME", "-")))
 
 
 if __name__ == "__main__":
