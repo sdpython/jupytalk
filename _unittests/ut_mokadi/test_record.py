@@ -65,7 +65,7 @@ class TestRestApiSpeech(unittest.TestCase):
                os.environ["USERNAME"] == "vsxavierdupre" or \
                "DOUZE2016" in os.environ["COMPUTERNAME"] or \
                os.environ["USERNAME"] == "appveyor" or \
-               "paris" in os.environ["COMPUTERNAME"].lower() or \
+               "ENSAE" in os.environ["COMPUTERNAME"].lower() or \
                os.environ["USERNAME"].endswith("$"):
                 return
         fLOG("play", len(record))

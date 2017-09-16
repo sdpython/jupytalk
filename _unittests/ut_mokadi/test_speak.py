@@ -69,7 +69,7 @@ class TestSpeak(unittest.TestCase):
                    os.environ["USERNAME"] == "vsxavierdupre" or \
                    "DOUZE2016" in os.environ.get("COMPUTERNAME", "") or \
                    os.environ["USERNAME"] == "appveyor" or \
-                   "paris" in os.environ.get("COMPUTERNAME", "").lower() or \
+                   "ENSAE" in os.environ.get("COMPUTERNAME", "").lower() or \
                    os.environ["USERNAME"].endswith("$"):  # anonymous Jenkins configuration
                     # I would prefer to catch a proper exception
                     # it just exclude one user only used on remotre
