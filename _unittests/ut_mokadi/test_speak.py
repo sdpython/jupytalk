@@ -77,7 +77,7 @@ class TestSpeak(unittest.TestCase):
                     # machines
                     return
             raise Exception("USERNAME {0} COMPUTERNAME {1}".format(
-                os.environ.get("USERNAME", "-"), os.environ.get("COMPUTERNAME", "-")))
+                os.environ.get("USERNAME", "-"), os.environ.get("COMPUTERNAME", "-"))) from e
 
 
 if __name__ == "__main__":

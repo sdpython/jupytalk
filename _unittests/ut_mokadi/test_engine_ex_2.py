@@ -80,7 +80,7 @@ class TestEngineExtended_2(unittest.TestCase):
                    ]
 
         # Adding test which requires credentials.
-        if not is_travis_or_appveyor() and "ENSAE" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
+        if not is_travis_or_appveyor() and "ensae" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
             import keyring
             subkey_emo = keyring.get_password(
