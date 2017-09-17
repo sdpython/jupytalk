@@ -61,6 +61,9 @@ class TestLONGRestApiSpeech(unittest.TestCase):
             # jenkins remote machine: no audio
             return
 
+        # key must be renewed before calling it again
+        return
+
         from src.jupytalk.mokadi.cognitive_services_helper import call_api_speech_reco
         import keyring
         subkey = keyring.get_password(
