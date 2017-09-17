@@ -69,7 +69,8 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         """
         If the test does not end, it is probably due to PyQt4 needed by ete3.
         Try ``import PyQt4.QtCore``.
-        Try to remove PyQt5.
+        Try to remove PyQt5, uninstall PyQt4, reinstall it from
+        http://www.lfd.uci.edu/~gohlke/pythonlibs/#pyqt4 (Windows).
         """
         fLOG(
             __file__,

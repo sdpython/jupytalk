@@ -61,7 +61,8 @@ class TestSpeak(unittest.TestCase):
         try:
             speak("mail reçu à 15h30 mardi 21 septembre.")
         except Exception as e:
-            if "Audio device error encountered" in str(e):
+            if "Audio device error encountered" in str(e) or \
+                    "Erreur de périphérique audio rencontrée" in str(e):
                 # maybe the script is running on a virtual machine (no
                 # Audia device)
                 if os.environ["USERNAME"] == "ensaestudent" or \
