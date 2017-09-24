@@ -50,4 +50,4 @@ version_information
 wikipedia
 vispy
 wheel
-wptools
+wptools>=0.4

@@ -66,7 +66,7 @@ def synonyms_wiktionary(name, lang="fr"):
     page = wptools.page(name, wiki='{0}.wiktionary.org'.format(
         lang), lang=lang, silent=True)
     page.get_parse()
-    text = page.wikitext
+    text = page.data['wikitext']
     syn = "==== {{S|synonymes}} ===="
     if syn not in text:
         return None
