@@ -1,0 +1,14 @@
+
+.. blogpost::
+    :title: plotnine, mpl_scatter_density
+    :keywords: matplotlib
+    :date: 2017-09-24
+    :categories: module
+
+    I discovered two libraries based on
+    :epkg:`matplotlib`. The first one
+    :ref:`implotninerst` proposes a different way
+    to create graphs. The second one adresses
+    a typical issue for a statisticians which is plotting
+    a density estimated with lots of points
+    :ref:`immplscatterdensityrst`.

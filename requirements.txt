@@ -16,8 +16,10 @@ lifelines
 lightning-python
 mutagen
 missingno
+mpl_scatter_density
 mpld3
 plotly
+plotnine
 pycodestyle>=2.0.0
 pydocstyle
 pydy

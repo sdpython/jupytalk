@@ -30,7 +30,9 @@ it involves a server (bqplot).
 * :ref:`imlifelinesrst`
 * :ref:`immatplotlibrst`
 * :ref:`immissingnorst`
+* :ref:`immplscatterdensityrst`
 * :ref:`imnetworkxrst`
+* :ref:`implotninerst`
 * :ref:`imreportlabrst`
 * :ref:`imseabornrst`
 
