@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 @file
-@brief Main file.
+@brief Module *jupytalk*.
+Functions and examples associated to the
+presentation hosted by :epkg:`jupytalk`.
 """
 
 __version__ = "0.2"
