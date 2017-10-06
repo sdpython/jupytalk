@@ -42,3 +42,6 @@ j'ai conservé quelques exemples de code en C# que j'ai mis dans le module
 `ensae_teaching_cs <https://github.com/sdpython/ensae_teaching_cs/tree/master/helpers/cs/ENSAE.Voice>`_
 et convertis en Python à
 `ensae_teaching_cs/pythonnet/__init__ <https://github.com/sdpython/ensae_teaching_cs/blob/master/src/ensae_teaching_cs/pythonnet/__init__.py>`_.
+Pout finir, la vidéo :
+
+.. youtube:: https://www.youtube.com/watch?v=UGPOauhD7Ks

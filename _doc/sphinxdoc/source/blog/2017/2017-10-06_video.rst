@@ -1,0 +1,21 @@
+
+.. blogpost::
+    :title: Videos of past presentations
+    :keywords: devoxx, pydata
+    :date: 2017-10-06
+    :categories: videos
+
+    Here are a couple of videos taken from the presentations
+    I did or I was expected to do.
+
+    :ref:`l-devoxx2017`
+
+    .. youtube:: https://www.youtube.com/watch?v=UGPOauhD7Ks
+
+    An old one I made for `DataLead 2015 <https://www.universite-paris-saclay.fr/en/event/leading-the-way-in-big-data>`_.
+
+    .. youtube:: https://www.youtube.com/watch?v=ltsiS0tyE0E
+
+    Unforunately, I could not be at `PyData Seattle 2017 <https://pydata.org/seattle2017/>`_.
+
+    .. youtube:: https://www.youtube.com/watch?v=P7Or7XzeIno
