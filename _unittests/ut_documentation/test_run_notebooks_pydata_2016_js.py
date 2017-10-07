@@ -98,6 +98,9 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
                 os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src"))
         ]
 
+        if is_travis_or_appveyor() == "appveyor":
+            keepnote = [_ for _ in keepnote if 'mpld3' not in _]
+
         # run the notebooks
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
