@@ -80,7 +80,7 @@ class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
         kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
             "python3_module_template")
 
-        temp = get_temp_folder(__file__, "temp_run_notebooks_js")
+        temp = get_temp_folder(__file__, "temp_run_notebooks_lightning_js")
 
         # selection of notebooks
         fnb = os.path.normpath(os.path.join(
