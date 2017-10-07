@@ -16,6 +16,6 @@
 
     .. youtube:: https://www.youtube.com/watch?v=ltsiS0tyE0E
 
-    Unforunately, I could not be at `PyData Seattle 2017 <https://pydata.org/seattle2017/>`_.
+    Unfortunately, I could not be at `PyData Seattle 2017 <https://pydata.org/seattle2017/>`_.
 
     .. youtube:: https://www.youtube.com/watch?v=P7Or7XzeIno
