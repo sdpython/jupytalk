@@ -98,7 +98,12 @@ class MokadiActionMail(MokadiAction):
                               "**", mail.get_date_str())
                     h = mail.get_date().hour
                     yield MokadiInfo("ok", "Mail reçu vers {0} heures de {1}.".format(h, mail.get_name()))
-                    yield MokadiInfo("ok", mail.get_field("subject").split("\n")[0])
+                    subj = mail.get_field("subject")
+                    if subj is None:
+                        subj = ""
+                    else:
+                        subj = subj.split("\n")[0]
+                    yield MokadiInfo("ok", subj)
                     nb = mail.get_nb_attachements()
                     if nb > 0:
                         yield MokadiInfo("ok", "Ce mail a {0} pièces jointes.".format(nb))
