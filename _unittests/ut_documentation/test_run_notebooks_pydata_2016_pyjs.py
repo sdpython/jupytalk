@@ -63,7 +63,7 @@ class TestRunNotebooksPyData2016_pyjs(unittest.TestCase):
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb" and "pyjs_" in f:
+            if os.path.splitext(f)[-1] == ".ipynb" and "pyjs_" in f and "mpld3" not in f:
                 if is_travis_or_appveyor() == "travis":
                     if "pyjs_brython" in f:
                         warnings.warn("Travis, skipping " + f)
