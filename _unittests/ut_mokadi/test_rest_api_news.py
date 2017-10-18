@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -54,7 +55,9 @@ class TestRestApiNews(unittest.TestCase):
             # no keys
             return
 
-        import keyring
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore', DeprecationWarning)
+            import keyring
         subkey = keyring.get_password(
             "cogser", os.environ["COMPUTERNAME"] + "news")
         res = call_api_news(subkey, "tennis")

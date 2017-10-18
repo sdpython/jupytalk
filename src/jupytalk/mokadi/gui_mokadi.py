@@ -8,6 +8,7 @@ import tkinter.ttk as ttk
 import tkinter.scrolledtext as ScrolledText
 import os
 import threading
+import warnings
 from queue import Queue
 from PIL import Image, ImageTk
 from pyquickhelper.loghelper import CustomLog, fLOG
@@ -311,7 +312,9 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     runs first. We need to take a picture first.
     """
     take_picture()
-    import keyring
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore', DeprecationWarning)
+        import keyring
     user = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "user")
     pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
     server = "imap.gmail.com"

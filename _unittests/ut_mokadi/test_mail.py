@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -71,7 +72,9 @@ class TestMail(unittest.TestCase):
             # no keys
             return
 
-        import keyring
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore', DeprecationWarning)
+            import keyring
         user = keyring.get_password(
             "gmail", os.environ["COMPUTERNAME"] + "user")
         pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")

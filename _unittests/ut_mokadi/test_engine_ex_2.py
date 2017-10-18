@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -82,7 +83,9 @@ class TestEngineExtended_2(unittest.TestCase):
         # Adding test which requires credentials.
         if not is_travis_or_appveyor() and "ensae" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
-            import keyring
+            with warnings.catch_warnings():
+                warnings.simplefilter('ignore', DeprecationWarning)
+                import keyring
             subkey_emo = keyring.get_password(
                 "cogser", os.environ["COMPUTERNAME"] + "emotions")
 

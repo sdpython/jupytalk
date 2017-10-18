@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -65,7 +66,9 @@ class TestLONGRestApiSpeech(unittest.TestCase):
         return
 
         from src.jupytalk.mokadi.cognitive_services_helper import call_api_speech_reco
-        import keyring
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore', DeprecationWarning)
+            import keyring
         subkey = keyring.get_password(
             "cogser", os.environ["COMPUTERNAME"] + "voicereco")
 

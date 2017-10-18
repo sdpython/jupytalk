@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 
 
 try:
@@ -94,7 +95,9 @@ class TestEngineExtended(unittest.TestCase):
         # Adding test which requires credentials.
         if not is_travis_or_appveyor() and "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
             fLOG("Adding actions with credentials.")
-            import keyring
+            with warnings.catch_warnings():
+                warnings.simplefilter('ignore', DeprecationWarning)
+                import keyring
             user = keyring.get_password(
                 "gmail", os.environ["COMPUTERNAME"] + "user")
             pwd = keyring.get_password(
