@@ -29,4 +29,5 @@ entrainer ces modèles dans Azure (GPU, FPGA).
 Contenu
 +++++++
 
-`2017_deeplearning_demo <https://github.com/sdpython/2017_deeplearning_demo>`_
+* `2017_deeplearning_demo <https://github.com/sdpython/2017_deeplearning_demo>`_
+* `Deep Learning 2017 <http://www.xavierdupre.fr/exposes/deeplearning/>`_
