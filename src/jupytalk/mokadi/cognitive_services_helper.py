@@ -38,6 +38,92 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
 
     ::
 
+        {
+          "_type": "Images",
+          "instrumentation": {},
+          "readLink": "https://api.cognitive.microsoft.com/api/v7/images/search?q=puppies",
+          "webSearchUrl": "https://www.bing.com/images/search?q=puppies&FORM=OIIARP",
+          "totalEstimatedMatches": 955,
+          "nextOffset": 1,
+          "value": [
+            {
+              "webSearchUrl": "https://www.bing.com/images/search?view=detailv2&FORM=OIIRPO&q=puppies&id=F68CC526226E163FD1EA659747ADCB8F9FA3CD96&simid=608055280844016271",
+              "name": "So cute - Puppies Wallpaper (14749028) - Fanpop",
+              "thumbnailUrl": "https://tse3.mm.bing.net/th?id=OIP.jHrihoDNkXGS1t5e89jNfwEsDh&pid=Api",
+              "datePublished": "2014-02-01T21:55:00.0000000Z",
+              "contentUrl": "http://images4.fanpop.com/image/photos/14700000/So-cute-puppies-14749028-1600-1200.jpg",
+              "hostPageUrl": "http://www.fanpop.com/clubs/puppies/images/14749028/title/cute-wallpaper",
+              "contentSize": "394455 B",
+              "encodingFormat": "jpeg",
+              "hostPageDisplayUrl": "www.fanpop.com/clubs/puppies/images/14749028/title/cute-wallpaper",
+              "width": 1600,
+              "height": 1200,
+              "thumbnail": {
+                "width": 300,
+                "height": 225
+              },
+              "imageInsightsToken": "ccid_jHrihoDN*mid_F68CC526226E163FD1EA659747ADCB8F9FA3CD96*simid_608055280844016271*thid_OIP.jHrihoDNkXGS1t5e89jNfwEsDh",
+              "insightsMetadata": {
+                "recipeSourcesCount": 0
+              },
+              "imageId": "F68CC526226E163FD1EA659747ADCB8F9FA3CD96",
+              "accentColor": "8D613E"
+            }
+          ],
+          "queryExpansions": [
+            {
+              "text": "Shih Tzu Puppies",
+              "displayText": "Shih Tzu",
+              "webSearchUrl": "https://www.bing.com/images/search?q=Shih+Tzu+Puppies&tq=%7b%22pq%22%3a%22puppies%22%2c%22qs%22%3a%5b%7b%22cv%22%3a%22puppies%22%2c%22pv%22%3a%22puppies%22%2c%22hps%22%3atrue%2c%22iqp%22%3afalse%7d%2c%7b%22cv%22%3a%22Shih+Tzu%22%2c%22pv%22%3a%22%22%2c%22hps%22%3afalse%2c%22iqp%22%3atrue%7d%5d%7d&FORM=IRPATC",
+              "searchLink": "https://api.cognitive.microsoft.com/api/v7/images/search?q=Shih+Tzu+Puppies&tq=%7b%22pq%22%3a%22puppies%22%2c%22qs%22%3a%5b%7b%22cv%22%3a%22puppies%22%2c%22pv%22%3a%22puppies%22%2c%22hps%22%3atrue%2c%22iqp%22%3afalse%7d%2c%7b%22cv%22%3a%22Shih+Tzu%22%2c%22pv%22%3a%22%22%2c%22hps%22%3afalse%2c%22iqp%22%3atrue%7d%5d%7d",
+              "thumbnail": {
+                "thumbnailUrl": "https://tse2.mm.bing.net/th?q=Shih+Tzu+Puppies&pid=Api&mkt=en-US&adlt=moderate&t=1"
+              }
+            }
+          ],
+          ...
+    """
+    headers = {
+        # Request headers
+        'Ocp-Apim-Subscription-Key': subscription_key,
+    }
+
+    params = urllib.parse.urlencode({
+        # Request parameters
+        'q': query,
+        'count': "{0}".format(count),
+        'offset': "{0}".format(offset),
+        'mkt': market,
+        'safeSearch': 'Moderate',
+    })
+
+    try:
+        conn = http.client.HTTPSConnection('api.cognitive.microsoft.com')
+        conn.request("GET", "/bing/v5.0/news/search?%s" %
+                     params, "{body}", headers)
+        response = conn.getresponse()
+        data = response.read()
+        conn.close()
+        return bytes2python(data)
+    except Exception as e:
+        raise CognitiveException("[Errno {0}] {1}".format(e.errno, e.strerror))
+
+
+def call_api_images(subscription_key, query, market="fr-FR", count=10, offset=0):
+    """
+    Retrieve resuls for images.
+
+    @param      subscription_key
+    @param      query               query
+    @param      market              market
+    @param      count               number of results
+    @param      offset              skip results
+    @return                         results
+
+    Example of a result:
+
+    ::
+
         {'_type': 'News',
          'readLink': 'https://api.cognitive.microsoft.com/api/v5/news/search?q=',
          'value': [{'name': "Colombie : le bilan de la coulée de boue s'alourdit 54 morts",
@@ -72,7 +158,7 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
 
     try:
         conn = http.client.HTTPSConnection('api.cognitive.microsoft.com')
-        conn.request("GET", "/bing/v5.0/news/search?%s" %
+        conn.request("GET", "/bing/v7.0/images/search?%s" %
                      params, "{body}", headers)
         response = conn.getresponse()
         data = response.read()

@@ -57,6 +57,7 @@ Resources
 .. toctree::
     :maxdepth: 1
 
+    api/index
     i_faq
     i_ex
     all_notebooks
