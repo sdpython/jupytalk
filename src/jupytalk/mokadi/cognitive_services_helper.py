@@ -47,7 +47,7 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
           "nextOffset": 1,
           "value": [
             {
-              "webSearchUrl": "https://www.bing.com/images/search?view=detailv2&FORM=OIIRPO&q=puppies&id=F68CC526226E163FD1EA659747ADCB8F9FA3CD96&simid=608055280844016271",
+              "webSearchUrl": "https://www.bing.com/images/search?view=detailv2&FORM=...",
               "name": "So cute - Puppies Wallpaper (14749028) - Fanpop",
               "thumbnailUrl": "https://tse3.mm.bing.net/th?id=OIP.jHrihoDNkXGS1t5e89jNfwEsDh&pid=Api",
               "datePublished": "2014-02-01T21:55:00.0000000Z",
@@ -62,7 +62,7 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
                 "width": 300,
                 "height": 225
               },
-              "imageInsightsToken": "ccid_jHrihoDN*mid_F68CC526226E163FD1EA659747ADCB8F9FA3CD96*simid_608055280844016271*thid_OIP.jHrihoDNkXGS1t5e89jNfwEsDh",
+              "imageInsightsToken": "ccid_jHrihoDN*mid_F68CC526226E163FD1EA659747...",
               "insightsMetadata": {
                 "recipeSourcesCount": 0
               },
@@ -74,8 +74,8 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
             {
               "text": "Shih Tzu Puppies",
               "displayText": "Shih Tzu",
-              "webSearchUrl": "https://www.bing.com/images/search?q=Shih+Tzu+Puppies&tq=%7b%22pq%22%3a%22puppies%22%2c%22qs%22%3a%5b%7b%22cv%22%3a%22puppies%22%2c%22pv%22%3a%22puppies%22%2c%22hps%22%3atrue%2c%22iqp%22%3afalse%7d%2c%7b%22cv%22%3a%22Shih+Tzu%22%2c%22pv%22%3a%22%22%2c%22hps%22%3afalse%2c%22iqp%22%3atrue%7d%5d%7d&FORM=IRPATC",
-              "searchLink": "https://api.cognitive.microsoft.com/api/v7/images/search?q=Shih+Tzu+Puppies&tq=%7b%22pq%22%3a%22puppies%22%2c%22qs%22%3a%5b%7b%22cv%22%3a%22puppies%22%2c%22pv%22%3a%22puppies%22%2c%22hps%22%3atrue%2c%22iqp%22%3afalse%7d%2c%7b%22cv%22%3a%22Shih+Tzu%22%2c%22pv%22%3a%22%22%2c%22hps%22%3afalse%2c%22iqp%22%3atrue%7d%5d%7d",
+              "webSearchUrl": "https://www.bing.com/images/search?q=Shih+Tzu+Puppies&tq=%7b%22pq...",
+              "searchLink": "https://api.cognitive.microsoft.com/api/v7/images/search?q=S22%2c%...",
               "thumbnail": {
                 "thumbnailUrl": "https://tse2.mm.bing.net/th?q=Shih+Tzu+Puppies&pid=Api&mkt=en-US&adlt=moderate&t=1"
               }
