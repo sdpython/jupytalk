@@ -39,7 +39,6 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor, add_missing_development_version
-from src.jupytalk.mokadi import speak
 
 
 class TestSpeak(unittest.TestCase):
@@ -57,6 +56,12 @@ class TestSpeak(unittest.TestCase):
         if is_travis_or_appveyor():
             # no keys
             return
+
+        if os.environ.get("COMPUTERNAME", "").lower() == "ensaegithubxd":
+            # The import crashes since 2017-11-06 on the virtual machine.
+            return
+
+        from src.jupytalk.mokadi import speak
 
         try:
             speak("mail reçu à 15h30 mardi 21 septembre.")
