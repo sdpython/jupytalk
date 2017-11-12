@@ -35,6 +35,7 @@ Presentations
     ENSAE 05/09/2017 <2017/ensae_1a_2017>
     Microsoft Experience 10/04/2017 <2017/experience_2017>
     J-Fall 11/02/2017 <2017/jfall_2017>
+    ENSAE 14/11/2017 <2017/ensae_2a_201711>
 
 Teachings
 =========

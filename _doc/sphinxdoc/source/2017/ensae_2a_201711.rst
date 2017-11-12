@@ -1,0 +1,70 @@
+
+.. _l-ensae2a2017:
+
+ENSAE 14/11/2017
+================
+
+.. sharenet::
+    :facebook: 1
+    :linkedin: 2
+    :twitter: 3
+    :head: False
+
+Source: `Blog Kaggle <http://blog.kaggle.com/>`_.
+
+Présentation
+++++++++++++
+
+* :ref:`kagglereview2017rst`
+
+Librairies
+++++++++++
+
+* `py-R-FCN <https://github.com/YuwenXiong/py-R-FCN>`_ :
+  R-FCN: Object Detection via Region-based Fully Convolutional Networks (MXNet)
+* `Deformable Convolutional Networks <https://github.com/msracver/Deformable-ConvNets>`_,
+  `example <https://github.com/apache/incubator-mxnet/tree/master/example/rcnn>`_
+* `ffm <https://github.com/alno/batch-learn>`_
+* `rusboost.py <https://github.com/harusametime/RUSBoost>`_
+* `ND DIAL: Imbalanced Algorithms <https://github.com/dialnd/imbalanced-algorithms>`_
+
+Idées / algorithmes
++++++++++++++++++++
+
+* `R-FCN: Object Detection via Region-based Fully Convolutional Network <https://arxiv.org/abs/1605.06409>`_
+* `Linear Mixed Effects Models <http://www.statsmodels.org/dev/mixed_linear.html>`_
+* `u-net <https://arxiv.org/abs/1505.04597>`_
+* `Tiramisu <https://arxiv.org/abs/1611.09326>`_
+* `Incorporating Nesterov Momentum into Adam <http://cs229.stanford.edu/proj2015/054_report.pdf>`_
+* `SSD <https://arxiv.org/abs/1512.02325>`_
+* `RUSBoost: A Hybrid Approach to Alleviating Class Imbalance <http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=9260A5C92AC5F8FA3B8590A53A06248D?doi=10.1.1.309.2305&rep=rep1&type=pdf>`_
+
+Liens
++++++
+
+* 12/2017 - `Cdiscount's Image Classification Challenge <https://www.kaggle.com/c/cdiscount-image-classification-challenge>`_
+
+* 04/2017 - `The Nature Conservancy Fisheries Monitoring <https://www.kaggle.com/c/the-nature-conservancy-fisheries-monitoring>`_
+
+    * `The Nature Conservancy Fisheries Monitoring Competition, 1st Place Winner's Interview: Team 'Towards Robust-Optimal Learning of Learning' <http://blog.kaggle.com/2017/07/07/the-nature-conservancy-fisheries-monitoring-competition-1st-place-winners-interview-team-towards-robust-optimal-learning-of-learning/>`_
+
+* 04/2017 - `Data Science Bowl 2017: Can you improve lung cancer detection? <https://www.kaggle.com/c/data-science-bowl-2017>`_
+
+    * `2017 Data Science Bowl, Predicting Lung Cancer: 2nd Place Solution Write-up, Daniel Hammack and Julian de Wit <http://blog.kaggle.com/2017/06/29/2017-data-science-bowl-predicting-lung-cancer-2nd-place-solution-write-up-daniel-hammack-and-julian-de-wit/>`_
+    * `Lung Nodule Andalysis 2016 <https://luna16.grand-challenge.org/>`_
+    * `code 1 <https://github.com/juliandewit/kaggle_ndsb2017>`_
+    * `code 2 <https://github.com/dhammack/DSB2017>`_
+    * `Predicting lung cancer <https://eliasvansteenkiste.github.io/machine%20learning/lung-cancer-pred/>`_ (9th)
+
+* 2017 - `March Machine Learning Mania 2017: Predict the 2017 NCAA Basketball Tournament <https://www.kaggle.com/c/march-machine-learning-mania-2017>`_
+
+    * `March Machine Learning Mania, 5th Place Winner's Interview: David Scott <http://blog.kaggle.com/2017/05/23/march-machine-learning-mania-5th-place-winners-interview-david-scott/>`_
+    * `Building an NCAA mens basketball predictive model and quantifying its success <https://arxiv.org/abs/1412.0248>`_
+
+* 2017 - `Dstl Satellite Imagery Feature Detection <https://www.kaggle.com/c/dstl-satellite-imagery-feature-detection>`_
+
+    * `Dstl Satellite Imagery Competition, 3rd Place Winners' Interview: Vladimir & Sergey <http://blog.kaggle.com/2017/05/09/dstl-satellite-imagery-competition-3rd-place-winners-interview-vladimir-sergey/>`_
+
+* 2017 - `Two Sigma Financial Modeling Challenge <https://www.kaggle.com/c/two-sigma-financial-modeling>`_
+
+    * `Two Sigma Financial Modeling Code Competition, 5th Place Winners' Interview: Team Best Fitting | Bestfitting, Zero, & CircleCircle <http://blog.kaggle.com/2017/05/11/two-sigma-financial-modeling-code-competition-5th-place-winners-interview-team-best-fitting-bestfitting-zero-circlecircle/>`_

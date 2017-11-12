@@ -10,6 +10,8 @@ ENSAE 14/11/2016
     :twitter: 3
     :head: False
 
+Source: `Blog Kaggle <http://blog.kaggle.com/>`_.
+
 Présentation
 ++++++++++++
 
