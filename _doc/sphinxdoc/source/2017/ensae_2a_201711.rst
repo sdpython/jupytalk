@@ -12,7 +12,7 @@ ENSAE 14/11/2017
 
 Source: `Blog Kaggle <http://blog.kaggle.com/>`_.
 
-Présentation
+PrÃ©sentation
 ++++++++++++
 
 * :ref:`kagglereview2017rst`
@@ -28,7 +28,7 @@ Librairies
 * `rusboost.py <https://github.com/harusametime/RUSBoost>`_
 * `ND DIAL: Imbalanced Algorithms <https://github.com/dialnd/imbalanced-algorithms>`_
 
-Idées / algorithmes
+IdÃ©es / algorithmes
 +++++++++++++++++++
 
 * `R-FCN: Object Detection via Region-based Fully Convolutional Network <https://arxiv.org/abs/1605.06409>`_
