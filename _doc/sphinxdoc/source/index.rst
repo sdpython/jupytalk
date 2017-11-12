@@ -33,7 +33,8 @@ Presentations
     Devoxx 06/04/2017 <2017/devoxx2017>
     Meshs 04/05/2017 <2017/meshs_2017>
     ENSAE 05/09/2017 <2017/ensae_1a_2017>
-    Microsft Experience 10/04/2017 <2017/experience_2017>
+    Microsoft Experience 10/04/2017 <2017/experience_2017>
+    J-Fall 11/02/2017 <2017/jfall_2017>
 
 Teachings
 =========
@@ -42,14 +43,14 @@ Teachings
 * `Institut des Actuaires <http://www.institutdesactuaires.com/>`_ : `Python et actuariat <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/index.html>`_
 * Pour les enfants : `lesenfantscodaient.fr <http://lesenfantscodaient.fr>`_
 
-References
-==========
+Related topics
+==============
 
 * `A Issy, les collégiennes passent leurs vacances en « colo » numérique <http://www.leparisien.fr/issy-les-moulineaux-92130/a-issy-les-collegiennes-passent-leurs-vacances-en-colo-numerique-22-04-2016-5737487.php>`_,
   Le Parisien 22 avril 2016
 * `Le premier hackathon organisé par l'ENSAE et Microsoft sur les données de la Croix-Rouge <http://variances.eu/index.php/2016/03/29/le-premier-hackathon-organise-par-lensae-et-microsoft-sur-les-donnees-de-la-croix-rouge/>`_,
   Variances 54, mars 2016
-* `Vidéo sur hackathon Microsoft - ENSAE - Croix-Rouge <https://channel9.msdn.com/Series/Data-Science-Student-Challenge/ENSAE-ParisTech-DSSC>`_, Novembre 2016
+* `The two first hackathons with ENSAE's students <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx//blog/2017/2017-10-07_hackathons.html>`_
 
 Resources
 =========
