@@ -57,4 +57,4 @@ test_script:
 
 artifacts:
   - path: dist
-    name: pandas_streaming
+    name: jupytalk
