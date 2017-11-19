@@ -252,6 +252,6 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         #data_files              = data_files,
-        install_requires=['pyquickhelper', "jyquickhelper"],
+        install_requires=['pyquickhelper>=1.5.2259', "jyquickhelper"],
         #include_package_data    = True,
     )
