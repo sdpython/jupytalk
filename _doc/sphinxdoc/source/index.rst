@@ -92,10 +92,6 @@ See also `github <https://github.com/sdpython/jupytalk/>`_,
         :alt: MIT License
         :target: http://opensource.org/licenses/MIT
 
-    .. image:: https://landscape.io/github/sdpython/jupytalk/master/landscape.svg?style=flat
-       :target: https://landscape.io/github/sdpython/jupytalk/master
-       :alt: Code Health
-
     .. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
          :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
          :alt: Requirements Status
