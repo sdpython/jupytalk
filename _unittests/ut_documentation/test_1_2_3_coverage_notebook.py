@@ -38,7 +38,7 @@ except ImportError:
     import pyquickhelper as skip_
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, add_missing_development_version
+from pyquickhelper.pycode import get_temp_folder, add_missing_development_version, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut, get_additional_paths
 
 
@@ -70,6 +70,10 @@ class TestNotebook123Coverage(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
+        if is_travis_or_appveyor() in ('circleci',):
+            # It fails on circleci.
+            # prices = StockPrices(tick="NASDAQ:MSFT") --> HTTPError
+            return
         self.a_test_notebook_runner("automation_finance_trading", "2017/meshs")
 
     def test_notebook_centrale_201606(self):
