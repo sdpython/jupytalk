@@ -17,16 +17,22 @@ Slides en vrac
 --------------
 
 .. image:: images/oss1.png
+    :width: 500
 
 .. image:: images/oss2.png
+    :width: 500
 
 .. image:: images/oss3.png
+    :width: 500
 
 .. image:: images/oss4.png
+    :width: 500
 
 .. image:: images/oss5.png
+    :width: 500
 
 .. image:: images/oss6.png
+    :width: 500
 
 Liens vers les notebooks et le code
 -----------------------------------
