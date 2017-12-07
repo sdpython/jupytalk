@@ -36,6 +36,7 @@ Presentations
     Microsoft Experience 10/04/2017 <2017/experience_2017>
     J-Fall 11/02/2017 <2017/jfall_2017>
     ENSAE 14/11/2017 <2017/ensae_2a_201711>
+    Open Source Submit 2017 <2017/oss_201712>
 
 Teachings
 =========
