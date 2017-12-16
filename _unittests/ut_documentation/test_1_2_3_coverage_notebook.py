@@ -132,6 +132,14 @@ class TestNotebook123Coverage(unittest.TestCase):
 
         self.a_test_notebook_runner("2017_1a_ensae_nocture", "2017/ensae")
 
+    def test_notebook_2017_kaggle(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        self.a_test_notebook_runner("kaggle", "2017/ensae")
+
 
 if __name__ == "__main__":
     unittest.main()
