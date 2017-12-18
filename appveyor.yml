@@ -22,7 +22,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install cryptography"
   - "%PYTHON%\\Scripts\\pip install azure"
   - "%PYTHON%\\Scripts\\pymy_install3 pycrypto numba pycurl Pillow shapely"
-  - "%PYTHON%\\Scripts\\pymy_install3 basemap sympy pyqt4 mpmath reportlab statsmodels cffi scipy pylzma"
+  - "%PYTHON%\\Scripts\\pymy_install3 basemap sympy mpmath reportlab statsmodels cffi scipy pylzma"
   - "%PYTHON%\\Scripts\\pymy_install3 fast_histogram"
   - "%PYTHON%\\Scripts\\pip install pycryptodomex jyquickhelper"
   - "%PYTHON%\\Scripts\\pip install urllib3 traittypes"

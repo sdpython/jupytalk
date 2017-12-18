@@ -6,7 +6,6 @@ virtualenv:
   - path: {{ospathjoin(root_path, pickname("%NAME_JENKINS%", project_name + "_%VERSION%_%DIST%_%NAME%"), "_venv")}}
 install:
   - pip install --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae jyquickhelper pymyinstall pymmails ensae_teaching_cs
-  - pymy_install PyQt4 --source=2
   - pip install -r requirements.txt
   - pip freeze
   - pip freeze > pip_freeze.txt
