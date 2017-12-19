@@ -90,8 +90,8 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
             # We need to run this file with the main python.
             # Otherwise it fails for tables: DLL load failed.
             import numpy
-            rootn = os.path.normpath(
-                os.path.dirname(numpy.__file__), "..", "..")
+            rootn = os.path.normpath(os.path.join(
+                os.path.dirname(numpy.__file__), "..", ".."))
             exe = os.path.normpath(os.path.join(
                 rootn, "..", "..", "python.exe"))
             cmd = '"{0}" -u "{1}"'.format(exe, os.path.abspath(__file__))
