@@ -56,7 +56,8 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from pyquickhelper.loghelper import fLOG, CustomLog
+from pyquickhelper.loghelper import fLOG, CustomLog, run_cmd
+from pyquickhelper.pycode.venv_helper import is_virtual_environment
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
 from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
@@ -79,6 +80,37 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
 
         if is_travis_or_appveyor() == "travis":
             warnings.warn("issue with datashader.bokeh_ext, skipping")
+            return
+
+        if is_virtual_environment() and sys.platform.startswith("win"):
+            pp = os.environ.get('PYTHONPATH', '')
+            if "SECONDTRY" in pp:
+                raise Exception(
+                    "Not working**EXE\n{0}\n**PP\n{1}\n****".format(sys.executable, pp))
+            # We need to run this file with the main python.
+            # Otherwise it fails for tables: DLL load failed.
+            import numpy
+            rootn = os.path.normpath(
+                os.path.dirname(numpy.__file__), "..", "..")
+            exe = os.path.normpath(os.path.join(
+                rootn, "..", "..", "python.exe"))
+            cmd = '"{0}" -u "{1}"'.format(exe, os.path.abspath(__file__))
+            import jyquickhelper
+            import pyquickhelper
+            add = ["SECONDTRY"]
+            for mod in [pyquickhelper, jyquickhelper]:
+                add.append(os.path.normpath(os.path.join(
+                    os.path.dirname(mod.__file__), "..")))
+            fLOG("set PYTHONPATH={0}".format(";".join(add)))
+            os.environ['PYTHONPATH'] = ";".join(add)
+            out, err = run_cmd(cmd, wait=True, fLOG=fLOG)
+            if len(err) > 0:
+                lines = err.split("\n")
+                lines = [_ for _ in lines if _[0] != " "]
+                lines = [_ for _ in lines if "warning" not in _.lower()]
+                if len(lines) > 0:
+                    raise Exception("--CMD:\n{0}\n--OUT:\n{1}\n--ERR\n{2}\n--ERR2\n{3}\n--PP\n{4}".format(
+                        cmd, out, err, "\n".join(lines), pp))
             return
 
         kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
