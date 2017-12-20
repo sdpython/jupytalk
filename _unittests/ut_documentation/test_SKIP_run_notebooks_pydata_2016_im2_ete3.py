@@ -106,10 +106,10 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
             out, err = run_cmd(cmd, wait=True, fLOG=fLOG)
             if len(err) > 0:
                 lines = err.split("\n")
-                lines = [_.lower() for _ in lines if len(_) > 0 and _[
+                lines = [_.lower().strip() for _ in lines if len(_) > 0 and _[
                     0] not in (" ", "-", ".", "-")]
                 lines = [
-                    _ for _ in lines if "warning" not in _ and not _.startswith("ran ")]
+                    _ for _ in lines if "warning" not in _ and not _.startswith("ran ") and _ != "ok"]
                 if len(lines) > 0:
                     raise Exception("--CMD:\n{0}\n--OUT:\n{1}\n--ERR\n{2}\n--ERR2\n{3}\n--PP\n{4}".format(
                         cmd, out, err, "\n".join(lines), pp))
