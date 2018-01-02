@@ -20,7 +20,7 @@ sys.path.insert(
             "src")))
 
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
-set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2017,
+set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2018,
                      # "readable", [sphinx_readable_theme.get_html_theme_path()],
                      "basicstrap", None,
                      locals(), extlinks=dict(
