@@ -16,6 +16,12 @@ Democratization of AI: from Researchers to Any User
 Summary
 +++++++
 
+Beaucoup de sociétés de réfléchissent à leur propre évolution dans un monde
+de plus en plus digital et le machine learning est devenu incontournable.
+Ces techniques techniques existent depuis longtemps et elles se sont récemment
+démocratisées. Cette présentation revient sur les ingrédients qui ont permis
+leur popularisation.
+
 Machine learning somehow became one magic wand able to solve many things.
 It can be seen as a way to automate an existing pipeline which became very time
 consuming, it could also be seen as a way to process information we could not
