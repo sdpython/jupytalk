@@ -33,7 +33,7 @@ Presentations
     Devoxx 06/04/2017 <2017/devoxx2017>
     Meshs 04/05/2017 <2017/meshs_2017>
     ENSAE 05/09/2017 <2017/ensae_1a_2017>
-    Microsoft Experience 10/04/2017 <2017/experience_2017>
+    Microsoft Experience 04/10/2017 <2017/experience_2017>
     J-Fall 11/02/2017 <2017/jfall_2017>
     ENSAE 14/11/2017 <2017/ensae_2a_201711>
     Open Source Submit 2017 <2017/oss_201712>
