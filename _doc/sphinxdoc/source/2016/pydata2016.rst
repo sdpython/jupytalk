@@ -81,6 +81,7 @@ it involves a server (bqplot).
   offers similar tools than `folium <http://folium.readthedocs.io/en/latest/>`_,
   see an example on how to interact with `bqplot <https://github.com/bloomberg/bqplot>`_:
   `An Analysis of Well-Being in San Francisco <https://github.com/SylvainCorlay/bayeshack>`_
+* `kartograph <http://www.kartograph.org/>`_ : maps
 * `nglview <http://arose.github.io/nglview/latest/>`_: animate molecular structures
 * `pandastable <https://pypi.python.org/pypi/pandastable>`_ : IDE to look at dataframes
 * `python-gantt <http://xael.org/pages/python-gantt-en.html>`_ : to draw
