@@ -39,7 +39,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install brewer2mpl cufflinks"
   - "%PYTHON%\\Scripts\\pip install lifelines"
   - "%PYTHON%\\Scripts\\pip install plotnine"
-  - "%PYTHON%\\Scripts\\pip install mizani mpl_scatter_density"
+  - "%PYTHON%\\Scripts\\pip install mizani mpl_scatter_density python-pptx"
   - "%PYTHON%\\Scripts\\pip install missingno pythreejs vega"
   - "%PYTHON%\\Scripts\\pip install pygal_maps_fr"
   - "%PYTHON%\\Scripts\\pip install ggplot"  # ==0.9.3"
