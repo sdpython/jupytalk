@@ -24,6 +24,7 @@ pymyinstall
 pyquickhelper>=1.7.2438
 pyreadline
 pyshp
+python-pptx
 pythreejs
 scikit-image
 shapely
