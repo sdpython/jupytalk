@@ -160,6 +160,7 @@ if "--verbose" in sys.argv:
 
 if is_local():
     pyquickhelper = import_pyquickhelper()
+	from pyquickhelper.pycode import process_standard_options_for_setup
     logging_function = pyquickhelper.get_fLOG()
     logging_function(OutputPrint=True)
     if "unittests" in sys.argv and sys.platform.startswith("win"):
