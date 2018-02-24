@@ -2,13 +2,8 @@ biopython
 bokeh
 Cython
 datashape
-ipython
 jupyter
-jupyter_client
-jupyter_core
 matplotlib
-nbformat
-nbpresent
 notebook>=5.0.0
 networkx
 numba
