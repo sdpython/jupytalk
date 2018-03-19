@@ -36,3 +36,4 @@ wikipedia
 vispy
 wheel
 wptools>=0.4
+yahoo_historical
