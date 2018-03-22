@@ -25,7 +25,7 @@ pyquickhelper>=1.7.2438
 pyreadline
 pyshp
 python-pptx
-pythreejs
+pythreejs>=1.0.0
 scikit-image
 shapely
 sphinxjp.themes.basicstrap
