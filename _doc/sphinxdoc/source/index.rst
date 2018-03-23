@@ -38,6 +38,14 @@ Presentations
     ENSAE 14/11/2017 <2017/ensae_2a_201711>
     Open Source Submit 2017 <2017/oss_201712>
 
+2018
+----
+
+.. toctree::
+    :maxdepth: 1
+
+    Imagine Cup 23/03/2018 <2018/imcup201803>
+
 Teachings
 =========
 

@@ -1,0 +1,66 @@
+
+.. _l-imcup:
+
+Imagine Cup
+===========
+
+.. sharenet::
+    :facebook: 1
+    :linkedin: 2
+    :twitter: 3
+    :head: False
+
+.. contents::
+    :local:
+
+`Imagine Cup <https://www.microsoft.com/france/imagine-cup/default.aspx>`_
+
+Plan
+----
+
+**1 : application**
+
+* Dernier tweet de Yann Lecun `Machine Learning Intelligence Artificelle Formation Continue <https://formationmachinelearning.lip6.fr/>`_
+* Développement logiciel des années 1990-2010 (langage bas-niveau, installé chez le client)
+* Internet
+* Développement logiciel des années 2000+ (application web, téléphone, mise à jour continue, test A/B, ...)
+* Machine plus performante, langage haut niveau (Python, R)
+* Librairie open source (machine learning, serveur web, base de données...), Github, travis
+* Développement logiciel des années 2015+ (API REST qui communiquent, remote - Azure, Amazon, ...)
+* 2017+ deep learning, transfer learning
+* Développement logiciel des années 2017+ (deep learning)
+
+**2 : données**
+
+* Tous les problèmes peuvent être résolus : il suffit d'avoir les bonnes données
+* Collecter la données (capteurs, application facebook, ...)
+* Kafka (temps réel), Hadoop (stockage), Spark (traitement), Beam (pipeline)
+* `Arrow <http://arrow.apache.org/>` (API)
+* Exemples : moteur de recherches, site marchand
+* Enjeux légaux, protections des données
+
+**3 : production**
+
+* Pas de solution standard aujourd'hui mais bientôt
+* Implémentation faite par chaque entreprise
+* Approche très deep learning : `TensorFlow Serving <https://www.tensorflow.org/serving/>`_
+* Approches plus génériques : `ONNX <https://onnx.ai/>`_
+* `ONNX : apprendre et prédire sur différentes machines <http://www.xavierdupre.fr/blog/2018-03-19_nojs.html>`_
+* `onnxmltools <https://github.com/onnx/onnxmltools>`_,
+  `winmltools <https://docs.microsoft.com/en-us/windows/uwp/machine-learning/index>`_
+* `How Three Lines of Code and Windows Machine Learning Empower .NET Developers to Run AI Locally on Windows 10 Devices <https://blogs.technet.microsoft.com/machinelearning/2018/03/13/how-three-lines-of-code-and-windows-machine-learning-empower-net-developers-to-run-ai-locally-on-windows-10-devices/>`_
+
+**4 : IA**
+
+* Pas d'inelligence artificelle autonome
+* Mais une myriade de modèles de machine learning
+* Effet long terme (usage) / court terme (rendement)
+* Mise à jour de modèle, historique des versions
+* Ingénieur recherche et développement, de plus en plus recherche
+
+**5 : conquête**
+
+* Plein de domaines où la machine peut aider.
+* Education, santé, droit, transport...
+* Impact social, économique
+* Marché mature (client, acteurs présents)
