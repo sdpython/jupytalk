@@ -21,6 +21,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyensae"
   - "%PYTHON%\\Scripts\\pip install cryptography"
   - "%PYTHON%\\Scripts\\pip install azure"
+  - "%PYTHON%\\Scripts\\pymy_install3 cython cairocffi cairosvg"
   - "%PYTHON%\\Scripts\\pymy_install3 pycrypto numba pycurl Pillow shapely"
   - "%PYTHON%\\Scripts\\pymy_install3 basemap sympy mpmath reportlab statsmodels cffi scipy pylzma"
   - "%PYTHON%\\Scripts\\pymy_install3 fast_histogram"

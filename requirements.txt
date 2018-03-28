@@ -2,6 +2,8 @@ antlr4-python3-runtime
 bqplot
 brython>=3.4.0
 brythonmagic
+cairocffi
+cairosvg
 coverage
 cufflinks
 ensae_teaching_cs
