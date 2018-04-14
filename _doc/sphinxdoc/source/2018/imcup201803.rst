@@ -34,9 +34,9 @@ Plan
 
 * Tous les problèmes peuvent être résolus : il suffit d'avoir les bonnes données
 * Collecter la données (capteurs, application facebook, ...)
-* `Kafka <https://kafka.apache.org/>`_ (temps réel), 
-  `Hadoop <http://hadoop.apache.org/>`_ (stockage), 
-  `Spark <https://spark.apache.org/>`_ (traitement), 
+* `Kafka <https://kafka.apache.org/>`_ (temps réel),
+  `Hadoop <http://hadoop.apache.org/>`_ (stockage),
+  `Spark <https://spark.apache.org/>`_ (traitement),
   `Beam <https://beam.apache.org/>`_ (pipeline),
   `Arrow <http://arrow.apache.org/>`_ (API)
 * Exemples : moteur de recherches, site marchand

@@ -169,7 +169,8 @@ if is_local():
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=(
             "989a8320-d21b-47f4-910b-f1fd9b2e5415", "'_UT_36_std' in outfile"),
-        nbformats=('ipynb', 'html', 'python', 'rst', 'slides', 'present', 'github'),
+        nbformats=('ipynb', 'html', 'python', 'rst',
+                   'slides', 'present', 'github'),
         github_owner='sdpython')
     if not r and "update_grammars" in sys.argv:
         # expecting python setup.py update_grammars file

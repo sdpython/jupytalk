@@ -6,9 +6,8 @@ History
 current - 2018-03-28 - 0.00Mb
 =============================
 
-* `6`: fix notebook on pythreejs (update to 1.0.0) (2018-03-22) 
-* `5`: fix unit test with ete3 (2017-12-20) 
+* `6`: fix notebook on pythreejs (update to 1.0.0) (2018-03-22)
+* `5`: fix unit test with ete3 (2017-12-20)
 
 0.2.225 - 2017-05-09 - 0.73Mb
 =============================
-
