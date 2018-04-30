@@ -127,8 +127,7 @@ class TestEngineExtended(unittest.TestCase):
             fLOG("***", text)
             mes = MokadiMessage(text, 1)
             res = list(engine.process(mes, exc=True))
-            fLOG(res)
-            self.assertTrue(len(res) > 0)
+            self.assertNotEmpty(res)
             if i == 4:
                 self.assertEqual(len(res), 1)
                 self.assertTrue(res[0].has_sound)
