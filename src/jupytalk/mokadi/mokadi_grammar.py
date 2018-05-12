@@ -21,6 +21,6 @@ def interpret(sentance, MokadiGrammarParser, MokadiGrammarLexer, MokadiGrammarLi
     if stderr and len(stderr) > 0:
         raise MokadiException(
             "Unable to parse '{0}'\nOUT\n{1}\nERR\n{2}".format(sentance, stdout, stderr))
-    res, simple = get_tree_string(
+    _, simple = get_tree_string(
         MokadiGrammarListener, tree, parser, sentance)
     return simple

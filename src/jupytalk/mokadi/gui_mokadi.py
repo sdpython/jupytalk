@@ -126,10 +126,9 @@ class TkinterMokadi(tkinter.Frame):
     Defines a frame.
     """
 
-    def __init__(self, parent, mokadi, speak=False, subkey_speech=None, fLOG=fLOG, folder="."):
+    def __init__(self, parent, mokadi, speak=False, subkey_speech=None,
+                 fLOG=fLOG, folder="."):
         """
-        Constructor.
-
         @param      parent          a frame
         @param      mokadi          the bot @see cl MokadiEngine
         @param      speak           speak the answer and not just display it

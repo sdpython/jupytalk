@@ -85,7 +85,7 @@ class MokadiActionMail(MokadiAction):
             try:
                 mails = enumerate_last_mails(
                     self._user, self._pwd, self._server, fLOG=self.fLOG, nb=fetch)
-            except MokadiAuthentification as e:
+            except MokadiAuthentification:
                 yield MokadiInfo("error", "Il m'est impossible de me connecter à la boîte mail de {0}.".format(self._user))
 
             try:
@@ -112,10 +112,10 @@ class MokadiActionMail(MokadiAction):
                         # This should be removed as well as html tags.
                         for line in mail.body.split("\n"):
                             yield MokadiInfo("ok", line)
-            except MokadiAuthentification as e:
+            except MokadiAuthentification:
                 yield MokadiInfo("error", "Il m'est impossible de me connecter à la boîte mail de {0}.".format(self._user))
 
             done = True
         if not done:
             raise MokadiException(
-                "Unable to interpret '{0}'\n{1} - {2}\n.".format(message, len(interpretation0), interpretation, interpretation_clean))
+                "Unable to interpret '{0}'\n{1} - {2} - {3}\n.".format(message, len(interpretation0), interpretation, interpretation_clean))

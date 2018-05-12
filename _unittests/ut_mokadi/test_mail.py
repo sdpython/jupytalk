@@ -7,6 +7,8 @@ import sys
 import os
 import unittest
 import warnings
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import is_travis_or_appveyor
 
 
 try:
@@ -22,41 +24,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
 
-try:
-    import pymmails as skip__
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pymmails",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pymmails as skip__
-
-
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import is_travis_or_appveyor
 from src.jupytalk.mokadi import enumerate_last_mails
 
 
@@ -89,7 +57,7 @@ class TestMail(unittest.TestCase):
                 fLOG(mail.get_field("subject").split("\n")[0])
                 i += 1
 
-        except Exception as e:
+        except Exception:
             if os.environ["USERNAME"] == "ensaestudent" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \

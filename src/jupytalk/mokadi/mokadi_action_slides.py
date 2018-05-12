@@ -4,12 +4,12 @@
 @brief Defines an action for Mokadi.
 """
 import os
+import pptx
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
 from .pptx_helper import pptx_enumerate_text
 from .mokadi_helper import parse_string_int
-import pptx
 
 
 class MokadiActionSlides(MokadiAction):

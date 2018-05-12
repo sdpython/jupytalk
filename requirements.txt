@@ -24,7 +24,7 @@ pydy
 pygal
 pygal_maps_fr
 pymyinstall
-pyquickhelper>=1.7.2569
+pyquickhelper>=1.8
 pyreadline
 pyshp
 python-pptx

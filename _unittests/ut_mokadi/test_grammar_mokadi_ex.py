@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -20,24 +21,6 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import src
-
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
-
-from pyquickhelper.loghelper import fLOG
 
 
 class TestGrammarMokadiExtended(unittest.TestCase):
@@ -91,7 +74,8 @@ class TestGrammarMokadiExtended(unittest.TestCase):
                                                                     ':time_indication:'), ('nouvelles', ':news:')],  # 7
                  [('MOKADI', ':MOKADI:'), ('quelles', ':verb_voir:'), ('sont', ':verb_voir:'), ('les', ':stopword:'),
                   ('nouvelles', ':news:'), ('?', ':question_mark:')],  # 8
-                 [('MOKADI', ':MOKADI:'), ('quelles', ':verb_voir:'), ('sont', ':verb_voir:'), ('les', ':stopword:'), ('dernières', ':time_indication:'),
+                 [('MOKADI', ':MOKADI:'), ('quelles', ':verb_voir:'), ('sont', ':verb_voir:'),
+                  ('les', ':stopword:'), ('dernières', ':time_indication:'),
                   ('nouvelles', ':news:'), ('?', ':question_mark:')],  # 9
                  [('MOKADI', ':MOKADI:'), ('news', ':news:')],  # 10
                  [('MOKADI', ':MOKADI:'), ('lire', ':verb_voir:'), ('news', ':news:'),

@@ -19,8 +19,8 @@ def enumerate_last_mails(user, pwd, server, nb=5, fLOG=noLOG):
     @param  fLOG        logging function
 
     We use the examples from
-    `Capturing a single image from my webcam in Java or Python <http://stackoverflow.com/questions/11094481/capturing-a-single-image-from-my-webcam-in-java-or-python>`_.
-
+    `Capturing a single image from my webcam in Java or Python
+    <http://stackoverflow.com/questions/11094481/capturing-a-single-image-from-my-webcam-in-java-or-python>`_.
     See `pymmails <http://www.xavierdupre.fr/app/pymmails/helpsphinx/index.html>`_.
     """
     from pymmails.grabber import MailBoxImap

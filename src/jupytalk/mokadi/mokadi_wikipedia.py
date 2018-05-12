@@ -3,9 +3,9 @@
 @file
 @brief Look into the mail box
 """
+import re
 import wikipedia
 import wptools
-import re
 from .mokadi_exceptions import WikipediaException
 
 

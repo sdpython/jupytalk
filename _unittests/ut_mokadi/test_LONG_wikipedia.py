@@ -7,6 +7,7 @@ import sys
 import os
 import unittest
 import wikipedia
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -22,40 +23,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
 
-try:
-    import pymmails as skip__
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pymmails",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pymmails as skip__
-
-
-from pyquickhelper.loghelper import fLOG
 from src.jupytalk.mokadi import definition_wikipedia, suggestions_wikipedia, synonyms_wiktionary
 
 
@@ -73,7 +41,7 @@ class TestWikipedia(unittest.TestCase):
         self.assertTrue("L'intelligence" in res)
         try:
             definition_wikipedia("intelligence iafhaepzfuichaefhanozfnhaoi")
-            self.assertTrue(False)
+            raise AssertionError("should fail")
         except wikipedia.exceptions.PageError:
             pass
 

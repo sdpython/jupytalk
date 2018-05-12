@@ -7,6 +7,7 @@ import sys
 import os
 import unittest
 import datetime
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -22,40 +23,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
 
-try:
-    import pymmails as skip__
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pymmails",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pymmails as skip__
-
-
-from pyquickhelper.loghelper import fLOG
 from src.jupytalk.mokadi.mokadi_helper import convert_into_days
 
 

@@ -6,6 +6,9 @@
 import sys
 import os
 import unittest
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode import is_travis_or_appveyor
 
 
 try:
@@ -21,25 +24,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
-
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
-from pyquickhelper.pycode import is_travis_or_appveyor
 from src.jupytalk.mokadi import take_picture
 
 
@@ -62,7 +46,7 @@ class TestPicture(unittest.TestCase):
                 fLOG(module)
                 img = os.path.join(temp, "im_{0}.png".format(module))
                 take_picture(img, module=module)
-        except Exception as e:
+        except Exception:
             if os.environ["USERNAME"] == "ensaestudent" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \

@@ -6,6 +6,8 @@
 import sys
 import os
 import unittest
+from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import is_travis_or_appveyor, get_temp_folder
 
 
 try:
@@ -21,24 +23,7 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
 
-from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import is_travis_or_appveyor, get_temp_folder
 from src.jupytalk.mokadi import record_speech, play_speech
 
 
@@ -59,7 +44,7 @@ class TestRestApiSpeech(unittest.TestCase):
         output = os.path.join(temp, "output.wav")
         try:
             record = record_speech(3, fLOG=fLOG, WAVE_OUTPUT_FILENAME=output)
-        except Exception as e:
+        except Exception:
             if os.environ["USERNAME"] == "ensaestudent" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \
                os.environ["USERNAME"] == "vsxavierdupre" or \

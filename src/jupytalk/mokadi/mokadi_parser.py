@@ -178,8 +178,7 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":op:"
             if isinstance(ch, self.parser.Verb_voirContext):
                 return ":verb_voir:"
-            if isinstance(ch, self.parser.Mail_stmtContext) or \
-                    isinstance(ch, self.parser.MailsContext):
+            if isinstance(ch, (self.parser.Mail_stmtContext, self.parser.MailsContext)):
                 return ":mails:"
             if isinstance(ch, self.parser.QuestionContext):
                 return ":question:"
@@ -223,8 +222,7 @@ def get_tree_string(MokadiGrammarListener, tree, parser, script=None):
                 return ":definition:"
             if isinstance(ch, self.parser.SynonymeContext):
                 return ":synonym:"
-            if isinstance(ch, self.parser.Expression_stmtContext) or \
-                    isinstance(ch, self.parser.ExpressionContext):
+            if isinstance(ch, (self.parser.Expression_stmtContext, self.parser.ExpressionContext)):
                 return ":expression:"
             return None
 

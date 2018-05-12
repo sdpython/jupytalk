@@ -13,7 +13,8 @@ def take_picture(filename=None, size=(640, 480), module="cv2"):
     @return                         image object
 
     We use the examples from
-    `Capturing a single image from my webcam in Java or Python <http://stackoverflow.com/questions/11094481/capturing-a-single-image-from-my-webcam-in-java-or-python>`_.
+    `Capturing a single image from my webcam in Java or Python
+    <http://stackoverflow.com/questions/11094481/capturing-a-single-image-from-my-webcam-in-java-or-python>`_.
     """
 
     if module == "pygame":
@@ -35,7 +36,7 @@ def take_picture(filename=None, size=(640, 480), module="cv2"):
         from cv2 import VideoCapture, imwrite
         # initialize the camera
         cam = VideoCapture(0)   # 0 -> index of camera
-        s, img = cam.read()
+        _, img = cam.read()
         if filename is not None:
             imwrite(filename, img)
         return img

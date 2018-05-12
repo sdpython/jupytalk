@@ -5,12 +5,12 @@
 """
 import datetime
 import os
+from PIL import Image, ImageDraw
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
 from .cognitive_services_helper import call_api_emotions
 from .mokadi_picture import take_picture
-from PIL import Image, ImageDraw
 
 
 class MokadiActionEmotion(MokadiAction):

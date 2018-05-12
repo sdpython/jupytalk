@@ -60,7 +60,7 @@ class MokadiActionConversation(MokadiAction):
             return False
         res = self.process_interpreted_message(interpreted, message)
         try:
-            for info in res:
+            for _ in res:
                 return True
         except MokadiException:
             return False

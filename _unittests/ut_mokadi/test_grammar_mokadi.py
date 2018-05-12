@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -20,24 +21,6 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import src
-
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
-
-from pyquickhelper.loghelper import fLOG
 
 
 class TestGrammarMokadi(unittest.TestCase):
@@ -113,7 +96,7 @@ class TestGrammarMokadi(unittest.TestCase):
         try:
             interpret("ROOCADI", MokadiGrammar_frParser,
                       MokadiGrammar_frLexer, MokadiGrammar_frListener)
-            self.assertTrue(False)
+            raise AssertionError("should fail")
         except SyntaxError as e:
             fLOG(e)
             self.assertTrue("missing" in str(e))

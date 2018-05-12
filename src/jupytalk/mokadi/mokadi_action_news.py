@@ -57,15 +57,18 @@ class MokadiActionNews(MokadiAction):
         has_query = any(_ for _ in interpretation if _[1] == ":apropos:")
         if has_news:
             if has_query:
+                lasti = None
                 for i in range(len(interpretation)):
+                    lasti = i
                     if interpretation[i][1] == ":apropos:":
                         break
-                if i == len(interpretation):
+                if lasti == len(interpretation):
                     yield MokadiInfo("error", "", "Je n'ai pas compris ce qu'il fallait chercher.")
                     done = True
                     query = None
                 else:
-                    query = " ".join(_[0] for _ in interpretation[i + 1:-1])
+                    query = " ".join(_[0]
+                                     for _ in interpretation[lasti + 1:-1])
             else:
                 query = ""
 
@@ -84,8 +87,13 @@ class MokadiActionNews(MokadiAction):
                         # {'_type': 'News',
                         #  'readLink': 'https://api.cognitive.microsoft.com/api/v5/news/search?q=',
                         #  'value': [{'name': "Colombie : le bilan de la coulꥠde boue s'alourdit ࠲54 morts",
-                        #             'url': 'http://www.bing.com/cr?IG=CEFF9C63FD7A4439B591261606484860&CID=3B75F5FD9A146DBF103CFFA49BF36C83&rd=1&h=Pu7c9WbgY9iMPFtyYtszuhDNymO92hG1vbCqLp0qUHw&v=1&r=http%3a%2f%2fwww.lepoint.fr%2fmonde%2fcolombie-le-bilan-de-la-coulee-de-boue-s-alourdit-a-254-morts-03-04-2017-2116711_24.php&p=DevEx,5019.1',
-                        #             'image': {'thumbnail': {'contentUrl': 'https://www.bing.com/th?id=ON.08357B50C029DBC09D053826F9B22658&pid=News',
+                        #             'url': 'http://www.bing.com/cr?
+                        #                   IG=CEFF9C63FD7A4439B591261606484860&CID=3B75F5FD9A146DBF103CFFA49BF36C83&rd=1&h=
+                        #                   Pu7c9WbgY9iMPFtyYtszuhDNymO92hG1vbCqLp0qUHw&v=1&r=http%3a%2f%2fwww.lepoint.fr%2fmonde
+                        #                   %2fcolombie-le-bilan-de-la-coulee-de-boue-
+                        #                   s-alourdit-a-254-morts-03-04-2017-2116711_24.php&p=DevEx,5019.1',
+                        #             'image': {'thumbnail': {'contentUrl':
+                        #                       'https://www.bing.com/th?id=ON.08357B50C029DBC09D053826F9B22658&pid=News',
                         #                                     'width': 700, 'height': 304}},
                         #             'datePublished': '2017-04-03T10:33:00',
                         title = val["name"]
