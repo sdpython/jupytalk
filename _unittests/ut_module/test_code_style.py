@@ -54,6 +54,11 @@ class TestCodeStyle(ExtTestCase):
                          "gui_mokadi.py:78: W0612",
                          "Unused variable 'ensae_teaching_cs'",
                          "Unable to import 'ensae_teaching_cs'",
+                         "Unable to import 'pygame'",
+                         "Unable to import 'pygame.camera'",
+                         "Unable to import 'cv2'",
+                         "Unable to import 'keyring'",
+                         "Unable to import 'pyaudio'",
                          ])
 
     def test_style_test(self):
