@@ -71,6 +71,7 @@ class TestCodeStyle(ExtTestCase):
                          "Unused import src",
                          "Unable to import 'ensae_teaching_cs.pythonnet'",
                          "Redefining name 'path' from outer scope",
+                         "Unable to import 'keyring'",
                          ])
 
 
