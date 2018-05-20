@@ -51,7 +51,7 @@ class TestSpeechSystem(unittest.TestCase):
         with open(wav, "rb") as f:
             content = f.read()
 
-        from ensae_teaching_cs.pythonnet import vocal_recognition_system
+        from ensae_teaching_cs.cspython import vocal_recognition_system
         fLOG("start recognition")
         res = vocal_recognition_system(content)
         fLOG("end recognition")

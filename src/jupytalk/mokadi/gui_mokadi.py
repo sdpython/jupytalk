@@ -101,7 +101,7 @@ class ThreadListen(threading.Thread):
 
     def run(self):
         self.fLOG("[Listen] start")
-        from ensae_teaching_cs.pythonnet import vocal_recognition_system
+        from ensae_teaching_cs.cspython import vocal_recognition_system
         good = {'123', 'et 23', '23', 'et 223', '923', '2123', ', 923', 'l\'un des trois',
                 '0123'}
         self.continue_listening = True
