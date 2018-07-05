@@ -77,6 +77,7 @@ Resources
     resources/rnotebooks
     resources/teachings
     issues_todoextlist
+    HISTORY
 
 See also `github <https://github.com/sdpython/jupytalk/>`_,
 :ref:`blog <ap-main-0>`.
@@ -125,5 +126,5 @@ See also `github <https://github.com/sdpython/jupytalk/>`_,
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`modindex`      |  :ref:`l-EX2`       | :ref:`search`       | :ref:`l-license`   | :ref:`l-changes`       | :ref:`l-README`                                |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
-| :ref:`genindex`      |  :ref:`l-FAQ2       | :ref:`l-notebooks`  |                    | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
+| :ref:`genindex`      |  :ref:`l-FAQ2`      | :ref:`l-notebooks`  | :ref:`l-HISTORY`   | :ref:`l-statcode`      | `Unit Test Coverage <coverage/index.html>`_    |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+

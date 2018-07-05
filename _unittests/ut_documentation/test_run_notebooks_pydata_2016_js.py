@@ -60,6 +60,8 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
                 return False
             if '<div style="position:absolute' in cell:
                 return False
+            if 'bar.render(path="render.png")' in cell:
+                return False
             return True
 
         # file to copy

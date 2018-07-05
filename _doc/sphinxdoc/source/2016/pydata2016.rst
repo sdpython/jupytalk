@@ -43,6 +43,7 @@ it involves a server (bqplot).
 * :ref:`jsmpld3rst`
 * :ref:`jsplotlyrst`
 * :ref:`jspydymassspringdamperrst`
+* :ref:`jspyechartsrst`
 * :ref:`jspygalrst`
 * :ref:`jspythreejsrst`
 * :ref:`jsvegarst`

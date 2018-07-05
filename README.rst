@@ -35,7 +35,7 @@ README
 
 .. image:: https://badge.waffle.io/sdpython/jupytalk.png?label=ready&title=Ready
     :alt: Waffle
-    :target: https://waffle.io/jupytalk/pymyinstall
+    :target: https://waffle.io/sdpython/jupytalk
 
 .. image:: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/_images/nbcov.png
     :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html

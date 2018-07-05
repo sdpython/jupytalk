@@ -21,6 +21,7 @@ mpld3
 plotly
 plotnine
 pydy
+pyecharts
 pygal
 pygal_maps_fr
 pymyinstall
