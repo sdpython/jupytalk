@@ -76,7 +76,6 @@ Resources
     blog/blogindex
     resources/rnotebooks
     resources/teachings
-    issues_todoextlist
     HISTORY
 
 See also `github <https://github.com/sdpython/jupytalk/>`_,
