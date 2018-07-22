@@ -92,7 +92,7 @@ class MokadiActionMail(MokadiAction):
                 for i, mail in enumerate(mails):
                     if i == stop:
                         break
-                    if keep != -1 and i != keep:
+                    if keep not in (-1, i):
                         continue
                     self.fLOG(mail.get_name(), "**", mail.get_nb_attachements(),
                               "**", mail.get_date_str())

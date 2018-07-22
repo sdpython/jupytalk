@@ -4,7 +4,7 @@
 @brief Tkinter application for Mokadi
 """
 import tkinter
-import tkinter.ttk as ttk
+import tkinter.ttk as tttk
 import tkinter.scrolledtext as ScrolledText
 import os
 import threading
@@ -155,22 +155,22 @@ class TkinterMokadi(tkinter.Frame):
         self.subframe1.grid(column=0, row=0)
         self.subframe2.grid(column=1, row=0)
 
-        self.respond = ttk.Button(
+        self.respond = tttk.Button(
             self.subframe1, text='Demander', command=self.get_response)
         self.respond.grid(column=1, row=0, sticky='nesw', padx=3, pady=3)
         self.respond.config(width=5)
 
-        self.listen = ttk.Button(
+        self.listen = tttk.Button(
             self.subframe1, text='Ecouter', command=self.start_speech_listening)
         self.listen.grid(column=1, row=1, sticky='nesw', padx=3, pady=3)
         self.listen.config(width=5)
 
-        self.usr_input = ttk.Entry(self.subframe1, state='normal')
+        self.usr_input = tttk.Entry(self.subframe1, state='normal')
         self.usr_input.grid(column=0, row=0, sticky='nesw', padx=3, pady=3)
         self.usr_input.bind("<Return>", self.bound_enter)
         self.usr_input.config(width=5)
 
-        self.conversation_lbl = ttk.Label(
+        self.conversation_lbl = tttk.Label(
             self.subframe1, anchor=tkinter.E, text='Conversation')
         self.conversation_lbl.grid(
             column=0, row=1, sticky='nesw', padx=3, pady=3)
