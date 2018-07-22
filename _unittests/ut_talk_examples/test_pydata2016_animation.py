@@ -56,7 +56,7 @@ class TestPyData2016Animation(unittest.TestCase):
             writers.register(prog)
         fLOG(writers.list())
 
-        class UpdateDist(object):
+        class UpdateDist:
 
             def __init__(self, ax, prob=0.5):
                 self.success = 0
