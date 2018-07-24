@@ -8,6 +8,9 @@ addons:
 -  apt:
 -    packages:
       - ffmpeg
+      - libproj-dev
+      - libgeos-dev
+
 before_install:
   - sudo apt-get -qq update
   # - sudo apt-get install -y ta-lib  does not work
@@ -28,7 +31,7 @@ install:
   # - make all
   #- conda build build_tools/conda-recipe --quiet
   - conda install -q --file=requirements_conda.txt
-  - pip install git+https://github.com/matplotlib/basemap.git
+  - conda install -c scitools/label/archive cartopy
   - pip install git+https://github.com/matplotlib/mpl_finance
   - pip install -r requirements.txt
 script:

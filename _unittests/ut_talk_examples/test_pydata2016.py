@@ -6,7 +6,7 @@ import sys
 import os
 import unittest
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv
+from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, ExtTestCase
 
 
 try:
@@ -22,10 +22,10 @@ except ImportError:
         sys.path.append(path)
     import src
 
-from src.jupytalk.talk_examples.pydata2016 import example_networkx, example_confidence_interval, example_basemap
+from src.jupytalk.talk_examples.pydata2016 import example_networkx, example_confidence_interval, example_cartopy
 
 
-class TestPyData2016(unittest.TestCase):
+class TestPyData2016(ExtTestCase):
 
     def test_example_networkx(self):
         fLOG(
@@ -40,7 +40,7 @@ class TestPyData2016(unittest.TestCase):
         assert ax is not None
         img = os.path.join(temp, "img.png")
         fig.savefig(img)
-        assert os.path.exists(img)
+        self.assertExists(img)
         if __name__ == "__main__":
             fig.show()
         plt.close('all')
@@ -59,13 +59,13 @@ class TestPyData2016(unittest.TestCase):
         assert ax is not None
         img = os.path.join(temp, "img.png")
         fig.savefig(img)
-        assert os.path.exists(img)
+        self.assertExists(img)
         if __name__ == "__main__":
             fig.show()
         plt.close('all')
         fLOG("end")
 
-    def test_example_basemap(self):
+    def test_example_cartopy(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -74,11 +74,11 @@ class TestPyData2016(unittest.TestCase):
         fix_tkinter_issues_virtualenv()
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(8, 8))
-        example_basemap(ax=ax)
+        example_cartopy(ax=ax)
         assert ax is not None
         img = os.path.join(temp, "img.png")
         fig.savefig(img)
-        assert os.path.exists(img)
+        self.assertExists(img)
         if __name__ == "__main__":
             fig.show()
         plt.close('all')

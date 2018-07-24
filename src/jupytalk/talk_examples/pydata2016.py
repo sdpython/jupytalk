@@ -6,7 +6,7 @@
 
 def example_networkx(ax=None, **options):
     """
-    example using networks
+    Example using :epkg:`networkx`.
 
     @param      ax          axis
     @param      options     look at the code
@@ -48,10 +48,12 @@ def example_networkx(ax=None, **options):
 
 def example_confidence_interval(ax=None, seaborn=False, **options):
     """
-    draw pseudo confidence interval for a regression in a matplotlib
+    Draws pseudo confidence interval for a regression
+    in a :epkg:`matplotlib` graph.
 
     @param      ax          axis
-    @param      seaborn     uses *seaborn* instead of *matplotlib*
+    @param      seaborn     uses :epkg:`seaborn`
+                            instead of :epkg:`matplotlib`
     @param      options     look at the code
     @return                 ax
     """
@@ -74,7 +76,7 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
         return regplot(x, data, ax=ax)
     else:
         r = data - y
-        for i in range(nboot):
+        for _ in range(nboot):
             pc = scipy.polyfit(
                 x, y + r[scipy.random.randint(0, nx - 1, nx)], 1)
             ax.plot(x, scipy.polyval(pc, x), 'k-',
@@ -84,37 +86,40 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
         return ax
 
 
-def example_basemap(ax=None, **options):
+def example_cartopy(ax=None, **options):
     """
-    draw a map of France
+    Draws a map of France
+    with :epkg:`cartopy`.
 
     @param      ax          axis
     @param      options     look at the code
     @return                 ax
     """
+    import cartopy.crs as ccrs
+    import cartopy.feature as cfeature
     import matplotlib.pyplot as plt
 
-    if ax is None:
-        _, ax = plt.subplots(
-            nrows=1, ncols=1, figsize=options.get('figsize', (5, 5)))
+    fig = plt.figure(figsize=(7, 7))
+    ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
+    ax.set_extent([-5, 10, 42, 52])
 
-    from mpl_toolkits.basemap import Basemap
-    import numpy
-    m = Basemap(llcrnrlon=-5, llcrnrlat=40, urcrnrlon=20, urcrnrlat=56,
-                resolution='i', projection='cass', lon_0=2.34, lat_0=48,
-                ax=ax)
-    m.drawcoastlines()
-    m.drawcountries()
-    m.fillcontinents(color='lightgrey', lake_color='#AAAAFF')
-    m.drawparallels(numpy.arange(-40, 61., 2.))
-    m.drawmeridians(numpy.arange(-20., 21., 2.))
-    m.drawmapboundary(fill_color='#BBBBFF')
+    ax.add_feature(cfeature.OCEAN)
+    ax.add_feature(cfeature.COASTLINE)
+    ax.add_feature(cfeature.RIVERS)
+    ax.add_feature(cfeature.LAKES)
+    ax.add_feature(cfeature.LAND)
+    ax.add_feature(cfeature.BORDERS, linestyle=':')
+    ax.plot([2.35, 2.20], [48.85, 48.71], '.')
+    ax.text(2.35, 48.85, "Paris")
+    ax.text(2.20, 48.71, "Saclay", ha="right")
+    ax.set_title('France')
     return ax
 
 
 def example_pydy(ax=None, **options):
     """
-    example from the documentation of `pydy <https://github.com/pydy/pydy>`_
+    Example from the documentation of
+    :epkg:`pydy`.
 
     @param      ax          matplotlib axis
     @parm       options     extra options

@@ -24,7 +24,7 @@ it involves a server (bqplot).
 
 **Static libraries**
 
-* :ref:`imbasemaprst`
+* :ref:`imcartopyrst`
 * :ref:`imbiopythonrst`
 * :ref:`imete3rst`
 * :ref:`imlifelinesrst`

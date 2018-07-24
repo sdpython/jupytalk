@@ -23,3 +23,7 @@ html_context = {
 # https://github.com/peterhudec/foundation-sphinx-theme
 # http://docs.guzzlephp.org/en/latest/
 # http://sphinx-better-theme.readthedocs.io/en/latest/
+
+epkg_dictionary['networkx'] = "https://networkx.github.io/"
+epkg_dictionary['pydy'] = "https://github.com/pydy/pydy"
+epkg_dictionary['seaborn'] = "https://seaborn.pydata.org/"

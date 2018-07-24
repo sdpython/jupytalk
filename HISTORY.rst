@@ -5,9 +5,10 @@
 History
 =======
 
-current - 2018-07-05 - 0.00Mb
+current - 2018-07-24 - 0.00Mb
 =============================
 
+* `4`: replace basemap by cartopy (2018-07-24)
 * `9`: add notebook on pyecharts (2018-07-05)
 * `8`: try catch around ggplot (not maintained anymore) (2018-05-24)
 * `7`: split unit test on ggplot - failing on appveyor (2018-03-28)
