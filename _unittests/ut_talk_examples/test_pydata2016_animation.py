@@ -27,6 +27,10 @@ class TestPyData2016Animation(unittest.TestCase):
             warnings.warn("no ffmpeg installed")
             return
 
+        if is_travis_or_appveyor() == "circleci":
+            warnings.warn("avconv unavailable")
+            return
+
         prog = "ffmpeg" if sys.platform.startswith("win") else "avconv"
         out, err = run_cmd(prog, wait=True, fLOG=fLOG)
         exps = prog + " version"
