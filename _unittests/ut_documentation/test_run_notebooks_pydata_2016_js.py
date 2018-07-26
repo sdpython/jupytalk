@@ -45,7 +45,7 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
         keepnote = []
         for f in os.listdir(fnb):
             if os.path.splitext(f)[-1] == ".ipynb" and "js_" in f and "pyjs_" not in f and \
-                    "lightning" not in f and "pydy" not in f:
+                    "lightning" not in f and "pydy" not in f and "bokeh" not in f:
                 keepnote.append(os.path.join(fnb, f))
 
         # function to tell that a can be run
