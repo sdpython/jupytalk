@@ -8,7 +8,7 @@ import os
 import unittest
 import shutil
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode import get_temp_folder, skipif_travis
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
 
 try:
@@ -29,6 +29,7 @@ import src.jupytalk
 
 class TestRunNotebooksPyData2016_js_bokeh(unittest.TestCase):
 
+    @skipif_travis("travis gets stuck can do not move to the next unit test")
     def test_run_notebook_js_bokeh(self):
         fLOG(
             __file__,
