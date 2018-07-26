@@ -19,7 +19,6 @@ reportlab
 scikit-learn
 scipy
 seaborn
-setuptools
 Sphinx
 sympy
 toolz

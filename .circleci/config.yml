@@ -64,21 +64,28 @@ jobs:
             sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
 
       - run:
-          name: install dependencies (1)
+          name: install dependencies (1) - requirements_conda
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements_conda.txt
             
       - run:
-          name: install dependencies (2)
+          name: install dependencies (2) - requirements
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
             
       - run:
-          name: install dependencies (3)
+          name: install dependencies (2) - cairo
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install cairocffi cairosvg
+            
+      - run:
+          name: install dependencies (3) - sphinxcontrib, datashader
           command: |
             python3 -m venv venv
             . venv/bin/activate
