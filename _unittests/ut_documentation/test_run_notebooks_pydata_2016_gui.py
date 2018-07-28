@@ -53,10 +53,6 @@ class TestRunNotebooksPyData2016_gui(unittest.TestCase):
         def valid(cell):
             if ".show" in cell:
                 return False
-            if "open_window_params" in cell:
-                return False
-            if '<div style="position:absolute' in cell:
-                return False
             return True
 
         # additionnal path to add
