@@ -7,7 +7,6 @@ import sys
 import os
 import unittest
 import shutil
-import warnings
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, skipif_travis, skipif_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut

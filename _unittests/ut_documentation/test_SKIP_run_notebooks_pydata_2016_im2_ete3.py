@@ -7,7 +7,6 @@ import sys
 import os
 import unittest
 import shutil
-import warnings
 from pyquickhelper.loghelper import fLOG, CustomLog, run_cmd
 from pyquickhelper.pycode.venv_helper import is_virtual_environment
 from pyquickhelper.pycode import get_temp_folder, skipif_travis
