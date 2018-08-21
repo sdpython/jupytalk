@@ -11,7 +11,6 @@ import warnings
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 
 try:
     import src
@@ -41,9 +40,6 @@ class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
             warnings.warn(
                 "The unit test relies on lightning-python but it shares the same name as another one. We disable it.")
             return
-
-        kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
-            "python3_module_template")
 
         temp = get_temp_folder(__file__, "temp_run_notebooks_lightning_js")
 
@@ -77,7 +73,7 @@ class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
 
         # run the notebooks
         res = execute_notebook_list(
-            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
+            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
         execute_notebook_list_finalize_ut(
             res, fLOG=fLOG, dump=src.jupytalk)
 

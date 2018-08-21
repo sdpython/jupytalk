@@ -10,9 +10,8 @@ import shutil
 import warnings
 from pyquickhelper.loghelper import fLOG, CustomLog, run_cmd
 from pyquickhelper.pycode.venv_helper import is_virtual_environment
-from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
+from pyquickhelper.pycode import get_temp_folder, skipif_travis
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 
 
 try:
@@ -33,6 +32,7 @@ import src.jupytalk
 
 class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
 
+    @skipif_travis("issue with datashader.bokeh_ext, skipping")
     def test_run_notebook_im2(self):
         """
         If the test does not end, it is probably due to PyQt4 needed by ete3.
@@ -44,10 +44,6 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-
-        if is_travis_or_appveyor() == "travis":
-            warnings.warn("issue with datashader.bokeh_ext, skipping")
-            return
 
         if is_virtual_environment() and sys.platform.startswith("win"):
             pp = os.environ.get('PYTHONPATH', '')
@@ -81,9 +77,6 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
                     raise Exception("--CMD:\n{0}\n--OUT:\n{1}\n--ERR\n{2}\n--ERR2\n{3}\n--PP\n{4}".format(
                         cmd, out, err, "\n".join(lines), pp))
             return
-
-        kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
-            "python3_module_template")
 
         temp = get_temp_folder(__file__, "temp_run_notebooks_im2")
 
@@ -122,7 +115,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         # run the notebooks
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths,
-            kernel_name=kernel_name, detailed_log=clog)
+            detailed_log=clog)
         execute_notebook_list_finalize_ut(
             res, fLOG=fLOG, dump=src.jupytalk)
 

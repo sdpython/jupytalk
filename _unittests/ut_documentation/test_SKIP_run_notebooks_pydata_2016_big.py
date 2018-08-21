@@ -9,9 +9,8 @@ import unittest
 import shutil
 import warnings
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
+from pyquickhelper.pycode import get_temp_folder, skipif_travis, skipif_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-from pyquickhelper.ipythonhelper import install_python_kernel_for_unittest
 
 
 try:
@@ -32,22 +31,13 @@ import src.jupytalk
 
 class TestRunNotebooksPyData2016_big(unittest.TestCase):
 
+    @skipif_travis("issue with datashader.bokeh_ext")
+    @skipif_appveyor("issue with numba")
     def test_run_notebook_big(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-
-        if is_travis_or_appveyor() == "travis":
-            warnings.warn("issue with datashader.bokeh_ext, skipping")
-            return
-
-        if is_travis_or_appveyor() == "appveyor":
-            warnings.warn("issue with numba, skipping")
-            return
-
-        kernel_name = None if is_travis_or_appveyor() else install_python_kernel_for_unittest(
-            "python3_module_template")
 
         temp = get_temp_folder(__file__, "temp_run_notebooks_big")
 
@@ -83,7 +73,7 @@ class TestRunNotebooksPyData2016_big(unittest.TestCase):
 
         # run the notebooks
         res = execute_notebook_list(
-            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=kernel_name)
+            temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
         execute_notebook_list_finalize_ut(
             res, fLOG=fLOG, dump=src.jupytalk)
 

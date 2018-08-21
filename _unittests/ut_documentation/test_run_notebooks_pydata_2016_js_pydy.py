@@ -77,7 +77,7 @@ class TestRunNotebooksPyData2016_js_pydy(unittest.TestCase):
         # run the notebooks
         try:
             res = execute_notebook_list(
-                temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths, kernel_name=None)
+                temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
             execute_notebook_list_finalize_ut(
                 res, fLOG=fLOG, dump=src.jupytalk)
         except Exception as e:
