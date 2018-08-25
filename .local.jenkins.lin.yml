@@ -15,7 +15,8 @@ install:
   - $PYINT -c "from pip._internal import main;main([\"freeze\"])"
 
 script:
-  - { CMD: "$PYINT -u setup.py unittests", NAME: "UT" }
+  - { CMD: "$PYINT -u setup.py unittests -g \".*code_style.*\"", NAME: "UT" }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*code_style.*\"", NAME: "UT_STYLE" }
   - { CMD: "$PYINT -u setup.py unittests_LONG", NAME: "UT_LONG", TIMEOUT: 3600 }
   - { CMD: "$PYINT -u setup.py unittests -e .*SKIP.* -g \".*ete3.*\"", NAME: "UT_SKIP", TIMEOUT: 3600 }
   - { CMD: "$PYINT -u setup.py unittests -e .*ete3.*", NAME: "UT_SKIP_ETE3", TIMEOUT: 3600 }
