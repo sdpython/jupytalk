@@ -83,7 +83,7 @@ class MokadiActionEmotion(MokadiAction):
             yield MokadiInfo("error", "", "Aucun résultat. Veuillez recommencer.")
             done = True
         elif "error" in res:
-            yield MokadiInfo("error", "", res["message"])
+            yield MokadiInfo("error", "", res.get("message", "no message"))
             done = True
         else:
             img = Image.open(filename)

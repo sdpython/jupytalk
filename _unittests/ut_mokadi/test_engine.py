@@ -57,8 +57,8 @@ class TestEngine(unittest.TestCase):
         clog = CustomLog(temp)
         folder = os.path.join(temp, "..", "data")
         act = MokadiActionSlides(folder)
-        engine = MokadiEngine(temp, clog, [
-                              act], MokadiGrammar_frParser, MokadiGrammar_frLexer, MokadiGrammar_frListener)
+        engine = MokadiEngine(temp, clog, [act], MokadiGrammar_frParser,
+                              MokadiGrammar_frLexer, MokadiGrammar_frListener)
         mes = MokadiMessage("MOKADI liste presentation", 1)
         res = list(engine.process(mes, exc=True))
         self.assertEqual(len(res), 2)

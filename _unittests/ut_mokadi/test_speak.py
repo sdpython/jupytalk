@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import is_travis_or_appveyor, add_missing_development_version
 
@@ -40,14 +41,12 @@ class TestSpeak(unittest.TestCase):
             # no keys
             return
 
-        if os.environ.get("COMPUTERNAME", "").lower() == "ensaegithubxd":
-            # The import crashes since 2017-11-06 on the virtual machine.
-            return
-
         from src.jupytalk.mokadi import speak
 
         try:
             speak("mail reçu à 15h30 mardi 21 septembre.")
+        except NotImplementedError:
+            warnings.warn("Speech not implemented")
         except Exception as e:
             if "Audio device error encountered" in str(e) or \
                     "Erreur de périphérique audio rencontrée" in str(e):
@@ -65,8 +64,7 @@ class TestSpeak(unittest.TestCase):
                     # it just exclude one user only used on remotre
                     # machines
                     return
-            raise Exception("USERNAME {0} COMPUTERNAME {1}".format(
-                os.environ.get("USERNAME", "-"), os.environ.get("COMPUTERNAME", "-"))) from e
+            raise Exception("Audio device should work") from e
 
 
 if __name__ == "__main__":

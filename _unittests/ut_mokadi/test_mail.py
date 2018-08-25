@@ -30,22 +30,18 @@ from src.jupytalk.mokadi import enumerate_last_mails
 
 class TestMail(unittest.TestCase):
 
+    @unittest.skipIf(is_travis_or_appveyor() is not None, reason="no keys")
     def test_mail(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        if is_travis_or_appveyor():
-            # no keys
-            return
-
         with warnings.catch_warnings():
             warnings.simplefilter('ignore', DeprecationWarning)
             import keyring
-        user = keyring.get_password(
-            "gmail", os.environ["COMPUTERNAME"] + "user")
-        pwd = keyring.get_password("gmail", os.environ["COMPUTERNAME"] + "pwd")
+        user = keyring.get_password("gmail", "jupytalk,user")
+        pwd = keyring.get_password("gmail", "jupytalk,pwd")
         server = "imap.gmail.com"
         try:
             mails = enumerate_last_mails(user, pwd, server, fLOG=fLOG)
@@ -57,15 +53,8 @@ class TestMail(unittest.TestCase):
                 fLOG(mail.get_field("subject").split("\n")[0])
                 i += 1
 
-        except Exception:
-            if os.environ["USERNAME"] == "ensaestudent" or \
-               os.environ["USERNAME"] == "vsxavierdupre" or \
-               os.environ["USERNAME"] == "vsxavierdupre" or \
-               "DOUZE2016" in os.environ.get("COMPUTERNAME", "") or \
-               os.environ["USERNAME"] == "appveyor" or \
-               "paris" in os.environ.get("COMPUTERNAME", "").lower() or \
-               os.environ["USERNAME"].endswith("$"):
-                return
+        except Exception as e:
+            raise Exception("Does not work") from e
 
 
 if __name__ == "__main__":

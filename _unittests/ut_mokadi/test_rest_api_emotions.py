@@ -29,15 +29,12 @@ from src.jupytalk.mokadi.cognitive_services_helper import call_api_emotions
 
 class TestRestApiEmotions(unittest.TestCase):
 
+    @unittest.skipIf(is_travis_or_appveyor() is not None, reason="no keys")
     def test_api_emotions(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
-
-        if is_travis_or_appveyor():
-            # no keys
-            return
 
         path = os.path.join(os.path.abspath(os.path.dirname(__file__)), "data")
         imgs = [os.path.join(path, "84-cate-blanchett-jude-quinn-i-m-not-there-2007--630-75.jpg"),
@@ -46,8 +43,10 @@ class TestRestApiEmotions(unittest.TestCase):
         with warnings.catch_warnings():
             warnings.simplefilter('ignore', DeprecationWarning)
             import keyring
-        subkey = keyring.get_password(
-            "cogser", os.environ["COMPUTERNAME"] + "emotions")
+        subkey = keyring.get_password("cogser", "jupytalk,emotions")
+        if not subkey:
+            warnings.warn("No key")
+            return
         for img in imgs:
             res = call_api_emotions(subkey, img)
             if isinstance(res, dict) and "error" in res:

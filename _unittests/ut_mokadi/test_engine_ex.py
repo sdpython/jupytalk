@@ -61,7 +61,7 @@ class TestEngineExtended(ExtTestCase):
                    ]
 
         # Adding test which requires credentials.
-        if not is_travis_or_appveyor() and "douze2016" not in os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME", "")).lower():
+        if not is_travis_or_appveyor():
             fLOG("Adding actions with credentials.")
             with warnings.catch_warnings():
                 warnings.simplefilter('ignore', DeprecationWarning)

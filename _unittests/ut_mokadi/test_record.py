@@ -29,36 +29,20 @@ from src.jupytalk.mokadi import record_speech, play_speech
 
 class TestRestApiSpeech(unittest.TestCase):
 
+    @unittest.skipIf(is_travis_or_appveyor() is not None, reason="no keys")
     def test_record(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        if is_travis_or_appveyor():
-            # no keys
-            return
-
         fLOG("record")
         temp = get_temp_folder(__file__, "temp_record")
         output = os.path.join(temp, "output.wav")
         try:
             record = record_speech(3, fLOG=fLOG, WAVE_OUTPUT_FILENAME=output)
-        except Exception:
-            if os.environ["USERNAME"] == "ensaestudent" or \
-               os.environ["USERNAME"] == "vsxavierdupre" or \
-               os.environ["USERNAME"] == "vsxavierdupre" or \
-               os.environ["USERNAME"] == "Administrateur" or \
-               "DOUZE2016" in os.environ.get("COMPUTERNAME", "") or \
-               os.environ["USERNAME"] == "appveyor" or \
-               "ENSAE" in os.environ.get("COMPUTERNAME", "") or \
-               os.environ["USERNAME"].endswith("$"):  # anonymous Jenkins configuration
-                # I would prefer to catch a proper exception
-                # it just exclude one user only used on remotre
-                # machines
-                return
-            raise Exception("USERNAME {0} COMPUTERNAME {1}".format(
-                os.environ.get("USERNAME", "-"), os.environ.get("COMPUTERNAME", "-")))
+        except Exception as e:
+            raise Exception("Does not work") from e
         fLOG("play", len(record))
         play_speech(record)
         fLOG("end")

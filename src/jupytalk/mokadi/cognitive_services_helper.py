@@ -106,7 +106,8 @@ def call_api_news(subscription_key, query, market="fr-FR", count=10, offset=0):
         conn.close()
         return bytes2python(data)
     except Exception as e:
-        raise CognitiveException("[Errno {0}] {1}".format(e.errno, e.strerror))
+        raise CognitiveException("[Errno {0}] {1}".format(
+            getattr(e, "errno", "-"), getattr(e, 'strerror', '-'))) from e
 
 
 def call_api_images(subscription_key, query, market="fr-FR", count=10, offset=0):
@@ -165,7 +166,8 @@ def call_api_images(subscription_key, query, market="fr-FR", count=10, offset=0)
         conn.close()
         return bytes2python(data)
     except Exception as e:
-        raise CognitiveException("[Errno {0}] {1}".format(e.errno, e.strerror))
+        raise CognitiveException("[Errno {0}] {1}".format(
+            getattr(e, "errno", "-"), getattr(e, 'strerror', '-'))) from e
 
 
 def call_api_speech_reco(subkey, lang="fr-FR", filename=None, memwav=None,
@@ -222,4 +224,5 @@ def call_api_emotions(subkey, image_or_bytes):
         conn.close()
         return bytes2python(data)
     except Exception as e:
-        raise CognitiveException("[Errno {0}] {1}".format(e.errno, e.strerror))
+        raise CognitiveException("[Errno {0}] {1}".format(
+            getattr(e, 'errno', '-'), getattr(e, 'strerror', '-'))) from e

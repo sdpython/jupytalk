@@ -31,29 +31,21 @@ class TestLONGRestApiSpeech(unittest.TestCase):
         add_missing_development_version(["jyquickhelper", "ensae_teaching_cs", "pymmails"],
                                         __file__, hide=True)
 
+    @unittest.skipIf(is_travis_or_appveyor() is not None, reason="no keys")
     def test_api_speech_reco(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        if is_travis_or_appveyor():
-            # no keys
-            return
-
-        if os.environ.get("COMPUTERNAME", os.environ.get("HOSTNAME")).startswith("VSWINDOUZE"):
-            # jenkins remote machine: no audio
-            return
-
-        # key must be renewed before calling it again
-        return
-
         from src.jupytalk.mokadi.cognitive_services_helper import call_api_speech_reco
         with warnings.catch_warnings():
             warnings.simplefilter('ignore', DeprecationWarning)
             import keyring
-        subkey = keyring.get_password(
-            "cogser", os.environ["COMPUTERNAME"] + "voicereco")
+        subkey = keyring.get_password("cogser", "jupyter,voicereco")
+        if not subkey:
+            warnings.warn("not key")
+            return
 
         wav = os.path.join(os.path.abspath(
             os.path.dirname(__file__)), "data", "output.wav")

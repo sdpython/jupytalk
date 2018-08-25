@@ -7,7 +7,6 @@ import sys
 import os
 import unittest
 import datetime
-from pyquickhelper.loghelper import fLOG
 
 
 try:
@@ -30,11 +29,6 @@ from src.jupytalk.mokadi.mokadi_helper import convert_into_days
 class TestHelper(unittest.TestCase):
 
     def test_helper(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         r = "2017-04-03T12:58:00"
         conv = convert_into_days(r)
         self.assertTrue(isinstance(conv, str))

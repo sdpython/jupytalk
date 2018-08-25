@@ -349,7 +349,7 @@ def gui_mokadi(fLOG=None, folder_slides=None):
     tk = tkinter.Tk()
     tk.iconbitmap(os.path.join(os.path.dirname(__file__), 'project_ico.ico'))
     tk.title("Mokadi")
-    window = TkinterMokadi(tk, engine, speak=True, subkey_speech=subkey_speech)
+    window = TkinterMokadi(tk, engine, vocal=True, subkey_speech=subkey_speech)
     tk.mainloop()
     if hasattr(window, "thread_listen") and window.thread_listen is not None:
         window.thread_listen.stop_listening()

@@ -4,7 +4,7 @@
 """
 
 
-def take_picture(filename=None, size=(640, 480), module="cv2"):
+def take_picture(filename=None, size=(1280, 720), module="cv2"):
     """
     Take a picture with the camera.
 
