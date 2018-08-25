@@ -184,8 +184,9 @@ def call_api_speech_reco(subkey, lang="fr-FR", filename=None, memwav=None,
 
     Either filename or memwav must be specified.
     """
-    from ensae_teaching_cs.cspython import vocal_recognition
-    return vocal_recognition(subkey, lang=lang, filename=filename, memwav=memwav, url=url)
+    raise NotImplementedError("Implementation was removed.")
+    # from ensae_teaching_cs.cspython import vocal_recognition
+    # return vocal_recognition(subkey, lang=lang, filename=filename, memwav=memwav, url=url)
 
 
 def call_api_emotions(subkey, image_or_bytes):

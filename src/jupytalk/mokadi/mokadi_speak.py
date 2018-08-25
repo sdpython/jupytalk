@@ -15,5 +15,6 @@ def speak(text, lang="fr-FR", voice="", filename=None):
 
     See `SpeechSynthesizer <https://msdn.microsoft.com/fr-fr/library/system.speech.synthesis.speechsynthesizer(v=vs.110).aspx>`_.
     """
-    from ensae_teaching_cs.cspython import vocal_synthesis
-    vocal_synthesis(text, lang=lang, voice=voice, filename=filename)
+    raise NotImplementedError("Implementation was removed.")
+    # from ensae_teaching_cs.cspython import vocal_synthesis
+    # vocal_synthesis(text, lang=lang, voice=voice, filename=filename)

@@ -101,7 +101,8 @@ class ThreadListen(threading.Thread):
 
     def run(self):
         self.fLOG("[Listen] start")
-        from ensae_teaching_cs.cspython import vocal_recognition_system
+        # Implementation was removed.
+        # from ensae_teaching_cs.cspython import vocal_recognition_system
         good = {'123', 'et 23', '23', 'et 223', '923', '2123', ', 923', 'l\'un des trois',
                 '0123'}
         self.continue_listening = True
@@ -110,9 +111,9 @@ class ThreadListen(threading.Thread):
             sound = record_speech(RECORD_SECONDS=2)
             with open(self.filename, "wb") as f:
                 f.write(sound)
-            res = vocal_recognition_system(self.filename)
+            res = None  # vocal_recognition_system(self.filename)
             if res is not None:
-                text = " ".join(_[1] for _ in res)
+                text = " ".join(_[1] for _ in res)  # pylint: disable=E1133
                 self.fLOG("[Listen] .", text)
                 if text in good:
                     self.win.event_generate("<<Listener>>")
@@ -126,19 +127,19 @@ class TkinterMokadi(tkinter.Frame):
     Defines a frame.
     """
 
-    def __init__(self, parent, mokadi, speak=False, subkey_speech=None,
+    def __init__(self, parent, mokadi, vocal=False, subkey_speech=None,
                  fLOG=fLOG, folder="."):
         """
         @param      parent          a frame
         @param      mokadi          the bot @see cl MokadiEngine
-        @param      speak           speak the answer and not just display it
+        @param      vocal           speak the answer and not just display it
         @param      subkey_speech   key for the speech
         @param      folder          temporary folder
         @param      fLOG            logging function
         """
         tkinter.Frame.__init__(self, parent)
         self._mokadi = mokadi
-        self._speak = speak
+        self._speak = vocal
         self._subkey_speech = subkey_speech
         self.fLOG = fLOG
         self.queue = Queue()

@@ -9,10 +9,11 @@ from multiprocessing import Process, Pipe
 
 
 def process_listen(conn):
-    from ensae_teaching_cs.cspython import vocal_recognition_listening
-    for score, text in vocal_recognition_listening():
-        conn.send(text)
-    conn.close()
+    raise NotImplementedError("Implementation was removed.")
+    # from ensae_teaching_cs.cspython import vocal_recognition_listening
+    # for score, text in vocal_recognition_listening():
+    #     conn.send(text)
+    # conn.close()
 
 
 def start_process_listen():
