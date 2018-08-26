@@ -22,7 +22,7 @@ class TestPyData2016Animation(unittest.TestCase):
 
         progs = ["ffmpeg"]
         if not sys.platform.startswith("win"):
-            prog.append("avconv")
+            progs.append("avconv")
         errs = []
         prog = None
         for prog in progs:
