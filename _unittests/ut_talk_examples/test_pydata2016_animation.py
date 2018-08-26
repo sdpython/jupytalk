@@ -5,36 +5,35 @@
 import sys
 import os
 import unittest
-import warnings
 from pyquickhelper.loghelper import fLOG, run_cmd
-from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, is_travis_or_appveyor
+from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, skipif_appveyor, skipif_travis
 from pyquickhelper.pycode import add_missing_development_version
 
 
 class TestPyData2016Animation(unittest.TestCase):
 
+    @skipif_appveyor("no ffmpeg installed")
+    @skipif_travis("issue with datashader.bokeh_ext, skipping")
     def test_matplotlib_example(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        if is_travis_or_appveyor() == "travis":
-            warnings.warn("issue with datashader.bokeh_ext, skipping")
-            return
+        progs = ["ffmpeg"]
+        if not sys.platform.startswith("win"):
+            prog.append("avconv")
+        errs = []
+        prog = None
+        for prog in progs:
+            out, err = run_cmd(prog, wait=True, fLOG=fLOG)
+            exps = "usage:"
+            if (exps not in out and exps not in err) or err is None or len(err) == 0:
+                errs.append((prog, err))
+            else:
+                break
 
-        if is_travis_or_appveyor() == "appveyor":
-            warnings.warn("no ffmpeg installed")
-            return
-
-        if is_travis_or_appveyor() == "circleci":
-            warnings.warn("avconv unavailable")
-            return
-
-        prog = "ffmpeg" if sys.platform.startswith("win") else "avconv"
-        out, err = run_cmd(prog, wait=True, fLOG=fLOG)
-        exps = prog + " version"
-        if (exps not in out and exps not in err) or err is None or len(err) == 0:
+        if len(errs) >= len(progs):
             if sys.platform.startswith("win"):
                 fLOG("download ffmpeg")
                 add_missing_development_version(
@@ -44,7 +43,8 @@ class TestPyData2016Animation(unittest.TestCase):
             else:
                 raise FileNotFoundError(
                     "Unable to find '{1}'.\nPATH='{0}'\n--------\n[OUT]\n{2}\n[ERR]\n{3}".format(
-                        os.environ["PATH"], prog, out, err))
+                        os.environ["PATH"], prog, out,
+                        "\n----\n".join("{0}:\n{1}".format(*_) for _ in errs)))
 
         temp = get_temp_folder(__file__, "temp_example_example")
         fix_tkinter_issues_virtualenv()

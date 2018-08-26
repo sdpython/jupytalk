@@ -66,13 +66,13 @@ class TestEngineExtended(ExtTestCase):
             with warnings.catch_warnings():
                 warnings.simplefilter('ignore', DeprecationWarning)
                 import keyring
-            user = keyring.get_password(
-                "gmail", os.environ["COMPUTERNAME"] + "user")
-            pwd = keyring.get_password(
-                "gmail", os.environ["COMPUTERNAME"] + "pwd")
+            user = keyring.get_password("gmail", "jupytalk,user")
+            pwd = keyring.get_password("gmail", "jupytalk,pwd")
             server = "imap.gmail.com"
-            subkey_news = keyring.get_password(
-                "cogser", os.environ["COMPUTERNAME"] + "news")
+            subkey_news = keyring.get_password("cogser", "jupytalk,news")
+            if subkey_news is None:
+                warnings.warn("No key")
+                return
 
             messages.append("MOKADI lire mail 2 en entier")
             messages.append("MOKADI lire mail 2")
