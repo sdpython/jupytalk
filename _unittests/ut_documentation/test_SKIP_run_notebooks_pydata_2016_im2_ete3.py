@@ -109,6 +109,8 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
                 os.path.abspath(os.path.dirname(__file__)), "..", "..", "..", "jyquickhelper", "src"))
         ]
 
+        os.environ["DISPLAY"] = ":0"
+
         clog = CustomLog(temp)
 
         # run the notebooks
