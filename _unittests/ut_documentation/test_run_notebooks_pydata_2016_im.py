@@ -8,7 +8,7 @@ import os
 import unittest
 import shutil
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder
+from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
 
 try:
@@ -42,7 +42,8 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
             os.path.abspath(os.path.dirname(__file__)), "..", "..", "_doc", "notebooks", "2016", "pydata"))
         keepnote = []
         for f in os.listdir(fnb):
-            if os.path.splitext(f)[-1] == ".ipynb" and "im_" in f and "ete" not in f and 'ggplot' not in f:
+            if os.path.splitext(f)[-1] == ".ipynb" and "im_" in f and "ete" not in f and 'ggplot' not in f and \
+                (is_travis_or_appveyor() != 'appveyor' or 'im_mpl_scatter_density' not in f):
                 keepnote.append(os.path.join(fnb, f))
 
         # function to tell that a can be run
