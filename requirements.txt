@@ -6,6 +6,7 @@ cairocffi
 cairosvg
 coverage
 cufflinks
+datashader
 ensae_teaching_cs>=0.8.2426
 ete3
 folium

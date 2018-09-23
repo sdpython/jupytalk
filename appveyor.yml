@@ -20,7 +20,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 llvmlite numba pycurl pillow shapely pyproj cartopy fiona"
   - "%PYTHON%\\Scripts\\pymy_install3 sympy mpmath reportlab statsmodels scipy pylzma"
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
-  - "%PYTHON%\\Scripts\\pymy_install3 datashader pydy biopython scikit-image TA_Lib"
+  - "%PYTHON%\\Scripts\\pymy_install3 pydy biopython scikit-image TA_Lib"
   - "%PYTHON%\\Scripts\\pymy_install3 fast_histogram"
   - "%PYTHON%\\Scripts\\pip install -r requirements_conda.txt"
   - "%PYTHON%\\Scripts\\pip install ete3"
