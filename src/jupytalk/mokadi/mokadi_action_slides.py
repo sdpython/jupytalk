@@ -82,7 +82,7 @@ class MokadiActionSlides(MokadiAction):
                         yield MokadiInfo("error", error="La présentation ne contient pas le transparent {0}.".format(slide))
                         done = True
                     else:
-                        for islide, ishape, ip, text in pptx_enumerate_text(ptx):
+                        for islide, _, __, text in pptx_enumerate_text(ptx):
                             if islide == slide - 1:
                                 yield MokadiInfo("ok", text)
                         done = True

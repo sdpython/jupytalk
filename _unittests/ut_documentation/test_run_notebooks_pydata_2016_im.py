@@ -43,7 +43,7 @@ class TestRunNotebooksPyData2016_im(unittest.TestCase):
         keepnote = []
         for f in os.listdir(fnb):
             if os.path.splitext(f)[-1] == ".ipynb" and "im_" in f and "ete" not in f and 'ggplot' not in f and \
-                (is_travis_or_appveyor() != 'appveyor' or 'im_mpl_scatter_density' not in f):
+                    (is_travis_or_appveyor() != 'appveyor' or 'im_mpl_scatter_density' not in f):
                 keepnote.append(os.path.join(fnb, f))
 
         # function to tell that a can be run
