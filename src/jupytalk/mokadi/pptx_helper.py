@@ -3,13 +3,11 @@
 @brief Helpers on Powerpoint presentation.
 It relies on module `python-pptx <https://python-pptx.readthedocs.io/en/latest/>`_.
 """
-from pptx.util import Pt
-from pptx.dml.color import RGBColor
 
 
 def pptx_enumerate_text(ptx):
     """
-    Enumerate all text content in a presentation.
+    Enumerates all text content in a presentation.
 
     @param      ptx         presentation
     @return                 enumerate (slide, shape, zone, text)
@@ -26,7 +24,7 @@ def pptx_enumerate_text(ptx):
 
 def pptx_apply_transform(ptx, replace_func):
     """
-    Apply the same transformation on all text zone.
+    Applies the same transformation on all text zone.
 
     @param      ptx             presentation
     @param      replace_func    function ``f(islide, ishape, ip, text) --> text
@@ -34,6 +32,9 @@ def pptx_apply_transform(ptx, replace_func):
 
     @warning Updated text does not retain style (bug).
     """
+    from pptx.util import Pt
+    from pptx.dml.color import RGBColor
+
     for islide, slide in enumerate(ptx.slides):
         for ishape, shape in enumerate(slide.shapes):
             if not shape.has_text_frame:

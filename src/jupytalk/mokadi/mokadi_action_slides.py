@@ -4,7 +4,6 @@
 @brief Defines an action for Mokadi.
 """
 import os
-import pptx
 from .mokadi_action import MokadiAction
 from .mokadi_info import MokadiInfo
 from .mokadi_exceptions import MokadiException
@@ -46,12 +45,14 @@ class MokadiActionSlides(MokadiAction):
 
     def process_interpreted_message(self, interpretation, message):
         """
-        Process the interpreted message.
+        Processes the interpreted message.
 
         @param      interpretation      interpretation
         @param      message             original message
         @return                         iterator on Info
         """
+        import pptx
+
         done = False
         interpretation0 = interpretation
         interpretation = [_ for _ in interpretation if _[1] != ":numero:"]
