@@ -34,6 +34,7 @@ it involves a server (bqplot).
 * :ref:`imnetworkxrst`
 * :ref:`implotninerst`
 * :ref:`imreportlabrst`
+* :ref:`imscikitplotrst`
 * :ref:`imseabornrst`
 
 **Interactive libraries**

@@ -5,9 +5,10 @@
 History
 =======
 
-current - 2018-07-24 - 0.00Mb
+current - 2018-10-14 - 0.00Mb
 =============================
 
+* `13`: add notebook on scikit-plot (2018-10-14)
 * `4`: replace basemap by cartopy (2018-07-24)
 * `9`: add notebook on pyecharts (2018-07-05)
 * `8`: try catch around ggplot (not maintained anymore) (2018-05-24)

@@ -32,6 +32,7 @@ pyshp
 python-pptx
 pythreejs>=1.0.0
 scikit-image
+scikit-plot
 semantic_version
 shapely
 sphinxjp.themes.basicstrap
