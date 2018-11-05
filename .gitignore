@@ -292,3 +292,8 @@ _doc/notebooks/2017/ensae/.ipynb_checkpoints/*
 _doc/notebooks/2016/pydata/render.html
 _doc/notebooks/2016/pydata/phantomjs.exe
 _doc/notebooks/2016/pydata/render.png
+_doc/notebooks/2018/msexp/data_train.csv
+_doc/notebooks/2018/msexp/diabetes.csv
+_doc/notebooks/2018/msexp/rf*.zip
+_doc/notebooks/2018/msexp/rf*.onnx
+_doc/notebooks/2018/msexp/.ipynb_checkpoints/*

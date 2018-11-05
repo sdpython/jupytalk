@@ -372,7 +372,7 @@ class MokadiGrammar_frParser (Parser):
 
     class ParseContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -430,7 +430,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Expression_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -484,7 +484,7 @@ class MokadiGrammar_frParser (Parser):
 
     class ExpressionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -563,7 +563,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Slides_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -576,7 +576,7 @@ class MokadiGrammar_frParser (Parser):
         def stop_words(self):
             return self.getTypedRuleContext(MokadiGrammar_frParser.Stop_wordsContext, 0)
 
-        def integer_number_string(self, i: int=None):
+        def integer_number_string(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(MokadiGrammar_frParser.Integer_number_stringContext)
             else:
@@ -646,7 +646,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Mail_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -662,7 +662,7 @@ class MokadiGrammar_frParser (Parser):
         def time_indication(self):
             return self.getTypedRuleContext(MokadiGrammar_frParser.Time_indicationContext, 0)
 
-        def integer_number_string(self, i: int=None):
+        def integer_number_string(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(MokadiGrammar_frParser.Integer_number_stringContext)
             else:
@@ -748,7 +748,7 @@ class MokadiGrammar_frParser (Parser):
 
     class News_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -841,20 +841,20 @@ class MokadiGrammar_frParser (Parser):
 
     class News_queryContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def apropos(self):
             return self.getTypedRuleContext(MokadiGrammar_frParser.AproposContext, 0)
 
-        def stop_words(self, i: int=None):
+        def stop_words(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(MokadiGrammar_frParser.Stop_wordsContext)
             else:
                 return self.getTypedRuleContext(MokadiGrammar_frParser.Stop_wordsContext, i)
 
-        def word_name(self, i: int=None):
+        def word_name(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(MokadiGrammar_frParser.Word_nameContext)
             else:
@@ -917,7 +917,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Emotion_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -975,11 +975,11 @@ class MokadiGrammar_frParser (Parser):
 
     class Anything_stmtContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def word_name_ext(self, i: int=None):
+        def word_name_ext(self, i: int = None):
             if i is None:
                 return self.getTypedRuleContexts(MokadiGrammar_frParser.Word_name_extContext)
             else:
@@ -1036,7 +1036,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Word_name_extContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1187,7 +1187,7 @@ class MokadiGrammar_frParser (Parser):
 
     class MokadiContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1227,7 +1227,7 @@ class MokadiGrammar_frParser (Parser):
 
     class HumeurContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1261,7 +1261,7 @@ class MokadiGrammar_frParser (Parser):
 
     class NumeroContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1298,7 +1298,7 @@ class MokadiGrammar_frParser (Parser):
 
     class PresentationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1341,7 +1341,7 @@ class MokadiGrammar_frParser (Parser):
 
     class NewsContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1381,7 +1381,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Time_indicationContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1427,7 +1427,7 @@ class MokadiGrammar_frParser (Parser):
 
     class With_bodyContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1469,7 +1469,7 @@ class MokadiGrammar_frParser (Parser):
 
     class EntierContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1506,7 +1506,7 @@ class MokadiGrammar_frParser (Parser):
 
     class DefinitionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1543,7 +1543,7 @@ class MokadiGrammar_frParser (Parser):
 
     class SynonymeContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1580,7 +1580,7 @@ class MokadiGrammar_frParser (Parser):
 
     class AproposContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1632,7 +1632,7 @@ class MokadiGrammar_frParser (Parser):
 
     class SlidesContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1678,7 +1678,7 @@ class MokadiGrammar_frParser (Parser):
 
     class MailsContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1718,7 +1718,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Verb_voirContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1820,7 +1820,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Stop_wordsContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1863,7 +1863,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Possessif_meContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1903,7 +1903,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Questions_markContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1937,7 +1937,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Integer_number_stringContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1990,7 +1990,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Number_nameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2149,7 +2149,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Word_nameContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2210,7 +2210,7 @@ class MokadiGrammar_frParser (Parser):
 
     class OperatorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2250,7 +2250,7 @@ class MokadiGrammar_frParser (Parser):
 
     class QuestionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2284,7 +2284,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Constant_numberContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2336,7 +2336,7 @@ class MokadiGrammar_frParser (Parser):
 
     class Integer_numberContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2384,17 +2384,17 @@ class MokadiGrammar_frParser (Parser):
 
     class Real_numberContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext=None, invokingState: int=-1):
+        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def Digits(self, i: int=None):
+        def Digits(self, i: int = None):
             if i is None:
                 return self.getTokens(MokadiGrammar_frParser.Digits)
             else:
                 return self.getToken(MokadiGrammar_frParser.Digits, i)
 
-        def Sign(self, i: int=None):
+        def Sign(self, i: int = None):
             if i is None:
                 return self.getTokens(MokadiGrammar_frParser.Sign)
             else:

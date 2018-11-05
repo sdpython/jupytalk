@@ -24,6 +24,16 @@ html_context = {
 # http://docs.guzzlephp.org/en/latest/
 # http://sphinx-better-theme.readthedocs.io/en/latest/
 
-epkg_dictionary['networkx'] = "https://networkx.github.io/"
-epkg_dictionary['pydy'] = "https://github.com/pydy/pydy"
-epkg_dictionary['seaborn'] = "https://seaborn.pydata.org/"
+epkg_dictionary.update({
+    'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
+    'Microsoft': 'https://docs.microsoft.com/en-us/',
+    'ML.net': "https://github.com/dotnet/machinelearning",
+    'networkx': "https://networkx.github.io/",
+    'nimbusml': 'https://docs.microsoft.com/en-us/nimbusml/overview',
+    'onnx': "https://github.com/onnx/onnx",
+    'ONNX': "https://onnx.ai/",
+    'onnxmltools': "https://github.com/onnx/onnxmltools",
+    'onnxruntime': "https://docs.microsoft.com/en-us/python/api/overview/azure/onnx/intro",
+    'pydy': "https://github.com/pydy/pydy",
+    'seaborn': "https://seaborn.pydata.org/",
+})

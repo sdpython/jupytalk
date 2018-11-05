@@ -3,11 +3,10 @@
 Notebook presentations
 ======================
 
-Materials for the talks are included in this module. To install it:
-
-::
-
-    pip install jupytalk
+Materials for the talks are included in this module.
+Contenu pour différentes présentations la plupart
+du temps sous forme de notebooks lorsqu'il n'y a pas de
+tableau blanc.
 
 **Author:** `Xavier Dupré <http://www.xavierdupre.fr/>`_
 
@@ -45,6 +44,7 @@ Presentations
     :maxdepth: 1
 
     Imagine Cup 23/03/2018 <2018/imcup201803>
+    MS Experience 07/11/2018 <2018/msexperience201811>
 
 Teachings
 =========
