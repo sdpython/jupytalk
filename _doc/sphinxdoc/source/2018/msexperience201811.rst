@@ -25,6 +25,8 @@ par Microsoft et Facebook est une réponse à ce problème. Ce talk illustrera
 ce concept avec un démo mêlant deep learning, :epkg:`scikit-learn` et :epkg:`ML.net`,
 la librairie de machine learning open source écrite en :epkg:`C#` et développée par :epkg:`Microsoft`.
 
+:ref:`onnxdeployrst`
+
 Pointeurs
 ---------
 

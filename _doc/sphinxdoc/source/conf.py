@@ -26,6 +26,7 @@ html_context = {
 
 epkg_dictionary.update({
     'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
+    'C#': 'https://fr.wikipedia.org/wiki/C_sharp',
     'Microsoft': 'https://docs.microsoft.com/en-us/',
     'ML.net': "https://github.com/dotnet/machinelearning",
     'networkx': "https://networkx.github.io/",
