@@ -13,15 +13,15 @@ tableau blanc.
 Presentations
 =============
 
-2016
+2018
 ----
 
 .. toctree::
     :maxdepth: 1
 
-    PyData 06/15/2016 <2016/pydata2016>
-    Centrale 06/14/2016 <2016/centrale201606>
-    ENSAE 14/11/2016 <2016/ensae201611>
+    Imagine Cup 23/03/2018 <2018/imcup201803>
+    MS Experience 07/11/2018 <2018/msexperience201811>
+    Paris 15/11/2018 <2018/pyparis201811>
 
 2017
 ----
@@ -37,14 +37,15 @@ Presentations
     ENSAE 14/11/2017 <2017/ensae_2a_201711>
     Open Source Submit 2017 <2017/oss_201712>
 
-2018
+2016
 ----
 
 .. toctree::
     :maxdepth: 1
 
-    Imagine Cup 23/03/2018 <2018/imcup201803>
-    MS Experience 07/11/2018 <2018/msexperience201811>
+    PyData 06/15/2016 <2016/pydata2016>
+    Centrale 06/14/2016 <2016/centrale201606>
+    ENSAE 14/11/2016 <2016/ensae201611>
 
 Teachings
 =========

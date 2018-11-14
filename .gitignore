@@ -312,3 +312,8 @@ _doc/notebooks/2018/msexp/squeezenet1.1.onnx
 _doc/notebooks/2018/msexp/tiny_yolov2.tar.gz
 _doc/notebooks/2018/msexp/tiny_yolov2/*
 _doc/sphinxdoc/source/phdoc_static/style_notebook_snippet.css
+_doc/notebooks/2018/pyparis/*.csv
+_doc/notebooks/2018/pyparis/*.zip
+_doc/notebooks/2018/pyparis/*.onnx
+_doc/notebooks/2018/pyparis/simages/*
+_doc/notebooks/2018/pyparis/tiny*
