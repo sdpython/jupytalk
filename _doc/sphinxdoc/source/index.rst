@@ -21,7 +21,7 @@ Presentations
 
     Imagine Cup 23/03/2018 <2018/imcup201803>
     MS Experience 07/11/2018 <2018/msexperience201811>
-    Paris 15/11/2018 <2018/pyparis201811>
+    PyParis 15/11/2018 <2018/pyparis201811>
 
 2017
 ----

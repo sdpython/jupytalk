@@ -13,7 +13,7 @@ ONNX: machine learning in production
 .. contents::
     :local:
 
-`PyParis <>`_
+`PyParis <http://pyparis.org/>`_
 
 Résumé
 ------
