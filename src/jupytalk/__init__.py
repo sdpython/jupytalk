@@ -66,7 +66,7 @@ def launch_gui_mokadi(fLOG=None):
             np = os.path.join(this, "..", "..", "..", mod, "src")
             sys.path.append(np)
         import pyquickhelper
-    import ensae_teaching_cs
+    import ensae_teaching_cs  # pylint: disable=W0611
 
     if fLOG is None:
         import pyquickhelper.loghelper

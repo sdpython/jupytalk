@@ -8,25 +8,25 @@ class MokadiException(Exception):
     """
     Mokadi exception.
     """
-    pass
+    pass  # pylint: disable=W0107
 
 
 class CognitiveException(Exception):
     """
     Failure when calling the API.
     """
-    pass
+    pass  # pylint: disable=W0107
 
 
 class WikipediaException(Exception):
     """
-    Issue with wikipedia
+    Issue with :epkg:`wikipedia`.
     """
-    pass
+    pass  # pylint: disable=W0107
 
 
 class MokadiAuthentification(Exception):
     """
-    Issue with authentification
+    Issue with authentification.
     """
-    pass
+    pass  # pylint: disable=W0107
