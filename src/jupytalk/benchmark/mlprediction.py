@@ -84,6 +84,7 @@ def make_dataframe(labels, arrays):
 
     @param  labels      list of labels
     @param  arrays      list of arrays (or one array)
+    @return             dataframes
     """
     if labels is not None:
         df = [pandas.DataFrame(data={'Label': labels})]

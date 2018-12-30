@@ -35,8 +35,7 @@ scikit-image
 scikit-plot
 semantic_version
 shapely
-sphinxjp.themes.basicstrap
-sphinxjp.themes.sphinxjp
+sphinx_modern_theme_modified
 vega
 version_information
 wikipedia
