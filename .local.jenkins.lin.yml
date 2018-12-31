@@ -13,6 +13,7 @@ install:
   - $PYINT -c "from pip._internal import main;main(\"install -r requirements.txt\".split())"
   - $PYINT --version
   - $PYINT -c "from pip._internal import main;main([\"freeze\"])"
+  - export QT_QPA_PLATFORM=offscreen
 
 script:
   - { CMD: "$PYINT -u setup.py unittests -g \".*((code_style)|(ete3)|(LONG)|(SKIP)).*\"", NAME: "UT" }
