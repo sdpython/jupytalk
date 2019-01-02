@@ -22,6 +22,11 @@ except ImportError:
     import src
 
 
+def _run_cmd_filter(name):
+    print("#", name)
+    return False
+
+
 class TestCodeStyle(ExtTestCase):
     """Test style."""
 
@@ -32,7 +37,7 @@ class TestCodeStyle(ExtTestCase):
     def test_style_src(self):
         thi = os.path.abspath(os.path.dirname(__file__))
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
-        check_pep8(src_, fLOG=fLOG,
+        check_pep8(src_, fLOG=fLOG, run_cmd_filter=_run_cmd_filter,
                    pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
                                   'R0911', 'W0201', 'W070', 'W0622', 'R1702',
                                   'C0111', 'W0703', 'C0200'),
@@ -64,7 +69,7 @@ class TestCodeStyle(ExtTestCase):
     def test_style_test(self):
         thi = os.path.abspath(os.path.dirname(__file__))
         test = os.path.normpath(os.path.join(thi, "..", ))
-        check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*",
+        check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*", run_cmd_filter=_run_cmd_filter,
                    pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
                                   'C0111', 'W0703', 'C0122', 'W0101', 'R1707'),
                    skip=["src' imported but unused",
