@@ -65,6 +65,13 @@ jobs:
             sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
 
       - run:
+          name: install cython
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install cython
+            
+      - run:
           name: install dependencies (1) - requirements_conda
           command: |
             python3 -m venv venv
