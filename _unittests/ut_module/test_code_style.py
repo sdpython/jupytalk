@@ -24,7 +24,7 @@ except ImportError:
 
 def _run_cmd_filter(name):
     print("#", name)
-    return False
+    return True
 
 
 class TestCodeStyle(ExtTestCase):
