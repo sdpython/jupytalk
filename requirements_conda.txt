@@ -2,7 +2,7 @@ biopython
 bokeh
 cartopy
 cffi
-Cython
+cython
 datashape
 jupyter
 matplotlib

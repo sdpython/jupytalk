@@ -24,7 +24,7 @@ except ImportError:
 from src.jupytalk import __version__
 
 
-class TestVersion (unittest.TestCase):
+class TestVersion(unittest.TestCase):
 
     def test_version(self):
         setup = os.path.join(

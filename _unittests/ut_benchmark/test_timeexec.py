@@ -38,8 +38,8 @@ class TestTimeExec(ExtTestCase):
     def test_make_dataframe(self):
         df = make_dataframe([0, 1], [numpy.zeros((2, 3)), numpy.ones((2, 1))])
         self.assertEqual(df.shape, (2, 5))
-        self.assertEqual(list(df.columns), [
-                         "Label", "F0_0", "F0_1", "F0_2", "F1_0"])
+        self.assertEqual(list(df.columns),
+                         ["Label", "F0_0", "F0_1", "F0_2", "F1_0"])
         df = make_dataframe([0, 1], numpy.zeros((2, 3)))
         self.assertEqual(df.shape, (2, 4))
         self.assertEqual(list(df.columns), ["Label", "F0", "F1", "F2"])
