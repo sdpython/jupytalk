@@ -10,7 +10,7 @@ set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2018,
                      "sphinx_modern_theme_modified", sphinx_modern_theme_modified.get_html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),
-                     github_user="sdpython", github_repo="jupytalk", book=True)
+                     github_user="sdpython", github_repo="jupytalk", book=True, nblayout='table')
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
 blog_background = False
