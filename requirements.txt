@@ -21,7 +21,7 @@ mpl_scatter_density
 mpld3
 plotly
 plotnine
-pydy
+pydy>=0.5
 pyecharts
 pygal
 pygal_maps_fr
