@@ -11,7 +11,6 @@ ensae_teaching_cs>=0.8.2426
 ete3
 folium
 geoplotlib
-ggplot
 jyquickhelper
 lifelines
 lightning-python
