@@ -14,6 +14,7 @@ set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2019,
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
 blog_background = False
+pygments_style = 'default'
 html_context = {
     'css_files': get_default_stylesheet() + ['_static/my-styles.css'],
 }
