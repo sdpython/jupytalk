@@ -1,9 +1,4 @@
 
-.. _l-README:
-
-README
-======
-
 .. image:: https://travis-ci.org/sdpython/jupytalk.svg?branch=master
     :target: https://travis-ci.org/sdpython/jupytalk
     :alt: Build status
@@ -41,12 +36,14 @@ README
     :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
 
-**Links:**
+.. _l-README:
+
+jupytalk
+========
+
+Contents used and most of the time maintained for
+presentation, talks, shows, teachings...
 
 * `GitHub/jupytalk <https://github.com/sdpython/jupytalk/>`_
 * `documentation <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html>`_
 * `Blog <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/blog/main_0000.html#ap-main-0>`_
-
-**jupytalk**
-
-Material for presentation.
