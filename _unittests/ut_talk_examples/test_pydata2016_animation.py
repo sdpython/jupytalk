@@ -91,7 +91,7 @@ class TestPyData2016Animation(unittest.TestCase):
 
                 # Choose success based on exceed a threshold with a uniform
                 # pick
-                if np.random.rand(1,) < self.prob:
+                if np.random.rand(1,) < self.prob:  # pylint: disable=W0143
                     self.success += 1
                 y = ss.beta.pdf(self.x, self.success + 1,
                                 (i - self.success) + 1)
