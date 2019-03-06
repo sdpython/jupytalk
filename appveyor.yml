@@ -22,6 +22,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
   - "%PYTHON%\\Scripts\\pymy_install3 pydy biopython scikit-image TA_Lib"
   - "%PYTHON%\\Scripts\\pymy_install3 fast_histogram"
+  - "%PYTHON%\\Scripts\\pip install git+https://github.com/sdpython/nbconvert.git@fixes"
   - "%PYTHON%\\Scripts\\pip install -r requirements_conda.txt"
   - "%PYTHON%\\Scripts\\pip install ete3"
   - "%PYTHON%\\Scripts\\pip install git+https://github.com/matplotlib/mpl_finance"
