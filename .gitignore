@@ -317,3 +317,4 @@ _doc/notebooks/2018/pyparis/*.zip
 _doc/notebooks/2018/pyparis/*.onnx
 _doc/notebooks/2018/pyparis/simages/*
 _doc/notebooks/2018/pyparis/tiny*
+_doc/notebooks/2018/pyparis/.ipynb_checkpoints
