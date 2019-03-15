@@ -18,6 +18,7 @@ mutagen
 missingno
 mpl_scatter_density
 mpld3
+git+https://github.com/sdpython/nbconvert.git@fixes
 plotly
 plotnine
 pydy>=0.5
