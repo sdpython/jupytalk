@@ -98,7 +98,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         clog = CustomLog(temp)
 
         # run the notebooks
-        import jupytalk        
+        import jupytalk
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths,
             detailed_log=clog)
