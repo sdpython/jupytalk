@@ -11,22 +11,7 @@ from pyquickhelper.loghelper import fLOG, CustomLog, run_cmd
 from pyquickhelper.pycode.venv_helper import is_virtual_environment
 from pyquickhelper.pycode import get_temp_folder, skipif_travis
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-import src.jupytalk
+import jupytalk
 
 
 class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
@@ -118,7 +103,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths,
             detailed_log=clog)
         execute_notebook_list_finalize_ut(
-            res, fLOG=fLOG, dump=src.jupytalk)
+            res, fLOG=fLOG, dump=jupytalk)
 
 
 if __name__ == "__main__":

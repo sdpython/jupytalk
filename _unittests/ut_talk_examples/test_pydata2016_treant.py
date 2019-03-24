@@ -6,23 +6,7 @@ import sys
 import os
 import unittest
 from pyquickhelper.loghelper import fLOG
-
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-
-from src.jupytalk.talk_examples.treant_wrapper import display_treant
+from jupytalk.talk_examples.treant_wrapper import display_treant
 
 
 class TestPyData2016treant(unittest.TestCase):

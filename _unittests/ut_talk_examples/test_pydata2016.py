@@ -7,22 +7,7 @@ import os
 import unittest
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, fix_tkinter_issues_virtualenv, ExtTestCase
-
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.jupytalk.talk_examples.pydata2016 import example_networkx, example_confidence_interval, example_cartopy
+from jupytalk.talk_examples.pydata2016 import example_networkx, example_confidence_interval, example_cartopy
 
 
 class TestPyData2016(ExtTestCase):

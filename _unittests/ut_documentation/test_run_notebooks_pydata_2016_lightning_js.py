@@ -11,21 +11,7 @@ import warnings
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-import src.jupytalk
+import jupytalk
 
 
 class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
@@ -75,7 +61,7 @@ class TestRunNotebooksPyData2016_lightning_js(unittest.TestCase):
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
         execute_notebook_list_finalize_ut(
-            res, fLOG=fLOG, dump=src.jupytalk)
+            res, fLOG=fLOG, dump=jupytalk)
 
 
 if __name__ == "__main__":

@@ -34,5 +34,6 @@ install:
   - conda install -c scitools/label/archive cartopy
   - pip install git+https://github.com/matplotlib/mpl_finance
   - pip install -r requirements.txt
+  - export PYTHONPATH=src
 script:
   - python setup.py unittests

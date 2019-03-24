@@ -11,21 +11,7 @@ import warnings
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, skipif_circleci
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-import src.jupytalk
+import jupytalk
 
 
 class TestRunNotebooksPyData2016_js_pydy(unittest.TestCase):
@@ -79,7 +65,7 @@ class TestRunNotebooksPyData2016_js_pydy(unittest.TestCase):
             res = execute_notebook_list(
                 temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths)
             execute_notebook_list_finalize_ut(
-                res, fLOG=fLOG, dump=src.jupytalk)
+                res, fLOG=fLOG, dump=jupytalk)
         except Exception as e:
             if 'can only concatenate list (not "tuple") to list' in str(e):
                 warnings.warn("Pydy needs to be updated for Python 3.7")

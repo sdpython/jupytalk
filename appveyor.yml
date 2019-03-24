@@ -31,6 +31,7 @@ install:
   - "set PATH=%PATH%;%PYTHON%\\Scripts"
   #- "jupyter nbextension enable --py --sys-prefix widgetsnbextension"
   - "set PATH=%PATH%;C:\\projects\\jupytalk\\build\\update_modules\\Graphviz\\bin"
+  - set PYTHONPATH=src
 build: off
 
 test_script:

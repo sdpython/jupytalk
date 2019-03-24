@@ -11,20 +11,6 @@ from pyquickhelper.pycode import get_temp_folder, add_missing_development_versio
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut, get_additional_paths
 
 
-try:
-    import src.jupytalk
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src.jupytalk
-
-
 class TestNotebook123Coverage(unittest.TestCase):
 
     def setUp(self):
@@ -41,11 +27,12 @@ class TestNotebook123Coverage(unittest.TestCase):
         import pyquickhelper
         import jyquickhelper
         import pyensae
+        import jupytalk
         add_path = get_additional_paths(
-            [jyquickhelper, pyquickhelper, pyensae, src.jupytalk])
+            [jyquickhelper, pyquickhelper, pyensae, jupytalk])
         res = execute_notebook_list(
             temp, keepnote, additional_path=add_path, valid=valid)
-        execute_notebook_list_finalize_ut(res, fLOG=fLOG, dump=src.jupytalk)
+        execute_notebook_list_finalize_ut(res, fLOG=fLOG, dump=jupytalk)
 
     def test_notebook_automation_finance_trading(self):
         fLOG(
