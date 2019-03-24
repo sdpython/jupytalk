@@ -27,6 +27,7 @@ epkg_dictionary.update({
     'cartopy': 'https://scitools.org.uk/cartopy/docs/latest/',
     'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
     'C#': 'https://fr.wikipedia.org/wiki/C_sharp',
+    'CNTK': 'https://github.com/Microsoft/CNTK',
     'jupytalk': 'http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html',
     'Microsoft': 'https://docs.microsoft.com/en-us/',
     'ML.net': "https://github.com/dotnet/machinelearning",
