@@ -24,8 +24,10 @@ html_context = {
 # http://sphinx-better-theme.readthedocs.io/en/latest/
 
 epkg_dictionary.update({
+    'cartopy': 'https://scitools.org.uk/cartopy/docs/latest/',
     'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
     'C#': 'https://fr.wikipedia.org/wiki/C_sharp',
+    'jupytalk': 'http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html',
     'Microsoft': 'https://docs.microsoft.com/en-us/',
     'ML.net': "https://github.com/dotnet/machinelearning",
     'networkx': "https://networkx.github.io/",
@@ -35,5 +37,7 @@ epkg_dictionary.update({
     'onnxmltools': "https://github.com/onnx/onnxmltools",
     'onnxruntime': "https://docs.microsoft.com/en-us/python/api/overview/azure/onnx/intro",
     'pydy': "https://github.com/pydy/pydy",
+    'pytorch': 'https://pytorch.org/',
+    'quizlet': 'https://quizlet.com/fr-fr',
     'seaborn': "https://seaborn.pydata.org/",
 })
