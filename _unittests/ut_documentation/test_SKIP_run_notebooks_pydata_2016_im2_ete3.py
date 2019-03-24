@@ -11,7 +11,6 @@ from pyquickhelper.loghelper import fLOG, CustomLog, run_cmd
 from pyquickhelper.pycode.venv_helper import is_virtual_environment
 from pyquickhelper.pycode import get_temp_folder, skipif_travis
 from pyquickhelper.ipythonhelper import execute_notebook_list, execute_notebook_list_finalize_ut
-import jupytalk
 
 
 class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
@@ -99,6 +98,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         clog = CustomLog(temp)
 
         # run the notebooks
+        import jupytalk        
         res = execute_notebook_list(
             temp, keepnote, fLOG=fLOG, valid=valid, additional_path=addpaths,
             detailed_log=clog)
