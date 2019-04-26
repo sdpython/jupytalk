@@ -1,16 +1,32 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
-import sphinx_modern_theme_modified
+import sphinx_bootstrap_theme
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 
 set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2019,
-                     "sphinx_modern_theme_modified", sphinx_modern_theme_modified.get_html_theme_path(),
+                     "bootstrap", sphinx_bootstrap_theme.get_html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),
                      github_user="sdpython", github_repo="jupytalk", book=True, nblayout='table')
+
+html_theme_options = {
+    'navbar_title': ".",
+    'navbar_site_name': "Site",
+    'navbar_links': [
+        ("XD", "http://www.xavierdupre.fr", True),
+        ("blog", "blog/main_0000.html", True),
+        ("index", "genindex"),
+    ],
+    'navbar_sidebarrel': True,
+    'navbar_pagenav': True,
+    'navbar_pagenav_name': "Page",
+    'bootswatch_theme': "readable",
+    'bootstrap_version': "3",
+    'source_link_position': "footer",
+}
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
 blog_background = False
