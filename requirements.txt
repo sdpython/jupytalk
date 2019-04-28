@@ -14,10 +14,11 @@ geoplotlib
 jyquickhelper
 lifelines
 lightning-python
-mutagen
 missingno
+mlinsights
 mpl_scatter_density
 mpld3
+mutagen
 git+https://github.com/sdpython/nbconvert.git@fixes
 plotly
 plotnine
