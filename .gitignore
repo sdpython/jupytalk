@@ -318,3 +318,4 @@ _doc/notebooks/2018/pyparis/*.onnx
 _doc/notebooks/2018/pyparis/simages/*
 _doc/notebooks/2018/pyparis/tiny*
 _doc/notebooks/2018/pyparis/.ipynb_checkpoints
+_doc/notebooks/2016/pydata/echart_render.*
