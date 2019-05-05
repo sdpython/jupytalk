@@ -23,7 +23,7 @@ git+https://github.com/sdpython/nbconvert.git@fixes
 plotly
 plotnine
 pydy>=0.5
-pyecharts
+pyecharts>=1.0.0
 pygal
 pygal_maps_fr
 pymyinstall
