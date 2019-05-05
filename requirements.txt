@@ -24,6 +24,7 @@ plotly
 plotnine
 pydy>=0.5
 pyecharts>=1.0.0
+pyecharts_snapshot
 pygal
 pygal_maps_fr
 pymyinstall
