@@ -38,6 +38,8 @@ class TestRunNotebooksPyData2016_js(unittest.TestCase):
         def valid(cell):
             if 'bar.render(path="render.png")' in cell:
                 return False
+            if 'make_a_snapshot' in cell:
+                return False
             return True
 
         # file to copy
