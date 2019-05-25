@@ -13,6 +13,14 @@ tableau blanc.
 Presentations
 =============
 
+2019
+----
+
+.. toctree::
+    :maxdepth: 1
+
+    Scikit-learn day 28/05/2019 <2019/sklearn201905>
+
 2018
 ----
 
