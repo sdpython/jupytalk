@@ -40,6 +40,7 @@ html_context = {
 # http://sphinx-better-theme.readthedocs.io/en/latest/
 
 epkg_dictionary.update({
+    'asciitree': 'https://github.com/mbr/asciitree',
     'cartopy': 'https://scitools.org.uk/cartopy/docs/latest/',
     'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
     'C#': 'https://fr.wikipedia.org/wiki/C_sharp',
@@ -53,8 +54,10 @@ epkg_dictionary.update({
     'ONNX': "https://onnx.ai/",
     'onnxmltools': "https://github.com/onnx/onnxmltools",
     'onnxruntime': "https://docs.microsoft.com/en-us/python/api/overview/azure/onnx/intro",
+    'OrderedDict': 'https://docs.python.org/3/library/collections.html#collections.OrderedDict',
     'pydy': "https://github.com/pydy/pydy",
     'pytorch': 'https://pytorch.org/',
     'quizlet': 'https://quizlet.com/fr-fr',
     'seaborn': "https://seaborn.pydata.org/",
+    'sklearn-onnx': 'https://github.com/onnx/sklearn-onnx',
 })

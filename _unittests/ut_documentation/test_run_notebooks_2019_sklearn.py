@@ -10,8 +10,8 @@ import shutil
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
-import jupytalk
 import jyquickhelper
+import jupytalk
 
 
 class TestRunNotebooks2019_sklearn(unittest.TestCase):

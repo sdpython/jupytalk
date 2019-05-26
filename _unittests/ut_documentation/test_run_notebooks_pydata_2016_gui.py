@@ -9,8 +9,8 @@ import unittest
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import get_temp_folder
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
-import jupytalk
 import jyquickhelper
+import jupytalk
 
 
 class TestRunNotebooksPyData2016_gui(unittest.TestCase):
