@@ -53,7 +53,7 @@ def edges2asciitree(edges):
                 'probabilities': ['ZipMap[ZipMap]'],
                 'ZipMap[ZipMap]': ['output_probability']}
 
-        from jupytalk.talk_examples import edges2asciitree
+        from jupytalk.talk_examples.onnx_helper import edges2asciitree
         res = edges2asciitree(data)
 
         import pprint
