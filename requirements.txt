@@ -23,6 +23,7 @@ mpld3
 mutagen
 git+https://github.com/sdpython/nbconvert.git@fixes
 onnx
+onnxruntime
 plotly
 plotnine
 pydy>=0.5
@@ -37,9 +38,11 @@ pyshp
 python-pptx
 pythreejs>=1.0.0
 scikit-image
+scikit-onnxruntime
 scikit-plot
 semantic_version
 shapely
+sklearn-onnx
 sphinx-bootstrap-theme
 vega
 version_information
