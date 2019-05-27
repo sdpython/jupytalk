@@ -42,7 +42,7 @@ scikit-onnxruntime
 scikit-plot
 semantic_version
 shapely
-sklearn-onnx
+skl2onnx
 sphinx-bootstrap-theme
 vega
 version_information
