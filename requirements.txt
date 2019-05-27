@@ -18,7 +18,7 @@ jyquickhelper
 lifelines
 lightning-python
 missingno
-mlinsights>=0.2.285
+mlinsights>=0.2.286
 mpl_scatter_density
 mpld3
 mutagen
