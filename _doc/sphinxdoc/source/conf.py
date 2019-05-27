@@ -58,6 +58,7 @@ epkg_dictionary.update({
     'pydy': "https://github.com/pydy/pydy",
     'pytorch': 'https://pytorch.org/',
     'quizlet': 'https://quizlet.com/fr-fr',
+    'RenderJsDot': 'http://www.xavierdupre.fr/app/jyquickhelper/helpsphinx/jyquickhelper/jspy/render_nb_js_dot.html?highlight=renderjsdot#jyquickhelper.jspy.render_nb_js_dot.RenderJsDot',
     'seaborn': "https://seaborn.pydata.org/",
     'sklearn-onnx': 'https://github.com/onnx/sklearn-onnx',
 })
