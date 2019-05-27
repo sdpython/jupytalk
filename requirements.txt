@@ -17,7 +17,7 @@ jyquickhelper
 lifelines
 lightning-python
 missingno
-mlinsights
+git+https://github.com/sdpython/mlinsights.git
 mpl_scatter_density
 mpld3
 mutagen
@@ -42,7 +42,7 @@ scikit-onnxruntime
 scikit-plot
 semantic_version
 shapely
-skl2onnx
+git+https://github.com/onnx/sklearn-onnx.git
 sphinx-bootstrap-theme
 vega
 version_information
