@@ -1,4 +1,5 @@
 antlr4-python3-runtime
+asciitree
 bqplot
 brython>=3.4.0
 brythonmagic
