@@ -13,7 +13,7 @@ import jyquickhelper
 import jupytalk
 
 
-class TestRunNotebooksPyData2016_gui(unittest.TestCase):
+class TestLONGRunNotebooksPyData2016_gui(unittest.TestCase):
 
     def test_run_notebook_gui(self):
         fLOG(
