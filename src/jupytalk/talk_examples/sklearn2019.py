@@ -6,7 +6,6 @@ import os
 import sys
 from collections import OrderedDict
 import warnings
-from onnx.tools.net_drawer import GetPydotGraph, GetOpNodeProducer
 from onnx import helper
 from pyquickhelper.pycode.profiling import profile
 from pyquickhelper.helpgen.rst_converters import docstring2html
@@ -150,6 +149,7 @@ def onnx2dotnb(model_onnx, width="100%", orientation="LR"):
     Converts an ONNX graph into dot then into :epkg:`RenderJsDot`.
     See :ref:`onnxsklearnconsortiumrst`.
     """
+    from onnx.tools.net_drawer import GetPydotGraph, GetOpNodeProducer
     pydot_graph = GetPydotGraph(
         model_onnx.graph, name=model_onnx.graph.name, rankdir=orientation,
         node_producer=GetOpNodeProducer("docstring", color="yellow",
