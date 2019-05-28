@@ -7,7 +7,7 @@ brythonmagic
 cairocffi
 cairosvg
 coverage
-cpyquickhelper>=0.2
+cpyquickhelper>=0.2.226
 cufflinks
 datashader
 ensae_teaching_cs>=0.8.2426
@@ -18,7 +18,7 @@ jyquickhelper
 lifelines
 lightning-python
 missingno
-mlinsights>=0.2.286
+mlinsights>=0.2.288
 mpl_scatter_density
 mpld3
 mutagen
