@@ -12,10 +12,9 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from jupytalk.talk_examples.treant_wrapper import display_treant
+from skl2onnx import to_onnx
 from jupytalk.talk_examples.sklearn2019 import edges2asciitree, onnx2graph, onnxdocstring2html
 from jupytalk.talk_examples.sklearn2019 import rename_input_output
-from skl2onnx import to_onnx
 
 
 class TestSklearn2019(ExtTestCase):
