@@ -27,6 +27,7 @@ onnx
 onnxruntime
 plotly
 plotnine
+pydot
 pydy>=0.5
 pyecharts>=1.0.0
 pyecharts_snapshot
