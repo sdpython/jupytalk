@@ -23,6 +23,7 @@ First developped for deep learning models, it is now available for
 and fast computation of predictions on CPU, GPU or ARM processors.
 The talk introduces three tools to play with ONNX in Python.
 
+* `Slides <https://github.com/xadupre/presentation/blob/master/2019/model_persistence_xavier_dupre.pdf>`_
 * :ref:`onnxsklearnconsortiumrst`
 * :ref:`onnxsklearncustomrst`
 
