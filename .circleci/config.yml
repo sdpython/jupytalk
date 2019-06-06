@@ -90,6 +90,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
+            pip uninstall -y sklearn-onnx
             pip install git+https://github.com/onnx/sklearn-onnx.git
             
       - run:
