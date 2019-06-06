@@ -12,7 +12,6 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from skl2onnx import to_onnx
 from jupytalk.talk_examples.sklearn2019 import edges2asciitree, onnx2graph, onnxdocstring2html
 from jupytalk.talk_examples.sklearn2019 import rename_input_output
 
@@ -50,6 +49,7 @@ class TestSklearn2019(ExtTestCase):
         self.assertEqual(exp, v.replace('\n', '').replace(' ', ''))
 
     def test_sklearn_onnx_full(self):
+        from skl2onnx import to_onnx
         data = load_iris()
         X, y = data.data, data.target  # pylint: disable=E1101
         clr = LogisticRegression(
@@ -78,6 +78,7 @@ class TestSklearn2019(ExtTestCase):
         self.assertIsInstance(rst, HTML)
 
     def test_sklearn_onnx_rename(self):
+        from skl2onnx import to_onnx
         data = load_iris()
         X, y = data.data, data.target  # pylint: disable=E1101
         clr = LogisticRegression(

@@ -86,14 +86,6 @@ jobs:
             pip install -r requirements.txt
             
       - run:
-          name: install dependencies (3) - sklearn-onnx
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip uninstall -y sklearn-onnx
-            pip install git+https://github.com/onnx/sklearn-onnx.git
-            
-      - run:
           name: install dependencies (2) - cairo
           command: |
             python3 -m venv venv
