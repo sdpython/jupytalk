@@ -118,13 +118,22 @@ def profile_fct_graph(fct, title, highlights=None, nb=20, figsize=(10, 3)):
              "site-packages",
              os.path.join(sys.prefix, "lib")]
     _, df = profile(fct, as_df=True, rootrem=paths)
-    sdf = df[['fct', 'cum_tall']].head(n=nb).set_index('fct')
+    colname = 'namefct' if 'namefct' in df.columns else 'fct'
+    sdf = df[[colname, 'cum_tall']].head(n=nb).set_index(colname)
+    index_list = list(sdf.index)
     ax = sdf.plot(kind='bar', figsize=figsize, rot=30)
     ax.set_title(title)
     for la in ax.get_xticklabels():
         la.set_horizontalalignment('right')
     if highlights:
         for lab in highlights:
+            if lab not in index_list:
+                new_labs = [ns for ns in index_list if isinstance(
+                    ns, str) and lab in ns]
+                if len(new_labs) != 1:
+                    raise ValueError("Unable to find '{}' in '{}'?".format(
+                        lab, ", ".join(sorted(map(str, index_list)))))
+                lab = new_labs[0]
             pos = sdf.index.get_loc(lab)
             h = 0.15
             ax.plot([pos - 0.35, pos - 0.35], [0, h], 'r--')

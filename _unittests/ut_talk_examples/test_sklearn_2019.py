@@ -13,7 +13,7 @@ from pyquickhelper.pycode import ExtTestCase
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
 from jupytalk.talk_examples.sklearn2019 import edges2asciitree, onnx2graph, onnxdocstring2html
-from jupytalk.talk_examples.sklearn2019 import rename_input_output
+from jupytalk.talk_examples.sklearn2019 import rename_input_output, profile_fct_graph
 
 
 class TestSklearn2019(ExtTestCase):
@@ -86,6 +86,12 @@ class TestSklearn2019(ExtTestCase):
         model_onnx = to_onnx(clr, X.astype(np.float32))
         model2 = rename_input_output(model_onnx)
         self.assertIn("outputlabel", str(model2))
+
+    def test_profile_graph(self):
+        def plus1(x):
+            return x + 1
+        ax = profile_fct_graph(lambda: plus1(3), "t", highlights=['plus1'])
+        self.assertNotEmpty(ax)
 
 
 if __name__ == "__main__":
