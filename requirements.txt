@@ -19,6 +19,7 @@ lifelines
 lightning-python
 missingno
 mlinsights>=0.2.288
+mlprodict
 mpl_scatter_density
 mpld3
 mutagen
