@@ -130,15 +130,18 @@ def profile_fct_graph(fct, title, highlights=None, nb=20, figsize=(10, 3)):
             if lab not in index_list:
                 new_labs = [ns for ns in index_list if isinstance(
                     ns, str) and lab in ns]
-                if len(new_labs) != 1:
+                if len(new_labs) == 0:
                     raise ValueError("Unable to find '{}' in '{}'?".format(
                         lab, ", ".join(sorted(map(str, index_list)))))
-                lab = new_labs[0]
-            pos = sdf.index.get_loc(lab)
-            h = 0.15
-            ax.plot([pos - 0.35, pos - 0.35], [0, h], 'r--')
-            ax.plot([pos + 0.3, pos + 0.3], [0, h], 'r--')
-            ax.plot([pos - 0.35, pos + 0.3], [h, h], 'r--')
+                labs = new_labs
+            else:
+                labs = [lab]
+            for lab in labs:
+                pos = sdf.index.get_loc(lab)
+                h = 0.15
+                ax.plot([pos - 0.35, pos - 0.35], [0, h], 'r--')
+                ax.plot([pos + 0.3, pos + 0.3], [0, h], 'r--')
+                ax.plot([pos - 0.35, pos + 0.3], [h, h], 'r--')
     return ax
 
 
