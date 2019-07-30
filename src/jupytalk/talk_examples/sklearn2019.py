@@ -136,8 +136,8 @@ def profile_fct_graph(fct, title, highlights=None, nb=20, figsize=(10, 3)):
                 labs = new_labs
             else:
                 labs = [lab]
-            for lab in labs:
-                pos = sdf.index.get_loc(lab)
+            for la in labs:
+                pos = sdf.index.get_loc(la)
                 h = 0.15
                 ax.plot([pos - 0.35, pos - 0.35], [0, h], 'r--')
                 ax.plot([pos + 0.3, pos + 0.3], [0, h], 'r--')
