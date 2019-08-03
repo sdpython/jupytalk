@@ -35,7 +35,7 @@ pyecharts_snapshot
 pygal
 pygal_maps_fr
 pymyinstall
-pyquickhelper>=1.9.3135
+pyquickhelper>=1.9.3186
 pyreadline
 pyshp
 python-pptx
