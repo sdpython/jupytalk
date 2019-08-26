@@ -66,6 +66,15 @@ jobs:
 #            sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
 
       - run:
+          name: Install tex
+          command: |
+                    sudo apt-get install -y texlive
+                    sudo apt-get install -y texlive-latex-extra
+                    sudo apt-get install -y texlive-lang-french
+                    sudo apt-get install -y texlive-xetex
+                    sudo apt-get install -y dvipng
+          
+      - run:
           name: install cython
           command: |
             python3 -m venv venv
@@ -93,15 +102,6 @@ jobs:
             . venv/bin/activate
             pip install cairocffi cairosvg
             
-      - run:
-          name: Install tex
-          command: |
-                    sudo apt-get install -y texlive
-                    sudo apt-get install -y texlive-latex-extra
-                    sudo apt-get install -y texlive-lang-french
-                    sudo apt-get install -y texlive-xetex
-                    sudo apt-get install -y dvipng
-          
       - save_cache:
           paths:
             - ./venv
