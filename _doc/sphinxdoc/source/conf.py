@@ -13,7 +13,7 @@ set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2019,
                      github_user="sdpython", github_repo="jupytalk", book=True, nblayout='table')
 
 html_theme_options = {
-    'navbar_title': ".",
+    'navbar_title': "BASE",
     'navbar_site_name': "Site",
     'navbar_links': [
         ("XD", "http://www.xavierdupre.fr", True),
