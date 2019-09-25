@@ -12,7 +12,6 @@ numba
 numpy>=1.11.0
 pandas>=0.20.0
 pillow
-pycurl
 pyproj
 pyzmq
 reportlab
