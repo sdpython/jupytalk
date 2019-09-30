@@ -321,3 +321,5 @@ _doc/notebooks/2018/*/.ipynb_checkpoints
 _doc/notebooks/2016/pydata/echart_render.*
 _doc/notebooks/2019/*/.ipynb_checkpoints
 _doc/notebooks/2019/sklearn/*.onnx
+_doc/notebooks/2019/ensae_api/*.pickle
+_doc/notebooks/2019/ensae_api/data_iris.csv
