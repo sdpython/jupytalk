@@ -21,6 +21,7 @@ Presentations
 
     Scikit-learn day 28/05/2019 <2019/sklearn201905>
     ParisDataEng 09/07/2019 <2019/ParisDataEng201907>
+    ENSAE 01/10/2019 <2019/sklearnapi201910>
 
 2018
 ----
