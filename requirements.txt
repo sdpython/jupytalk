@@ -23,7 +23,6 @@ mlprodict
 mpl_scatter_density
 mpld3
 mutagen
-git+https://github.com/sdpython/nbconvert.git@fixes
 onnx
 onnxruntime
 plotly
