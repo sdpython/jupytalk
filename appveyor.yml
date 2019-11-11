@@ -27,7 +27,6 @@ install:
   - "%PYTHON%\\Scripts\\pip install git+https://github.com/matplotlib/mpl_finance"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
   - "%PYTHON%\\Scripts\\pip install widgetsnbextension"
-  - "%PYTHON%\\Scripts\\pip install git+https://github.com/sdpython/nbconvert.git@fixes"
   - "set PATH=%PATH%;%PYTHON%\\Scripts"
   #- "jupyter nbextension enable --py --sys-prefix widgetsnbextension"
   - "set PATH=%PATH%;C:\\projects\\jupytalk\\build\\update_modules\\Graphviz\\bin"
