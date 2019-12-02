@@ -2,7 +2,7 @@ antlr4-python3-runtime
 asciitree
 blockdiag
 bqplot
-brython>=3.4.0
+brython!=3.8.1
 brythonmagic
 cairocffi
 cairosvg
