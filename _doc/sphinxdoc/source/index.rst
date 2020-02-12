@@ -13,6 +13,14 @@ tableau blanc.
 Presentations
 =============
 
+2020
+----
+
+.. toctree::
+    :maxdepth: 1
+
+    ONNX 15/01/2020 <2020/onnx202001>
+
 2019
 ----
 
