@@ -66,10 +66,10 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
     import scipy
     import numpy
     nx, nboot = 22, 400
-    x = scipy.linspace(0.0, 1.0, nx)
+    x = scipy.linspace(0.0, 1.0, nx)  # pylint: disable=E1101
     data = x + numpy.random.normal(loc=0.0, scale=0.1, size=nx)
-    yp = scipy.polyfit(x, data, 1)
-    y = scipy.polyval(yp, x)
+    yp = scipy.polyfit(x, data, 1)  # pylint: disable=E1101
+    y = scipy.polyval(yp, x)  # pylint: disable=E1101
 
     if seaborn:
         from seaborn import regplot
@@ -77,9 +77,9 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
     else:
         r = data - y
         for _ in range(nboot):
-            pc = scipy.polyfit(
-                x, y + r[scipy.random.randint(0, nx - 1, nx)], 1)
-            ax.plot(x, scipy.polyval(pc, x), 'k-',
+            pc = scipy.polyfit(  # pylint: disable=E1101
+                x, y + r[scipy.random.randint(0, nx - 1, nx)], 1)  # pylint: disable=E1101
+            ax.plot(x, scipy.polyval(pc, x), 'k-',  # pylint: disable=E1101
                     linewidth=2, alpha=3.0 / float(nboot))
         ax.plot(x, y, 'k-')
         ax.plot(x, data, 'ko')

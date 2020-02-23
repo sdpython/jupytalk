@@ -17,15 +17,15 @@ Résumé
 ------
 
 Si Python est très souvent utilisé pour apprendre un modèle de machine learning,
-il ne convient pas à tous les usages quand il s'agit de prédire. 
-Pickle n'est pas un ami très fiable, prédire une observation à la 
-fois est souvent lent sans parler des dépendances. ONNX en séparant 
-la prédiction de l'apprentissage est un moyen de contourner ces trois 
-obstacles. Le principe se décompose en trois outils : un langage qui 
-permet de décrire une fonction de prédiction, un convertisseur qui 
-traduit le modèle en langage ONNX et un "runtime" qui exécute le modèle 
-ONNX dans l'environnement de prédiction. La présentation abordera ces trois 
-éléments au travers des outils open source développés par Microsoft qui 
+il ne convient pas à tous les usages quand il s'agit de prédire.
+Pickle n'est pas un ami très fiable, prédire une observation à la
+fois est souvent lent sans parler des dépendances. ONNX en séparant
+la prédiction de l'apprentissage est un moyen de contourner ces trois
+obstacles. Le principe se décompose en trois outils : un langage qui
+permet de décrire une fonction de prédiction, un convertisseur qui
+traduit le modèle en langage ONNX et un "runtime" qui exécute le modèle
+ONNX dans l'environnement de prédiction. La présentation abordera ces trois
+éléments au travers des outils open source développés par Microsoft qui
 rendent ce scénario viable.
 
 * `Slides <https://github.com/xadupre/presentation/blob/master/2020/onnx_meetup_xavier_dupre_lille.pdf>`_
