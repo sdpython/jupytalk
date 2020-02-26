@@ -55,7 +55,7 @@ jobs:
           command: |
             echo "deb http://deb.debian.org/debian sid main" | sudo tee /etc/apt/sources.list.d/proj.list
             sudo apt-get -qq update
-            sudo apt-get -t sid install -y libproj-dev proj-bin=6.2.1-1 proj-data libgeos-dev python-gdal gdal-bin libc6
+            sudo apt-get -t sid install -y libproj-dev proj-bin=6.1.1-1 proj-data libgeos-dev python-gdal gdal-bin libc6
             python3 -m venv venv
             . venv/bin/activate
             sudo pip install git+https://github.com/pyproj4/pyproj.git
