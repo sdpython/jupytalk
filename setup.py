@@ -195,5 +195,8 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         setup_requires=["pyquickhelper"],
-        install_requires=['pyquickhelper>=1.9', 'jyquickhelper'],
+        install_requires=[
+            'pyquickhelper>=1.9', 'jyquickhelper',
+            'cpyquickhelper>=0.2.226'
+        ],
     )
