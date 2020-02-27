@@ -65,7 +65,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install cython numpy pandas matplotlib
-            
+
       - run:
           name: Install pyproj for cartopy
           command: |
@@ -73,10 +73,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install pyproj
-
-            # echo "deb http://deb.debian.org/debian sid main" | sudo tee /etc/apt/sources.list.d/proj.list
-            # sudo apt-get -qq update
-            # sudo apt-get -t sid install -y libproj-dev proj-bin=6.1.1-1 proj-data libgeos-dev python-gdal gdal-bin libc6
 
       - run:
           name: install dependencies (1) - requirements_conda
