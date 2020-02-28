@@ -16,7 +16,7 @@ install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
   - "%PYTHON%\\Scripts\\pip install pymyinstall"
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyensae"
-  - "%PYTHON%\\Scripts\\pymy_install3 cython cffi cairocffi cairosvg dukpy"
+  - "%PYTHON%\\Scripts\\pymy_install3 cython cffi cairocffi cairosvg dukpy pyshp"
   - "%PYTHON%\\Scripts\\pymy_install3 llvmlite numba pillow shapely pyproj cartopy fiona"
   - "%PYTHON%\\Scripts\\pymy_install3 sympy mpmath reportlab statsmodels scipy pylzma pycurl"
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
