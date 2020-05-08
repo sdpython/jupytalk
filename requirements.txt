@@ -24,6 +24,7 @@ mpl_scatter_density
 mpld3
 mutagen
 onnx
+git+https://github.com/xadupre/onnxconverter-common.git@jenkins
 onnxruntime
 plotly
 plotnine
