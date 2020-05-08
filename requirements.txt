@@ -44,7 +44,7 @@ scikit-image
 scikit-onnxruntime
 scikit-plot
 semantic_version
-shapely==1.6.4
+shapely
 git+https://github.com/xadupre/sklearn-onnx.git@jenkins
 sphinx-bootstrap-theme
 vega
