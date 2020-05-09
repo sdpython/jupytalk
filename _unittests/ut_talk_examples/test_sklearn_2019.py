@@ -12,13 +12,12 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.datasets import load_iris
 from sklearn.linear_model import LogisticRegression
-from jupytalk.talk_examples.sklearn2019 import edges2asciitree, onnx2graph, onnxdocstring2html
-from jupytalk.talk_examples.sklearn2019 import rename_input_output, profile_fct_graph
 
 
 class TestSklearn2019(ExtTestCase):
 
     def test_sklearn_onnx(self):
+        from jupytalk.talk_examples.sklearn2019 import edges2asciitree
         data = {'X': ['LinearClassifier[LinearClassifier]'],
                 'LinearClassifier[LinearClassifier]':
                     ['label', 'probability_tensor'],
@@ -50,6 +49,7 @@ class TestSklearn2019(ExtTestCase):
 
     def test_sklearn_onnx_full(self):
         from skl2onnx import to_onnx
+        from jupytalk.talk_examples.sklearn2019 import onnx2graph
         data = load_iris()
         X, y = data.data, data.target  # pylint: disable=E1101
         clr = LogisticRegression(
@@ -74,11 +74,13 @@ class TestSklearn2019(ExtTestCase):
         self.assertEqual(exp, v.replace('\n', '').replace(' ', ''))
 
     def test_doc_full(self):
+        from jupytalk.talk_examples.sklearn2019 import onnxdocstring2html
         rst = onnxdocstring2html(onnxdocstring2html.__doc__)
         self.assertIsInstance(rst, HTML)
 
     def test_sklearn_onnx_rename(self):
         from skl2onnx import to_onnx
+        from jupytalk.talk_examples.sklearn2019 import rename_input_output
         data = load_iris()
         X, y = data.data, data.target  # pylint: disable=E1101
         clr = LogisticRegression(
@@ -88,6 +90,7 @@ class TestSklearn2019(ExtTestCase):
         self.assertIn("outputlabel", str(model2))
 
     def test_profile_graph(self):
+        from jupytalk.talk_examples.sklearn2019 import profile_fct_graph
         def plus1(x):
             return x + 1
         ax = profile_fct_graph(lambda: plus1(3), "t", highlights=['plus1'])
