@@ -91,6 +91,7 @@ class TestSklearn2019(ExtTestCase):
 
     def test_profile_graph(self):
         from jupytalk.talk_examples.sklearn2019 import profile_fct_graph
+
         def plus1(x):
             return x + 1
         ax = profile_fct_graph(lambda: plus1(3), "t", highlights=['plus1'])
