@@ -5,6 +5,7 @@ cffi
 cython
 datashape
 jupyter
+llvmlite
 matplotlib
 notebook>=5.0.0
 networkx
