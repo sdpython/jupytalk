@@ -6,7 +6,7 @@ Functions and examples associated to the
 presentation hosted by :epkg:`jupytalk`.
 """
 
-__version__ = "0.2.547"
+__version__ = "0.2.548"
 __author__ = "Xavier Dupré"
 __github__ = "https://github.com/sdpython/jupytalk"
 __url__ = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html"
