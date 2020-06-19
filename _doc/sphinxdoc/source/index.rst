@@ -137,6 +137,10 @@ See also `github <https://github.com/sdpython/jupytalk/>`_,
         :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
         :alt: Notebook Coverage
 
+    .. image:: https://img.shields.io/github/repo-size/sdpython/jupytalk
+        :target: https://github.com/sdpython/jupytalk/
+        :alt: size
+    
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+

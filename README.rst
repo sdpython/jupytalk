@@ -32,6 +32,10 @@
     :target: http://www.xavierdupre.fr/app/jupytalk/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
 
+.. image:: https://img.shields.io/github/repo-size/sdpython/jupytalk
+    :target: https://github.com/sdpython/jupytalk/
+    :alt: size
+
 .. _l-README:
 
 jupytalk
