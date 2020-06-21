@@ -1,3 +1,4 @@
+autopep8
 antlr4-python3-runtime
 asciitree
 blockdiag
@@ -28,12 +29,14 @@ git+https://github.com/xadupre/onnxconverter-common.git@jenkins
 onnxruntime
 plotly
 plotnine
+pycodestyle
 pydot
 pydy>=0.5
 pyecharts>=1.0.0
 pyecharts_snapshot
 pygal
 pygal_maps_fr
+pylint
 pymyinstall
 pyquickhelper>=1.9.3186
 pyreadline
