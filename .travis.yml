@@ -2,21 +2,12 @@ dist: bionic
 sudo: true
 language: python
 python:
-  - "3.7"
-sudo: required
+  - "3.8"
 addons:
 -  apt:
 -    packages:
       - ffmpeg
-      - libproj-dev
-      - libgeos-dev
-
-before_install:
-  - sudo apt-get -qq update
-  # - sudo apt-get install -y ta-lib  does not work
 install:
-  # We do this conditionally because it saves us some downloading if the
-  # version is the same.
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
   - export PATH="$HOME/miniconda/bin:$PATH"
@@ -28,10 +19,7 @@ install:
   - conda info -a
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION numpy mkl scipy nose cython scikit-learn llvmlite
   - source activate test-environment
-  # - make all
-  #- conda build build_tools/conda-recipe --quiet
   - conda install -q --file=requirements_conda.txt
-  - pip install git+https://github.com/matplotlib/mpl_finance
   - pip install -r requirements.txt
   - export PYTHONPATH=src
 script:

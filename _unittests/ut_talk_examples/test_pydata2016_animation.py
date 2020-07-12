@@ -14,6 +14,7 @@ class TestPyData2016Animation(unittest.TestCase):
 
     @skipif_appveyor("no ffmpeg installed")
     @skipif_travis("issue with datashader.bokeh_ext, skipping")
+    @skipif_appveyor("issue with pyproj")
     def test_matplotlib_example(self):
         fLOG(
             __file__,
