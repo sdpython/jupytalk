@@ -5,8 +5,8 @@ environment:
 
   matrix:
 
-    - PYTHON: "C:\\Python37-x64"
-      PYTHON_VERSION: "3.7.x"
+    - PYTHON: "C:\\Python38-x64"
+      PYTHON_VERSION: "3.8.x"
       PYTHON_ARCH: "64"
 
 init:
@@ -28,6 +28,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install git+https://github.com/matplotlib/mpl_finance"
   - "%PYTHON%\\Scripts\\pip install onnx"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
+  - "%PYTHON%\\Scripts\\pip install -r requirements-geo.txt"
   - "%PYTHON%\\Scripts\\pip install widgetsnbextension"
   - "set PATH=%PATH%;%PYTHON%\\Scripts"
   #- "jupyter nbextension enable --py --sys-prefix widgetsnbextension"

@@ -4,8 +4,6 @@ cartopy
 cffi
 cython
 datashape
-folium
-geoplotlib
 jupyter
 matplotlib
 notebook>=5.0.0
@@ -27,9 +25,7 @@ scipy
 seaborn
 shapely
 Sphinx
-sphinx_gallery
 sympy
 toolz
-vega
 wheel
 xarray

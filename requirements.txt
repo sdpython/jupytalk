@@ -12,6 +12,7 @@ cpyquickhelper>=0.2.226
 cufflinks
 datashader
 ensae_teaching_cs>=0.9.2873
+folium
 jyquickhelper
 lifelines
 lightning-python
@@ -41,8 +42,10 @@ pythreejs>=1.0.0
 scikit-plot
 semantic_version
 git+https://github.com/xadupre/sklearn-onnx.git@jenkins
+sphinx_gallery
 sphinx-bootstrap-theme
 sphinxcontrib.imagesvg
+vega
 version_information
 wikipedia
 vispy
