@@ -13,6 +13,7 @@ cufflinks
 datashader
 ensae_teaching_cs>=0.9.2873
 folium
+jupyter_sphinx
 jyquickhelper
 lifelines
 lightning-python
