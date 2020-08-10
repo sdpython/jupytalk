@@ -1,1 +1,2 @@
 geoplotlib
+shapely!=1.7.0
