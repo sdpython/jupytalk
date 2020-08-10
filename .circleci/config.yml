@@ -18,8 +18,8 @@ jobs:
           name: Install pandoc
           command: |
                     sudo apt-get update 
-                    wget https://github.com/jgm/pandoc/releases/download/2.2.1/pandoc-2.2.1-1-amd64.deb
-                    sudo dpkg -i pandoc-2.2.1-1-amd64.deb
+                    wget https://github.com/jgm/pandoc/releases/download/2.10.1/pandoc-2.10.1-1-amd64.deb
+                    sudo dpkg -i pandoc-2.10.1-1-amd64.deb
           
       - run:
           name: Install tex
@@ -46,9 +46,9 @@ jobs:
                     sudo apt-get install -y graphviz
           
       - run:
-          name: install avconv (ffmpeg)
+          name: install ffmpeg
           command: |
-                    sudo apt-get install libav-tools
+                    sudo apt-get install ffmpeg
 
       - run:
           name: Install tex
