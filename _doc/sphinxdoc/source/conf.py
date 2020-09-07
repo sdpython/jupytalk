@@ -45,6 +45,7 @@ epkg_dictionary.update({
     'Custom Extensions to ML.net': 'http://www.xavierdupre.fr/app/machinelearningext/helpsphinx/index.html',
     'C#': 'https://fr.wikipedia.org/wiki/C_sharp',
     'CNTK': 'https://github.com/Microsoft/CNTK',
+    'ensae_teaching_cs': 'http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html',
     'jupytalk': 'http://www.xavierdupre.fr/app/jupytalk/helpsphinx/index.html',
     'Microsoft': 'https://docs.microsoft.com/en-us/',
     'ML.net': "https://github.com/dotnet/machinelearning",
@@ -61,4 +62,5 @@ epkg_dictionary.update({
     'RenderJsDot': 'http://www.xavierdupre.fr/app/jyquickhelper/helpsphinx/jyquickhelper/jspy/render_nb_js_dot.html?highlight=renderjsdot#jyquickhelper.jspy.render_nb_js_dot.RenderJsDot',
     'seaborn': "https://seaborn.pydata.org/",
     'sklearn-onnx': 'https://github.com/onnx/sklearn-onnx',
+    'xavierdupre.fr': 'http://www.xavierdupre.fr/',
 })

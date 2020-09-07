@@ -20,6 +20,7 @@ Presentations
     :maxdepth: 1
 
     ONNX 15/01/2020 <2020/onnx202001>
+    ENSAE 08/09/2020 <2020/intro202009>
 
 2019
 ----

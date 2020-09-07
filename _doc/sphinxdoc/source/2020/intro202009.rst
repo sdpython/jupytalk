@@ -1,0 +1,30 @@
+
+.. _l-ensaeintro2020:
+
+ENSAE : leçon de code
+=====================
+
+.. sharenet::
+    :facebook: 1
+    :linkedin: 2
+    :twitter: 3
+    :head: False
+
+Objectif du cours
+-----------------
+
+La programmation est devenue un outil essentiel du datascientist
+mais pas seulement. Beaucoup d'outils pointus sont open source
+mais uniquement accessibles à ceux qui savent programmer.
+Après la mise au point d'un modèle statistique, économique,
+il se pose souvent la question de la mise à jour fréquente des
+résultats, c'est à dire leur automatisation via la programmation.
+
+* :ref:`introcoderst`
+
+Links
+-----
+
+* :epkg:`ensae_teaching_cs`
+* :epkg:`xavierdupre.fr`
+* :epkg:`scikit-learn`
