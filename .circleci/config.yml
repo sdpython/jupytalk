@@ -51,15 +51,6 @@ jobs:
                     sudo apt-get install ffmpeg
 
       - run:
-          name: Install tex
-          command: |
-                    sudo apt-get install -y texlive
-                    sudo apt-get install -y texlive-latex-extra
-                    sudo apt-get install -y texlive-lang-french
-                    sudo apt-get install -y texlive-xetex
-                    sudo apt-get install -y dvipng
-          
-      - run:
           name: install cython
           command: |
             python3 -m venv venv

@@ -1,6 +1,5 @@
 biopython
 bokeh
-cartopy
 cffi
 cython
 datashape
@@ -16,7 +15,6 @@ pybind11
 pycodestyle
 pycurl
 pydot
-pyproj
 pyzmq
 reportlab
 scikit-image

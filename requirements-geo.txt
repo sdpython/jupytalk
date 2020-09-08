@@ -1,2 +1,4 @@
+cartopy
 geoplotlib
+pyproj
 shapely!=1.7.0
