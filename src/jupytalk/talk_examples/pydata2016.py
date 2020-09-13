@@ -73,7 +73,7 @@ def example_confidence_interval(ax=None, seaborn=False, **options):
 
     if seaborn:
         from seaborn import regplot
-        return regplot(x, data=data, ax=ax)
+        return regplot(x=x, y=y, ax=ax)
     else:
         r = data - y
         for _ in range(nboot):
