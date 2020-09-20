@@ -23,7 +23,7 @@ mlprodict
 mpl_scatter_density
 mpld3
 mutagen
-nbconvert<6.0
+nbconvert>=6.0.2
 onnx
 git+https://github.com/xadupre/onnxconverter-common.git@jenkins
 onnxruntime
