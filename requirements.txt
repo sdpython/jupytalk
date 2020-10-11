@@ -32,12 +32,11 @@ plotnine
 pydy>=0.5
 pyecharts>=1.0.0
 pyecharts_snapshot
-pyensae>=1.3.880
+pyensae>1.3.882
 pygal
 pygal_maps_fr
 pylint
 pymyinstall
-pyquickhelper>=1.9.3186
 pyreadline
 pyshp
 python-pptx
