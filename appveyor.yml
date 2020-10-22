@@ -1,20 +1,15 @@
+image:
+  - Visual Studio 2019
 environment:
-
-  global:
-    WITH_COMPILER: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_compiler.cmd"
-
   matrix:
-
     - PYTHON: "C:\\Python38-x64"
       PYTHON_VERSION: "3.8.x"
       PYTHON_ARCH: "64"
-
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
-  - "%PYTHON%\\Scripts\\pip install pymyinstall"
   #- "%PYTHON%\\Scripts\\pip install numpy pandas scikit-learn scipy matplotlib jupyter statsmodels"
   # - "%PYTHON%\\Scripts\\pymy_install3 --set=pyensae"
   #- "%PYTHON%\\Scripts\\pymy_install3 cython cffi cairocffi cairosvg dukpy pyshp"
@@ -29,10 +24,6 @@ install:
   #- "%PYTHON%\\Scripts\\pip install onnx"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
   - "%PYTHON%\\Scripts\\pip install -r requirements-geo.txt"
-  #- "%PYTHON%\\Scripts\\pip install widgetsnbextension"
-  - "set PATH=%PATH%;%PYTHON%\\Scripts"
-  #- "jupyter nbextension enable --py --sys-prefix widgetsnbextension"
-  - "set PATH=%PATH%;C:\\projects\\jupytalk\\build\\update_modules\\Graphviz\\bin"
   - set PYTHONPATH=src
 build: off
 
