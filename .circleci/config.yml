@@ -78,6 +78,13 @@ jobs:
             pip install -r requirements_conda.txt
             
       - run:
+          name: install onnx
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install onnx
+
+      - run:
           name: install dependencies (2) - requirements
           command: |
             python3 -m venv venv
