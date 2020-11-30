@@ -13,7 +13,6 @@ pandas>=0.20.0
 pillow
 pybind11
 pycodestyle
-pycurl
 pydot
 pyzmq
 reportlab
