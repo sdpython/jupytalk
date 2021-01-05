@@ -2,17 +2,11 @@
 language: python
 
 python:
-  - { PATH: "{{Python37}}",
-      VERSION: 3.7,
+  - { PATH: "{{Python39}}",
+      VERSION: 3.9,
       DIST: std,
-      PYINT: python3.7,
-      PYTHONPATH: src,
-      LD_LIBRARY_PATH: /usr/local/Python-3.7.2 }
-  - { PATH: "{{Python38}}",
-      VERSION: 3.8,
-      DIST: std,
-      PYINT: python3.8,
-      LD_LIBRARY_PATH: /usr/local/Python-3.8.1 }
+      PYINT: python3.9,
+      LD_LIBRARY_PATH: /usr/local/Python-3.9.1 }
   
 virtualenv:
   - path: {{ospathjoin(root_path, pickname("$NAME_JENKINS", project_name + "_$VERSION_$DIST_$NAME"), "_venv")}}
@@ -21,10 +15,7 @@ install:
   - $PYINT -m pip install --upgrade pip
   - $PYINT -m pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ onnxruntime scikit-learn --extra-index-url=https://pypi.python.org/simple/
   - $PYINT -m pip install --upgrade --no-cache-dir --no-deps --index http://localhost:8067/simple/ pyquickhelper pyensae jyquickhelper pymyinstall pymmails ensae_teaching_cs skl2onnx onnx keras2onnx onnxconverter_common mlinsights mlprodict --extra-index-url=https://pypi.python.org/simple/
-  - $PYINT -m pip install -r requirements_conda.txt
   - $PYINT -m pip install -r requirements.txt
-  - $PYINT -m pip install -r requirements-geo.txt
-  - $PYINT -m pip install shapely==1.6.4 keras tensorflow
   - $PYINT --version
   - $PYINT -m pip freeze
   - export QT_QPA_PLATFORM=offscreen
@@ -39,7 +30,7 @@ script:
 
 after_script:
   - $PYINT -u setup.py bdist_wheel
-  - if [ ${VERSION} == "3.7" and ${DIST} != "conda" and ${NAME} == "UT" ] then cp dist/*.whl {{root_path}}/../local_pypi/local_pypi_server fi
+  - if [ ${VERSION} == "3.9" and ${NAME} == "UT" ] then cp dist/*.whl {{root_path}}/../local_pypi/local_pypi_server fi
 
 documentation:
   - if [ ${NAME} == "UT" ] then $PYINT -u setup.py build_sphinx fi

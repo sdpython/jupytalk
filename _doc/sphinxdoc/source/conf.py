@@ -6,7 +6,7 @@ from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 
-set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2020,
+set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2021,
                      "bootstrap", sphinx_bootstrap_theme.get_html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),

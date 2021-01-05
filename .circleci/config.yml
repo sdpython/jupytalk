@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.8.3
+      - image: circleci/python:3.8.7
     
     working_directory: ~/repo
     
@@ -14,24 +14,32 @@ jobs:
           - v2-dependencies-{{ checksum "requirements.txt" }}
           - v2-dependencies-
 
+#       - run:
+#           name: Install omp
+#           command: |
+#                     sudo apt-get install -y libomp-dev
+          
       - run:
           name: Install pandoc
           command: |
                     sudo apt-get update 
-                    wget https://github.com/jgm/pandoc/releases/download/2.10.1/pandoc-2.10.1-1-amd64.deb
-                    sudo dpkg -i pandoc-2.10.1-1-amd64.deb
+                    wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.11.3.2-1-amd64.deb
+                    sudo dpkg -i pandoc-2.11.3.2-1-amd64.deb
           
       - run:
           name: Install tex
           command: |
                     sudo apt-get install -y texlive
                     sudo apt-get install -y texlive-latex-extra
-                    sudo apt-get install -y texlive-lang-french
-                    sudo apt-get install -y texlive-xetex
                     sudo apt-get install -y dvipng
           
       - run:
-          name: Install 7z
+          name: install language package for onnxruntime
+          command: |
+                    sudo locale-gen
+
+      - run:
+          name: Install 7z, unrar
           command: |
                     sudo apt-get install -y p7zip-full
           
@@ -44,100 +52,121 @@ jobs:
           name: Install graphviz
           command: |
                     sudo apt-get install -y graphviz
-          
-      - run:
-          name: Install cmake
-          command: |
-                    sudo apt-get install -y cmake
-          
-      - run:
-          name: install ffmpeg
-          command: |
-                    sudo apt-get install ffmpeg
 
       - run:
-          name: install cython
+          name: Install llvmlite
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install cython numpy pandas matplotlib
+            sudo apt-get install lsb-release wget software-properties-common
+            wget https://apt.llvm.org/llvm.sh
+            chmod +x llvm.sh
+            sudo ./llvm.sh 10
+            ls /usr/bin/llvm*
 
       - run:
-          name: Install pyproj for cartopy
+          name: Install protobuf-compiler cmake
           command: |
-            sudo apt-get install -y libproj-dev proj-bin proj-data libgeos-dev python-gdal gdal-bin
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install pyproj "shapely<1.7.0"
+            sudo apt-get install protobuf-compiler libprotoc-dev cmake
 
       - run:
-          name: install dependencies (1) - requirements_conda
+          name: Install standard libraries
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            pip install -r requirements_conda.txt
-            
-      - run:
-          name: install onnx
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install onnx
+            pip install scipy matplotlib numpy cython pandas wheel pybind11
 
       - run:
-          name: install dependencies (2) - requirements
+          name: Install numba, llvmlite
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            # export LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config
+            sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
+            pip install llvmlite numba
+
+#      - run:
+#          name: Build onnx
+#          command: |
+#            python3 -m venv venv
+#            git clone -b master --single-branch https://github.com/onnx/onnx.git --recursive
+#            cd onnx
+#            export ONNX_ML=1
+#            export ONNX_BUILD_TESTS=1
+#            export ONNXIFI_DUMMY_BACKEND=1
+#            python setup.py bdist_wheel
+#            ls dist
+#            python setup.py install
+#            cd ..
+
+      - run:
+          name: install dependencies (2)
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            
+
       - run:
-          name: install dependencies (3) - cairo
+          name: install onnxruntime
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            pip install cairocffi cairosvg
-            
-      - run:
-          name: install dependencies (4) - geo
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r requirements-geo.txt
-            
+            pip freeze | grep onnx
+            pip install onnxruntime>=1.6.0 --verbose
+            pip show onnxruntime
+
       - save_cache:
           paths:
             - ./venv
           key: v2-dependencies-{{ checksum "requirements.txt" }}
         
       - run:
+          name: install sklearn-onnx, onnxconverter-common
+          command: |
+            . venv/bin/activate
+            pip install git+https://github.com/xadupre/onnxconverter-common.git@jenkins --upgrade
+            pip install git+https://github.com/xadupre/sklearn-onnx.git@jenkins --upgrade
+
+      - run:
+          name: check list of dependencies
+          command: |
+            python -m venv venv
+            . venv/bin/activate
+            pip freeze
+            apt list --installed
+        
+      - run:
+          name: compile and build
+          command: |
+            . venv/bin/activate
+            python setup.py build_ext --inplace
+
+      - run:
           name: run tests
           command: |
             . venv/bin/activate
-            export PYTHONPATH=src
-            python setup.py unittests
+            python setup.py unittests -d 15 -g ".*((LONG)|(SKIP)|(notebooks)).*"
+          # Some tests take for ever, cutting the list.
 
       - run:
           name: wheel
           command: |
             . venv/bin/activate
-            export PYTHONPATH=src
             python setup.py bdist_wheel
             mkdir -p test-reports/dist
             cp dist/*.whl test-reports/dist
+            mkdir -p test-reports/src
+            cp -r  mlprodict test-reports/src
 
-#       - run:
-#           name: documentation
-#           command: |
-#             . venv/bin/activate
-#             export PYTHONPATH=src
-#             python setup.py build_sphinx
-#             
-#       - run:
-#           name: copy documentation
-#           command: |
-#             mkdir -p test-reports/doc
-#             zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
+#      - run:
+#          name: documentation
+#          command: |
+#           . venv/bin/activate
+#           python setup.py build_sphinx
+#           
+#      - run:
+#          name: copy documentation
+#          command: |
+#           mkdir -p test-reports/doc
+#           zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
             
       - store_artifacts:
           path: test-reports
