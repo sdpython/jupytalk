@@ -49,9 +49,9 @@ jobs:
                     sudo apt-get install -y inkscape
           
       - run:
-          name: Install graphviz
+          name: Install libproj
           command: |
-                    sudo apt-get install -y graphviz
+            sudo apt-get install -y libgeos-dev libproj-dev proj-data graphviz
 
       - run:
           name: Install llvmlite
@@ -66,6 +66,11 @@ jobs:
           name: Install protobuf-compiler cmake
           command: |
             sudo apt-get install protobuf-compiler libprotoc-dev cmake
+
+      - run:
+          name: Install libgnutls (pycurl)
+          command: |
+            sudo apt-get install libgnutls28-dev
 
       - run:
           name: Install standard libraries
