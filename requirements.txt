@@ -75,6 +75,7 @@ semantic_version
 sphinx_gallery
 sphinx-bootstrap-theme
 sphinxcontrib.imagesvg
+traittypes
 vega
 version_information
 wikipedia
