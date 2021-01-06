@@ -5,6 +5,7 @@
 import sys
 import os
 import unittest
+import warnings
 from asciitree import LeftAligned
 import numpy as np
 from IPython.core.display import HTML

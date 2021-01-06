@@ -6,6 +6,7 @@
 import sys
 import os
 import unittest
+import warnings
 import numpy
 from pyquickhelper.pycode import ExtTestCase
 from jupytalk.pres_helper import show_images

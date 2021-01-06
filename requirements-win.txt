@@ -1,5 +1,6 @@
 astroid
 blockdiag
+bohek
 branca
 cython
 docutils
@@ -36,6 +37,7 @@ statsmodels
 sympy
 threadpoolctl
 traittypes
+typing_extensions
 xlrd
 xlsxwriter
 werkzeug
