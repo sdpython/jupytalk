@@ -1,4 +1,5 @@
 astroid
+autograd
 blockdiag
 bokeh
 branca
@@ -20,6 +21,7 @@ nbformat
 numpy
 openpyxl
 pandas
+plotly
 psutil
 pybind11
 pycodestyle

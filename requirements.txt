@@ -29,6 +29,7 @@ wheel
 xarray
 
 # other
+autograd
 autopep8
 antlr4-python3-runtime
 asciitree
