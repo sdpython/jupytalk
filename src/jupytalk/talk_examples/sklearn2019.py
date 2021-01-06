@@ -6,11 +6,11 @@ import os
 import sys
 from collections import OrderedDict
 import warnings
-from onnx import helper
 from pyquickhelper.pycode.profiling import profile
 from pyquickhelper.helpgen.rst_converters import docstring2html
 from pyensae.graphhelper import draw_diagram
 from jyquickhelper import RenderJsDot
+from onnx import helper
 from skl2onnx.proto import TensorProto
 import sklearn
 

@@ -53,6 +53,7 @@ mlinsights
 mlprodict
 mpl_scatter_density
 mpld3
+mplfinance
 mutagen
 nbconvert
 plotly
