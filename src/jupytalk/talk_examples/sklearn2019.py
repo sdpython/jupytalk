@@ -10,9 +10,9 @@ from pyquickhelper.pycode.profiling import profile
 from pyquickhelper.helpgen.rst_converters import docstring2html
 from pyensae.graphhelper import draw_diagram
 from jyquickhelper import RenderJsDot
-from onnx import helper
-from skl2onnx.proto import TensorProto
 import sklearn
+from skl2onnx.proto import TensorProto
+from onnx import helper
 
 
 def graph_persistence_pickle():
