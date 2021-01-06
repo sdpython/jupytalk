@@ -33,6 +33,7 @@ python-jenkins
 PyYAML
 scikit-learn
 statsmodels
+sympy
 threadpoolctl
 traittypes
 xlrd
