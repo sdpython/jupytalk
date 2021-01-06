@@ -8,7 +8,8 @@ import os
 import unittest
 import shutil
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import get_temp_folder, is_travis_or_appveyor
+from pyquickhelper.pycode import (
+    get_temp_folder, is_travis_or_appveyor, skipif_appveyor)
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import jyquickhelper
 import jupytalk
@@ -16,6 +17,7 @@ import jupytalk
 
 class TestRunNotebooks2019_sklearn(unittest.TestCase):
 
+    @skipif_appveyor("stuck")
     def test_notebook_sklearn(self):
         fLOG(
             __file__,

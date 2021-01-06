@@ -14,6 +14,11 @@ from jupytalk.pres_helper import show_images
 class TestPresHelperImage(ExtTestCase):
 
     def test_show_images(self):
+        try:
+            import cairo
+        except ImportError as e:
+            warnings.warn("Issue with pycairo %r." % e)
+            return
         this = os.path.abspath(os.path.dirname(__file__))
         img = os.path.join(this, "data", "wiki.jpg")
         ax = show_images(img, title1="a")

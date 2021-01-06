@@ -90,6 +90,11 @@ class TestSklearn2019(ExtTestCase):
         self.assertIn("outputlabel", str(model2))
 
     def test_profile_graph(self):
+        try:
+            import cairo
+        except ImportError as e:
+            warnings.warn("Issue with pycairo %r." % e)
+            return
         from jupytalk.talk_examples.sklearn2019 import profile_fct_graph
 
         def plus1(x):
