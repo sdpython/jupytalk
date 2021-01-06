@@ -1,6 +1,6 @@
 astroid
 blockdiag
-bohek
+bokeh
 branca
 cython
 docutils
