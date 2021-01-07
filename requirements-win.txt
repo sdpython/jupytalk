@@ -5,6 +5,7 @@ blockdiag
 bokeh
 branca
 cython
+descartes
 docutils
 et_xmlfile
 flask
@@ -25,6 +26,7 @@ numpy
 openpyxl
 pandas
 plotly
+plotnine
 psutil
 pybind11
 pycodestyle
