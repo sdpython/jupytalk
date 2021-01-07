@@ -24,6 +24,7 @@ jupyter
 lifelines
 matplotlib
 mizani
+nbconvert
 nbformat
 numpy
 openpyxl
@@ -44,6 +45,7 @@ pyshp
 python-jenkins
 PyYAML
 scikit-learn
+sphinx
 simplejson
 statsmodels
 sympy
