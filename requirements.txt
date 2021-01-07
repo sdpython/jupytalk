@@ -30,6 +30,7 @@ xarray
 
 # other
 autograd
+autograd_gamma
 autopep8
 antlr4-python3-runtime
 asciitree

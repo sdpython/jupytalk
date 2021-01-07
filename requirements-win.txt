@@ -1,5 +1,6 @@
 astroid
 autograd
+autograd_gamma
 blockdiag
 bokeh
 branca
@@ -16,6 +17,7 @@ itsdangerous
 jdcal
 joblib
 jupyter
+lifelines
 matplotlib
 nbformat
 numpy
