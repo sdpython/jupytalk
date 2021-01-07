@@ -75,6 +75,11 @@ class TestSklearn2019(ExtTestCase):
         self.assertEqual(exp, v.replace('\n', '').replace(' ', ''))
 
     def test_doc_full(self):
+        try:
+            import cairo
+        except ImportError as e:
+            warnings.warn("Issue with pycairo %r." % e)
+            return
         from jupytalk.talk_examples.sklearn2019 import onnxdocstring2html
         rst = onnxdocstring2html(onnxdocstring2html.__doc__)
         self.assertIsInstance(rst, HTML)
