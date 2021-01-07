@@ -12,7 +12,9 @@ et_xmlfile
 flask
 funcparserlib
 ijson
+imagesize
 importlib_metadata
+ipydatawidgets
 ipython
 isort
 itsdangerous
