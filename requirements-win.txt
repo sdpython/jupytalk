@@ -1,6 +1,7 @@
 astroid
 autograd
 autograd_gamma
+babel
 blockdiag
 bokeh
 branca
@@ -27,6 +28,7 @@ openpyxl
 pandas
 plotly
 plotnine
+prettytable
 psutil
 pybind11
 pycodestyle

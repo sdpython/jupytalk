@@ -18,6 +18,11 @@ class TestPyData2016pydy(ExtTestCase):
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
+        try:
+            import cairo
+        except ImportError as e:
+            warnings.warn("Unable to import cairo %r." % e)
+            return
 
         temp = get_temp_folder(__file__, "temp_example_pydy")
         fix_tkinter_issues_virtualenv()
