@@ -51,6 +51,7 @@ jyquickhelper
 lifelines
 lightning-python
 missingno
+mizani
 mlinsights
 mlprodict
 mpl_scatter_density
