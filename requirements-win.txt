@@ -40,6 +40,7 @@ pyshp
 python-jenkins
 PyYAML
 scikit-learn
+simplejson
 statsmodels
 sympy
 threadpoolctl
