@@ -61,6 +61,7 @@ mutagen
 nbconvert
 plotly
 plotnine
+pydata_sphinx_theme
 pydy>=0.5
 pyecharts>=1.0.0
 pyecharts_snapshot
