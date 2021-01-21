@@ -21,12 +21,12 @@ install:
   - export QT_QPA_PLATFORM=offscreen
 
 script:
-  - { CMD: "$PYINT -u setup.py unittests -g \".*((code_style)|(ete3)|(LONG)|(SKIP)).*\"", NAME: "UT" }
-  - { CMD: "$PYINT -u setup.py unittests -e \".*code_style.*\"", NAME: "UT_STYLE" }
-  - { CMD: "$PYINT -u setup.py unittests -e \".*LONG.*\" -g \".*onnx.*\"", NAME: "UT_LONG", TIMEOUT: 3600 }
-  - { CMD: "$PYINT -u setup.py unittests -e \".*onnx.*\"", NAME: "UT_LONG_ONNX", TIMEOUT: 3600 }
-  - { CMD: "$PYINT -u setup.py unittests -e .*SKIP.* -g \".*ete3.*\"", NAME: "UT_SKIP", TIMEOUT: 3600 }
-  - { CMD: "$PYINT -u setup.py unittests -e .*ete3.*", NAME: "UT_SKIP_ETE3", TIMEOUT: 3600 }
+  - { CMD: "$PYINT -u setup.py unittests -g \".*((code_style)|(ete3)|(LONG)|(SKIP)).*\"", NAME: "UT", SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*code_style.*\"", NAME: "UT_STYLE", SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*LONG.*\" -g \".*onnx.*\"", NAME: "UT_LONG", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*onnx.*\"", NAME: "UT_LONG_ONNX", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -e .*SKIP.* -g \".*ete3.*\"", NAME: "UT_SKIP", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -e .*ete3.*", NAME: "UT_SKIP_ETE3", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
 
 after_script:
   - $PYINT -u setup.py bdist_wheel
