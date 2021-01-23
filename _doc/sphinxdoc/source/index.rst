@@ -13,58 +13,14 @@ tableau blanc.
 Presentations
 =============
 
-2020
-----
-
 .. toctree::
-    :maxdepth: 1
-
-    ONNX 15/01/2020 <2020/onnx202001>
-    ENSAE 08/09/2020 <2020/intro202009>
-
-2019
-----
-
-.. toctree::
-    :maxdepth: 1
-
-    Scikit-learn day 28/05/2019 <2019/sklearn201905>
-    ParisDataEng 09/07/2019 <2019/ParisDataEng201907>
-    ENSAE 01/10/2019 <2019/sklearnapi201910>
-
-2018
-----
-
-.. toctree::
-    :maxdepth: 1
-
-    Imagine Cup 23/03/2018 <2018/imcup201803>
-    MS Experience 07/11/2018 <2018/msexperience201811>
-    PyParis 15/11/2018 <2018/pyparis201811>
-
-2017
-----
-
-.. toctree::
-    :maxdepth: 1
-
-    Devoxx 06/04/2017 <2017/devoxx2017>
-    Meshs 04/05/2017 <2017/meshs_2017>
-    ENSAE 05/09/2017 <2017/ensae_1a_2017>
-    Microsoft Experience 04/10/2017 <2017/experience_2017>
-    J-Fall 11/02/2017 <2017/jfall_2017>
-    ENSAE 14/11/2017 <2017/ensae_2a_201711>
-    Open Source Submit 2017 <2017/oss_201712>
-
-2016
-----
-
-.. toctree::
-    :maxdepth: 1
-
-    PyData 06/15/2016 <2016/pydata2016>
-    Centrale 06/14/2016 <2016/centrale201606>
-    ENSAE 14/11/2016 <2016/ensae201611>
+    :maxdepth: 2
+    
+    2020
+    2019
+    2018
+    2017
+    2016
 
 Teachings
 =========
