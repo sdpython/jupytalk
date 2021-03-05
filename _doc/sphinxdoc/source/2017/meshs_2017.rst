@@ -52,7 +52,7 @@ Liens, articles
 
 *Programmation*
 
-* `Stratégie automatique de trading en finance <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/specials/finance_autostrat.html>`_
+* `Stratégie automatique de trading en finance <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/specials/finance_autostrat.html>`_
 * `zipline <http://www.zipline.io/>`_
 * `awesome-quant <https://github.com/wilsonfreitas/awesome-quant>`_
 

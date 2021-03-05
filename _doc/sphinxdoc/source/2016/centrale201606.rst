@@ -11,7 +11,7 @@ Centrale 16 juin 2016
 **Digressions**
 
 * :ref:`l-pydata2016`
-* `Survol algorithmique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/specials/algorithm_culture.html>`_
+* `Survol algorithmique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/specials/algorithm_culture.html>`_
 * Exercices d'algorithmes parfois corrigés : `Algorithmique ludique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx2/td_2a.html#algorithmique-ludique>`_
 
 **Lectures**
@@ -22,7 +22,7 @@ Centrale 16 juin 2016
   traduire un texte incorrect en un texte correct
 * `Auto Encoders <https://piotrmirowski.wordpress.com/2014/03/27/tutorial-on-auto-encoders/>`_,
   c'est une façon d'amener le deep learning dans le traiteement du langage et cela les rend plus fiable
-* `Données antipathiques (skewed), Appariement <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td3a_cenonce_session8a.html>`_
+* `Données antipathiques (skewed), Appariement <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td3a_cenonce_session8a.html>`_
 
 **Articles**
 

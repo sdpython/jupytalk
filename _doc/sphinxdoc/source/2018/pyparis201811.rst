@@ -39,4 +39,4 @@ Links
 Lectures
 --------
 
-* `Optimisation de code avec cffi, numba, cython <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/cffi_linear_regression.html>`_
+* `Optimisation de code avec cffi, numba, cython <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/cffi_linear_regression.html>`_

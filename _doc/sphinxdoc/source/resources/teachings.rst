@@ -12,5 +12,5 @@ Technics
 Lectures
 ++++++++
 
-* `Eléments logiciels pour le traitement des données massives <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_3a.html>`_
-* `ENSAE - Xavier Dupré <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html>`_
+* `Eléments logiciels pour le traitement des données massives <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/td_3a.html>`_
+* `ENSAE - Xavier Dupré <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html>`_

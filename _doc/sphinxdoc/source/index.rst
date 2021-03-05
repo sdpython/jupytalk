@@ -26,7 +26,7 @@ Teachings
 =========
 
 * `ENSAE <http://www.ensae.fr>`_ :
-  `Python pour un Data Scientist <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html>`_,
+  `Python pour un Data Scientist <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/index.html>`_,
   `Petit voyage au pays du machine learning <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_
 * `Institut des Actuaires <http://www.institutdesactuaires.com/>`_ : `Python et actuariat <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/index.html>`_
 * Pour les enfants : `lesenfantscodaient.fr <http://lesenfantscodaient.fr>`_
