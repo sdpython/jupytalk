@@ -91,9 +91,10 @@ wptools>=0.4
 yahoo_historical
 
 # onnx
+onnx
+onnxruntime
 git+https://github.com/xadupre/sklearn-onnx.git@jenkins
 git+https://github.com/xadupre/onnxconverter-common.git@jenkins
-onnx
 
 # geo
 cartopy
