@@ -71,6 +71,8 @@ pygal_maps_fr
 pylint
 pymmails
 pymyinstall
+pyquickhelper
+pyquicksetup
 pyreadline
 pyshp
 python-pptx

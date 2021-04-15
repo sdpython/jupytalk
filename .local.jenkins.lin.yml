@@ -21,7 +21,7 @@ install:
   - export QT_QPA_PLATFORM=offscreen
 
 script:
-  - { CMD: "$PYINT -u setup.py unittests -g \".*((code_style)|(ete3)|(LONG)|(SKIP)).*\"", NAME: "UT", SCHEDULER: "H H(1-2) 26 * *" }
+  - { CMD: "$PYINT -u setup.py unittests -g \".*((code_style)|(ete3)|(LONG)|(SKIP)).*\" --covtoken=989a8320-d21b-47f4-910b-f1fd9b2e5415", NAME: "UT", SCHEDULER: "H H(1-2) 26 * *" }
   - { CMD: "$PYINT -u setup.py unittests -e \".*code_style.*\"", NAME: "UT_STYLE", SCHEDULER: "H H(1-2) 26 * *" }
   - { CMD: "$PYINT -u setup.py unittests -e \".*LONG.*\" -g \".*onnx.*\"", NAME: "UT_LONG", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
   - { CMD: "$PYINT -u setup.py unittests -e \".*onnx.*\"", NAME: "UT_LONG_ONNX", TIMEOUT: 3600, SCHEDULER: "H H(1-2) 26 * *" }
@@ -33,5 +33,5 @@ after_script:
   - if [ ${VERSION} == "3.9" and ${NAME} == "UT" ] then cp dist/*.whl {{root_path}}/../local_pypi/local_pypi_server fi
 
 documentation:
-  - if [ ${NAME} == "UT" ] then $PYINT -u setup.py build_sphinx fi
+  - if [ ${NAME} == "UT" ] then $PYINT -u setup.py build_sphinx --layout=html fi
   - if [ ${NAME} == "UT" ] then cp -R -f _doc/sphinxdoc/build/html dist/html fi
