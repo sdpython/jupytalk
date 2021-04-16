@@ -33,6 +33,7 @@ CLASSIFIERS = [
 # data
 #######
 
+
 class SetupCommandBuildScript(Command):
     description = "Updates grammars."
 
