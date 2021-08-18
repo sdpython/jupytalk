@@ -17,10 +17,6 @@
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
 
-.. image:: https://requires.io/github/sdpython/jupytalk/requirements.svg?branch=master
-     :target: https://requires.io/github/sdpython/jupytalk/requirements/?branch=master
-     :alt: Requirements Status
-
 .. image:: https://codecov.io/github/sdpython/jupytalk/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/jupytalk?branch=master
 
