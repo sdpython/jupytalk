@@ -117,7 +117,7 @@ def profile_fct_graph(fct, title, highlights=None, nb=20, figsize=(10, 3)):
     paths = [os.path.dirname(sklearn.__file__),
              "site-packages",
              os.path.join(sys.prefix, "lib")]
-    _, df = profile(fct, as_df=True, rootrem=paths)
+    _, df = profile(fct, as_df=True, rootrem=paths)  # pylint: disable=W0632
     colname = 'namefct' if 'namefct' in df.columns else 'fct'
     sdf = df[[colname, 'cum_tall']].head(n=nb).set_index(colname)
     index_list = list(sdf.index)
