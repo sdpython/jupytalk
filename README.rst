@@ -1,6 +1,6 @@
 
 .. image:: https://travis-ci.com/sdpython/jupytalk.svg?branch=master
-    :target: https://travis-ci.com/sdpython/jupytalk
+    :target: https://app.travis-ci.com/github/sdpython/jupytalk
     :alt: Build status
 
 .. image:: https://ci.appveyor.com/api/projects/status/cq8d56y2o4ldi7rn?svg=true
