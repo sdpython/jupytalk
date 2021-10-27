@@ -35,7 +35,7 @@ def display_treant(json_tree, json_data, css, classname):
     @return                 HTML object
     """
 
-    global _template_html, _template_js  # pylint: disable=W0603
+    global _template_html, _template_js  # pylint: disable=W0603,W0602
     uid = "id_" + str(id(json_data))
 
     # this should be done with jinja2 or mako

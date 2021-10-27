@@ -11,10 +11,10 @@ init:
 install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
   - pip install wheel
+  # install precompiled versions not available on pypi
+  - "%PYTHON%\\Scripts\\pymy_install3 cartopy pyproj shapely fiona gdal llvmlite"
   # for many packages
   - "%PYTHON%\\Scripts\\pip install -r requirements-win.txt"
-  # install precompiled versions not available on pypi
-  - "%PYTHON%\\Scripts\\pymy_install3 cartopy pyproj shapely fiona gdal llvmlite numba cpyquickhelper"
   # onnx
   #- git clone -b master --single-branch https://github.com/onnx/onnx.git --recursive
   #- cd onnx
