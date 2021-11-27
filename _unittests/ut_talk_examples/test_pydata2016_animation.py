@@ -109,7 +109,7 @@ class TestPyData2016Animation(unittest.TestCase):
             Writer = writers[prog]
         except KeyError as e:
             if prog == "avconv":
-                from matplotlib.animation import AVConvWriter
+                from matplotlib.animation import AVConvWriter  # pylint: disable=E0611
                 Writer = AVConvWriter
             else:
                 raise e
