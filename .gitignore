@@ -325,3 +325,4 @@ _doc/notebooks/2019/ensae_api/*.pickle
 _doc/notebooks/2019/ensae_api/data_iris.csv
 _doc/notebooks/2018/msexp/squeezenet.torch.onnx
 _doc/notebooks/2020/ensae/.ipynb_checkpoints
+_doc/notebooks/2021/actuaires/.ipynb_checkpoints/*
