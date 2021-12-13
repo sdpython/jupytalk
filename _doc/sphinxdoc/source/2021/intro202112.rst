@@ -38,8 +38,23 @@ de prendre de l'ampleur.
   les réseaux sociaux sont incontournables, il existe même des 
   tableurs écrit en `python <https://pyspread.gitlab.io/index.html>`_
 
-Dans le domaine informatique, soit on programme, soit on a cinq ans
-de retard.
+La plupart des programmes informatiques
+sont buggés et évoluent sans cesse à l'inverse des objets physiques.
+
+* 2030 - téléphones traduisant en temps réel d'une langue à
+  l'autre, voitures automatisées sur l'autoroute,
+  des drones survoles les champs pour éradiquer les insectes
+  ou autres champignons, commande vocale de nombreux appareils ménagers,
+
+Plan
+
+* Brève histoire du machine learning entre 1970 et aujourd'hui
+* Le langage Python en quelques mots
+* Pourquoi le langage python s'est imposé en data science ?
+* Comment partager son travail ? Package et Documentation
+* Les sujets fréquemment oubliés : tests unitaires, ingénierie logicielle
+* Etre rapide avec un des langages les plus lents, mise en production
+
 
 * :ref:`introprogpyrst`
 
