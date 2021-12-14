@@ -10,32 +10,33 @@ Institut des actuaires
     :twitter: 3
     :head: False
 
-Mon premier ordinateur était un 
+Mon premier ordinateur était un
 `Amstrad CPC 464 <https://fr.wikipedia.org/wiki/Amstrad_CPC_464>`_
 des millions de fois plus lent que l'ordinateur sur lequel j'écris ces lignes.
 Il était muni d'une lecteur de cassette et de 64 Ko de mémoire,
 du langage de programmation BASIC. Depuis l'informatique n'a cessé
 de prendre de l'ampleur.
 
+* 1970 - premier ordinateur IBM, création de Microsoft, Apple
 * 1980 - début de l'informatisation, les imprimantes à aiguilles,
   le langage Pascal, l'éditeur Borland, Quatro Pro,
   les premiers réseaux de neurones
-* 1990 - Les SVM, les imprimantes laser, popularisation des PCs, début
-  débuts d'internet et des téléphones portables, premières vesions du
-  langages python
+* 1990 - Les SVM, les imprimantes laser, popularisation des PCs,
+  débuts d'internet et des téléphones portables, premières versions du
+  langages Python, Linux, création d'Amazon, de Google
 * 2000 - Premiers smartphone, les random forest, début de
   scikit-learn, python 3.0, début de IPython, l'ancêtre de
   jupyter, pandas, début de Hadoop, l'ancêtre du calcul distribué
-  pour le traitement des log de site web
+  pour le traitement des log de site web, création de Facebook
 * 2010 - le deep learning gagne ses premières compétitions,
   les librairies de machine learning deviennent open source,
   elles sont accessibles en python, langage beaucoup plus facile
   d'accès que C++, le GPU prend son envol, les librairies
-  implémentent les calculs de façons distribués, calcul en 
+  implémentent les calculs de façons distribués, calcul en
   temps réel, loi RGPD
 * 2020 - Python efface R, l'exploitation des données est
   une évidence, le numérique est partout, peut-être un peu trop,
-  les réseaux sociaux sont incontournables, il existe même des 
+  les réseaux sociaux sont incontournables, il existe même des
   tableurs écrit en `python <https://pyspread.gitlab.io/index.html>`_
 
 La plupart des programmes informatiques
@@ -54,7 +55,6 @@ Plan
 * Comment partager son travail ? Package et Documentation
 * Les sujets fréquemment oubliés : tests unitaires, ingénierie logicielle
 * Etre rapide avec un des langages les plus lents, mise en production
-
 
 * :ref:`introprogpyrst`
 
