@@ -100,7 +100,8 @@ def example_cartopy(ax=None, **options):
     import matplotlib.pyplot as plt
 
     fig = plt.figure(figsize=(7, 7))
-    ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
+    ax = fig.add_subplot(
+        1, 1, 1, projection=ccrs.PlateCarree())  # pylint: disable=E0110
     ax.set_extent([-5, 10, 42, 52])
 
     ax.add_feature(cfeature.OCEAN)

@@ -56,7 +56,7 @@ Plan
 * Les sujets fréquemment oubliés : tests unitaires, ingénierie logicielle
 * Etre rapide avec un des langages les plus lents, mise en production
 
-* :ref:`introprogpyrst`
+La suite : :ref:`introprogpyrst`.
 
 Links
 -----
