@@ -16,7 +16,7 @@ readme = 'README.rst'
 history = "HISTORY.rst"
 requirements = None
 
-KEYWORDS = project_var_name + ', first name, last name'
+KEYWORDS = [project_var_name, 'Xavier Dupré', 'talks']
 DESCRIPTION = """Material for presentations. The documentation generation is using pyquickhelper."""
 
 
