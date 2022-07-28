@@ -22,7 +22,7 @@ class TestCodeStyle(ExtTestCase):
         src_ = os.path.normpath(os.path.join(thi, "..", "..", "src"))
         check_pep8(src_, fLOG=fLOG, run_cmd_filter=_run_cmd_filter,
                    pylint_ignore=('C0103', 'C1801', 'R1705', 'W0108', 'W0613',
-                                  'R0911', 'W0201', 'W070', 'W0622', 'R1702',
+                                  'R0911', 'W0201', 'W0622', 'R1702',
                                   'C0111', 'W0703', 'C0200', 'C0415', 'C0209'),
                    neg_pattern='.*MokadiGrammar_((frParser)|(frListener)|(frLexer))[.]py$',
                    skip=["Unable to import 'ensae_teaching_cs.pythonnet'",
@@ -54,7 +54,7 @@ class TestCodeStyle(ExtTestCase):
         test = os.path.normpath(os.path.join(thi, "..", ))
         check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*", run_cmd_filter=_run_cmd_filter,
                    pylint_ignore=('C0103', 'C1801', 'R1705', 'W0108', 'W0613',
-                                  'C0111', 'W0703', 'C0122', 'W0101', 'R1707',
+                                  'C0111', 'W0703', 'W0101', 'R1707',
                                   'W0611', 'C0415', 'C0209'),
                    skip=["Unable to import 'ensae_teaching_cs.pythonnet'",
                          "Redefining name 'path' from outer scope",
