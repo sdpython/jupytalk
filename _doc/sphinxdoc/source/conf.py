@@ -8,8 +8,9 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 
 set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2021,
                      "pydata_sphinx_theme", ['_static'],
-                     locals(), extlinks=dict(
-                         issue=('https://github.com/sdpython/jupytalk/issues/%s', 'issue')),
+                     locals(), extlinks=dict(issue=(
+                         'https://github.com/sdpython/jupytalk/issues/%s',
+                         'issue %s')),
                      github_user="sdpython", github_repo="jupytalk", book=True, nblayout='table')
 
 html_theme_options = {
