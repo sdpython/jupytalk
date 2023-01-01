@@ -6,14 +6,14 @@ from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
 
-set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2021,
+set_sphinx_variables(__file__, "jupytalk", "Xavier Dupré", 2023,
                      "pydata_sphinx_theme", ['_static'],
                      locals(), extlinks=dict(issue=(
                          'https://github.com/sdpython/jupytalk/issues/%s',
                          'issue %s')),
                      github_user="sdpython", github_repo="jupytalk", book=True, nblayout='table')
 
-html_theme_options = {
+html_theme_options.update({
     'navbar_title': "BASE",
     'navbar_site_name': "Site",
     'navbar_links': [
@@ -27,7 +27,7 @@ html_theme_options = {
     'bootswatch_theme': "readable",
     'bootstrap_version': "3",
     'source_link_position': "footer",
-}
+})
 
 blog_root = "http://www.xavierdupre.fr/app/jupytalk/helpsphinx/"
 blog_background = False
