@@ -241,7 +241,7 @@ _doc/sphinxdoc/source/blog/rss.xml
 _doc/sphinxdoc/source/phdoc_templates/*toc.html
 _doc/sphinxdoc/source/phdoc_templates/*box.html
 _doc/sphinxdoc/source/blog/feed-icon*.png
-_doc/sphinxdoc/source/phdoc_static/reveal.js/*
+_doc/sphinxdoc/source/_static/reveal.js/*
 _doc/notebooks/.ipynb_checkpoints/*
 dist_module27/*
 auto_*.bat
@@ -249,7 +249,7 @@ auto_*.sh
 auto_*.py
 auto_*.xml
 auto_*.db3
-_doc/sphinxdoc/source/phdoc_static/require.js
+_doc/sphinxdoc/source/_static/require.js
 _doc/sphinxdoc/require.js
 _doc/notebooks/2016/pydata/.ipynb_checkpoints/*
 _doc/notebooks/2016/pydata/histogram_single.html
@@ -311,7 +311,7 @@ _doc/notebooks/2018/msexp/squeeze.onnx
 _doc/notebooks/2018/msexp/squeezenet1.1.onnx
 _doc/notebooks/2018/msexp/tiny_yolov2.tar.gz
 _doc/notebooks/2018/msexp/tiny_yolov2/*
-_doc/sphinxdoc/source/phdoc_static/style_notebook_snippet.css
+_doc/sphinxdoc/source/_static/style_notebook_snippet.css
 _doc/notebooks/2018/pyparis/*.csv
 _doc/notebooks/2018/pyparis/*.zip
 _doc/notebooks/2018/pyparis/*.onnx
