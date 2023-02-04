@@ -10,8 +10,8 @@ init:
 
 install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
-  - pip install pyquicksetup
-  - pip install wheel pymyinstall
+  - "%PYTHON%\\python -m pip install pyquicksetup"
+  - "%PYTHON%\\python -m pip install wheel pymyinstall"
   # install precompiled versions not available on pypi
   - "%PYTHON%\\Scripts\\pymy_install3 cartopy pyproj shapely fiona gdal"
   # for many packages
