@@ -31,7 +31,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
         if is_virtual_environment() and sys.platform.startswith("win"):
             pp = os.environ.get('PYTHONPATH', '')
             if "SECONDTRY" in pp:
-                raise Exception(
+                raise AssertionError(
                     "Not working**EXE\n{0}\n**PP\n{1}\n****".format(sys.executable, pp))
             # We need to run this file with the main python.
             # Otherwise it fails for tables: DLL load failed.
@@ -57,7 +57,7 @@ class TestLONGRunNotebooksPyData2016_im2(unittest.TestCase):
                 lines = [
                     _ for _ in lines if "warning" not in _ and not _.startswith("ran ") and _ != "ok"]
                 if len(lines) > 0:
-                    raise Exception("--CMD:\n{0}\n--OUT:\n{1}\n--ERR\n{2}\n--ERR2\n{3}\n--PP\n{4}".format(
+                    raise AssertionError("--CMD:\n{0}\n--OUT:\n{1}\n--ERR\n{2}\n--ERR2\n{3}\n--PP\n{4}".format(
                         cmd, out, err, "\n".join(lines), pp))
             return
 
