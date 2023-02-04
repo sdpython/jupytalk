@@ -97,8 +97,6 @@ skl2onnx
 
 # geo
 cartopy
-geoplotlib
 pyproj
 shapely
 geopandas
-fiona

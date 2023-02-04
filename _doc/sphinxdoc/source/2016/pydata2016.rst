@@ -57,10 +57,6 @@ it involves a server (bqplot).
 
 * :ref:`bigdatashaderrst`
 
-**GUI**
-
-* :ref:`guigeoplotlibrst`
-
 **Mix between Python and Javascript**
 
 * :ref:`pyjsbqplotrst`
